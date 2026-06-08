@@ -506,3 +506,41 @@ textarea {
 @media (max-width: 600px) {
   .tagline-small { display: none; }
 }
+
+/* FAQ accordions */
+.faq {
+  border-top: 1px solid #e6e3da;
+  padding: 1.1rem 0;
+}
+.faq:last-of-type {
+  border-bottom: 1px solid #e6e3da;
+}
+.faq summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--ink, #2d4a3e);
+  list-style: none;
+  padding-right: 2rem;
+  position: relative;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: var(--ink-soft, #5a6660);
+  transition: transform 0.15s ease;
+}
+.faq[open] summary::after {
+  content: "\2212";
+}
+.faq p {
+  margin-top: 0.85rem;
+  margin-bottom: 0.25rem;
+  color: var(--ink-soft, #5a6660);
+  line-height: 1.6;
+}
