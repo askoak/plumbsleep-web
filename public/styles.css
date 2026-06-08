@@ -544,3 +544,78 @@ textarea {
   color: var(--ink-soft, #5a6660);
   line-height: 1.6;
 }
+
+/* 90-night guarantee section */
+.hero-trust {
+  display: block;
+  margin-top: 0.4rem;
+  font-style: normal;
+  font-size: 0.95rem;
+  color: var(--ink-soft, #5a6660);
+  letter-spacing: 0.01em;
+}
+@media (min-width: 700px) {
+  .hero-trust {
+    display: inline;
+    margin-top: 0;
+    margin-left: 0.6rem;
+  }
+  .hero-trust::before {
+    content: "\00b7\00a0";
+    color: var(--ink-soft, #5a6660);
+  }
+}
+
+.section-guarantee {
+  background: #f4f0e6;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+.section-guarantee h2 {
+  font-family: var(--ff-serif, Georgia, serif);
+  font-style: italic;
+  font-weight: 500;
+}
+.guarantee-lede {
+  font-size: 1.1rem;
+  color: var(--ink, #2d4a3e);
+  line-height: 1.55;
+}
+.guarantee-promise {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0 1.5rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid #d9d3c0;
+  border-bottom: 1px solid #d9d3c0;
+}
+.promise-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.promise-item strong {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--ink, #2d4a3e);
+  letter-spacing: -0.005em;
+}
+.promise-item span {
+  font-size: 0.9rem;
+  color: var(--ink-soft, #5a6660);
+  margin-top: 0.25rem;
+}
+.guarantee-fineprint {
+  font-size: 0.92rem;
+  color: var(--ink-soft, #5a6660);
+  font-style: italic;
+  margin-top: 1.5rem;
+}
+@media (max-width: 600px) {
+  .guarantee-promise {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
