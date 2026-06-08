@@ -619,3 +619,128 @@ textarea {
     gap: 1rem;
   }
 }
+
+/* ---- Status strip under header ---- */
+.status-strip {
+  font-size: 0.82rem;
+  color: var(--ink-soft, #5a6660);
+  letter-spacing: 0.02em;
+  text-align: center;
+  padding: 0.45rem 1rem;
+  background: #f4f0e6;
+  border-top: 1px solid #e6e3da;
+  border-bottom: 1px solid #e6e3da;
+}
+
+/* ---- Hero pre-launch note ---- */
+.prelaunch-note {
+  font-size: 0.95rem;
+  color: var(--ink-soft, #5a6660);
+  background: #f4f0e6;
+  border-left: 3px solid #c7bca5;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0 1.5rem 0;
+  line-height: 1.55;
+}
+.prelaunch-note strong {
+  color: var(--ink, #2d4a3e);
+}
+
+/* ---- Size table ---- */
+.size-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0 0.75rem;
+  font-size: 0.95rem;
+}
+.size-table caption {
+  text-align: left;
+  font-weight: 600;
+  color: var(--ink, #2d4a3e);
+  padding-bottom: 0.6rem;
+  caption-side: top;
+}
+.size-table caption .opt {
+  font-weight: 400;
+  color: var(--ink-soft, #5a6660);
+  font-style: italic;
+}
+.size-table th {
+  background: #f4f0e6;
+  border: 1px solid #c7bca5;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+.size-table td {
+  border: 1px solid #e6e3da;
+  padding: 0.5rem 0.75rem;
+  vertical-align: top;
+}
+.size-note {
+  font-size: 0.88rem;
+  color: var(--ink-soft, #5a6660);
+  font-style: italic;
+  margin-bottom: 0;
+}
+@media (max-width: 600px) {
+  .size-table { font-size: 0.85rem; }
+  .size-table th, .size-table td { padding: 0.4rem 0.55rem; }
+}
+
+/* ---- Body-size callouts ---- */
+.callout {
+  background: #f4f0e6;
+  border-left: 3px solid #c7bca5;
+  padding: 0.85rem 1.1rem;
+  margin: 1rem 0;
+  font-size: 0.97rem;
+  line-height: 1.55;
+  color: var(--ink, #2d4a3e);
+}
+.callout strong {
+  color: var(--ink, #2d4a3e);
+}
+
+/* ---- Feels-like paragraph ---- */
+.feels-like-h3 {
+  font-family: var(--ff-serif, Georgia, serif);
+  font-style: italic;
+  font-weight: 500;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--ink, #2d4a3e);
+  font-size: 1.15rem;
+}
+.feels-like {
+  font-size: 1rem;
+  color: var(--ink-soft, #5a6660);
+  line-height: 1.65;
+  font-style: italic;
+  border-left: 2px solid #c7bca5;
+  padding-left: 1rem;
+  margin: 0.75rem 0 1.25rem 0;
+}
+
+/* ---- Demoted logo vote section ---- */
+.section-vote-demoted {
+  background: #fbf9f2;
+  border-top: 1px solid #e6e3da;
+  border-bottom: 1px solid #e6e3da;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin-top: 2rem;
+}
+.section-vote-demoted h2 {
+  font-size: 1.5rem;
+}
+
+/* ---- Founder line in footer ---- */
+.founder-line {
+  display: block;
+  font-style: italic;
+  color: var(--ink-soft, #5a6660);
+  font-size: 0.9rem;
+  margin-top: 0.4rem;
+  letter-spacing: 0.01em;
+}
