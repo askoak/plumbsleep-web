@@ -744,3 +744,15 @@ textarea {
   margin-top: 0.4rem;
   letter-spacing: 0.01em;
 }
+
+.section-hero .product-descriptor {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border, #d8d3c8);
+  font-family: var(--serif, Georgia, "Times New Roman", serif);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--ink-soft, #5a5a5a);
+  letter-spacing: 0.01em;
+  max-width: 38em;
+}
