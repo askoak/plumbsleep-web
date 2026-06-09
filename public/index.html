@@ -497,6 +497,38 @@
       </div>
     </section>
 
+    <!-- WAITLIST -->
+    <section class="section">
+      <div class="content">
+        <h2>Hear from us first</h2>
+        <p>
+          Plumb is pre-prototype. We are running a small wear test before we make
+          units to sell. If you want an email when the first wear-test cohort opens
+          and another when general sale starts, leave your address. We send two
+          emails. That is all.
+        </p>
+
+        <form id="waitlist-form" name="plumb-waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?waitlist_submitted=1">
+          <input type="hidden" name="form-name" value="plumb-waitlist">
+          <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
+          <div class="field">
+            <label for="wl-email">Email <span class="req" aria-hidden="true">*</span></label>
+            <input type="email" name="email" id="wl-email" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="wl-note">Anything you want us to know? <span class="opt">(optional)</span></label>
+            <input type="text" name="note" id="wl-note" maxlength="140">
+          </div>
+          <button type="submit" class="button">Join the waitlist</button>
+          <p class="form-note">We use your address only to send the two emails above. We do not sell or share addresses. To delete your address, email <a href="mailto:hello@plumbsleep.com">hello@plumbsleep.com</a>.</p>
+        </form>
+
+        <div id="waitlist-thanks" class="thanks" hidden>
+          <h3>Confirmed.</h3>
+          <p>We have your email. We will write to you once when we open the first wear-test cohort, and once more when general sale opens. That is it.</p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -573,7 +605,28 @@
         voteThanks.hidden = false;
       }
     })();
-  </script>
+    // Waitlist form: progressive enhancement
+    (function () {
+      var wlForm = document.getElementById('waitlist-form');
+      var wlThanks = document.getElementById('waitlist-thanks');
+      if (!wlForm || !wlThanks) return;
+      wlForm.addEventListener('submit', function (e) {
+        if (!window.fetch || !wlForm.checkValidity()) return;
+        e.preventDefault();
+        var data = new FormData(wlForm);
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Accept': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(data).toString()
+        }).then(function () {
+          wlForm.hidden = true; wlThanks.hidden = false;
+          wlThanks.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }).catch(function () { wlForm.submit(); });
+      });
+      if (window.location.search.indexOf('waitlist_submitted=1') !== -1) {
+        wlForm.hidden = true; wlThanks.hidden = false;
+      }
+    })();  </script>
 
 </body>
 </html>
