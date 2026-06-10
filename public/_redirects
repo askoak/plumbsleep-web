@@ -1,10 +1,8 @@
 # ============================================================================
-# WTP_TEST_FLAG: OFF (dormant). The three forced redirects below 302 the
-# price-variant pages to the homepage. FLIPPING THE TEST ON = delete the three
-# /price/ lines in ONE PR titled "feat(wtp): enable A/B/C test traffic" with
-# Mike's explicit approval (Layer-3 — v1.4 Rule B does NOT auto-merge that PR).
+# WTP_TEST_FLAG: ON (live). The three /price/<n>/ variants serve their A/B/C
+# pages directly per package/112. Flipped 2026-06-10T14:20 EDT per Mike's
+# direct instruction (item 3 "WTP flip — merge"). Signal collected through
+# pre-launch waitlist conversion on each variant.
+# To re-disable: add back the three `302!` lines below the comment.
 # See plumb-coordination package/112.
 # ============================================================================
-/price/49/* / 302!
-/price/69/* / 302!
-/price/89/* / 302!
