@@ -741,6 +741,32 @@ textarea {
   max-width: 38em;
 }
 
+/* Hero closing line (the mechanical promise from the 2026-06-10 claims audit, Path A). */
+.section-hero .hero-close {
+  margin-top: 1.25rem;
+  font-family: var(--serif, Georgia, "Times New Roman", serif);
+  font-size: 1.15rem;
+  color: var(--ink, #2d4a3e);
+  letter-spacing: 0.005em;
+  max-width: 38em;
+  font-weight: 500;
+}
+
+/* 'Who Plumb is for / not for' plain bullet lists (claims-audit Path A section). */
+.plain-list {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin: 0.5rem 0 1.5rem;
+  max-width: 42em;
+}
+.plain-list li {
+  margin: 0.5rem 0;
+  line-height: 1.55;
+}
+.sub-h2 {
+  margin-top: 2.25rem;
+}
+
 /* ---- Sticky waitlist CTA (appears after scrolling past hero) ---- */
 .sticky-cta{
   position: fixed;
