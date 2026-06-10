@@ -478,6 +478,11 @@ p { margin: 0 0 1rem; max-width: 64ch; }
   margin: 1.5rem 0 0;
   font-style: italic;
 }
+/* J: very narrow phones (≤360px) — tighten the sizing table so it fits 320px */
+@media (max-width: 380px) {
+  .sizing-table th, .sizing-table td { padding: 0.55rem 0.45rem; font-size: 0.9rem; }
+  .sizing-table thead th { font-size: 0.76rem; letter-spacing: 0.04em; }
+}
 
 /* ============================================================
    Figures
