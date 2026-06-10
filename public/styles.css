@@ -9,7 +9,11 @@
   --ink: #1a1a1a;         /* primary text */
   --muted: #6a6a65;       /* secondary text */
   --rule: #cfcfca;        /* hairline dividers */
-  --accent: #2d4a3e;      /* institutional green */
+  --accent: #2d4a3e;      /* deep forest accent — NOT the brand sage #6B8E5A.
+                             The "sage wordmark only" rule governs the embroidered
+                             product wordmark (package/96 §3, Reading 1); the site
+                             palette is a separate design decision. Do not treat
+                             this variable as the brand sage. */
   --accent-hover: #1f342b;
   --warm: #e8e0d2;        /* bamboo card tone */
   --card-border: #e0d8c8;
