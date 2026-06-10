@@ -69,6 +69,44 @@ a:hover, a:focus-visible { color: var(--accent-hover); text-decoration-thickness
   text-decoration: none;
 }
 .wordmark:hover, .wordmark:focus-visible { color: var(--ink); }
+
+/* Brand mark in header: Logo C (selected 2026-06-10). */
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  line-height: 0;
+}
+.brand-mark img {
+  display: block;
+  height: 44px;
+  width: auto;
+  border-radius: 4px;
+}
+@media (max-width: 600px) {
+  .brand-mark img { height: 36px; }
+}
+
+/* "Mark we picked" announcement figure (replaces five-option vote grid). */
+.logo-selected {
+  margin: 1.5rem auto 0;
+  max-width: 360px;
+  text-align: center;
+}
+.logo-selected picture { display: block; }
+.logo-selected img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 1px 0 var(--border);
+}
+.logo-selected figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
 .back-link {
   font-size: 0.85rem;
   color: var(--muted);

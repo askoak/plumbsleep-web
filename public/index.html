@@ -15,14 +15,19 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://plumbsleep.com/assets/og_card.png">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23fafaf7'/%3E%3Ctext x='50' y='68' font-family='system-ui,sans-serif' font-size='64' font-weight='700' text-anchor='middle' fill='%232d4a3e'%3EP%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%233F5874'/%3E%3Ctext x='50' y='72' font-family='Georgia,Cambria,serif' font-size='72' font-weight='400' text-anchor='middle' fill='%23E8DCC4'%3EP%3C/text%3E%3Cpath d='M58 42 Q66 36 70 30 Q66 40 60 46 Z' fill='%236B8E5A'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <header class="site-header">
     <div class="header-inner">
-      <a class="wordmark" href="/">PLUMB</a>
+      <a class="brand-mark" href="/" aria-label="Plumb — home">
+        <picture>
+          <source srcset="assets/logos/logo_C.webp" type="image/webp">
+          <img src="assets/logos/logo_C.jpg" alt="Plumb" width="160" height="56" loading="eager" decoding="async">
+        </picture>
+      </a>
       <span class="tagline-small">Sleep, aligned.</span>
     </div>
     <div class="status-strip" role="status">
@@ -313,90 +318,32 @@
       </div>
     </section>
 
-    <!-- LOGO VOTE (demoted; brand exercise after product credibility) -->
+    <!-- LOGO SELECTED (formerly the public vote section; vote closed) -->
     <section class="section section-vote-demoted">
       <div class="content">
-        <h2>Help us pick the logo</h2>
+        <h2>The mark we picked</h2>
         <p>
-          We're between a few directions for the Plumb mark. We'd love your
-          gut reaction. Click the one that feels most like a brand you'd want
-          to bring home. One vote per person.
+          A few weeks ago we ran a quiet vote across five directions for the
+          Plumb mark. Thank you to everyone who weighed in. We've selected
+          <strong>Option C</strong> &mdash; a serif <em>P</em> with a single
+          leaf inside the bowl.
+        </p>
+        <p>
+          The reasoning was simple: it embroiders cleanly on the cover, it
+          reads at favicon size, and it lets the <em>fiber</em> story live in
+          the copy ("viscose made from bamboo") rather than in the imagery.
+          That keeps the brand restrained and our claims honest.
         </p>
       </div>
 
       <div class="logo-vote-wrap">
-        <form id="logo-vote-form" name="plumb-logo-vote" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?logo_submitted=1">
-          <input type="hidden" name="form-name" value="plumb-logo-vote">
-          <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
-
-          <fieldset class="logo-grid">
-            <legend class="visually-hidden">Choose your preferred logo</legend>
-
-            <label class="logo-card">
-              <input type="radio" name="logo_choice" value="A" required>
-              <picture>
-                <source srcset="assets/logos/logo_A.webp" type="image/webp">
-                <img src="assets/logos/logo_A.jpg" alt="Logo option A: bamboo culm integrated into the letter P, with leaves, on midnight navy background." loading="lazy">
-              </picture>
-              <span class="logo-card-label">Option A</span>
-            </label>
-
-            <label class="logo-card">
-              <input type="radio" name="logo_choice" value="B">
-              <picture>
-                <source srcset="assets/logos/logo_B.webp" type="image/webp">
-                <img src="assets/logos/logo_B.jpg" alt="Logo option B: refined serif P with bamboo culm and sage-green leaves, on midnight navy background." loading="lazy">
-              </picture>
-              <span class="logo-card-label">Option B</span>
-            </label>
-
-            <label class="logo-card">
-              <input type="radio" name="logo_choice" value="C">
-              <picture>
-                <source srcset="assets/logos/logo_C.webp" type="image/webp">
-                <img src="assets/logos/logo_C.jpg" alt="Logo option C: serif P with a single bamboo leaf inside the bowl of the P, on midnight navy background." loading="lazy">
-              </picture>
-              <span class="logo-card-label">Option C</span>
-            </label>
-
-            <label class="logo-card">
-              <input type="radio" name="logo_choice" value="D">
-              <picture>
-                <source srcset="assets/logos/logo_D.webp" type="image/webp">
-                <img src="assets/logos/logo_D.jpg" alt="Logo option D: serif P with prominent segmented bamboo culm and leaves, on midnight navy background." loading="lazy">
-              </picture>
-              <span class="logo-card-label">Option D</span>
-            </label>
-
-            <label class="logo-card">
-              <input type="radio" name="logo_choice" value="E">
-              <picture>
-                <source srcset="assets/logos/logo_E.webp" type="image/webp">
-                <img src="assets/logos/logo_E.jpg" alt="Logo option E: serif P with a four-segment bamboo culm and sage-green leaves, on midnight navy background." loading="lazy">
-              </picture>
-              <span class="logo-card-label">Option E</span>
-            </label>
-          </fieldset>
-
-          <div class="content vote-extras">
-            <div class="field">
-              <label for="logo_why">Why this one? <span class="opt">(optional, one line)</span></label>
-              <input type="text" name="logo_why" id="logo_why" maxlength="200">
-            </div>
-
-            <div class="field">
-              <label for="logo_email">Email <span class="opt">(optional, so we can let you know which one we pick)</span></label>
-              <input type="email" name="logo_email" id="logo_email" autocomplete="email">
-            </div>
-
-            <button type="submit" class="button">Submit vote</button>
-          </div>
-        </form>
-
-        <div id="vote-thanks" class="thanks content" hidden>
-          <h3>Thank you.</h3>
-          <p>Vote recorded. Results are private; we'll share the outcome with anyone who left an email.</p>
-        </div>
+        <figure class="logo-selected">
+          <picture>
+            <source srcset="assets/logos/logo_C.webp" type="image/webp">
+            <img src="assets/logos/logo_C.jpg" alt="The selected Plumb mark: a serif P with a single leaf inside the bowl, in champagne on midnight navy." width="560" height="560" loading="lazy">
+          </picture>
+          <figcaption>Plumb &middot; selected mark, June 2026</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -620,39 +567,7 @@
       }
     })();
 
-    // Logo vote: progressive enhancement + soft dupe block
-    (function () {
-      var voteForm = document.getElementById('logo-vote-form');
-      var voteThanks = document.getElementById('vote-thanks');
-      if (!voteForm || !voteThanks) return;
-      try {
-        if (localStorage.getItem('plumb_logo_voted') === '1') {
-          voteForm.hidden = true;
-          voteThanks.hidden = false;
-          voteThanks.querySelector('p').textContent = 'You\u2019ve already voted from this device. Thanks again.';
-        }
-      } catch (e) {}
-      voteForm.addEventListener('submit', function (e) {
-        if (!window.fetch || !voteForm.checkValidity()) return;
-        e.preventDefault();
-        var data = new FormData(voteForm);
-        fetch('/', {
-          method: 'POST',
-          headers: { 'Accept': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(data).toString()
-        }).then(function () {
-          try { localStorage.setItem('plumb_logo_voted', '1'); } catch (e) {}
-          voteForm.hidden = true;
-          voteThanks.hidden = false;
-          voteThanks.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }).catch(function () { voteForm.submit(); });
-      });
-      if (window.location.search.indexOf('logo_submitted=1') !== -1) {
-        try { localStorage.setItem('plumb_logo_voted', '1'); } catch (e) {}
-        voteForm.hidden = true;
-        voteThanks.hidden = false;
-      }
-    })();
+    // Logo vote handler retired 2026-06-10: Option C selected; section is announcement-only.
     // Waitlist form: progressive enhancement
     (function () {
       var wlForm = document.getElementById('waitlist-form');
