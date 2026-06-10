@@ -689,6 +689,24 @@ figure.full-width figcaption {
 }
 
 /* ============================================================
+   Customer guarantee callout (package/140)
+   ============================================================ */
+
+.guarantee-callout {
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--sage-deep);
+  border-radius: 6px;
+  padding: 1.3rem 1.6rem;
+  background: var(--surface);
+}
+.guarantee-callout h2 { margin: 0 0 0.5rem; font-size: 1.35rem; }
+.guarantee-callout p { margin: 0 0 0.6rem; }
+.guarantee-callout p:last-child { margin-bottom: 0; }
+.guarantee-callout a { color: var(--sage-deep); font-weight: 600; text-decoration: none; border-bottom: 1px solid transparent; }
+.guarantee-callout a:hover { border-bottom-color: var(--sage); }
+.guarantee-callout .guarantee-closing { font-family: var(--serif); font-style: italic; color: var(--ink-soft); }
+
+/* ============================================================
    Our promise to moms — homepage short variant
    (restrained: no special background, no icons, sage link only)
    ============================================================ */
