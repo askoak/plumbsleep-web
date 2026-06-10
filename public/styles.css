@@ -25,7 +25,7 @@
   --ink:             #2D4A3E;   /* primary ink — restrained green-grey */
   --ink-soft:        #4A4A45;
   --muted:           #4A4A45;
-  --faint:           #8B8B85;
+  --faint:           #75756E;   /* F3: was #8B8B85; >=4.5:1 on --bg-warm */
 
   /* Type families */
   --serif:           'Source Serif 4', 'Source Serif Pro', Georgia, Cambria, 'Times New Roman', serif;
@@ -171,14 +171,14 @@ p { margin: 0 0 1rem; max-width: 64ch; }
 }
 .nav-links a:hover { color: var(--sage-deep); }
 .nav-cta {
-  background: var(--sage);
+  background: var(--sage-deep); /* F2: WCAG AA 4.5:1 with white text */
   color: #FFFFFF !important;
   padding: 0.45rem 0.9rem;
   border-radius: 4px;
   text-decoration: none;
   font-weight: 600;
 }
-.nav-cta:hover { background: var(--sage-deep); color: #FFFFFF !important; }
+.nav-cta:hover { background: var(--sage); color: #FFFFFF !important; }
 
 @media (max-width: 720px) {
   .nav-links { gap: 0.85rem; }
@@ -225,8 +225,8 @@ p { margin: 0 0 1rem; max-width: 64ch; }
   transition: background .15s ease, color .15s ease, border-color .15s ease, transform .1s ease;
   line-height: 1.2;
 }
-.button-primary { background: var(--sage); color: #FFFFFF; border-color: var(--sage); }
-.button-primary:hover { background: var(--sage-deep); border-color: var(--sage-deep); color: #FFFFFF; }
+.button-primary { background: var(--sage-deep); color: #FFFFFF; border-color: var(--sage-deep); } /* F2 */
+.button-primary:hover { background: var(--sage); border-color: var(--sage); color: #FFFFFF; }
 .button-ghost { background: transparent; color: var(--ink); border-color: var(--rule); }
 .button-ghost:hover { border-color: var(--sage); color: var(--sage-deep); }
 .button-large { padding: 1rem 2rem; font-size: 1.05rem; }
@@ -404,10 +404,10 @@ p { margin: 0 0 1rem; max-width: 64ch; }
   font-style: italic;
 }
 .section-midcta .button-primary {
-  background: var(--sage);
-  border-color: var(--sage);
+  background: var(--sage-deep);
+  border-color: var(--sage-deep);
 }
-.section-midcta .button-primary:hover { background: #7ea36a; border-color: #7ea36a; }
+.section-midcta .button-primary:hover { background: var(--sage); border-color: var(--sage); }
 
 /* ============================================================
    Plain lists (who-it's-for)
@@ -640,7 +640,7 @@ figure.full-width figcaption {
   position: fixed;
   right: 1.25rem;
   bottom: 1.25rem;
-  background: var(--sage);
+  background: var(--sage-deep); /* F2 */
   color: #FFFFFF !important;
   text-decoration: none;
   padding: 0.85rem 1.4rem;
@@ -660,7 +660,7 @@ figure.full-width figcaption {
   transform: translateY(0);
   pointer-events: auto;
 }
-.sticky-cta:hover { background: var(--sage-deep); color: #FFFFFF !important; }
+.sticky-cta:hover { background: var(--sage); color: #FFFFFF !important; }
 @media (max-width: 600px) {
   .sticky-cta { right: 0.85rem; bottom: 0.85rem; padding: 0.7rem 1.1rem; font-size: 0.9rem; }
 }
