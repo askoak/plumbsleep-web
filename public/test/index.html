@@ -3,34 +3,52 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow"><!-- dormant pre-G1; flip to indexable at launch per package/111 §1 -->
+  <meta name="robots" content="noindex, nofollow"><!-- tester screener; noindex by design (package/111 §1). Recruitment outreach is Mike-only (UP-10). -->
   <title>Help us test Plumb</title>
+  <link rel="canonical" href="https://plumbsleep.com/test/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%233F5874'/%3E%3Ctext x='50' y='72' font-family='Georgia,Cambria,serif' font-size='72' font-weight='400' text-anchor='middle' fill='%23E8DCC4'%3EP%3C/text%3E%3Cpath d='M58 42 Q66 36 70 30 Q66 40 60 46 Z' fill='%236B8E5A'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+  <link rel="stylesheet" href="https://fonts.bunny.net/css?family=source-serif-4:400,500,600,700|inter:400,500,600&display=optional">
   <link rel="stylesheet" href="/styles.css">
-  <link rel="icon" href="/assets/logos/logo_C.jpg">
   <style>
-    .test-wrap{max-width:680px;margin:0 auto;padding:48px 24px 80px}
-    .test-wrap h1{margin-bottom:4px}
-    .screener .field{margin:14px 0}
-    .screener label{display:block;font-weight:600;margin-bottom:4px}
-    .screener .hint{font-size:13px;color:#6b6b66;margin:2px 0 6px}
-    .screener input[type=text],.screener input[type=email],.screener input[type=number],
-    .screener select,.screener textarea{width:100%;padding:9px 11px;border:1px solid #e4e2da;border-radius:4px;background:#fff;font:inherit}
-    .screener fieldset{border:1px solid #e4e2da;border-radius:4px;padding:10px 14px;margin:14px 0}
-    .screener fieldset legend{font-weight:600;padding:0 6px}
-    .screener .radio-row label{display:inline-block;font-weight:400;margin-right:16px}
-    .softnote{display:none;border-left:3px solid #6B8E5A;background:#f3f5ef;padding:14px 16px;margin:18px 0;border-radius:4px}
+    .test-wrap{max-width:680px;margin:0 auto;padding:48px 24px 16px}
+    .screener .hint{font-size:0.86rem;color:var(--ink-soft);margin:2px 0 6px}
+    .screener .field-hint{font-size:0.86rem;color:var(--ink-soft);margin:2px 0 6px}
+    .screener input[type=number]{width:100%;font-family:var(--sans);font-size:1rem;padding:0.75rem 0.9rem;
+      background:var(--surface);border:1px solid var(--rule);border-radius:4px;color:var(--ink);}
+    .screener input[type=number]:focus{outline:2px solid var(--sage);outline-offset:1px;border-color:var(--sage);}
+    .softnote{display:none;border-left:3px solid var(--sage);background:var(--bg-warm);
+      padding:14px 16px;margin:18px 0;border-radius:4px;}
   </style>
 </head>
 <body>
+
+  <!-- STICKY NAV -->
+  <nav class="site-nav" aria-label="Primary">
+    <div class="nav-inner">
+      <a class="nav-brand" href="/" aria-label="Plumb &mdash; home">
+        <picture>
+          <source srcset="/assets/logos/logo_C.webp" type="image/webp">
+          <img src="/assets/logos/logo_C.jpg" alt="Plumb" width="36" height="36" decoding="async">
+        </picture>
+        <span class="nav-brand-word">Plumb</span>
+      </a>
+      <ul class="nav-links">
+        <li><a class="nav-cta" href="#apply">Apply to test</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <main class="test-wrap">
+    <p class="eyebrow">Tester program</p>
     <h1>Help us test Plumb</h1>
-    <p class="lede">We're recruiting roughly 50 side sleepers to try the first production sample of
+    <p class="section-lede">We're recruiting roughly 50 side sleepers to try the first production sample of
     Plumb for about a month and tell us, honestly, what works and what doesn't. There's no charge for
     the unit and no obligation to keep using it; we just need clear, written feedback on a short
     questionnaire at the end.</p>
 
     <h2>Who we're looking for</h2>
-    <ul>
+    <ul class="plain-list">
       <li>You sleep on your side most nights.</li>
       <li>You currently use, or have tried, a pillow between your knees.</li>
       <li>You're between roughly 5'2" and 6'4" with a typical mid-thigh circumference of about
@@ -45,17 +63,17 @@
     conversation than a Stage-1 test allows.</p>
 
     <h2>What we ask of you</h2>
-    <ul>
+    <ul class="plain-list">
       <li>Wear the sleeve and use the pillow most nights for four weeks.</li>
       <li>Answer three short check-in emails (about a minute each).</li>
       <li>Complete one longer questionnaire at the end (about ten minutes).</li>
     </ul>
 
     <h2 id="apply">Apply to test</h2>
-    <p class="hint" style="color:#6b6b66">This is a screener, not a contest entry &mdash; we read every
+    <p class="hint">This is a screener, not a contest entry &mdash; we read every
     application, we can't accept everyone, and we'll tell you either way within two weeks.</p>
 
-    <form class="screener" id="screener" name="plumb-tester-screener" method="POST" data-netlify="true"
+    <form class="screener waitlist-form" id="screener" name="plumb-tester-screener" method="POST" data-netlify="true"
           netlify-honeypot="bot-field" action="/test/?applied=1">
       <input type="hidden" name="form-name" value="plumb-tester-screener">
       <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
@@ -65,11 +83,11 @@
       <div class="field"><label for="ts-name">Name (first and last)</label>
         <input type="text" name="name" id="ts-name" required autocomplete="name"></div>
       <div class="field"><label for="ts-zip">ZIP code</label>
-        <p class="hint">Continental US only for this round.</p>
+        <p class="field-hint">Continental US only for this round.</p>
         <input type="text" name="zip" id="ts-zip" required inputmode="numeric" pattern="[0-9]{5}" maxlength="5"></div>
 
       <fieldset><legend>Do you sleep on your side?</legend>
-        <div class="radio-row">
+        <div class="radio-group">
           <label><input type="radio" name="side_sleeper" value="yes" required> Yes, most nights</label>
           <label><input type="radio" name="side_sleeper" value="mostly"> Mostly</label>
           <label><input type="radio" name="side_sleeper" value="sometimes"> Sometimes</label>
@@ -77,7 +95,7 @@
         </div></fieldset>
 
       <fieldset><legend>Do you use a knee pillow now?</legend>
-        <div class="radio-row">
+        <div class="radio-group">
           <label><input type="radio" name="knee_pillow_now" value="yes" required> Yes</label>
           <label><input type="radio" name="knee_pillow_now" value="sometimes"> Sometimes</label>
           <label><input type="radio" name="knee_pillow_now" value="no"> No</label>
@@ -91,11 +109,11 @@
         <select name="height" id="ts-height" required></select></div>
 
       <div class="field"><label for="ts-thigh">Mid-thigh circumference (inches)</label>
-        <p class="hint">Measure around the fullest part of your upper thigh, about three inches below the crease.</p>
+        <p class="field-hint">Measure around the fullest part of your upper thigh, about three inches below the crease.</p>
         <input type="number" name="thigh_circumference_in" id="ts-thigh" min="14" max="34" step="0.5" required></div>
 
       <fieldset><legend>Do you share the bed with a partner?</legend>
-        <div class="radio-row">
+        <div class="radio-group">
           <label><input type="radio" name="sleep_partner" value="yes" required> Yes</label>
           <label><input type="radio" name="sleep_partner" value="no"> No</label>
         </div></fieldset>
@@ -104,16 +122,16 @@
         <p class="hint">These help us route this round correctly &mdash; a "yes" doesn't mean Plumb isn't
         for you, just that this test round isn't the right fit (see above).</p>
         <div class="field"><label>Pregnant now, or possibly in the next 60 days?</label>
-          <div class="radio-row"><label><input type="radio" name="dq_pregnancy" value="yes" required> Yes</label>
+          <div class="radio-group"><label><input type="radio" name="dq_pregnancy" value="yes" required> Yes</label>
           <label><input type="radio" name="dq_pregnancy" value="no"> No</label></div></div>
         <div class="field"><label>Surgery on a leg, hip, or knee in the past 6 months?</label>
-          <div class="radio-row"><label><input type="radio" name="dq_surgery" value="yes" required> Yes</label>
+          <div class="radio-group"><label><input type="radio" name="dq_surgery" value="yes" required> Yes</label>
           <label><input type="radio" name="dq_surgery" value="no"> No</label></div></div>
         <div class="field"><label>Lymphedema diagnosis?</label>
-          <div class="radio-row"><label><input type="radio" name="dq_lymphedema" value="yes" required> Yes</label>
+          <div class="radio-group"><label><input type="radio" name="dq_lymphedema" value="yes" required> Yes</label>
           <label><input type="radio" name="dq_lymphedema" value="no"> No</label></div></div>
         <div class="field"><label>DVT history (you, or a first-degree relative)?</label>
-          <div class="radio-row"><label><input type="radio" name="dq_dvt" value="yes" required> Yes</label>
+          <div class="radio-group"><label><input type="radio" name="dq_dvt" value="yes" required> Yes</label>
           <label><input type="radio" name="dq_dvt" value="no"> No</label></div></div>
       </fieldset>
 
@@ -122,7 +140,7 @@
       <div class="field"><label><input type="checkbox" name="honest_commitment" required>
         I will complete the end-of-test questionnaire even if I dislike the product.</label></div>
 
-      <button type="submit" class="button">Apply to test</button>
+      <button type="submit" class="button button-primary">Apply to test</button>
     </form>
 
     <p class="softnote" id="softnote">Thanks &mdash; based on what you told us, this round isn't the
@@ -136,6 +154,45 @@
       <input type="text" name="zip"><input type="text" name="dq_reason">
     </form>
   </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-cols">
+        <div>
+          <picture>
+            <source srcset="/assets/logos/logo_C.webp" type="image/webp">
+            <img src="/assets/logos/logo_C.jpg" alt="Plumb" width="48" height="48" class="footer-mark">
+          </picture>
+          <p class="footer-tag">Sleep, aligned.</p>
+        </div>
+        <div>
+          <p class="footer-col-h">Contact</p>
+          <p><a href="mailto:hello@plumbsleep.com">hello@plumbsleep.com</a></p>
+        </div>
+        <div>
+          <p class="footer-col-h">Audience pages</p>
+          <p><a href="/">Patient-facing site</a></p>
+          <p><a href="/clinicians/">For clinicians</a></p>
+        </div>
+        <div>
+          <p class="footer-col-h">Status</p>
+          <p>Pre-prototype</p>
+          <p>Stage 1 wear test underway</p>
+          <p>First production targeted Q4 2026</p>
+        </div>
+      </div>
+      <p class="founder-line">Designed by a side sleeper tired of restless nights and lost knee pillows.</p>
+      <p class="disclaimer">
+        Plumb is not a medical device. It is designed to improve sleep posture
+        and comfort and is not intended to diagnose, treat, cure, or prevent
+        any disease or medical condition. If you have a medical condition
+        affecting your back, hips, knees, or sleep, consult your physician.
+        Fabric is viscose made from bamboo, not raw bamboo fiber.
+      </p>
+      <p class="footer-fine">&copy; 2026 Plumb. All rights reserved.</p>
+    </div>
+  </footer>
+
 <script>
   // height options 5'0"–6'6"
   (function(){ var s=document.getElementById('ts-height');
