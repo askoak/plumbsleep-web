@@ -1,0 +1,10 @@
+# ============================================================================
+# WTP_TEST_FLAG: OFF (dormant). The three forced redirects below 302 the
+# price-variant pages to the homepage. FLIPPING THE TEST ON = delete the three
+# /price/ lines in ONE PR titled "feat(wtp): enable A/B/C test traffic" with
+# Mike's explicit approval (Layer-3 — v1.4 Rule B does NOT auto-merge that PR).
+# See plumb-coordination package/112.
+# ============================================================================
+/price/49/* / 302!
+/price/69/* / 302!
+/price/89/* / 302!
