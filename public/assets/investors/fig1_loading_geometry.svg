@@ -1,0 +1,51 @@
+<svg viewBox='0 0 600 400' xmlns='http://www.w3.org/2000/svg' role='img' aria-labelledby='f1t'>
+<title id='f1t'>Inter-thigh loading geometry, lateral-decubitus posture</title>
+<defs><marker id='arr1' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M0,0 L10,5 L0,10 z' fill='#0F172A'/></marker></defs>
+<rect width='600' height='400' fill='white'/>
+<text x='300' y='26' font-family='Inter,-apple-system,sans-serif' font-size='14' font-weight='500' fill='#0F172A' text-anchor='middle' >Inter-thigh loading geometry — lateral-decubitus posture</text>
+<line x1='60' y1='330' x2='540' y2='330' stroke='#0F172A' stroke-width='2'/>
+<line x1='70' y1='330' x2='60' y2='342' stroke='#0F172A' stroke-width='1' opacity='0.45'/>
+<line x1='94' y1='330' x2='84' y2='342' stroke='#0F172A' stroke-width='1' opacity='0.45'/>
+<line x1='118' y1='330' x2='108' y2='342' stroke='#0F172A' stroke-width='1' opacity='0.45'/>
+<line x1='142' y1='330' x2='132' y2='342' stroke='#0F172A' stroke-width='1' opacity='0.45'/>
+<line x1='166' y1='330' x2='156' y2='342' stroke='#0F172A' stroke-width='1' opacity='0.45'/>
+<line x1='190' y1='330' x2='180' y2='342' stroke='#0F172A' stroke-width='1' opacity='0.45'/>
+<line x1='214' y1='330' x2='204' y2='342' stroke='#0F172A' stroke-width='1' opacity='0.45'/>
+<line x1='238' y1='330' x2='228' y2='342' stroke='#0F172A' stroke-width='1' opacity='0.45'/>
+<line x1='262' y1='330' x2='252' y2='342' stroke='#0F172A' stroke-width='1' opacity='0.45'/>
+<line x1='286' y1='330' x2='276' y2='342' stroke='#0F172A' stroke-width='1' opacity='0.45'/>
+<line x1='310' y1='330' x2='300' y2='342' stroke='#0F172A' stroke-width='1' opacity='0.45'/>
+<line x1='334' y1='330' x2='324' y2='342' stroke='#0F172A' stroke-width='1' opacity='0.45'/>
+<line x1='358' y1='330' x2='348' y2='342' stroke='#0F172A' stroke-width='1' opacity='0.45'/>
+<line x1='382' y1='330' x2='372' y2='342' stroke='#0F172A' stroke-width='1' opacity='0.45'/>
+<line x1='406' y1='330' x2='396' y2='342' stroke='#0F172A' stroke-width='1' opacity='0.45'/>
+<line x1='430' y1='330' x2='420' y2='342' stroke='#0F172A' stroke-width='1' opacity='0.45'/>
+<line x1='454' y1='330' x2='444' y2='342' stroke='#0F172A' stroke-width='1' opacity='0.45'/>
+<line x1='478' y1='330' x2='468' y2='342' stroke='#0F172A' stroke-width='1' opacity='0.45'/>
+<line x1='502' y1='330' x2='492' y2='342' stroke='#0F172A' stroke-width='1' opacity='0.45'/>
+<line x1='526' y1='330' x2='516' y2='342' stroke='#0F172A' stroke-width='1' opacity='0.45'/>
+<text x='300' y='358' font-family='Inter,-apple-system,sans-serif' font-size='12' font-weight='400' fill='#0F172A' text-anchor='middle' font-style='italic'>mattress support surface</text>
+<rect x='70' y='272' width='130' height='58' rx='26' fill='#F8F7F4' stroke='#0F172A' stroke-width='1.5'/>
+<text x='135' y='306' font-family='Inter,-apple-system,sans-serif' font-size='12' font-weight='400' fill='#0F172A' text-anchor='middle' >torso</text>
+<circle cx='228' cy='301' r='29' fill='#F8F7F4' stroke='#0F172A' stroke-width='1.5'/>
+<text x='228' y='305' font-family='Inter,-apple-system,sans-serif' font-size='12' font-weight='400' fill='#0F172A' text-anchor='middle' >hip</text>
+<rect x='248' y='290' width='258' height='30' rx='15' fill='#F8F7F4' stroke='#0F172A' stroke-width='1.5'/>
+<text x='330' y='310' font-family='Inter,-apple-system,sans-serif' font-size='11' font-weight='400' fill='#0F172A' text-anchor='middle' >lower leg</text>
+<g transform='rotate(-14 230 268)'><rect x='248' y='252' width='250' height='26' rx='13' fill='#E8EFEA' stroke='#0F172A' stroke-width='1.5'/></g>
+<text x='492' y='188' font-family='Inter,-apple-system,sans-serif' font-size='12' font-weight='400' fill='#0F172A' text-anchor='middle' >upper leg</text>
+<path d='M 300 304 A 70 70 0 0 0 296 262' fill='none' stroke='#5C7A6E' stroke-width='1.5'/>
+<text x='312' y='286' font-family='Inter,-apple-system,sans-serif' font-size='13' font-weight='500' fill='#5C7A6E' text-anchor='start' >&#952;</text>
+<path d='M 338 246 C 328 258 328 274 338 286 L 396 286 C 406 274 406 258 396 246 Z' fill='#E8EFEA' stroke='#5C7A6E' stroke-width='2'/>
+<text x='367' y='271' font-family='Inter,-apple-system,sans-serif' font-size='11' font-weight='500' fill='#5C7A6E' text-anchor='middle' >pillow</text>
+<line x1='456' y1='138' x2='456' y2='184' stroke='#0F172A' stroke-width='2' marker-end='url(#arr1)'/>
+<text x='464' y='158' font-family='Inter,-apple-system,sans-serif' font-size='12' font-weight='500' fill='#0F172A' text-anchor='start' >W (upper-leg weight)</text>
+<line x1='367' y1='198' x2='367' y2='240' stroke='#0F172A' stroke-width='2' marker-end='url(#arr1)'/>
+<text x='357' y='212' font-family='Inter,-apple-system,sans-serif' font-size='12' font-weight='500' fill='#0F172A' text-anchor='end' >W&#183;cos(&#952;)</text>
+<line x1='412' y1='296' x2='412' y2='254' stroke='#5C7A6E' stroke-width='2' marker-end='url(#arr1)'/>
+<text x='422' y='278' font-family='Inter,-apple-system,sans-serif' font-size='11.5' font-weight='500' fill='#5C7A6E' text-anchor='start' >F&#8345; (pillow reaction)</text>
+<rect x='60' y='52' width='258' height='66' rx='4' fill='#F8F7F4' stroke='#0F172A' stroke-width='0.75' opacity='0.95'/>
+<text x='72' y='72' font-family='Inter,-apple-system,sans-serif' font-size='11' font-weight='400' fill='#0F172A' text-anchor='start' >Contact zone area: ~35&#8211;50 in&#178; (cohort estimate)</text>
+<text x='72' y='90' font-family='Inter,-apple-system,sans-serif' font-size='11' font-weight='400' fill='#0F172A' text-anchor='start' >Hip flexion angle &#952;: ~25&#8211;45&#176; typical side-sleeper</text>
+<text x='72' y='108' font-family='Inter,-apple-system,sans-serif' font-size='11' font-weight='400' fill='#0F172A' text-anchor='start' >Inter-thigh load: ~8&#8211;12 lb (sub-mattress regime)</text>
+<text x='300' y='386' font-family='Inter,-apple-system,sans-serif' font-size='10.5' font-weight='400' fill='#0F172A' text-anchor='middle' font-style='italic' opacity='0.75'>Schematic, not to scale. Quantitative cohort measurement is a Stage 2 instrumented-prototype objective.</text>
+</svg>
