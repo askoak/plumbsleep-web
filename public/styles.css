@@ -689,6 +689,19 @@ figure.full-width figcaption {
 }
 
 /* ============================================================
+   Our promise to moms — homepage short variant
+   (restrained: no special background, no icons, sage link only)
+   ============================================================ */
+
+.section-promise-moms a {
+  color: var(--sage-deep);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.section-promise-moms a:hover { border-bottom-color: var(--sage); }
+
+/* ============================================================
    Footer
    ============================================================ */
 
