@@ -104,6 +104,11 @@
   @media (max-width:600px){ .topbar-meta{ display:none; } }
   caption{ caption-side:top; text-align:left; font-family:var(--sans); font-size:12px;
             color:var(--muted); padding:0 0 6px; letter-spacing:.3px; }
+  figure{ margin:26px 0; }
+  figure img{ width:100%; max-width:640px; display:block; margin:0 auto; background:#fff;
+               border:1px solid var(--line); border-radius:4px; padding:10px; box-sizing:border-box; }
+  figcaption{ font-family:var(--sans); font-size:12px; color:var(--muted); margin:8px auto 0;
+               text-align:center; max-width:640px; line-height:1.5; }
   .print-header{ display:none; }
   @media print{
     body{ background:#fff; }
@@ -173,6 +178,7 @@
         <li><a href="#1-the-opportunity-one-paragraph">The opportunity</a></li>
         <li><a href="#2-what-we-know-with-evidence-and-what-we-dont">What we know (and don't)</a></li>
         <li><a href="#3-the-product-locked-design">The product (locked design)</a></li>
+                <li><a href="#3-5-mechanical-rationale">Mechanical rationale</a></li>
         <li><a href="#4-market-sizing-bottom-up-from-the-corpus">Market sizing</a></li>
         <li><a href="#5-unit-economics-at-a-69-retail-price">Unit economics</a></li>
         <li><a href="#6-capital-required-and-payback">Capital and payback</a></li>
@@ -235,6 +241,173 @@
 <p>The attachment mechanism between the covered pillow and the sleeve is <strong>TBD</strong> at Stage 1: three concepts (magnetic snap, kam-snap tab, sleeve-mounted exterior pouch) advance to the wear-test arm-selector (<a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/40_stage1_wear_test_v6.md">package/40 v6</a> Track 6). Velcro is rejected by design inference from the buyer-corpus bathroom-friction evidence.</p>
 <p><strong>Why three components instead of one:</strong> the modular separation solves three problems the integrated foam-in-sleeve category cannot — wash durability (foam never washed; sleeve and cover each launder on their own protocol), foam-life economics (the pillow becomes a replaceable consumable SKU rather than a warranty liability), and architecture-to-buyer-need alignment (the sleeve does staying-in-place; the pillow is freed to be optimized for firmness and comfort without compromising for a strap).</p>
 <p>Architecture document: <a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/86_three_component_modular_architecture.md"><code>package/86</code></a>. Manufacturing BOM: <a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/87_modular_manufacturing_handoff.md"><code>package/87</code></a>.</p>
+<h2 id="3-5-mechanical-rationale">3.5 Mechanical rationale</h2>
+<p>The product description above states what Plumb is. This section states why each
+engineering decision is what it is. The intended reader is someone who will ask
+how the forces work, where the sizing numbers come from, and why the foam spec
+is what it is. The answers are below, with sources.</p>
+
+<h3 id="3-5-1-retention-mechanism">3.5.1 Retention mechanism — decoupling friction from cushion</h3>
+
+<p>Every wearable knee-pillow product in the corpus uses one of two retention
+strategies: a strap that wraps the cushion to the leg (Helix, Contour, the
+strap-style wearable tier), or no retention at all (the loose-pillow majority).
+Both strategies couple retention force to cushion firmness. A strap tight enough
+to keep the cushion in place compresses the cushion against the inner thigh; a
+soft cushion that is comfortable against the thigh is not held tightly enough
+by the strap to survive a side-to-prone-to-side rotation.</p>
+
+<p>Plumb decouples retention from the cushion by anchoring retention to the
+thigh circumference rather than the pillow geometry. The thigh sleeve is a
+load-bearing structural element — it produces a normal force distributed around
+the upper-thigh circumference via fabric tension plus discrete silicone-dot
+grippers at the interior top rim. The covered pillow is then attached to the
+sleeve at the inner-thigh contact zone via the Stage-1-arm-selected mechanism
+(magnetic, snap, or pouch — package/40 v6 Track 6 selects). The pillow's job
+is comfort; the sleeve's job is staying. The mechanical separation is the
+design.</p>
+
+<p>This matters because the dominant failure mode in the wearable tier of the
+buyer corpus is not "the cushion is uncomfortable" — it is "the strap holds
+when I'm still and fails when I move." (Corpus: research/01 §"Doesn't Work for
+Position-Shifters," research/07 §Helix, §Contour.) A retention surface
+distributed over the full upper-thigh circumference of a knit sleeve produces
+~3–4× the skin-contact area of a strap of equivalent compression force,
+reducing the peak contact pressure proportionately and allowing significantly
+lower compression to achieve the same retention reliability. The skin-pressure
+budget is the limiting variable in any wearable that contacts a sleep surface
+for 6–9 hours; spreading the load is the design lever.</p>
+
+<h3 id="3-5-2-sizing-rationale">3.5.2 Sizing rationale — two SKUs from the thigh-circumference distribution</h3>
+
+<p>The Regular (≤28 in. / ≤71 cm upper-thigh) and XL (28–32 in. / 71–81 cm)
+sleeve sizing is bottom-up from US adult anthropometric data, not vendor
+convention.</p>
+
+<p>Source: National Health and Nutrition Examination Survey (NHANES) 1988–1994
+thigh-circumference reference tables, US adults age 20+, all race/ethnicity
+groups. The published 5th-to-95th-percentile range for adult US males spans
+~17.3 in. (44.0 cm) to ~24.1 in. (61.2 cm); for adult US females, the comparable
+range is ~17.4 in. (44.2 cm) to ~25.6 in. (65.0 cm). NHANES 2010-2012 shifts
+both distributions upward (per the IISE anthropometric-change webinar, 2016).
+The upper 95th-percentile target in present-day adult civilian populations
+runs to ~26–28 in. The Regular SKU (≤28 in.) therefore captures the full
+NHANES-1988 distribution and the great majority of the present-day distribution;
+the XL SKU (28–32 in.) extends to roughly the 99th percentile of US adult
+female and ~97th percentile of US adult male thigh circumference.</p>
+
+<p>Two sleeve sizes were chosen instead of one (the category default) or five
+(the apparel default). One sleeve at a single circumference would force grip
+compromise at either tail — too loose for the smaller end (no retention) or
+too tight for the larger end (skin-pressure exceedance). Five sleeves would
+fragment inventory, inflate MOQ across SKUs, and add fit-decision friction
+at purchase. Two SKUs at the midpoint split give &gt;95% fit coverage on
+NHANES-1988 data with two part numbers — a deliberately lean SKU lineup
+chosen for production economics, not aesthetic minimalism.</p>
+
+<p>See <a href="#fig-thigh-distribution">Figure 3 — Thigh-circumference distribution
+and SKU coverage</a>.</p>
+
+<h3 id="3-5-3-foam-spec">3.5.3 Foam spec — ILD 20–28 for the side-sleeper inter-thigh load</h3>
+
+<p>The pillow foam is open-cell polyurethane, CertiPUR-US certified, with
+Indentation Force Deflection (IFD, the standardized industry name for ILD) in
+the 20–28 lb-force range at 25% compression on the 50-square-inch standard
+indenter.</p>
+
+<p>The 20–28 IFD band sits at the medium-soft-to-medium boundary of the foam
+firmness scale. The selection rationale: in lateral-decubitus (side-lying)
+posture, the inter-thigh foam pillow is loaded across a contact zone of
+roughly 35–50 square inches and supports a fraction of the upper leg's weight
+modulated by hip flexion angle — a fraction of approximately 8–12 lb of
+distributed load at typical adult body weight, not the 80–120 lb load a
+mattress comfort layer sees from full torso weight. The pressure-relief
+mattress literature for side sleepers indicates lower-ILD comfort layers
+(12–18 IFD) for full-body-weight pressure points; the Plumb pillow sits at
+a different load regime (lower magnitude, smaller contact area) and is
+spec'd accordingly. Reference: <em>Effects of Mattress Material on Body
+Pressure Profiles</em>, Low et al., Journal of Chiropractic Medicine, 2016
+(side-sleeper torso and buttock pressure-distribution analysis).</p>
+
+<p>The optional 6-inch thickness SKU (vs. the 5-inch baseline) is offered for
+larger frames and firmer mattresses, where compressed inter-thigh distance is
+greater. Foam thickness was not raised universally to 6 inches because the
+incremental height shifts hip alignment past neutral for shorter-femur
+sleepers; the two-thickness SKU lineup is the same anthropometric-coverage
+logic as the two-circumference sleeve lineup.</p>
+
+<p>See <a href="#fig-loading-geometry">Figure 1 — Inter-thigh loading geometry,
+side-lying posture</a>.</p>
+
+<h3 id="3-5-4-attachment-mechanism">3.5.4 Attachment mechanism — the variable Stage 1 resolves</h3>
+
+<p>The sleeve geometry, pillow shape, and material specs above are held constant
+through Stage 1. The single variable evaluated is the attachment mechanism
+between the covered pillow and the sleeve. Three concepts advance to the
+wear-test arm-selector per package/40 v6:</p>
+
+<ul>
+<li><strong>Arm A — magnetic snap interface.</strong> Embedded magnets in the
+cover-back panel and the sleeve exterior at the inner-thigh contact zone.
+Failure modes evaluated: hold-through-the-night, one-handed release, magnet
+edge sharpness on skin, wash survival.</li>
+<li><strong>Arm B — kam-snap tab.</strong> Fabric tabs on the cover engaging
+kam-snaps on the sleeve exterior. Failure modes: engagement-force-vs-release-force
+balance, hair-pull risk, snap retention through wash.</li>
+<li><strong>Arm C — sleeve-mounted exterior pouch.</strong> A structured open-top
+pouch on the sleeve exterior; the covered pillow slides in from the top. Failure
+modes: pouch-mouth elastic recovery after wash, retention force at the open top
+edge, awkwardness of one-handed insertion.</li>
+</ul>
+
+<p>Velcro is excluded by design inference from the buyer-corpus
+bathroom-friction evidence (Contour Legacy non-removable strap "cited as
+cumbersome for bathroom trips during the night" — research/07:139).</p>
+
+<p>See <a href="#fig-attachment-family">Figure 2 — Attachment-mechanism family
+tree</a>.</p>
+
+<p>The full kill-criteria per arm (cycles, seconds, ratings, hair-pull/skin-pinch
+gates, the "2 a.m. inversion" disruption rating) are summarized in §7 below
+under Gate 1.</p>
+
+<figure id="fig-loading-geometry">
+  <img src="/assets/investors/fig1_loading_geometry.svg"
+       alt="Inter-thigh loading geometry in lateral-decubitus posture: schematic side view of a side sleeper with upper-leg flexion angle θ, foam pillow seated in the inter-thigh contact zone, normal-force vector W·cos(θ) acting on the pillow, and contact-zone area dimensions labeled."
+       loading="lazy">
+  <figcaption>Figure 1 — Inter-thigh loading geometry, side-lying posture. The
+  pillow supports a fraction of upper-leg weight modulated by hip flexion angle;
+  the loaded fraction is well below the mattress-comfort-layer regime, motivating
+  the IFD 20–28 spec.</figcaption>
+</figure>
+
+<figure id="fig-attachment-family">
+  <img src="/assets/investors/fig2_attachment_family.svg"
+       alt="Attachment-mechanism family tree: schematic comparison of Arm A (magnetic snap, two opposed magnet pucks on cover-back and sleeve exterior), Arm B (kam-snap tab, fabric tab plus snap stud), and Arm C (sleeve-mounted pouch, open-top pocket with elastic mouth)."
+       loading="lazy">
+  <figcaption>Figure 2 — Attachment-mechanism family tree (Stage 1 arms).
+  All three arms hold sleeve and pillow geometry constant; only the
+  cover-to-sleeve interface varies.</figcaption>
+</figure>
+
+<figure id="fig-thigh-distribution">
+  <img src="/assets/investors/fig3_thigh_distribution.svg"
+       alt="Thigh-circumference distribution chart: histogram of US adult thigh circumference (NHANES 1988-1994) with two vertical bands marking the Regular SKU (≤28 in.) coverage and XL SKU (28–32 in.) coverage, showing the SKU split captures &gt;95% of the adult civilian population in two part numbers."
+       loading="lazy">
+  <figcaption>Figure 3 — Thigh-circumference distribution and SKU coverage
+  (US adults, NHANES 1988–1994). The Regular/XL split is bottom-up from
+  anthropometric reference data rather than vendor convention.</figcaption>
+</figure>
+
+<p><em>Sources for this section:</em> NHANES 1988–1994 thigh-circumference reference
+tables (CDC Series 11 No. 249); IISE Anthropometric Change webinar (Bradtmiller,
+2016) for the 1988→2012 shift; CertiPUR-US program certification (certipur.us);
+Low et al., <em>Effects of Mattress Material on Body Pressure Profiles</em>,
+Journal of Chiropractic Medicine, 2016 (PMC5310954); <em>Spine alignment in men
+during lateral sleep position</em>, BioMedical Engineering OnLine, 2011
+(PMC3265433) for the side-sleep alignment evidence base. Internal sources:
+package/40 v6 (Stage 1 protocol), package/86 (architecture rationale),
+package/87 (modular BOM).</p>
 <h2 id="4-market-sizing-bottom-up-from-the-corpus">4. Market sizing — bottom-up from the corpus</h2>
 <p>Method: total Amazon ratings ÷ 2% review rate = lifetime units; lifetime units ÷ product age (from first review date) = annual units; annual units × price = annual revenue. The 29-ASIN tracked set is a <em>sample</em> of the category, so totals are a floor. All inputs are in <code>research/data/product_details.json</code>; reproducible via <code>package/build_business_case.py</code>.</p>
 <table role="table">
@@ -525,6 +698,94 @@
 </tbody>
 </table>
 <p><strong>Gates 1 and 2 together cost ~$3,000–$5,500.</strong> They convert the two largest unknowns — does retention work, and is there a clean IP path — from assumptions into facts before any tooling commitment. This is roughly 0.3% of the cost of being wrong at tooling scale.</p>
+<h3 id="7-1-gate-1-protocol-detail">7.1 Gate 1 protocol detail</h3>
+
+<p>The brief above states what Gate 1 costs and what it answers. Engineering
+readers will reasonably want to see the protocol structure before forming
+an opinion. The full protocol is package/40 v6; the summary below is the
+investor-readable extract.</p>
+
+<table role="table">
+  <caption>Stage 1 wear test — design summary</caption>
+  <tbody>
+    <tr>
+      <th scope="row">Cohort</th>
+      <td>4 testers, recruited from Mike's personal network or substantive
+      feedback-form responses (not anonymous-paid; tester quality is the
+      lever, not tester count).</td>
+    </tr>
+    <tr>
+      <th scope="row">Duration</th>
+      <td>30 consecutive nights per tester. No skip days except for illness
+      or travel.</td>
+    </tr>
+    <tr>
+      <th scope="row">Design</th>
+      <td>Within-subject. Each tester rotates through all three attachment
+      arms (magnetic / snap / pouch) in randomized 10-night blocks. Sleeve and
+      pillow are identical across all three arms — only the attachment
+      mechanism differs.</td>
+    </tr>
+    <tr>
+      <th scope="row">Six measurement tracks</th>
+      <td>
+        <ol>
+          <li><strong>Sleeve fit & rotation</strong> — time-lapse on ≥5 nights;
+          kill on &gt;15° rotation or &gt;2 in. vertical migration in 2+ testers
+          on 2+ nights.</li>
+          <li><strong>30-night tolerance</strong> — daily wear yes/no; kill on
+          &gt;3 abandoned nights per tester for 2+ testers.</li>
+          <li><strong>Bathroom-break ergonomics</strong> — per-event log of
+          one-handed detach/reattach time and "frictionless" rating; kill an
+          arm at median detach &gt;5s, median reattach &gt;10s, or any tester
+          needing two hands more than 1-in-5 events.</li>
+          <li><strong>Wash durability</strong> — sleeve, cover, and arm-specific
+          hardware rated through 30 wash cycles (10 in situ + 20 bench);
+          kill on any rating dropping to 1–2 in first 15 cycles.</li>
+          <li><strong>Pillow shape retention</strong> — photo-and-rating at
+          nights 1/7/14/21/30; pass ≥3.5 cohort-mean shape rating and no
+          worsening comfort trend.</li>
+          <li><strong>Attachment reliability (arm-selector)</strong> — hold
+          (≤1 unintended detachment per 10 nights), release (≥4 of 5
+          eyes-closed one-handed trials succeed, median ≤5s), cycle
+          durability (30 bench cycles, no rating drop below 3), safety (zero
+          hair-pull / skin-pinch events), and the "2 a.m. inversion"
+          experiential test — of any detachment events, ≤80% may register
+          as waking, median disruption ≤2 (1–5 scale), and zero may register
+          as a fall/hazard.</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Decision rule</th>
+      <td>An arm must pass tracks 3, 4-hardware, and 6 to remain a candidate.
+      Among surviving arms, the winner is the highest composite of friction +
+      wash-survival + hold/release/durability/safety, with hold and safety
+      weighted as binary gates (an arm that ever pinches skin or pulls hair
+      cannot win regardless of composite score).</td>
+    </tr>
+    <tr>
+      <th scope="row">Pass standard</th>
+      <td>At least one arm clears all six tracks across all four testers.
+      Zero arms passing = Gate 1 fails, the design is held until
+      re-engineered.</td>
+    </tr>
+    <tr>
+      <th scope="row">Source protocol</th>
+      <td><a target="_blank" rel="noopener"
+             href="https://github.com/askoak/plumb-coordination/blob/main/package/40_stage1_wear_test_v6.md">
+        package/40 v6
+      </a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This is not a vibe-check or a one-tester pilot. The protocol structure
+is a small within-subject trial with parallel bench durability, kill criteria
+that are quantitative and pre-registered, and an explicit failure-mode
+("2 a.m. inversion") that the quantitative measures cannot by themselves
+capture. The same design principles a Phase-1 medical-device feasibility
+study would use, sized appropriately for a comfort product.</p>
 <h2 id="8-risks-honest">8. Risks (honest)</h2>
 <p>A fiduciary-readable risk list. Mitigations named where they exist.</p>
 <ul>
