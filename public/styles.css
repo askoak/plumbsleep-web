@@ -25,7 +25,7 @@
   --ink:             #2D4A3E;   /* primary ink — restrained green-grey */
   --ink-soft:        #4A4A45;
   --muted:           #4A4A45;
-  --faint:           #75756E;   /* F3: was #8B8B85; >=4.5:1 on --bg-warm */
+  --faint:           #67675F;   /* F3 round 2: #75756E measured 4.07:1 on --bg-warm; this clears 4.5 */
 
   /* Type families */
   --serif:           'Source Serif 4', 'Source Serif Pro', Georgia, Cambria, 'Times New Roman', serif;
@@ -708,7 +708,7 @@ figure.full-width figcaption {
 .footer-cols p { margin: 0.25rem 0; font-size: 0.92rem; color: #D3D1C8; }
 .footer-cols a { color: #E8DCC4; text-decoration: none; border-bottom: 1px solid transparent; }
 .footer-cols a:hover { border-bottom-color: var(--sage); color: #FFFFFF; }
-.footer-gated { font-size: 0.78rem; color: rgba(232, 220, 196, 0.5); font-style: italic; }
+.footer-gated { font-size: 0.78rem; color: rgba(232, 220, 196, 0.82); font-style: italic; }
 .founder-line {
   font-family: var(--serif);
   font-style: italic;
@@ -721,7 +721,7 @@ figure.full-width figcaption {
 }
 .disclaimer {
   font-size: 0.82rem;
-  color: rgba(232, 220, 196, 0.7);
+  color: rgba(232, 220, 196, 0.85);
   max-width: 78ch;
   margin: 0 auto 1rem;
   line-height: 1.55;
@@ -729,7 +729,7 @@ figure.full-width figcaption {
 }
 .footer-fine {
   font-size: 0.78rem;
-  color: rgba(232, 220, 196, 0.5);
+  color: rgba(232, 220, 196, 0.82);
   text-align: center;
   margin: 0.4rem 0;
   font-style: italic;
