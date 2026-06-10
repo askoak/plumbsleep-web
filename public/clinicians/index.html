@@ -16,34 +16,61 @@
   <meta property="og:url" content="https://plumbsleep.com/clinicians/">
   <meta name="robots" content="noindex,follow">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%233F5874'/%3E%3Ctext x='50' y='72' font-family='Georgia,Cambria,serif' font-size='72' font-weight='400' text-anchor='middle' fill='%23E8DCC4'%3EP%3C/text%3E%3Cpath d='M58 42 Q66 36 70 30 Q66 40 60 46 Z' fill='%236B8E5A'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+  <link rel="stylesheet" href="https://fonts.bunny.net/css?family=source-serif-4:400,500,600,700|inter:400,500,600&display=swap">
   <link rel="stylesheet" href="/styles.css">
+  <style>
+    /* page-scoped: 2-column card grid for the four design-rationale cards */
+    .clin-grid { display: grid; grid-template-columns: 1fr; gap: 1.1rem; margin-top: 1.5rem; }
+    @media (min-width: 720px) { .clin-grid { grid-template-columns: 1fr 1fr; gap: 1.3rem 1.6rem; } }
+    .sizing-table caption {
+      caption-side: top; text-align: left; font-weight: 600;
+      color: var(--ink); padding-bottom: 0.6rem;
+    }
+    .sizing-table caption .caption-opt { font-weight: 400; color: var(--ink-soft); font-style: italic; }
+    #clinician-form { max-width: 560px; }
+  </style>
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="brand-mark" href="/" aria-label="Plumb — home">
+  <!-- STICKY NAV -->
+  <nav class="site-nav" aria-label="Primary">
+    <div class="nav-inner">
+      <a class="nav-brand" href="/" aria-label="Plumb &mdash; home">
         <picture>
           <source srcset="/assets/logos/logo_C.webp" type="image/webp">
-          <img src="/assets/logos/logo_C.jpg" alt="Plumb" width="160" height="56" loading="eager" decoding="async">
+          <img src="/assets/logos/logo_C.jpg" alt="Plumb" width="36" height="36" decoding="async">
         </picture>
+        <span class="nav-brand-word">Plumb</span>
       </a>
-      <span class="tagline-small">For clinicians</span>
+      <ul class="nav-links">
+        <li><a href="#what">What it is</a></li>
+        <li><a href="#why">Design</a></li>
+        <li><a href="#validation">Validation</a></li>
+        <li><a href="#terms">Wholesale</a></li>
+        <li><a class="nav-cta" href="#contact">Get in touch</a></li>
+      </ul>
     </div>
-    <div class="status-strip" role="status">
-      Pre-prototype &middot; Stage 1 wear test underway &middot; First production targeted Q4 2026
-    </div>
-  </header>
+  </nav>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip" role="status">
+    <span>Pre-prototype</span>
+    <span aria-hidden="true">&middot;</span>
+    <span>Stage 1 wear test underway</span>
+    <span aria-hidden="true">&middot;</span>
+    <span>First production targeted Q4 2026</span>
+  </div>
 
   <main>
 
     <!-- HERO -->
     <section class="section section-hero">
       <div class="content">
-        <p class="breadcrumb"><a href="/">&larr; Back to plumbsleep.com</a></p>
+        <p class="eyebrow">For clinicians</p>
         <h1>Plumb for clinicians</h1>
-        <p class="subtitle">A wearable knee pillow built for the patients your loose-pillow recommendations don't quite reach.</p>
-        <p class="lede">
+        <p class="section-lede">A wearable knee pillow built for the patients your loose-pillow recommendations don't quite reach.</p>
+        <p>
           You already recommend between-the-knees support for side-sleeping
           patients. The Contour Legacy and Cushy Form pillows you've been
           sending people to Amazon for solve the alignment problem only when
@@ -56,7 +83,7 @@
     </section>
 
     <!-- WHAT IT IS -->
-    <section class="section">
+    <section class="section section-warm" id="what">
       <div class="content">
         <h2>What Plumb is</h2>
         <p>
@@ -81,32 +108,32 @@
     </section>
 
     <!-- WHY US -->
-    <section class="section">
+    <section class="section" id="why">
       <div class="content">
         <h2>Why we're building it the way we are</h2>
-        <div class="grid-2x2">
-          <div class="card">
+        <div class="clin-grid">
+          <div class="piece-card">
             <h3>Wide soft sleeve, not a strap.</h3>
             <p>Pressure is distributed across 3+ inches of upper thigh rather than concentrated in a narrow strap. Aimed at all-night tolerance, not stay-put-while-walking.</p>
           </div>
-          <div class="card">
+          <div class="piece-card">
             <h3>Cushion on the outside, not inside.</h3>
             <p>The cushion mounts to the sleeve's exterior so it isn't pressed against the worn leg's skin. Heat at the inner-thigh contact zone is meaningfully different from a padded knee sleeve.</p>
           </div>
-          <div class="card">
+          <div class="piece-card">
             <h3>Silicone dot grippers, dual zones.</h3>
             <p>Top and bottom of the sleeve's interior. Designed to resist both vertical slide (the loose-pillow failure) and rotation (the strap-attached failure).</p>
           </div>
-          <div class="card">
-            <h3>Hourglass cushion, three thicknesses.</h3>
-            <p>The shape your patients already recognize from the category &mdash; refined to seat in the inter-thigh gap and pair with the sleeve. 2" for slim frames, 4" default, 6" for larger frames or firm mattresses.</p>
+          <div class="piece-card">
+            <h3>Hourglass cushion, two thicknesses.</h3>
+            <p>The shape your patients already recognize from the category &mdash; refined to seat in the inter-thigh gap and pair with the sleeve. 5-inch baseline for most adults, 6-inch for larger frames or firmer mattresses.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- VALIDATION POSTURE -->
-    <section class="section">
+    <section class="section section-warm" id="validation">
       <div class="content">
         <h2>Where we are in validation</h2>
         <p>
@@ -123,13 +150,13 @@
           and check the box for the test summary.
         </p>
         <p>
-          <a href="/" class="text-link">See the patient-facing site &rarr;</a>
+          <a href="/">See the patient-facing site &rarr;</a>
         </p>
       </div>
     </section>
 
     <!-- WHOLESALE TERMS -->
-    <section class="section">
+    <section class="section" id="terms">
       <div class="content">
         <h2>Wholesale terms (preliminary)</h2>
         <p>
@@ -138,23 +165,23 @@
           writing them down here in plain English because we'd rather be
           honest about what we don't yet know than vague.
         </p>
-        <table class="size-table" aria-label="Preliminary wholesale terms">
-          <caption>Preliminary wholesale terms <span class="opt">(subject to revision after manufacturing quotes return)</span></caption>
+        <table class="sizing-table" aria-label="Preliminary wholesale terms">
+          <caption>Preliminary wholesale terms <span class="caption-opt">(subject to revision after manufacturing quotes return)</span></caption>
           <thead>
             <tr><th>Term</th><th>Current direction</th></tr>
           </thead>
           <tbody>
-            <tr><td>Suggested retail (MSRP)</td><td>$79 &ndash; $89, depending on cushion thickness</td></tr>
-            <tr><td>Wholesale price target</td><td>Roughly half of MSRP &mdash; final number after Stage 1</td></tr>
-            <tr><td>Minimum opening order</td><td>3 units (intentionally small; we want you to evaluate before you commit to inventory)</td></tr>
-            <tr><td>Reorder MOQ</td><td>6 units, mix-and-match sleeve sizes and cushion thicknesses</td></tr>
-            <tr><td>Net terms</td><td>Net 30 once we've shipped to you twice and payment is on time</td></tr>
-            <tr><td>Returns</td><td>Defective units replaced; customer-return policy is direct-to-Plumb (the home trial is being designed around 90 nights with free returns &mdash; final terms TBA before launch)</td></tr>
-            <tr><td>Display materials</td><td>Printed sizing reference card per office, free of charge</td></tr>
-            <tr><td>Earliest ship</td><td>Q4 2026, conditional on Stage 1 and Stage 2 validation passing</td></tr>
+            <tr><th scope="row">Suggested retail (MSRP)</th><td>$79 &ndash; $89, depending on cushion thickness</td></tr>
+            <tr><th scope="row">Wholesale price target</th><td>Roughly half of MSRP &mdash; final number after Stage 1</td></tr>
+            <tr><th scope="row">Minimum opening order</th><td>3 units (intentionally small; we want you to evaluate before you commit to inventory)</td></tr>
+            <tr><th scope="row">Reorder MOQ</th><td>6 units, mix-and-match sleeve sizes and cushion thicknesses</td></tr>
+            <tr><th scope="row">Net terms</th><td>Net 30 once we've shipped to you twice and payment is on time</td></tr>
+            <tr><th scope="row">Returns</th><td>Defective units replaced; customer-return policy is direct-to-Plumb (the home trial is being designed around 90 nights with free returns &mdash; final terms TBA before launch)</td></tr>
+            <tr><th scope="row">Display materials</th><td>Printed sizing reference card per office, free of charge</td></tr>
+            <tr><th scope="row">Earliest ship</th><td>Q4 2026, conditional on Stage 1 and Stage 2 validation passing</td></tr>
           </tbody>
         </table>
-        <p class="opt size-note">
+        <p class="sizing-note">
           We're not going to ask you to commit to anything specific today. If
           the direction above is in the right zip code for your practice, the
           form below puts you on the early-access list and we follow up with
@@ -164,7 +191,7 @@
     </section>
 
     <!-- INTAKE FORM -->
-    <section class="section">
+    <section class="section section-warm" id="contact">
       <div class="content">
         <h2>Get in touch</h2>
         <p>
@@ -173,7 +200,7 @@
           firm pricing, sample availability, and the Stage 1 test results.
         </p>
 
-        <form id="clinician-form" name="plumb-clinician-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/clinicians/?submitted=1">
+        <form id="clinician-form" class="waitlist-form" name="plumb-clinician-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/clinicians/?submitted=1">
           <input type="hidden" name="form-name" value="plumb-clinician-inquiry">
           <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
 
@@ -238,7 +265,7 @@
             <textarea name="notes" id="clin_notes" rows="4"></textarea>
           </div>
 
-          <button type="submit" class="button">Send inquiry</button>
+          <button type="submit" class="button button-primary">Send inquiry</button>
         </form>
 
         <div id="clin-thanks" class="thanks" hidden>
@@ -253,10 +280,30 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-cols">
-        <span>Plumb &middot; concept stage &middot; June 2026</span>
-        <span>Clinician questions: <a href="mailto:hello@plumbsleep.com">hello@plumbsleep.com</a></span>
-        <span class="founder-line">Designed by a side sleeper tired of restless nights and lost knee pillows.</span>
+        <div>
+          <picture>
+            <source srcset="/assets/logos/logo_C.webp" type="image/webp">
+            <img src="/assets/logos/logo_C.jpg" alt="Plumb" width="48" height="48" class="footer-mark">
+          </picture>
+          <p class="footer-tag">Sleep, aligned.</p>
+        </div>
+        <div>
+          <p class="footer-col-h">Contact</p>
+          <p><a href="mailto:hello@plumbsleep.com">hello@plumbsleep.com</a></p>
+        </div>
+        <div>
+          <p class="footer-col-h">Audience pages</p>
+          <p><a href="/">Patient-facing site</a></p>
+          <p><a href="/investors/">For investors</a> <span class="footer-gated">(access-controlled)</span></p>
+        </div>
+        <div>
+          <p class="footer-col-h">Status</p>
+          <p>Pre-prototype</p>
+          <p>Stage 1 wear test underway</p>
+          <p>First production targeted Q4 2026</p>
+        </div>
       </div>
+      <p class="founder-line">Designed by a side sleeper tired of restless nights and lost knee pillows.</p>
       <p class="disclaimer">
         Plumb is not a medical device. It is designed to improve sleep posture
         and comfort and is not intended to diagnose, treat, cure, or prevent
@@ -264,6 +311,7 @@
         affecting your back, hips, knees, or sleep, consult your physician.
         Fabric is viscose made from bamboo, not raw bamboo fiber.
       </p>
+      <p class="footer-fine">&copy; 2026 Plumb. All rights reserved.</p>
     </div>
   </footer>
 

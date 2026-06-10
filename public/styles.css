@@ -563,6 +563,8 @@ figure.full-width figcaption {
   font-style: italic;
 }
 .waitlist-form input[type="email"],
+.waitlist-form input[type="text"],
+.waitlist-form textarea,
 .waitlist-form select {
   width: 100%;
   font-family: var(--sans);
@@ -574,6 +576,7 @@ figure.full-width figcaption {
   color: var(--ink);
 }
 .waitlist-form input:focus,
+.waitlist-form textarea:focus,
 .waitlist-form select:focus {
   outline: 2px solid var(--sage);
   outline-offset: 1px;
@@ -587,6 +590,47 @@ figure.full-width figcaption {
   margin: 1.5rem 0;
 }
 .thanks h3 { margin-top: 0; color: var(--sage-deep); }
+
+.waitlist-form fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0 0 1.1rem;
+}
+.waitlist-form legend {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ink);
+  padding: 0;
+  margin-bottom: 0.35rem;
+}
+.field .req { color: var(--sage-deep); font-weight: 400; }
+.radio-group {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.4rem;
+  flex-wrap: wrap;
+}
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-top: 0.4rem;
+}
+.radio-group label,
+.checkbox-group label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 400;
+  cursor: pointer;
+  margin: 0;
+}
+.radio-group input[type="radio"],
+.checkbox-group input[type="checkbox"] {
+  width: 1.1em;
+  height: 1.1em;
+  accent-color: var(--sage);
+}
 
 /* ============================================================
    Sticky CTA (appears post-hero)
@@ -716,170 +760,4 @@ figure.full-width figcaption {
   }
 }
 
-/* ============================================================
-   LEGACY — clinicians page support
-   ------------------------------------------------------------
-   These rules support /clinicians/index.html which uses an
-   older CSS class palette. Do NOT use these classes on the
-   relaunched homepage. The clinicians page can adopt the new
-   palette in a follow-up PR.
-   ============================================================ */
-
-.site-header { border-bottom: 1px solid var(--ink); }
-.header-inner {
-  max-width: var(--max-w-wide);
-  margin: 0 auto;
-  padding: 1.1rem 1.25rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 1rem;
-}
-.brand-mark {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-  line-height: 0;
-}
-.brand-mark img {
-  display: block;
-  height: 44px;
-  width: auto;
-  border-radius: 4px;
-}
-@media (max-width: 600px) {
-  .brand-mark img { height: 36px; }
-  .tagline-small { display: none; }
-}
-.tagline-small {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 0.95rem;
-  color: var(--ink-soft);
-  letter-spacing: 0.01em;
-}
-.status-strip {
-  font-size: 0.82rem;
-  color: var(--ink-soft);
-  letter-spacing: 0.02em;
-  text-align: center;
-  padding: 0.45rem 1rem;
-  background: var(--bg-warm);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-.subtitle {
-  font-size: 1.15rem;
-  color: var(--muted);
-  font-style: italic;
-  margin: 0 0 1.8rem;
-}
-.lede {
-  font-size: 1.08rem;
-  color: var(--ink);
-  margin: 0;
-  max-width: 36em;
-}
-.grid-2x2 {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.1rem;
-  margin-top: 1.5rem;
-}
-@media (min-width: 720px) {
-  .grid-2x2 { grid-template-columns: 1fr 1fr; gap: 1.3rem 1.6rem; }
-}
-.card {
-  background: var(--bg-warm);
-  border-radius: 8px;
-  padding: 1.4rem 1.4rem 1.3rem;
-}
-.card h3 {
-  position: relative;
-  padding-left: 1.1rem;
-  margin: 0 0 0.4em;
-}
-.card h3::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.45em;
-  width: 0.55em;
-  height: 0.55em;
-  background: var(--sage);
-}
-.card p {
-  margin: 0;
-  font-size: 0.97rem;
-  color: var(--ink);
-  line-height: 1.55;
-}
-.field .req { color: var(--sage-deep); font-weight: 400; }
-.radio-group {
-  display: flex;
-  gap: 1.5rem;
-  margin-top: 0.4rem;
-  flex-wrap: wrap;
-}
-.radio-group label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-weight: 400;
-  cursor: pointer;
-  margin: 0;
-}
-.radio-group input[type="radio"] {
-  width: 1.1em;
-  height: 1.1em;
-  accent-color: var(--sage);
-}
-.size-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1.5rem 0 0.75rem;
-  font-size: 0.95rem;
-}
-.size-table caption {
-  text-align: left;
-  font-weight: 600;
-  color: var(--ink);
-  padding-bottom: 0.6rem;
-  caption-side: top;
-}
-.size-table caption .opt {
-  font-weight: 400;
-  color: var(--ink-soft);
-  font-style: italic;
-}
-.size-table th {
-  background: var(--bg-warm);
-  border: 1px solid #c7bca5;
-  padding: 0.5rem 0.75rem;
-  text-align: left;
-  font-weight: 600;
-}
-.size-table td {
-  border: 1px solid var(--border);
-  padding: 0.5rem 0.75rem;
-  vertical-align: top;
-}
-.size-note {
-  font-size: 0.88rem;
-  color: var(--ink-soft);
-  font-style: italic;
-  margin-bottom: 0;
-}
-.breadcrumb {
-  font-size: 0.85rem;
-  color: var(--ink-soft);
-  margin-bottom: 1rem;
-}
-.text-link {
-  color: var(--midnight-deep);
-  text-decoration: underline;
-}
-@media (max-width: 600px) {
-  .size-table { font-size: 0.85rem; }
-  .size-table th, .size-table td { padding: 0.4rem 0.55rem; }
-}
+/*
