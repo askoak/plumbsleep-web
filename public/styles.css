@@ -689,6 +689,45 @@ figure.full-width figcaption {
 }
 
 /* ============================================================
+   Homepage "How it's built" designer sketches
+   ============================================================ */
+
+.built-sketches {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin: 2rem 0 0.75rem;
+  align-items: start;
+}
+@media (min-width: 680px) {
+  .built-sketches { grid-template-columns: 1fr 1fr; }
+}
+.built-sketches figure { margin: 0; }
+.built-sketches img {
+  width: 100%;
+  max-width: 460px;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+}
+.built-sketches figcaption {
+  font-family: var(--sans);
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+  text-align: center;
+  margin-top: 0.6rem;
+}
+.built-sketches-note {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--faint);
+  margin: 0.5rem 0 0;
+}
+
+/* ============================================================
    Customer guarantee callout (package/140)
    ============================================================ */
 
