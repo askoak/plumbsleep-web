@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow"><!-- dormant pre-G1; flip to indexable at launch per package/111 §1 -->
+  <title>Help us test Plumb</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" href="/assets/logos/logo_C.jpg">
+  <style>
+    .test-wrap{max-width:680px;margin:0 auto;padding:48px 24px 80px}
+    .test-wrap h1{margin-bottom:4px}
+    .screener .field{margin:14px 0}
+    .screener label{display:block;font-weight:600;margin-bottom:4px}
+    .screener .hint{font-size:13px;color:#6b6b66;margin:2px 0 6px}
+    .screener input[type=text],.screener input[type=email],.screener input[type=number],
+    .screener select,.screener textarea{width:100%;padding:9px 11px;border:1px solid #e4e2da;border-radius:4px;background:#fff;font:inherit}
+    .screener fieldset{border:1px solid #e4e2da;border-radius:4px;padding:10px 14px;margin:14px 0}
+    .screener fieldset legend{font-weight:600;padding:0 6px}
+    .screener .radio-row label{display:inline-block;font-weight:400;margin-right:16px}
+    .softnote{display:none;border-left:3px solid #6B8E5A;background:#f3f5ef;padding:14px 16px;margin:18px 0;border-radius:4px}
+  </style>
+</head>
+<body>
+  <main class="test-wrap">
+    <h1>Help us test Plumb</h1>
+    <p class="lede">We're recruiting roughly 50 side sleepers to try the first production sample of
+    Plumb for about a month and tell us, honestly, what works and what doesn't. There's no charge for
+    the unit and no obligation to keep using it; we just need clear, written feedback on a short
+    questionnaire at the end.</p>
+
+    <h2>Who we're looking for</h2>
+    <ul>
+      <li>You sleep on your side most nights.</li>
+      <li>You currently use, or have tried, a pillow between your knees.</li>
+      <li>You're between roughly 5'2" and 6'4" with a typical mid-thigh circumference of about
+          17&ndash;28 inches (we'll measure you in the screener).</li>
+      <li>You're in the continental US (shipping logistics).</li>
+    </ul>
+
+    <h2>Who we can't include right now</h2>
+    <p>Pregnancy; recent leg, hip, or knee surgery; active lymphedema; a personal or family history of
+    DVT. This isn't because Plumb is dangerous &mdash; it's because the wear-test period is exactly when
+    we're learning what fit issues look like, and any of those conditions deserves a more careful design
+    conversation than a Stage-1 test allows.</p>
+
+    <h2>What we ask of you</h2>
+    <ul>
+      <li>Wear the sleeve and use the pillow most nights for four weeks.</li>
+      <li>Answer three short check-in emails (about a minute each).</li>
+      <li>Complete one longer questionnaire at the end (about ten minutes).</li>
+    </ul>
+
+    <h2 id="apply">Apply to test</h2>
+    <p class="hint" style="color:#6b6b66">This is a screener, not a contest entry &mdash; we read every
+    application, we can't accept everyone, and we'll tell you either way within two weeks.</p>
+
+    <form class="screener" id="screener" name="plumb-tester-screener" method="POST" data-netlify="true"
+          netlify-honeypot="bot-field" action="/test/?applied=1">
+      <input type="hidden" name="form-name" value="plumb-tester-screener">
+      <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
+
+      <div class="field"><label for="ts-email">Email</label>
+        <input type="email" name="email" id="ts-email" required autocomplete="email"></div>
+      <div class="field"><label for="ts-name">Name (first and last)</label>
+        <input type="text" name="name" id="ts-name" required autocomplete="name"></div>
+      <div class="field"><label for="ts-zip">ZIP code</label>
+        <p class="hint">Continental US only for this round.</p>
+        <input type="text" name="zip" id="ts-zip" required inputmode="numeric" pattern="[0-9]{5}" maxlength="5"></div>
+
+      <fieldset><legend>Do you sleep on your side?</legend>
+        <div class="radio-row">
+          <label><input type="radio" name="side_sleeper" value="yes" required> Yes, most nights</label>
+          <label><input type="radio" name="side_sleeper" value="mostly"> Mostly</label>
+          <label><input type="radio" name="side_sleeper" value="sometimes"> Sometimes</label>
+          <label><input type="radio" name="side_sleeper" value="rarely"> Rarely</label>
+        </div></fieldset>
+
+      <fieldset><legend>Do you use a knee pillow now?</legend>
+        <div class="radio-row">
+          <label><input type="radio" name="knee_pillow_now" value="yes" required> Yes</label>
+          <label><input type="radio" name="knee_pillow_now" value="sometimes"> Sometimes</label>
+          <label><input type="radio" name="knee_pillow_now" value="no"> No</label>
+        </div></fieldset>
+
+      <div class="field"><label for="ts-frustration">What frustrates you most about the pillow you use
+        (or the ones you've tried)?</label>
+        <textarea name="pillow_frustration" id="ts-frustration" maxlength="200" rows="3" required></textarea></div>
+
+      <div class="field"><label for="ts-height">Height</label>
+        <select name="height" id="ts-height" required></select></div>
+
+      <div class="field"><label for="ts-thigh">Mid-thigh circumference (inches)</label>
+        <p class="hint">Measure around the fullest part of your upper thigh, about three inches below the crease.</p>
+        <input type="number" name="thigh_circumference_in" id="ts-thigh" min="14" max="34" step="0.5" required></div>
+
+      <fieldset><legend>Do you share the bed with a partner?</legend>
+        <div class="radio-row">
+          <label><input type="radio" name="sleep_partner" value="yes" required> Yes</label>
+          <label><input type="radio" name="sleep_partner" value="no"> No</label>
+        </div></fieldset>
+
+      <fieldset><legend>A few screening questions</legend>
+        <p class="hint">These help us route this round correctly &mdash; a "yes" doesn't mean Plumb isn't
+        for you, just that this test round isn't the right fit (see above).</p>
+        <div class="field"><label>Pregnant now, or possibly in the next 60 days?</label>
+          <div class="radio-row"><label><input type="radio" name="dq_pregnancy" value="yes" required> Yes</label>
+          <label><input type="radio" name="dq_pregnancy" value="no"> No</label></div></div>
+        <div class="field"><label>Surgery on a leg, hip, or knee in the past 6 months?</label>
+          <div class="radio-row"><label><input type="radio" name="dq_surgery" value="yes" required> Yes</label>
+          <label><input type="radio" name="dq_surgery" value="no"> No</label></div></div>
+        <div class="field"><label>Lymphedema diagnosis?</label>
+          <div class="radio-row"><label><input type="radio" name="dq_lymphedema" value="yes" required> Yes</label>
+          <label><input type="radio" name="dq_lymphedema" value="no"> No</label></div></div>
+        <div class="field"><label>DVT history (you, or a first-degree relative)?</label>
+          <div class="radio-row"><label><input type="radio" name="dq_dvt" value="yes" required> Yes</label>
+          <label><input type="radio" name="dq_dvt" value="no"> No</label></div></div>
+      </fieldset>
+
+      <div class="field"><label><input type="checkbox" name="consent_contact" required>
+        I consent to be contacted about this test.</label></div>
+      <div class="field"><label><input type="checkbox" name="honest_commitment" required>
+        I will complete the end-of-test questionnaire even if I dislike the product.</label></div>
+
+      <button type="submit" class="button">Apply to test</button>
+    </form>
+
+    <p class="softnote" id="softnote">Thanks &mdash; based on what you told us, this round isn't the
+    right fit. We'll keep you on the waitlist for the public launch, and we'll be honest about why this
+    matters: the first test round is exactly when we're learning what fit problems look like.</p>
+
+    <!-- out-of-cohort routing target: static definition so Netlify registers the form -->
+    <form name="plumb-tester-out-of-cohort" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="plumb-tester-out-of-cohort">
+      <input name="bot-field"><input type="email" name="email"><input type="text" name="name">
+      <input type="text" name="zip"><input type="text" name="dq_reason">
+    </form>
+  </main>
+<script>
+  // height options 5'0"–6'6"
+  (function(){ var s=document.getElementById('ts-height');
+    for (var ft=5; ft<=6; ft++) for (var i=0; i<12; i++){
+      if (ft===6 && i>6) break;
+      var o=document.createElement('option'); o.value=ft+"'"+i+'"'; o.textContent=ft+"'"+i+'"'; s.appendChild(o);
+    }})();
+  // disqualifier routing: graceful client-side branch to the out-of-cohort form (package/111 §2)
+  document.getElementById('screener').addEventListener('submit', function(e){
+    var f=e.target, dq=[];
+    ['dq_pregnancy','dq_surgery','dq_lymphedema','dq_dvt'].forEach(function(n){
+      var v=f.querySelector('input[name='+n+']:checked');
+      if (v && v.value==='yes') dq.push(n.replace('dq_',''));
+    });
+    var side=f.querySelector('input[name=side_sleeper]:checked');
+    if (side && side.value==='rarely') dq.push('rarely_side_sleeper');
+    if (!dq.length) return; // eligible — normal Netlify POST proceeds
+    e.preventDefault();
+    var data=new URLSearchParams();
+    data.set('form-name','plumb-tester-out-of-cohort');
+    data.set('email',f.email.value); data.set('name',f.name.value);
+    data.set('zip',f.zip.value); data.set('dq_reason',dq.join(','));
+    fetch('/test/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:data})
+      .finally(function(){
+        f.style.display='none';
+        document.getElementById('softnote').style.display='block';
+        document.getElementById('softnote').scrollIntoView({behavior:'smooth'});
+      });
+  });
+</script>
+</body>
+</html>

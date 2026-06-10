@@ -8,3 +8,7 @@
 /price/49/* / 302!
 /price/69/* / 302!
 /price/89/* / 302!
+
+# TESTER_FUNNEL_FLAG: OFF (dormant pre-G1). Flip = delete the /test/ line in one PR
+# per package/111 (recruitment release is part of the G1 trigger).
+/test/* / 302!
