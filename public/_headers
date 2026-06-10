@@ -1,0 +1,5 @@
+/investors
+  Basic-Auth: hello:SleepBetter1!
+
+/investors/*
+  Basic-Auth: hello:SleepBetter1!
