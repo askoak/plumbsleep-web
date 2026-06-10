@@ -1,357 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Plumb — A knee pillow that stays where loose pillows won't.</title>
-  <meta name="description" content="A three-part sleep-alignment system for side sleepers: a knit thigh sleeve, a removable washable cover, and a contoured foam pillow. The pillow stays in the gap between your thighs because the sleeve does. Pre-prototype, sharing for feedback.">
-  <link rel="canonical" href="https://plumbsleep.com/">
-  <meta property="og:title" content="Plumb — A knee pillow that stays where loose pillows won't.">
-  <meta property="og:description" content="A three-part sleep-alignment system for side sleepers: knit thigh sleeve, washable cover, contoured foam pillow. The pillow stays where the sleeve goes.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://plumbsleep.com/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plumb &mdash; the knee pillow that stays where loose pillows won't</title>
+  <meta name="description" content="A three-piece sleep-alignment kit for side sleepers. A knit thigh sleeve, a washable cover, and a contoured hourglass foam pillow that goes where the sleeve goes. Pre-prototype. 90-night trial intent at launch.">
+  <meta property="og:title" content="Plumb &mdash; the knee pillow that stays where loose pillows won't">
+  <meta property="og:description" content="Three pieces that work as one. The pillow is still between your knees in the morning.">
   <meta property="og:image" content="https://plumbsleep.com/assets/og_card.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://plumbsleep.com/assets/og_card.png">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%233F5874'/%3E%3Ctext x='50' y='72' font-family='Georgia,Cambria,serif' font-size='72' font-weight='400' text-anchor='middle' fill='%23E8DCC4'%3EP%3C/text%3E%3Cpath d='M58 42 Q66 36 70 30 Q66 40 60 46 Z' fill='%236B8E5A'/%3E%3C/svg%3E">
+
+  <!-- Bunny Fonts (GDPR-friendly Google Fonts mirror, no third-party tracking) -->
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+  <link rel="stylesheet" href="https://fonts.bunny.net/css?family=source-serif-4:400,500,600,700|inter:400,500,600&display=swap">
+
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="brand-mark" href="/" aria-label="Plumb — home">
+  <!-- STICKY NAV -->
+  <nav class="site-nav" aria-label="Primary">
+    <div class="nav-inner">
+      <a class="nav-brand" href="/" aria-label="Plumb &mdash; home">
         <picture>
           <source srcset="assets/logos/logo_C.webp" type="image/webp">
-          <img src="assets/logos/logo_C.jpg" alt="Plumb" width="160" height="56" loading="eager" decoding="async">
+          <img src="assets/logos/logo_C.jpg" alt="Plumb" width="36" height="36" decoding="async">
         </picture>
+        <span class="nav-brand-word">Plumb</span>
       </a>
-      <span class="tagline-small">Sleep, aligned.</span>
+      <ul class="nav-links">
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#pieces">The kit</a></li>
+        <li><a href="#sizing">Sizing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a class="nav-cta" href="#waitlist">Join the waitlist</a></li>
+      </ul>
     </div>
-    <div class="status-strip" role="status">
-      Pre-prototype &middot; Stage 1 wear test underway &middot; First production targeted Q4 2026
-    </div>
-  </header>
+  </nav>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip" role="status">
+    <span>Pre-prototype</span>
+    <span aria-hidden="true">&middot;</span>
+    <span>Stage 1 wear test underway</span>
+    <span aria-hidden="true">&middot;</span>
+    <span>90-night trial intent</span>
+    <span aria-hidden="true">&middot;</span>
+    <span>Viscose made from bamboo</span>
+    <span aria-hidden="true">&middot;</span>
+    <span>CertiPUR-US foam</span>
+  </div>
 
   <main>
 
-    <!-- HERO -->
+    <!-- 1. HERO -->
     <section class="section section-hero">
-      <figure class="hero-illustration">
-        <picture>
-          <source srcset="assets/hero_image.webp" type="image/webp">
-          <img src="assets/hero_image.jpg" alt="Plumb sleeve, cover, and pillow study: a soft knit thigh sleeve, a removable washable pillow cover, and a contoured hourglass foam pillow, drawn together as a three-component sleep-alignment system with assembly arrows and attachment-mechanism concepts." width="1536" height="1024" loading="eager">
-        </picture>
-      </figure>
-      <div class="content">
-        <h1>A knee pillow that stays where loose pillows won't.</h1>
-        <p class="subtitle">Sleep, aligned.</p>
-        <p class="prelaunch-note">
-          <strong>Pre-prototype.</strong> Sharing the design for feedback while
-          the first wear test runs. When Plumb ships, every order will include
-          a home trial designed around 90 nights with free returns both ways (final terms TBA before launch).
-        </p>
-        <p class="lede">
-          Plumb is three pieces that work as one. A soft knit thigh sleeve &mdash;
-          viscose made from bamboo &mdash; worn on the upper thigh. A removable
-          washable cover. A contoured hourglass foam pillow that seats between
-          your thighs the way a knee pillow does. The covered pillow attaches to
-          the sleeve, so the pillow goes where the sleeve goes. No 3 a.m. reaching,
-          no kicking it across the bed.
-        </p>
-        <p class="product-descriptor">
-          Three pieces, three wash cycles. Sleeve washes. Cover washes. Foam pillow airs out, never washed, replaced when it wears.
-        </p>
-        <p class="hero-close">
-          The promise is simple: the pillow is still between your knees in the morning. Through the night. Undisturbed.
-        </p>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Sleep, aligned.</p>
+          <h1>A knee pillow that <em>stays</em> where loose pillows won't.</h1>
+          <p class="hero-lede">
+            Plumb is three pieces that work as one. A soft knit thigh sleeve,
+            a removable washable cover, and a contoured foam pillow that
+            attaches to the sleeve &mdash; so the pillow goes where the sleeve
+            goes. No 3 a.m. reaching. No kicking it across the bed.
+          </p>
+          <div class="hero-ctas">
+            <a class="button button-primary" href="#waitlist">Join the waitlist</a>
+            <a class="button button-ghost" href="#how">See how it works &rarr;</a>
+          </div>
+          <p class="hero-meta">
+            <em>90-night risk-free trial intent.</em> Final terms posted before launch.
+          </p>
+        </div>
+        <figure class="hero-figure">
+          <picture>
+            <source srcset="assets/hero_image.webp" type="image/webp">
+            <img src="assets/hero_image.jpg" alt="Plumb sleeve, cover, and pillow study: a soft knit thigh sleeve, a removable washable pillow cover, and a contoured hourglass foam pillow, drawn together as a three-component sleep-alignment system." width="1536" height="1024" loading="eager" fetchpriority="high">
+          </picture>
+        </figure>
       </div>
     </section>
 
-    <!-- WHY -->
-    <section class="section">
+    <!-- 2. THE PROMISE (editorial pull-quote) -->
+    <section class="section section-promise">
+      <div class="content content-narrow">
+        <blockquote class="promise-quote">
+          <p>The pillow is still between your knees in the morning.</p>
+          <p class="promise-quote-sub">Through the night. Undisturbed.</p>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- 3. HOW IT WORKS -->
+    <section class="section" id="how">
       <div class="content">
-        <h2>The problem with loose knee pillows</h2>
-        <div class="grid-2x2">
-          <div class="card">
-            <h3>Falls out.</h3>
-            <p>Many side sleepers wake up reaching for a pillow that moved.</p>
+        <h2>How Plumb works</h2>
+        <p class="section-lede">
+          The sleeve is the anchor. It goes on your upper thigh. The covered
+          pillow attaches to the sleeve, so when you turn over, the pillow
+          turns with you.
+        </p>
+
+        <ol class="how-steps">
+          <li>
+            <span class="how-step-num">1</span>
+            <h3>Wear the sleeve</h3>
+            <p>A soft tubular knit (viscose made from bamboo), about five inches tall, on the upper thigh of your top-resting leg.</p>
+          </li>
+          <li>
+            <span class="how-step-num">2</span>
+            <h3>Attach the pillow</h3>
+            <p>The covered foam pillow connects to the sleeve at the inner-thigh contact zone. The wear test is selecting the attachment mechanism.</p>
+          </li>
+          <li>
+            <span class="how-step-num">3</span>
+            <h3>Sleep aligned</h3>
+            <p>Roll, twist, kick &mdash; the pillow goes where the sleeve goes. No reaching at 3 a.m.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 4. THE THREE PIECES -->
+    <section class="section section-warm" id="pieces">
+      <div class="content">
+        <h2>Three pieces. One job.</h2>
+        <p class="section-lede">
+          Most knee pillows are one foam block you can never wash. Plumb is
+          built so the parts that touch you wash &mdash; and the part that
+          doesn't, doesn't.
+        </p>
+      </div>
+
+      <figure class="full-width">
+        <picture>
+          <source srcset="assets/cushion_family.webp" type="image/webp">
+          <img src="assets/cushion_family.jpg" alt="Plumb pillow study: two foam pillow thicknesses, five-inch baseline and six-inch optional, in matching hourglass profile. Slate-blue Midnight colorway." width="1536" height="1024" loading="lazy">
+        </picture>
+        <figcaption>One shape &middot; two thicknesses &middot; foam pillow shown without the cover</figcaption>
+      </figure>
+
+      <div class="content">
+        <div class="three-pieces-grid">
+          <div class="piece-card">
+            <h3>The sleeve</h3>
+            <p>A soft knit band &mdash; viscose made from bamboo &mdash; worn on the upper thigh. Sized to stay put without binding. Silicone dot grippers on the inner top rim do the holding, not the tightness.</p>
           </div>
-          <div class="card">
-            <h3>Runs hot.</h3>
-            <p>Foam blocks can feel hot where your legs meet.</p>
+          <div class="piece-card">
+            <h3>The cover</h3>
+            <p>A removable washable shell over the foam. Machine wash cold. Tumble dry low. We're targeting three covers per starter kit so one is always clean.</p>
           </div>
-          <div class="card">
-            <h3>Wakes you up.</h3>
-            <p>Repositioning is exactly the kind of small wake-up that can ruin a good night.</p>
-          </div>
-          <div class="card">
-            <h3>Feels medical.</h3>
-            <p>Straps and braces invite a treatment mindset most people resist long-term.</p>
+          <div class="piece-card">
+            <h3>The pillow</h3>
+            <p>A contoured hourglass foam core, CertiPUR-US polyurethane. Twelve inches long. Five-inch baseline thickness; six-inch optional. Airs out between covers. Never washed. Replaced when it wears.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PRODUCT -->
-    <section class="section">
-      <div class="content">
-        <h2>How Plumb works</h2>
-        <p>
-          The sleeve is a viscose-made-from-bamboo knit, about five inches tall,
-          worn on the upper thigh. Silicone dot grippers on the interior top
-          rim keep it from sliding down the leg. The sleeve holds nothing
-          inside it &mdash; it's a structural anchor, not a container.
+    <!-- 5. SECOND CTA + 90-NIGHT (mid-page conversion anchor) -->
+    <section class="section section-midcta">
+      <div class="content content-narrow text-center">
+        <p class="midcta-lede">
+          Pre-prototype. First wear test in progress.
         </p>
-        <p>
-          The pillow is a contoured hourglass foam piece, about twelve inches
-          long, seven inches wide, and five inches thick. It sits between the
-          thighs the way a familiar knee pillow does. Open-cell polyurethane,
-          CertiPUR-US certified.
+        <p class="midcta-promise">
+          When Plumb ships, every order will include a <strong>90-night home trial</strong> with free returns both ways.
         </p>
-        <p>
-          The cover encases the pillow. Same viscose-made-from-bamboo knit as
-          the sleeve. Removable for washing. The covered pillow attaches to the
-          sleeve at the inner-thigh contact zone; how it attaches &mdash; magnetic,
-          snap, or sleeve-mounted pouch &mdash; is what the current wear test is
-          selecting.
-        </p>
-        <p>
-          One sleeve, one covered pillow, one leg. Designed to feel like premium
-          sleepwear, not a medical brace.
-        </p>
+        <a class="button button-primary button-large" href="#waitlist">Notify me when Plumb ships</a>
+        <p class="midcta-fine">Final trial terms posted before launch.</p>
       </div>
     </section>
 
-    <!-- PILLOW -->
-    <section class="section">
-      <div class="content">
-        <h2>One shape, two thicknesses</h2>
-        <p>
-          The pillow is a familiar hourglass silhouette &mdash; the same general
-          shape side sleepers have used for decades &mdash; sized at twelve
-          inches long and seven inches wide. Two thickness SKUs at launch:
-          five inches for most adults, six inches for larger frames or firmer
-          mattresses.
-        </p>
-      </div>
-      <figure class="full-width">
-        <picture>
-          <source srcset="assets/cushion_family.webp" type="image/webp">
-          <img src="assets/cushion_family.jpg" alt="Plumb pillow study: two foam pillow thicknesses, five-inch baseline and six-inch optional, in matching hourglass profile. Slate-blue Midnight colorway. Hand-drawn editorial illustration." width="1536" height="1024" loading="lazy">
-        </picture>
-        <figcaption>One shape &middot; two thicknesses &middot; foam pillow shown without the cover</figcaption>
-      </figure>
-      <div class="content">
-        <p class="callout callout-large">
-          <strong>For larger frames:</strong> If you're over six feet or over
-          220 pounds &mdash; or if a Contour Legacy or similar hourglass pillow
-          has felt too thin in the gap between your thighs &mdash; the six-inch
-          pillow paired with the XL sleeve is designed for you. The thicker
-          profile spans a wider inter-thigh gap and resists compression on firm
-          mattresses.
-        </p>
-        <p class="callout callout-petite">
-          <strong>For petite frames:</strong> If you've tried strap-on padded
-          knee sleeves and found they gape on slim thighs, the Regular sleeve
-          is cut for a smaller upper-thigh circumference. The pillow stays in
-          place because the sleeve does &mdash; not because anything has to be
-          tightened against your skin.
-        </p>
-        <h3 class="feels-like-h3">What we expect it to feel like</h3>
-        <p class="feels-like">
-          We won't know for certain until the wear test finishes, but here's
-          the design intent: the sleeve should disappear from awareness the way
-          a favorite pair of socks does. Soft knit, wide enough to spread
-          pressure across the upper thigh rather than concentrating it like a
-          strap, with enough stretch that you can pull it on without thinking
-          and forget it's there. The covered pillow adds a small amount of
-          bulk between the thighs &mdash; about what a folded knee pillow already
-          does &mdash; held in place by the sleeve rather than left loose on the
-          mattress. That's the bet. The wear test is how we find out if we got
-          it right.
-        </p>
-      </div>
-    </section>
-
-    <!-- PAIRING -->
-    <section class="section">
-      <div class="content">
-        <h2>Built to fit a range of bodies</h2>
-        <p>
-          Plumb is sized along two axes. The sleeve comes in
-          <strong>Regular</strong> or <strong>XL</strong>, based on upper-thigh
-          circumference. The pillow comes in <strong>five-inch</strong> or
-          <strong>six-inch</strong> thickness, based on body size and mattress
-          firmness. We pair them at order time so the product fits more side
-          sleepers across more body sizes and life stages &mdash; including bodies
-          that are changing.
-        </p>
-
-        <table class="size-table" aria-label="Sleeve sizes by upper thigh circumference (preliminary)">
-          <caption>Sleeve sizing by upper thigh circumference <span class="opt">(preliminary &mdash; refining from wear-test data)</span></caption>
-          <thead>
-            <tr><th>Sleeve size</th><th>Upper thigh circumference</th><th>Typical height range</th><th>Typical fit reference</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>Regular</strong></td><td>up to 28 in.</td><td>up to about 5'10"</td><td>Most adults; petite through average frames</td></tr>
-            <tr><td><strong>XL</strong></td><td>28&ndash;32 in.</td><td>about 5'10" and up</td><td>Larger frames, taller adults, athletes</td></tr>
-          </tbody>
-        </table>
-        <p class="opt size-note">
-          <strong>How to measure:</strong> wrap a soft tape around the fullest
-          part of your upper thigh, roughly three inches below the gluteal
-          crease. Standing relaxed, not flexed. If a tape isn't handy, a
-          string wrapped and then measured against a ruler works fine.
-        </p>
-        <p class="opt size-note">
-          <strong>Above the 32-inch cap:</strong> the cap reflects what the
-          current sleeve geometry can hold consistently. We are not yet sized
-          for thigh circumferences above 32 inches; please email
-          <a href="mailto:hello@plumbsleep.com">hello@plumbsleep.com</a>
-          before ordering and we'll talk through fit. We'd rather be honest
-          about the limit than ship a sleeve that won't grip.
-        </p>
-        <p class="opt size-note">
-          <strong>Below the Regular range:</strong> if your upper thigh
-          measures under 17 inches we'd also like to hear from you before
-          ordering &mdash; the sleeve needs enough thigh to spread pressure
-          across, and very slim frames can outpace the design's lower edge.
-          Same email above.
-        </p>
-        <p class="opt size-note">
-          Ranges above are our current best estimate and will be refined as
-          wear-test data comes in.
-        </p>
-      </div>
-      <figure class="full-width">
-        <picture>
-          <source srcset="assets/pairing.webp" type="image/webp">
-          <img src="assets/pairing.jpg" alt="Plumb pairing chart: two sleeve sizes (Regular, XL) on top, two pillow thicknesses (five-inch, six-inch) below. Pair one sleeve with one covered pillow. Hand-drawn editorial style, slate-blue Midnight colorway with sage-green PLUMB embroidery." width="1024" height="1536" loading="lazy">
-        </picture>
-        <figcaption>Two sleeve sizes &middot; two pillow thicknesses &middot; pair one sleeve with one covered pillow</figcaption>
-      </figure>
-    </section>
-
-    <!-- COLORWAYS -->
-    <section class="section">
-      <div class="content">
-        <h2>A restrained palette</h2>
-        <p>
-          Plumb is being designed in a deliberately quiet palette — colors
-          that feel like bedding, not equipment. Two fabric colorways at
-          launch (<strong>Midnight</strong>, a soft slate-blue; and
-          <strong>Dune</strong>, a warm terracotta-tinted oatmeal) with a
-          <strong>PLUMB sage</strong> wordmark embroidered on the front
-          &mdash; a muted green that nods to the natural-fiber story without
-          shouting. The full system below also covers the cream paper, soft
-          pencil tones, and skin and linen washes used in our concept
-          illustrations — so renderings, packaging, and (eventually)
-          photography all stay on the same page.
-        </p>
-      </div>
-      <figure class="full-width">
-        <picture>
-          <source srcset="assets/color_palette.webp" type="image/webp">
-          <img src="assets/color_palette.jpg" alt="Plumb color system swatch sheet: five brand colors (Midnight #5B7A99, Midnight deep #3F5874, Dune #C9A887, Dune deep #8D6B4F, PLUMB sage #6B8E5A), ten sketch and illustration colors (cream paper, pencil and skin tones, linen), and five site colors (background, section, ink, ink soft, border)." width="1600" height="1490" loading="lazy">
-        </picture>
-        <figcaption>Brand · sketch · site — the full color system, with hex codes</figcaption>
-      </figure>
-      <figure class="full-width">
-        <picture>
-          <source srcset="assets/hero_dune.webp" type="image/webp">
-          <img src="assets/hero_dune.jpg" alt="Plumb in the Dune colorway: warm oatmeal knit sleeve (viscose made from bamboo) with sage-green PLUMB embroidery, the contoured foam pillow visible inside, on natural linen. Color study, not a final product photograph." width="1024" height="1536" loading="lazy">
-        </picture>
-        <figcaption>Dune colorway &middot; color study, not a final product photo</figcaption>
-      </figure>
-    </section>
-
-    <!-- HOW WE'RE DIFFERENT -->
-    <section class="section">
-      <div class="content">
-        <h2>How Plumb differs from what's already out there</h2>
-        <p>
-          Knee pillows have been on the market for decades. Contour Legacy,
-          Cushy Form, ComfiLife and others sell loose hourglass pillows for
-          $25&ndash;$40. Companies like paDjamas, AliMed, and PalliPartners sell
-          padded knee sleeves with cushions sewn inside for $35. We've used and
-          studied all of them.
-        </p>
-        <p>
-          Loose pillows are soft and comfortable but fall out. Padded sleeves
-          stay in place but tend to feel medical and can't be properly washed.
-          Plumb separates the jobs across three pieces. The sleeve does the
-          staying-in-place job. The pillow is freed to be optimized for comfort
-          without compromising for a strap. The cover decouples wash durability
-          from foam selection &mdash; you launder the cover, the foam airs out,
-          and any one piece can be replaced as its own SKU when it eventually wears.
-          That's an honest design choice, not a marketing line: foam compression
-          and fabric wear are real, and treating each component as replaceable
-          means you're not re-buying the whole product when one piece reaches
-          the end of its useful life.
-        </p>
-        <p>
-          We think that's a better trade. We'll find out when testers wear it.
-        </p>
-      </div>
-    </section>
-
-    <!-- WHAT WE'RE TESTING -->
-    <section class="section">
-      <div class="content">
-        <h2>What we're testing</h2>
-        <p>
-          Plumb is pre-prototype. Before we tool, source, or ship anything,
-          we're answering five questions through a 30-night wear test:
-        </p>
-        <ul class="status-list">
-          <li><strong>Does the sleeve stay positioned on the upper thigh?</strong> A sleeve can rotate around the thigh during sleep. Silicone grippers stop vertical slide, but rotation is the open question. Time-lapse video answers it.</li>
-          <li><strong>Which attachment between the sleeve and the covered pillow works?</strong> Three concepts &mdash; magnetic, snap, or sleeve-mounted pouch &mdash; advance to this wear test. The one that holds through the night, releases one-handed at 3 a.m., and survives wash cycles wins. The other two don't ship.</li>
-          <li><strong>Is it tolerable to wear?</strong> Sleep products fail at 2 a.m., not in a store. Tightness, heat, edge pressure, bunching &mdash; any one of them kills repeat use.</li>
-          <li><strong>Do three pieces wash on three protocols without breaking the product?</strong> Sleeve machine-washes. Cover machine-washes with the foam removed. The foam pillow airs out and is never washed. We're confirming each piece survives thirty cycles and the attachment hardware survives with them.</li>
-          <li><strong>Would you reach for it on night 14?</strong> Novelty is easy. Habit is the test.</li>
-        </ul>
-        <p>
-          We'll publish what we learn. If the sleeve rotates or no attachment
-          mechanism clears the bar, we redesign or kill the idea. If the test
-          passes, the next gate is 30 strangers, not friends.
-        </p>
-      </div>
-    </section>
-
-    <!-- LOGO SELECTED (formerly the public vote section; vote closed) -->
-    <section class="section section-vote-demoted">
-      <div class="content">
-        <h2>The mark we picked</h2>
-        <p>
-          A few weeks ago we ran a quiet vote across five directions for the
-          Plumb mark. Thank you to everyone who weighed in. We've selected
-          <strong>Option C</strong> &mdash; a serif <em>P</em> with a single
-          leaf inside the bowl.
-        </p>
-        <p>
-          The reasoning was simple: it embroiders cleanly on the cover, it
-          reads at favicon size, and it lets the <em>fiber</em> story live in
-          the copy ("viscose made from bamboo") rather than in the imagery.
-          That keeps the brand restrained and our claims honest.
-        </p>
-      </div>
-
-      <div class="logo-vote-wrap">
-        <figure class="logo-selected">
-          <picture>
-            <source srcset="assets/logos/logo_C.webp" type="image/webp">
-            <img src="assets/logos/logo_C.jpg" alt="The selected Plumb mark: a serif P with a single leaf inside the bowl, in champagne on midnight navy." width="560" height="560" loading="lazy">
-          </picture>
-          <figcaption>Plumb &middot; selected mark, June 2026</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- WHO IT'S FOR / NOT FOR (places the non-device framing in the brand voice per the 2026-06-10 claims audit, Path A) -->
-    <section class="section">
+    <!-- 6. WHO IT'S FOR / NOT FOR -->
+    <section class="section" id="who">
       <div class="content">
         <h2>Who Plumb is for</h2>
         <ul class="plain-list">
@@ -369,14 +196,80 @@
       </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- 7. SIZING -->
+    <section class="section section-warm" id="sizing">
+      <div class="content">
+        <h2>Sizing &mdash; two sleeve sizes, two pillow thicknesses</h2>
+        <p class="section-lede">
+          Plumb runs lean by design. We'd rather get fit right in two sizes
+          than fake choice with five.
+        </p>
+      </div>
+
+      <figure class="full-width">
+        <picture>
+          <source srcset="assets/pairing.webp" type="image/webp">
+          <img src="assets/pairing.jpg" alt="Plumb pairing chart: two sleeve sizes (Regular, XL) on top, two pillow thicknesses (five-inch, six-inch) below. Pair one sleeve with one covered pillow." width="1024" height="1536" loading="lazy">
+        </picture>
+        <figcaption>Two sleeve sizes &middot; two pillow thicknesses &middot; pair one sleeve with one covered pillow</figcaption>
+      </figure>
+
+      <div class="content">
+        <table class="sizing-table">
+          <thead>
+            <tr><th scope="col">Component</th><th scope="col">Choice</th><th scope="col">Fit guide</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Sleeve</th><td>Regular</td><td>Up to 28 in. upper-thigh circumference</td></tr>
+            <tr><th scope="row">Sleeve</th><td>XL</td><td>28&ndash;32 in. upper-thigh circumference</td></tr>
+            <tr><th scope="row">Pillow</th><td>5-inch</td><td>Default for most adults</td></tr>
+            <tr><th scope="row">Pillow</th><td>6-inch</td><td>Larger frames or firmer mattresses</td></tr>
+          </tbody>
+        </table>
+        <p class="sizing-note">
+          Measure around the fullest part of your upper thigh, about three inches below the crease. If you're between sizes, size <em>down</em> &mdash; the sleeve needs to be snug enough for the silicone grippers to engage. Below the Regular range or above the XL cap, email us before ordering and we'll talk through fit.
+        </p>
+      </div>
+    </section>
+
+    <!-- 8. COLORWAY -->
     <section class="section">
+      <div class="content">
+        <h2>Two colorways</h2>
+        <p class="section-lede">
+          Slate-blue Midnight as the default. Warm-oatmeal Dune as the
+          alternate. Sage-green PLUMB embroidered on the front of each sleeve.
+          No purple, no neon, no logos beyond the wordmark.
+        </p>
+      </div>
+
+      <figure class="full-width">
+        <picture>
+          <source srcset="assets/hero_dune.webp" type="image/webp">
+          <img src="assets/hero_dune.jpg" alt="Plumb in the Dune colorway: warm oatmeal knit sleeve (viscose made from bamboo) with sage-green PLUMB embroidery, the contoured foam pillow visible inside, on natural linen." width="1024" height="1536" loading="lazy">
+        </picture>
+        <figcaption>Dune colorway &middot; color study, not a final product photo</figcaption>
+      </figure>
+    </section>
+
+    <!-- 9. FAQ -->
+    <section class="section" id="faq">
       <div class="content">
         <h2>Honest answers</h2>
 
         <details class="faq">
+          <summary>Will it actually stay in place?</summary>
+          <p>That's the entire design. The sleeve grips the upper thigh; the covered pillow attaches to the sleeve. When you turn, the pillow turns with you. We'll publish wear-test results before launch.</p>
+        </details>
+
+        <details class="faq">
+          <summary>Is this a medical device?</summary>
+          <p>No. Plumb is a comfort and sleep-alignment product. It's not intended to diagnose, treat, cure, or prevent any condition. If you have a medical issue affecting your back, hips, knees, or sleep, talk to your physician.</p>
+        </details>
+
+        <details class="faq">
           <summary>How is this different from a $35 knee pillow sleeve?</summary>
-          <p>Padded sleeves on the market put the cushion <em>inside</em> the sleeve, against the inner thigh of the worn leg &mdash; and can't be properly washed because the foam is sewn in. Plumb is three separate pieces: the sleeve, a removable washable cover, and a contoured foam pillow. The covered pillow attaches to the sleeve, so it stays in the inter-thigh gap rather than being squeezed against your own skin &mdash; and every piece can be washed or replaced independently. That's the bet. Whether it actually works better is what the wear test will tell us.</p>
+          <p>Padded sleeves on the market put the cushion <em>inside</em> the sleeve, against the inner thigh of the worn leg &mdash; and can't be properly washed because the foam is sewn in. Plumb is three separate pieces: the sleeve, a removable washable cover, and a contoured foam pillow. The covered pillow attaches to the sleeve, so it stays in the inter-thigh gap rather than being squeezed against your own skin &mdash; and every piece can be washed or replaced independently.</p>
         </details>
 
         <details class="faq">
@@ -385,43 +278,23 @@
         </details>
 
         <details class="faq">
-          <summary>What happens when I roll over?</summary>
-          <p>Honest answer: we don't fully know yet, and we're testing it. Here's the design response: the sleeve is a structural anchor on the upper thigh, about five inches tall, with multi-row silicone dot grippers on the interior top rim &mdash; the grippers engage skin or sleepwear to resist both vertical slide and rotation. The covered pillow attaches to the sleeve at the inner-thigh contact zone; the attachment mechanism (magnetic, snap, or sleeve-mounted pouch) is what the wear test is selecting. None of this is proven yet &mdash; the wear test answers it with time-lapse video and nightly logs. If the sleeve rotates or no attachment mechanism clears the bar, the plan is to redesign, not to ship something that doesn't work.</p>
-        </details>
-
-        <details class="faq">
-          <summary>Which leg do I wear it on?</summary>
-          <p>The dominant leg &mdash; the one that ends up on top more often when you're on your preferred side. Wear it on the leg that most often rests on top.</p>
-        </details>
-
-        <details class="faq">
-          <summary>How tight is it?</summary>
-          <p>Snug enough to stay in place; loose enough that you forget you're wearing it. The sleeve is wide enough on the upper thigh to distribute pressure across a wide area rather than concentrating it in a strap. The covered pillow doesn't tighten anything against your skin &mdash; it attaches to the sleeve, not to you.</p>
+          <summary>What's the foam?</summary>
+          <p>A contoured hourglass polyurethane foam core, CertiPUR-US certified. About twelve inches long, seven inches wide, five inches thick (baseline) or six inches (optional).</p>
         </details>
 
         <details class="faq">
           <summary>Is it washable?</summary>
-          <p>Most knee pillows are one foam block you can never wash. Plumb is built so the parts that touch you wash, and the part that doesn't, doesn't. Three pieces, three protocols. The sleeve machine-washes cold and air-dries flat, like any knit garment. The cover comes off the pillow and machine-washes the same way. The foam pillow itself is never washed &mdash; it airs out between uses and is designed to be replaced as a separate part when it eventually wears, rather than forcing you to re-buy the whole product. We chose three pieces specifically so wash durability doesn't fight foam selection.</p>
+          <p>Most knee pillows are one foam block you can never wash. Plumb is built so the parts that touch you wash, and the part that doesn't, doesn't. The sleeve and the cover machine-wash cold and air-dry. The foam pillow itself is never washed &mdash; it airs out between uses and is designed to be replaced as a separate part when it eventually wears.</p>
         </details>
 
         <details class="faq">
           <summary>Does it sleep hot?</summary>
-          <p>The sleeve and cover are a viscose-made-from-bamboo knit, targeted at the breathability profile typical of viscose-blend sleepwear. Per FTC textile labeling guidance, the fiber is described as &quot;viscose made from bamboo,&quot; not &quot;bamboo&quot; alone. Third-party thermal testing is planned before launch, so we're not going to make a quantitative heat claim yet. What we can say: anything worn on the leg adds some thermal mass, and the wear test will tell us how much.</p>
+          <p>The sleeve and cover are a viscose-made-from-bamboo knit, targeted at the breathability profile typical of viscose-blend sleepwear. Per FTC textile labeling guidance, the fiber is described as "viscose made from bamboo," not "bamboo" alone. Third-party thermal testing is planned before launch.</p>
         </details>
 
         <details class="faq">
           <summary>How do I pick a size?</summary>
-          <p>Two sleeve sizes &mdash; <strong>Regular</strong> (up to 28 in. upper thigh circumference) and <strong>XL</strong> (28&ndash;32 in.). Measure around the fullest part of your upper thigh, about three inches below the crease. If you're between sizes, size <em>down</em> &mdash; the sleeve needs to be snug enough for the silicone dot grippers to engage. If you're below the Regular range or above the XL cap (32 in.), email us before ordering and we'll talk through fit. Pillow thickness is a separate choice based on body size and mattress firmness &mdash; five inches for most adults, six inches for larger frames or firmer mattresses.</p>
-        </details>
-
-        <details class="faq">
-          <summary>Is this a medical device?</summary>
-          <p>No. Plumb is a comfort and sleep-alignment product. It is not intended to diagnose, treat, cure, or prevent any condition. If you have a medical issue affecting your back, hips, knees, or sleep, talk to your physician.</p>
-        </details>
-
-        <details class="faq">
-          <summary>Can I use it if I already have hip or back pain?</summary>
-          <p>Plumb is a sleep-positioning product designed for comfort. It is not a medical device. It is not intended to diagnose, treat, mitigate, or cure any condition. If you have hip, back, or joint pain, talk to your doctor or physical therapist about whether a between-the-knees cushion is appropriate for you.</p>
+          <p>Two sleeve sizes &mdash; <strong>Regular</strong> (up to 28 in. upper-thigh circumference) and <strong>XL</strong> (28&ndash;32 in.). Measure around the fullest part of your upper thigh, about three inches below the crease. If you're between sizes, size <em>down</em>. Pillow thickness: five inches for most adults, six inches for larger frames or firmer mattresses.</p>
         </details>
 
         <details class="faq">
@@ -431,140 +304,97 @@
 
         <details class="faq">
           <summary>When can I buy one?</summary>
-          <p>Not yet. Pre-prototype. If the wear test passes, we'll open a waitlist and ship the first production run later in 2026.</p>
+          <p>Not yet. Pre-prototype. If the wear test passes, we'll open a waitlist and ship the first production run later in 2026. Join the waitlist below and you'll be among the first to know.</p>
         </details>
 
         <details class="faq">
           <summary>What if I don't love it?</summary>
-          <p>Plumb is being designed around a generous home trial &mdash; the working target is 90 nights with free returns both ways. Final trial terms will be published before launch, after wear testing and production economics are complete. The intent is simple: if Plumb isn't the one for you, you should be able to send it back without friction.</p>
+          <p>Plumb is being designed around a <strong>90-night home trial</strong> with free returns both ways. Final trial terms will be published before launch, after wear testing and production economics are complete. If Plumb isn't the one for you, you should be able to send it back without friction.</p>
         </details>
       </div>
     </section>
 
-    <!-- 90-NIGHT GUARANTEE (intent, not commitment) -->
-    <section class="section section-guarantee">
-      <div class="content">
-        <h2>Designed around a real home trial</h2>
-        <p class="guarantee-lede">
-          Many side sleepers buy three or four knee pillows over a few years,
-          trying to find one that stays where they put it. We've done the same.
-          The home trial is being designed around that reality.
+    <!-- 10. WAITLIST (final conversion) -->
+    <section class="section section-waitlist" id="waitlist">
+      <div class="content content-narrow">
+        <h2>Be first to know.</h2>
+        <p class="waitlist-lede">
+          Pre-prototype. We're shipping when the wear test passes, not before.
+          Leave your email and we'll tell you when Plumb is real, what it
+          costs, and how the 90-night trial works. No spam. No drip campaign.
+          One launch email when the time comes.
         </p>
-        <p>
-          The working target is <strong>90 nights with free returns both ways</strong>.
-          We're holding off on calling it a binding commitment until production
-          economics are complete &mdash; return logistics, foam hygiene, and unit
-          costs all need to be modeled before we publish final terms. What we
-          can say now: Plumb is being designed so that you can return it
-          without friction if it isn't the one for you.
-        </p>
-        <div class="guarantee-promise">
-          <div class="promise-item">
-            <strong>90 nights</strong>
-            <span>working target</span>
-          </div>
-          <div class="promise-item">
-            <strong>Free shipping</strong>
-            <span>both ways (intent)</span>
-          </div>
-          <div class="promise-item">
-            <strong>Full refund</strong>
-            <span>final terms TBA</span>
-          </div>
-        </div>
-        <p class="guarantee-fineprint">
-          Final trial terms will be published before launch. We'd rather make
-          a commitment we can keep than a promise we have to walk back.
-        </p>
-      </div>
-    </section>
-
-    <!-- FEEDBACK -->
-    <section class="section">
-      <div class="content">
-        <h2>We'd value your reaction</h2>
-        <p>30 seconds. Your honest take is more useful than a polite one.</p>
-
-        <form id="feedback-form" name="plumb-feedback" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?submitted=1">
-          <input type="hidden" name="form-name" value="plumb-feedback">
-          <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
-
-          <div class="field">
-            <label for="name">Name <span class="opt">(optional)</span></label>
-            <input type="text" name="name" id="name" autocomplete="name">
-          </div>
-
-          <div class="field">
-            <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
-            <input type="email" name="email" id="email" required autocomplete="email">
-          </div>
-
-          <div class="field">
-            <label for="reaction">What's your one-sentence reaction? <span class="req" aria-hidden="true">*</span></label>
-            <textarea name="reaction" id="reaction" rows="3" required></textarea>
-          </div>
-
-          <fieldset class="field">
-            <legend>Would you be willing to try a prototype?</legend>
-            <div class="radio-group">
-              <label><input type="radio" name="tester" value="yes"> Yes</label>
-              <label><input type="radio" name="tester" value="maybe"> Maybe</label>
-              <label><input type="radio" name="tester" value="no"> No</label>
-            </div>
-          </fieldset>
-
-          <button type="submit" class="button">Send feedback</button>
-        </form>
-
-        <div id="thanks" class="thanks" hidden>
-          <h3>Thank you.</h3>
-          <p>Your feedback is in. We read every response.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- WAITLIST -->
-    <section class="section" id="waitlist">
-      <div class="content">
-        <h2>Hear from us first</h2>
-        <p style="font-style:italic; color:var(--accent); margin-bottom:14px;">Designed around 90 nights with free returns both ways.</p>
-        <p>
-          Plumb is pre-prototype. We are running a small wear test before we make
-          units to sell. If you want an email when the first wear-test cohort opens
-          and another when general sale starts, leave your address. We send two
-          emails. That is all.
+        <p class="waitlist-90night">
+          <em>90-night risk-free trial. Final terms posted before launch.</em>
         </p>
 
-        <form id="waitlist-form" name="plumb-waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?waitlist_submitted=1">
+        <form id="waitlist-form" name="plumb-waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?waitlist_submitted=1" class="waitlist-form">
           <input type="hidden" name="form-name" value="plumb-waitlist">
+          <input type="hidden" name="price_variant" value="">
+          <input type="hidden" name="displayed_price" value="">
           <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
+
           <div class="field">
-            <label for="wl-email">Email <span class="req" aria-hidden="true">*</span></label>
-            <input type="email" name="email" id="wl-email" required autocomplete="email">
+            <label for="wl_email">Email <span class="opt">(required)</span></label>
+            <input type="email" name="email" id="wl_email" autocomplete="email" required>
           </div>
+
           <div class="field">
-            <label for="wl-note">Anything you want us to know? <span class="opt">(optional)</span></label>
-            <input type="text" name="note" id="wl-note" maxlength="140">
+            <label for="wl_thigh">Upper-thigh circumference <span class="opt">(optional &mdash; helps us forecast sizing demand)</span></label>
+            <select name="thigh" id="wl_thigh">
+              <option value="">prefer not to say</option>
+              <option value="under-26">Under 26 in.</option>
+              <option value="26-28">26&ndash;28 in.</option>
+              <option value="28-30">28&ndash;30 in.</option>
+              <option value="30-32">30&ndash;32 in.</option>
+              <option value="over-32">Over 32 in.</option>
+            </select>
           </div>
-          <button type="submit" class="button">Join the waitlist</button>
-          <p class="form-note">We use your address only to send the two emails above. We do not sell or share addresses. To delete your address, email <a href="mailto:hello@plumbsleep.com">hello@plumbsleep.com</a>.</p>
+
+          <button type="submit" class="button button-primary button-large">Join the waitlist</button>
         </form>
 
         <div id="waitlist-thanks" class="thanks" hidden>
-          <h3>Confirmed.</h3>
-          <p>We have your email. We will write to you once when we open the first wear-test cohort, and once more when general sale opens. That is it.</p>
+          <h3>You're on the list.</h3>
+          <p>We'll send you a single email when Plumb is ready to ship. No drip campaign, no upsells, no shared list.</p>
         </div>
       </div>
     </section>
+
   </main>
+
+  <!-- Sticky waitlist CTA (appears after scrolling past hero) -->
+  <a href="#waitlist" class="sticky-cta" aria-label="Join the waitlist">Join the waitlist &rarr;</a>
 
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-cols">
-        <span>Plumb &middot; concept stage &middot; June 2026</span>
-        <span>Questions: <a href="mailto:hello@plumbsleep.com">hello@plumbsleep.com</a></span>
-        <span class="founder-line">Designed by a side sleeper tired of restless nights and lost knee pillows.</span>
+        <div>
+          <picture>
+            <source srcset="assets/logos/logo_C.webp" type="image/webp">
+            <img src="assets/logos/logo_C.jpg" alt="Plumb" width="48" height="48" class="footer-mark">
+          </picture>
+          <p class="footer-tag">Sleep, aligned.</p>
+        </div>
+        <div>
+          <p class="footer-col-h">Contact</p>
+          <p><a href="mailto:hello@plumbsleep.com">hello@plumbsleep.com</a></p>
+          <p><a href="mailto:press@plumbsleep.com">press@plumbsleep.com</a></p>
+        </div>
+        <div>
+          <p class="footer-col-h">Audience pages</p>
+          <p><a href="/clinicians/">For clinicians</a></p>
+          <p><a href="/investors/">For investors</a> <span class="footer-gated">(access-controlled)</span></p>
+          <p><a href="/press/">For press</a></p>
+        </div>
+        <div>
+          <p class="footer-col-h">Status</p>
+          <p>Pre-prototype</p>
+          <p>Stage 1 wear test underway</p>
+          <p>First production targeted Q4 2026</p>
+        </div>
       </div>
+      <p class="founder-line">Designed by a side sleeper tired of restless nights and lost knee pillows.</p>
       <p class="disclaimer">
         Plumb is not a medical device. It is designed to improve sleep posture
         and comfort and is not intended to diagnose, treat, cure, or prevent
@@ -572,36 +402,72 @@
         affecting your back, hips, knees, or sleep, consult your physician.
         Fabric is viscose made from bamboo, not raw bamboo fiber.
       </p>
+      <p class="footer-fine">Mark selected June 2026 &middot; Option C.</p>
+      <p class="footer-fine">&copy; 2026 Plumb. All rights reserved.</p>
     </div>
   </footer>
 
-  <script>
-    // Feedback form: progressive enhancement
-    (function () {
-      var form = document.getElementById('feedback-form');
-      var thanks = document.getElementById('thanks');
-      if (!form || !thanks) return;
-      form.addEventListener('submit', function (e) {
-        if (!window.fetch || !form.checkValidity()) return;
-        e.preventDefault();
-        var data = new FormData(form);
-        fetch('/', {
-          method: 'POST',
-          headers: { 'Accept': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(data).toString()
-        }).then(function () {
-          form.hidden = true;
-          thanks.hidden = false;
-          thanks.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }).catch(function () { form.submit(); });
-      });
-      if (window.location.search.indexOf('submitted=1') !== -1) {
-        form.hidden = true;
-        thanks.hidden = false;
-      }
-    })();
+  <!-- Schema.org JSON-LD Product (pre-order) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Plumb Sleep Kit",
+    "description": "A three-piece sleep-alignment kit for side sleepers: a knit thigh sleeve, a washable cover, and a contoured hourglass foam pillow that attaches to the sleeve.",
+    "brand": { "@type": "Brand", "name": "Plumb" },
+    "image": "https://plumbsleep.com/assets/hero_image.jpg",
+    "offers": {
+      "@type": "Offer",
+      "url": "https://plumbsleep.com/#waitlist",
+      "priceCurrency": "USD",
+      "price": "69",
+      "availability": "https://schema.org/PreOrder",
+      "priceValidUntil": "2026-12-31"
+    }
+  }
+  </script>
 
-    // Logo vote handler retired 2026-06-10: Option C selected; section is announcement-only.
+  <!-- Schema.org JSON-LD FAQPage (boosts SERP) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Will it actually stay in place?",
+        "acceptedAnswer": { "@type": "Answer", "text": "That's the entire design. The sleeve grips the upper thigh; the covered pillow attaches to the sleeve. When you turn, the pillow turns with you." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this a medical device?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Plumb is a comfort and sleep-alignment product. It is not intended to diagnose, treat, cure, or prevent any condition." }
+      },
+      {
+        "@type": "Question",
+        "name": "How is this different from a $35 knee pillow sleeve?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Plumb is three separate pieces. The covered pillow attaches to the sleeve, so it stays in the inter-thigh gap rather than being squeezed against the skin. Every piece can be washed or replaced independently." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it washable?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Most knee pillows are one foam block you can never wash. Plumb is built so the parts that touch you wash, and the part that doesn't, doesn't. The sleeve and cover machine-wash; the foam pillow airs out and is replaced when it wears." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work for pregnancy?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Many side sleepers find a knee pillow more useful during pregnancy. Plumb is designed to stay in place better than a loose pillow. We do not make pregnancy-specific health claims." }
+      },
+      {
+        "@type": "Question",
+        "name": "When can I buy one?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Not yet. Pre-prototype. If the wear test passes, we will open a waitlist and ship the first production run later in 2026." }
+      }
+    ]
+  }
+  </script>
+
+  <script>
     // Waitlist form: progressive enhancement
     (function () {
       var wlForm = document.getElementById('waitlist-form');
@@ -616,171 +482,27 @@
           headers: { 'Accept': 'application/x-www-form-urlencoded' },
           body: new URLSearchParams(data).toString()
         }).then(function () {
-          wlForm.hidden = true; wlThanks.hidden = false;
+          wlForm.hidden = true;
+          wlThanks.hidden = false;
           wlThanks.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }).catch(function () { wlForm.submit(); });
       });
       if (window.location.search.indexOf('waitlist_submitted=1') !== -1) {
-        wlForm.hidden = true; wlThanks.hidden = false;
+        wlForm.hidden = true;
+        wlThanks.hidden = false;
       }
-    })();  </script>
+    })();
 
-  <!-- Sticky waitlist CTA (appears after scrolling past the hero) -->
-  <a href="#waitlist" id="sticky-cta" class="sticky-cta" aria-label="Join the waitlist">Join the waitlist →</a>
-  <script>
-    (function(){
-      var cta = document.getElementById('sticky-cta');
+    // Sticky CTA: show after hero scrolls out
+    (function () {
+      var cta = document.querySelector('.sticky-cta');
       var hero = document.querySelector('.section-hero');
       if (!cta || !hero) return;
-      function update(){
-        var heroBottom = hero.getBoundingClientRect().bottom;
-        var inWaitlist = document.getElementById('waitlist').getBoundingClientRect().top < window.innerHeight * 0.5;
-        if (heroBottom < 80 && !inWaitlist) {
-          cta.classList.add('visible');
-        } else {
-          cta.classList.remove('visible');
-        }
-      }
-      update();
-      window.addEventListener('scroll', update, {passive: true});
-      window.addEventListener('resize', update);
+      var io = new IntersectionObserver(function (entries) {
+        cta.classList.toggle('is-visible', !entries[0].isIntersecting);
+      }, { rootMargin: '-40% 0px 0px 0px' });
+      io.observe(hero);
     })();
   </script>
-
-  <!-- Schema.org JSON-LD Product structured data -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How is this different from a $35 knee pillow sleeve?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Padded sleeves on the market put the cushion inside the sleeve, against the inner thigh of the worn leg — and can't be properly washed because the foam is sewn in. Plumb is three separate pieces: the sleeve, a removable washable cover, and a contoured foam pillow. The covered pillow attaches to the sleeve, so it stays in the inter-thigh gap rather than being squeezed against your own skin — and every piece can be washed or replaced independently. That's the bet. Whether it actually works better is what the wear test will tell us."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Will it cut off circulation?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The sleeve is soft knit and stretches significantly — closer to the feel of a wide compression sock than a strap. The grip comes from silicone dots, not from tightness. If a tester reports any numbness, tingling, or skin marks, we redesign. That's a hard kill criterion."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What happens when I roll over?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Honest answer: we don't fully know yet, and we're testing it. Here's the design response: the sleeve is a structural anchor on the upper thigh, about five inches tall, with multi-row silicone dot grippers on the interior top rim — the grippers engage skin or sleepwear to resist both vertical slide and rotation. The covered pillow attaches to the sleeve at the inner-thigh contact zone; the attachment mechanism (magnetic, snap, or sleeve-mounted pouch) is what the wear test is selecting. None of this is proven yet — the wear test answers it with time-lapse video and nightly logs. If the sleeve rotates or no attachment mechanism clears the bar, the plan is to redesign, not to ship something that doesn't work."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Which leg do I wear it on?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The dominant leg — the one that ends up on top more often when you're on your preferred side. Wear it on the leg that most often rests on top."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How tight is it?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Snug enough to stay in place; loose enough that you forget you're wearing it. The sleeve is wide enough on the upper thigh to distribute pressure across a wide area rather than concentrating it in a strap. The covered pillow doesn't tighten anything against your skin — it attaches to the sleeve, not to you."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is it washable?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Most knee pillows are one foam block you can never wash. Plumb is built so the parts that touch you wash, and the part that doesn't, doesn't. Three pieces, three protocols. The sleeve machine-washes cold and air-dries flat, like any knit garment. The cover comes off the pillow and machine-washes the same way. The foam pillow itself is never washed — it airs out between uses and is designed to be replaced as a separate part when it eventually wears, rather than forcing you to re-buy the whole product. We chose three pieces specifically so wash durability doesn't fight foam selection."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does it sleep hot?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The sleeve and cover are a viscose-made-from-bamboo knit, targeted at the breathability profile typical of viscose-blend sleepwear. Per FTC textile labeling guidance, the fiber is described as \"viscose made from bamboo,\" not \"bamboo\" alone. Third-party thermal testing is planned before launch, so we're not going to make a quantitative heat claim yet. What we can say: anything worn on the leg adds some thermal mass, and the wear test will tell us how much."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I pick a size?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Two sleeve sizes — Regular (up to 28 in. upper thigh circumference) and XL (28–32 in.). Measure around the fullest part of your upper thigh, about three inches below the crease. If you're between sizes, size down — the sleeve needs to be snug enough for the silicone dot grippers to engage. If you're below the Regular range or above the XL cap (32 in.), email us before ordering and we'll talk through fit. Pillow thickness is a separate choice based on body size and mattress firmness — five inches for most adults, six inches for larger frames or firmer mattresses."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is this a medical device?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Plumb is a comfort and sleep-alignment product. It is not intended to diagnose, treat, cure, or prevent any condition. If you have a medical issue affecting your back, hips, knees, or sleep, talk to your physician."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I use it if I already have hip or back pain?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Plumb is a sleep-positioning product designed for comfort. It is not a medical device. It is not intended to diagnose, treat, mitigate, or cure any condition. If you have hip, back, or joint pain, talk to your doctor or physical therapist about whether a between-the-knees cushion is appropriate for you."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does it work for pregnancy?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Many side sleepers find a knee pillow more useful during pregnancy, and Plumb is designed to stay in place better than a loose pillow. We don't make any pregnancy-specific health claims; talk to your provider about what's appropriate for you."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "When can I buy one?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Not yet. Pre-prototype. If the wear test passes, we'll open a waitlist and ship the first production run later in 2026."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What if I don't love it?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Plumb is being designed around a generous home trial — the working target is 90 nights with free returns both ways. Final trial terms will be published before launch, after wear testing and production economics are complete. The intent is simple: if Plumb isn't the one for you, you should be able to send it back without friction."
-      }
-    }
-  ]
-}
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Plumb",
-    "description": "A sleep-positioning kit for adult side sleepers. Three components — a soft knit thigh sleeve, a contoured hourglass foam pillow, and a removable washable cover — that attach to each other so the pillow stays where you put it.",
-    "brand": {
-      "@type": "Brand",
-      "name": "Plumb"
-    },
-    "category": "Sleep Accessories",
-    "url": "https://plumbsleep.com/",
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": "USD",
-      "price": "69.00",
-      "availability": "https://schema.org/PreOrder",
-      "url": "https://plumbsleep.com/#waitlist"
-    }
-  }
-  </script>
-
 </body>
 </html>

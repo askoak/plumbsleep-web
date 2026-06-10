@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plumb &mdash; Press Kit</title>
+  <meta name="description" content="Press kit for Plumb, a pre-launch three-piece sleep-alignment kit for side sleepers. Logo, photography, founder bio, fact sheet, and press contact.">
+  <link rel="canonical" href="https://plumbsleep.com/press/">
+  <meta property="og:title" content="Plumb &mdash; Press Kit">
+  <meta property="og:description" content="Logo, photography, founder bio, fact sheet, and press contact for the Plumb sleep-alignment kit.">
+  <meta property="og:image" content="https://plumbsleep.com/assets/og_card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="noindex,follow">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%233F5874'/%3E%3Ctext x='50' y='72' font-family='Georgia,Cambria,serif' font-size='72' font-weight='400' text-anchor='middle' fill='%23E8DCC4'%3EP%3C/text%3E%3Cpath d='M58 42 Q66 36 70 30 Q66 40 60 46 Z' fill='%236B8E5A'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+  <link rel="stylesheet" href="https://fonts.bunny.net/css?family=source-serif-4:400,500,600,700|inter:400,500,600&display=swap">
+
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    /* Page-scoped: press kit asset grid + fact sheet table */
+    .press-hero {
+      text-align: center;
+      padding: 3.5rem 0 1rem;
+      background: var(--bg-warm);
+      border-bottom: 1px solid var(--rule);
+    }
+    .press-hero h1 { margin: 0 0 0.5rem; }
+    .press-hero .lede {
+      font-family: var(--serif);
+      font-style: italic;
+      color: var(--ink-soft);
+      max-width: 56ch;
+      margin: 0 auto 1rem;
+      font-size: 1.1rem;
+    }
+    .press-meta {
+      font-size: 0.88rem;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+
+    .asset-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    @media (min-width: 720px) {
+      .asset-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1000px) {
+      .asset-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .asset-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color .15s ease;
+    }
+    .asset-card:hover { border-color: var(--sage); }
+    .asset-card .asset-image {
+      aspect-ratio: 4 / 3;
+      background: var(--bg-warm);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .asset-card .asset-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .asset-card .asset-meta {
+      padding: 1rem 1.1rem 1.2rem;
+    }
+    .asset-card h3 {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 0 0 0.3rem;
+      color: var(--ink);
+    }
+    .asset-card p {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      margin: 0 0 0.6rem;
+    }
+    .asset-card .download-row {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+      flex-wrap: wrap;
+    }
+    .asset-card .download-row a {
+      color: var(--sage-deep);
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px solid var(--sage);
+    }
+    .asset-card .download-row a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+
+    .fact-sheet {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.96rem;
+    }
+    .fact-sheet th, .fact-sheet td {
+      padding: 0.7rem 0.8rem;
+      border-bottom: 1px solid var(--rule);
+      text-align: left;
+      vertical-align: top;
+    }
+    .fact-sheet th {
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--faint);
+      width: 26%;
+    }
+
+    .contact-box {
+      background: var(--bg-warm);
+      border-left: 3px solid var(--sage);
+      padding: 1.3rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+    .contact-box p { margin: 0.25rem 0; }
+    .contact-box a {
+      color: var(--midnight-deep);
+      font-weight: 600;
+    }
+
+    .boilerplate-box {
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      padding: 1.3rem 1.5rem;
+      margin: 1rem 0;
+      border-radius: 4px;
+      font-size: 0.95rem;
+    }
+    .boilerplate-label {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin: 0 0 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky nav (matches homepage) -->
+  <nav class="site-nav" aria-label="Primary">
+    <div class="nav-inner">
+      <a class="nav-brand" href="/" aria-label="Plumb &mdash; home">
+        <picture>
+          <source srcset="/assets/logos/logo_C.webp" type="image/webp">
+          <img src="/assets/logos/logo_C.jpg" alt="Plumb" width="36" height="36" decoding="async">
+        </picture>
+        <span class="nav-brand-word">Plumb</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/#how">How it works</a></li>
+        <li><a href="/#pieces">The kit</a></li>
+        <li><a href="/#sizing">Sizing</a></li>
+        <li><a href="/#faq">FAQ</a></li>
+        <li><a class="nav-cta" href="/#waitlist">Join the waitlist</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="press-hero">
+    <div class="content content-narrow">
+      <p class="eyebrow">Press kit</p>
+      <h1>Plumb &mdash; for journalists and editors</h1>
+      <p class="lede">
+        Logo, product photography, founder bio, fact sheet, and press contact.
+        Everything below is licensed for editorial use with attribution.
+      </p>
+      <p class="press-meta">Last updated 10 June 2026 &middot; <a href="mailto:press@plumbsleep.com">press@plumbsleep.com</a></p>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- 1. CONTACT (above the fold for press) -->
+    <section class="section">
+      <div class="content">
+        <h2>Press contact</h2>
+        <div class="contact-box">
+          <p><strong>Mike Oak</strong> &mdash; Founder</p>
+          <p>Email: <a href="mailto:press@plumbsleep.com">press@plumbsleep.com</a></p>
+          <p>General: <a href="mailto:hello@plumbsleep.com">hello@plumbsleep.com</a></p>
+          <p>Web: <a href="https://plumbsleep.com">plumbsleep.com</a></p>
+          <p>Location: Ashburn, Virginia, US (Eastern Time)</p>
+          <p style="margin-top: 0.75rem; font-size: 0.88rem; color: var(--ink-soft);">
+            Mike responds to press inquiries personally. Expect a reply within 24 hours on weekdays.
+            For deadline-bound requests, mention the deadline in the subject line.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. FACT SHEET -->
+    <section class="section section-warm">
+      <div class="content">
+        <h2>Fact sheet</h2>
+        <p class="section-lede">
+          The 60-second version. Everything below is verified and on-record.
+        </p>
+
+        <table class="fact-sheet">
+          <tbody>
+            <tr>
+              <th scope="row">Company</th>
+              <td>Plumb &mdash; a single-founder consumer sleep brand</td>
+            </tr>
+            <tr>
+              <th scope="row">Founder</th>
+              <td>Mike Oak (mathematical statistician, side sleeper, Ashburn, VA)</td>
+            </tr>
+            <tr>
+              <th scope="row">Product</th>
+              <td>A three-piece sleep-alignment kit for side sleepers &mdash; knit thigh sleeve, removable washable cover, contoured hourglass foam pillow</td>
+            </tr>
+            <tr>
+              <th scope="row">Category</th>
+              <td>Consumer sleep accessory / soft goods (not a medical device, not a sleep aid)</td>
+            </tr>
+            <tr>
+              <th scope="row">Materials</th>
+              <td>Sleeve and cover: knit fabric, viscose made from bamboo (FTC-compliant fiber labeling). Pillow: CertiPUR-US certified polyurethane foam.</td>
+            </tr>
+            <tr>
+              <th scope="row">SKU lineup</th>
+              <td>Two sleeve sizes (Regular up to 28 in. upper-thigh; XL 28&ndash;32 in.). Two pillow thicknesses (5-inch baseline; 6-inch optional). Four total SKUs.</td>
+            </tr>
+            <tr>
+              <th scope="row">Pricing</th>
+              <td>$69 USD retail (direct-to-consumer)<br>$55 USD Kickstarter Early Bird (limited 200-unit tier)</td>
+            </tr>
+            <tr>
+              <th scope="row">Stage</th>
+              <td>Pre-prototype. First wear test underway. First production targeted Q4 2026.</td>
+            </tr>
+            <tr>
+              <th scope="row">Funding</th>
+              <td>Bootstrapped, single-founder. Planning a Kickstarter campaign in late 2026 to fund first production run (~$21,000 target).</td>
+            </tr>
+            <tr>
+              <th scope="row">Manufacturing</th>
+              <td>US-based small-MOQ apparel and foam manufacturers (specific partners disclosed at production go).</td>
+            </tr>
+            <tr>
+              <th scope="row">Return policy</th>
+              <td>90-night risk-free home trial. Free returns both ways. Final terms posted before launch.</td>
+            </tr>
+            <tr>
+              <th scope="row">Launched</th>
+              <td>Site launched June 2026. Brand mark (Logo C) selected June 2026.</td>
+            </tr>
+            <tr>
+              <th scope="row">Founded</th>
+              <td>2026, Ashburn, Virginia</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 3. FOUNDER BIO -->
+    <section class="section">
+      <div class="content">
+        <h2>About the founder</h2>
+
+        <div class="boilerplate-box">
+          <p class="boilerplate-label">Short bio (35 words)</p>
+          <p>
+            Mike Oak is a mathematical statistician and the founder of Plumb, a
+            consumer sleep brand based in Ashburn, Virginia. He's a long-time
+            side sleeper who got tired of going through three knee pillows a year.
+          </p>
+        </div>
+
+        <div class="boilerplate-box">
+          <p class="boilerplate-label">Medium bio (80 words)</p>
+          <p>
+            Mike Oak is the founder of Plumb, a pre-launch consumer sleep brand
+            based in Ashburn, Virginia. A mathematical statistician by training,
+            Mike has spent years building research and analytics tools, including
+            work in AI retrieval systems. Plumb is his first physical-product
+            venture. The product &mdash; a three-piece knee pillow kit that
+            attaches to a knit thigh sleeve &mdash; was designed to solve the one
+            problem every loose knee pillow has: it doesn't stay where you put
+            it.
+          </p>
+        </div>
+
+        <div class="boilerplate-box">
+          <p class="boilerplate-label">Long bio (140 words)</p>
+          <p>
+            Mike Oak is the founder of Plumb, a single-founder consumer sleep
+            brand launching in 2026. Mike is a mathematical statistician with a
+            background spanning institutional research, AI-driven analytics, and
+            data engineering. Before Plumb he built decision-support tooling for
+            institutional clients in financial and policy domains; outside Plumb
+            he continues that work as Michael Oak Advisors, a separate
+            consultancy. Plumb is his first physical-product venture and his
+            first direct-to-consumer brand. The motivation is personal &mdash;
+            Mike is a side sleeper who went through several knee pillows looking
+            for one that would stay in place through the night. After enough
+            frustration he sketched a three-piece design that anchors the pillow
+            to a knit thigh sleeve. The product is pre-prototype as of mid-2026
+            and is heading into a Kickstarter campaign later in the year.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. BRAND ASSETS -->
+    <section class="section section-warm">
+      <div class="content">
+        <h2>Brand assets</h2>
+        <p class="section-lede">
+          Logo, color palette, and photography. All assets are licensed for
+          editorial use with attribution. For commercial or non-editorial use,
+          please contact <a href="mailto:press@plumbsleep.com">press@plumbsleep.com</a>.
+        </p>
+
+        <div class="asset-grid">
+
+          <article class="asset-card">
+            <div class="asset-image" style="background: #3F5874;">
+              <picture>
+                <source srcset="/assets/logos/logo_C.webp" type="image/webp">
+                <img src="/assets/logos/logo_C.jpg" alt="Plumb logo: a serif letter P with a single leaf inside the bowl, in champagne on midnight navy.">
+              </picture>
+            </div>
+            <div class="asset-meta">
+              <h3>Logo &mdash; primary (navy)</h3>
+              <p>Plumb mark on midnight navy background. For dark-on-light layouts use the logo on cream variant.</p>
+              <div class="download-row">
+                <a href="/assets/logos/logo_C.jpg" download>JPG (560&times;560)</a>
+                <a href="/assets/logos/logo_C.webp" download>WebP</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="asset-card">
+            <div class="asset-image">
+              <picture>
+                <source srcset="/assets/hero_image.webp" type="image/webp">
+                <img src="/assets/hero_image.jpg" alt="Plumb sleeve, cover, and pillow study: a soft knit thigh sleeve, a removable washable pillow cover, and a contoured hourglass foam pillow drawn as a three-component sleep-alignment system.">
+              </picture>
+            </div>
+            <div class="asset-meta">
+              <h3>Hero technical study</h3>
+              <p>Editorial pencil-and-watercolor illustration of the three-piece kit with assembly arrows. Hand-drawn on cream.</p>
+              <div class="download-row">
+                <a href="/assets/hero_image.jpg" download>JPG (1536&times;1024)</a>
+                <a href="/assets/hero_image.webp" download>WebP</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="asset-card">
+            <div class="asset-image">
+              <picture>
+                <source srcset="/assets/pairing.webp" type="image/webp">
+                <img src="/assets/pairing.jpg" alt="Plumb pairing chart: two sleeve sizes (Regular and XL) above two pillow thicknesses (5-inch and 6-inch).">
+              </picture>
+            </div>
+            <div class="asset-meta">
+              <h3>Sizing &mdash; pairing chart</h3>
+              <p>Two sleeve sizes (Regular, XL) and two pillow thicknesses (5-inch, 6-inch). Shows the full SKU lineup.</p>
+              <div class="download-row">
+                <a href="/assets/pairing.jpg" download>JPG (1024&times;1536)</a>
+                <a href="/assets/pairing.webp" download>WebP</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="asset-card">
+            <div class="asset-image">
+              <picture>
+                <source srcset="/assets/cushion_family.webp" type="image/webp">
+                <img src="/assets/cushion_family.jpg" alt="Plumb pillow study: two contoured hourglass foam pillows in slate-blue Midnight colorway, 5-inch baseline and 6-inch optional thicknesses.">
+              </picture>
+            </div>
+            <div class="asset-meta">
+              <h3>Pillow study &mdash; cushion family</h3>
+              <p>The contoured hourglass foam pillow in both thicknesses. Slate-blue Midnight colorway, foam shown without cover.</p>
+              <div class="download-row">
+                <a href="/assets/cushion_family.jpg" download>JPG (1536&times;1024)</a>
+                <a href="/assets/cushion_family.webp" download>WebP</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="asset-card">
+            <div class="asset-image">
+              <picture>
+                <source srcset="/assets/hero_dune.webp" type="image/webp">
+                <img src="/assets/hero_dune.jpg" alt="Plumb in the Dune colorway: warm oatmeal knit sleeve with sage-green PLUMB embroidery on natural linen.">
+              </picture>
+            </div>
+            <div class="asset-meta">
+              <h3>Dune colorway</h3>
+              <p>The alternate Dune colorway &mdash; warm oatmeal knit with sage-green PLUMB embroidery. Color study, not a final product photo.</p>
+              <div class="download-row">
+                <a href="/assets/hero_dune.jpg" download>JPG (1024&times;1536)</a>
+                <a href="/assets/hero_dune.webp" download>WebP</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="asset-card">
+            <div class="asset-image">
+              <picture>
+                <source srcset="/assets/color_palette.webp" type="image/webp">
+                <img src="/assets/color_palette.jpg" alt="Plumb color system: Midnight slate blue, Midnight Deep, Dune oatmeal, Dune Deep, PLUMB Sage. Brand palette reference.">
+              </picture>
+            </div>
+            <div class="asset-meta">
+              <h3>Color system reference</h3>
+              <p>Brand palette with hex codes. Midnight slate blue is the primary product color; sage is the wordmark accent.</p>
+              <div class="download-row">
+                <a href="/assets/color_palette.jpg" download>JPG</a>
+                <a href="/assets/color_palette.webp" download>WebP</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. THE PITCH (boilerplate for journalists) -->
+    <section class="section">
+      <div class="content">
+        <h2>The pitch &mdash; boilerplate language</h2>
+        <p class="section-lede">
+          For convenience, here are pre-approved boilerplate paragraphs you can quote directly.
+          All copy below has been reviewed for FTC compliance and contains no medical claims.
+        </p>
+
+        <div class="boilerplate-box">
+          <p class="boilerplate-label">One-sentence description</p>
+          <p>Plumb is a three-piece sleep-alignment kit for side sleepers &mdash; a knit thigh sleeve, a removable washable cover, and a contoured foam pillow that attaches to the sleeve, so the pillow stays where you put it.</p>
+        </div>
+
+        <div class="boilerplate-box">
+          <p class="boilerplate-label">Two-sentence pitch</p>
+          <p>Plumb is the knee pillow that stays where loose pillows won't. A pre-launch consumer sleep brand from Ashburn, Virginia, founded by mathematical statistician Mike Oak, Plumb's three-piece kit attaches the foam pillow to a knit thigh sleeve worn on the upper thigh &mdash; so when you turn, the pillow turns with you.</p>
+        </div>
+
+        <div class="boilerplate-box">
+          <p class="boilerplate-label">Paragraph-length description</p>
+          <p>
+            Plumb is a pre-launch consumer sleep brand based in Ashburn, Virginia.
+            The product is a three-piece kit designed for side sleepers: a knit
+            thigh sleeve (viscose made from bamboo) worn on the upper thigh, a
+            removable washable cover, and a contoured hourglass foam pillow
+            (CertiPUR-US certified polyurethane). The covered pillow attaches to
+            the sleeve at the inner-thigh contact zone &mdash; when the sleeper
+            turns, the pillow turns with them. Plumb is not a medical device.
+            It's a comfort and sleep-alignment product designed to solve one
+            mechanical problem: loose knee pillows don't stay where you put them.
+            The brand is bootstrapped, single-founder, and headed for a
+            Kickstarter campaign in late 2026.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. WHAT WE WON'T SAY -->
+    <section class="section section-warm">
+      <div class="content">
+        <h2>What we won't claim</h2>
+        <p class="section-lede">
+          For transparency, here is what Plumb deliberately doesn't claim &mdash; and
+          why. If your story is about FTC-restrained marketing in the wellness
+          category, this section is the angle.
+        </p>
+
+        <ul class="plain-list">
+          <li><strong>Plumb is not a medical device.</strong> It doesn't diagnose, treat, cure, or prevent any condition. If you have a medical issue affecting your back, hips, knees, or sleep, talk to your physician.</li>
+          <li><strong>We don't name specific medical conditions.</strong> No sciatica, no herniated disc, no arthritis, no RLS. Naming a condition implies treating it; treating implies substantiation we don't have.</li>
+          <li><strong>We don't use the word "orthopedic."</strong> It pulls products toward FDA medical-device classification and adds no SEO value.</li>
+          <li><strong>We don't have doctor endorsements.</strong> No "doctor-recommended" or "chiropractor-approved" language. Endorsements require disclosed material connections and substantiation we don't have at pre-launch.</li>
+          <li><strong>We don't make outcome promises with numbers.</strong> No "85% of testers slept better." Pre-launch, we have no methodology that supports that kind of claim.</li>
+          <li><strong>The founder's personal back-pain story is investor-side, not marketing-side.</strong> Founders' personal experiences are FTC endorsement claims under the 2023 guidance. Plumb's marketing focuses on the mechanical product, not on the founder's body.</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-cols">
+        <div>
+          <picture>
+            <source srcset="/assets/logos/logo_C.webp" type="image/webp">
+            <img src="/assets/logos/logo_C.jpg" alt="Plumb" width="48" height="48" class="footer-mark">
+          </picture>
+          <p class="footer-tag">Sleep, aligned.</p>
+        </div>
+        <div>
+          <p class="footer-col-h">Contact</p>
+          <p><a href="mailto:hello@plumbsleep.com">hello@plumbsleep.com</a></p>
+          <p><a href="mailto:press@plumbsleep.com">press@plumbsleep.com</a></p>
+        </div>
+        <div>
+          <p class="footer-col-h">Audience pages</p>
+          <p><a href="/clinicians/">For clinicians</a></p>
+          <p><a href="/investors/">For investors</a> <span class="footer-gated">(access-controlled)</span></p>
+          <p><a href="/press/">For press</a></p>
+        </div>
+        <div>
+          <p class="footer-col-h">Status</p>
+          <p>Pre-prototype</p>
+          <p>Stage 1 wear test underway</p>
+          <p>First production targeted Q4 2026</p>
+        </div>
+      </div>
+      <p class="founder-line">Designed by a side sleeper tired of restless nights and lost knee pillows.</p>
+      <p class="disclaimer">
+        Plumb is not a medical device. It is designed to improve sleep posture
+        and comfort and is not intended to diagnose, treat, cure, or prevent
+        any disease or medical condition. If you have a medical condition
+        affecting your back, hips, knees, or sleep, consult your physician.
+        Fabric is viscose made from bamboo, not raw bamboo fiber.
+      </p>
+      <p class="footer-fine">Mark selected June 2026 &middot; Option C.</p>
+      <p class="footer-fine">&copy; 2026 Plumb. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
