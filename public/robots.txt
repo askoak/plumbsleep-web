@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /investors/
+Disallow: /investors
 Sitemap: https://plumbsleep.com/sitemap.xml

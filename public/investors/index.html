@@ -73,6 +73,16 @@
   .provisional-note{ background:#FDF6EC; border-left:3px solid #C08B4F; padding:8px 14px;
                       margin:10px 0; font-size:11px; color:#8B5A2B; font-style:italic;
                       font-family:-apple-system,system-ui,sans-serif; }
+  .toc{ background:#fff; border:1px solid var(--line); border-radius:4px;
+         padding:18px 22px 16px; margin:0 0 32px;
+         font-family:-apple-system,system-ui,sans-serif; font-size:13px; }
+  .toc .toc-label{ font-size:11px; letter-spacing:.5px; text-transform:uppercase;
+                    color:var(--muted); font-weight:700; margin:0 0 10px; }
+  .toc ol{ margin:0; padding:0 0 0 22px; columns:2; column-gap:30px; color:var(--ink); }
+  .toc ol li{ font-size:13px; margin:3px 0; break-inside:avoid; }
+  .toc ol li a{ color:var(--ink); text-decoration:none; }
+  .toc ol li a:hover{ color:var(--sage-d); text-decoration:underline; text-underline-offset:2px; }
+  @media (max-width:600px){ .toc ol{ columns:1; } }
   footer{ margin-top:46px; padding-top:16px; border-top:1px solid var(--line);
            font-family:-apple-system,system-ui,sans-serif; font-size:12px; color:#9b998f; }
   @media print{
@@ -101,6 +111,22 @@
     </div>
 
     <h1 id="plumb-investor-brief">Plumb — Investor brief</h1>
+
+    <nav class="toc noprint" aria-label="Contents">
+      <p class="toc-label">Contents</p>
+      <ol>
+        <li><a href="#1-the-opportunity-one-paragraph">The opportunity</a></li>
+        <li><a href="#2-what-we-know-with-evidence-and-what-we-dont">What we know (and don't)</a></li>
+        <li><a href="#3-the-product-locked-design">The product (locked design)</a></li>
+        <li><a href="#4-market-sizing-bottom-up-from-the-corpus">Market sizing</a></li>
+        <li><a href="#5-unit-economics-at-a-69-retail-price">Unit economics</a></li>
+        <li><a href="#6-capital-required-and-payback">Capital and payback</a></li>
+        <li><a href="#7-recommended-gates">Recommended gates</a></li>
+        <li><a href="#8-risks-honest">Risks (honest)</a></li>
+        <li><a href="#9-what-this-investment-is-not">What this is not</a></li>
+        <li><a href="#10-the-recommendation">The recommendation</a></li>
+      </ol>
+    </nav>
 <p><strong>Sleep, aligned.</strong></p>
 <p>A modular sleep-alignment system for adult side sleepers. Pre-prototype. Architecture ratified. Stage 1 wear test materials ready to execute. Capital required to launch: ~$21,000. Bottom-up visible-market floor: ~$58M/yr (knee/leg-pillow category, sample of 29 ASINs; true category materially larger). Side-venture profit profile: $42k–$168k annual contribution at 1,500–6,000 units/yr at premium-functional price tier.</p>
 <p>This is a confidential investor brief for <strong>Plumb Sleep</strong> and parties Plumb has explicitly approved. Not for redistribution.</p>

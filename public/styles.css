@@ -7,7 +7,8 @@
 :root {
   --bg: #fafaf7;          /* warm cream page background */
   --ink: #1a1a1a;         /* primary text */
-  --muted: #6a6a65;       /* secondary text */
+  --muted: #4a4a45;       /* secondary text (WCAG AAA 8.52:1 on cream) */
+  --ink-soft: #4a4a45;    /* alias of muted; WCAG AAA on cream */
   --rule: #cfcfca;        /* hairline dividers */
   --accent: #2d4a3e;      /* deep forest accent — NOT the brand sage #6B8E5A.
                              The "sage wordmark only" rule governs the embroidered
@@ -759,4 +760,47 @@ textarea {
   color: var(--ink-soft, #5a5a5a);
   letter-spacing: 0.01em;
   max-width: 38em;
+}
+
+/* ---- Sticky waitlist CTA (appears after scrolling past hero) ---- */
+.sticky-cta{
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--accent);
+  color: #fff;
+  padding: 13px 22px;
+  border-radius: 4px;
+  font-family: var(--sans, -apple-system, "Segoe UI", system-ui, sans-serif);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(45, 74, 62, 0.18);
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease, background 0.15s ease;
+  z-index: 100;
+}
+.sticky-cta.visible{
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.sticky-cta:hover{
+  background: #1f3a2e;
+}
+@media (max-width: 640px){
+  .sticky-cta{
+    bottom: 12px;
+    right: 12px;
+    left: 12px;
+    text-align: center;
+    padding: 14px 20px;
+    font-size: 15px;
+  }
+}
+@media print{
+  .sticky-cta{ display: none !important; }
 }
