@@ -329,65 +329,15 @@ p:last-child { margin-bottom: 0; }
   white-space: nowrap;
   border: 0;
 }
+/* Wrapper retained from the retired logo vote; now used by the 'mark we picked' announcement. */
 .logo-vote-wrap {
   max-width: var(--max-w-wide);
   margin: 1.5rem auto 0;
   padding: 0 1.25rem;
 }
-.logo-grid {
-  border: none;
-  padding: 0;
-  margin: 0 0 2rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-.logo-card {
-  position: relative;
-  display: block;
-  cursor: pointer;
-  border: 2px solid var(--rule);
-  border-radius: 6px;
-  padding: 0.6rem;
-  background: white;
-  transition: border-color 0.15s ease, transform 0.15s ease;
-}
-.logo-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-1px);
-}
-.logo-card input[type="radio"] {
-  position: absolute;
-  top: 0.6rem;
-  right: 0.6rem;
-  width: 1.15em;
-  height: 1.15em;
-  accent-color: var(--accent);
-  z-index: 2;
-}
-.logo-card:has(input:checked) {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 2px var(--accent);
-}
-.logo-card img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 3px;
-}
-.logo-card-label {
-  display: block;
-  text-align: center;
-  margin-top: 0.55rem;
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--ink);
-  letter-spacing: 0.02em;
-}
-.vote-extras {
-  padding-left: 0;
-  padding-right: 0;
-}
+/* Logo-vote grid CSS removed 2026-06-10 when Option C was selected and the
+   five-card vote form was retired. .logo-selected (above) styles the
+   single-image announcement that replaced it. */
 
 /* ============================================================
    Form
@@ -510,16 +460,7 @@ textarea {
     grid-template-columns: 1fr 1fr;
     gap: 1.3rem 1.6rem;
   }
-  .logo-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.2rem;
-  }
-}
-@media (min-width: 1100px) {
-  .logo-grid {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1.2rem;
-  }
+  /* .logo-grid responsive rules retired 2026-06-10 with the logo-vote form. */
 }
 
 /* ============================================================
