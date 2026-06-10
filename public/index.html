@@ -555,8 +555,11 @@
           emails. That is all.
         </p>
 
+        <p id="wtp-price" class="form-note" hidden></p>
         <form id="waitlist-form" name="plumb-waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?waitlist_submitted=1">
           <input type="hidden" name="form-name" value="plumb-waitlist">
+          <input type="hidden" name="price_variant" id="wl-price-variant" value="">
+          <input type="hidden" name="displayed_price" id="wl-displayed-price" value="">
           <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
           <div class="field">
             <label for="wl-email">Email <span class="req" aria-hidden="true">*</span></label>
@@ -675,5 +678,6 @@
       }
     })();  </script>
 
+  <script src="wtp_test.js" defer></script>
 </body>
 </html>
