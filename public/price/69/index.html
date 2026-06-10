@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Plumb — reserve your spot</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" href="/assets/logos/logo_C.jpg">
+  <style>
+    .wtp-wrap{max-width:640px;margin:0 auto;padding:56px 24px 80px;text-align:center}
+    .wtp-price{font-size:56px;font-weight:600;color:var(--ink,#1a1a1a);margin:28px 0 6px}
+    .wtp-price small{font-size:18px;color:#6b6b66;font-weight:400;display:block;margin-top:4px}
+    .wtp-form{max-width:420px;margin:26px auto 0;text-align:left}
+  </style>
+</head>
+<body>
+  <main class="wtp-wrap">
+    <h1>A knee pillow that stays where loose pillows won't.</h1>
+    <p class="subtitle">Sleep, aligned.</p>
+    <p class="lede">Plumb is three pieces that work as one: a soft knit thigh sleeve that does the
+    staying-in-place job, a removable washable cover, and a contoured foam pillow &mdash; sized to your
+    body, in viscose made from bamboo.</p>
+    <p class="wtp-price">$69<small>planned price</small></p>
+    <form class="wtp-form" name="plumb-waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?waitlist_submitted=1">
+      <input type="hidden" name="form-name" value="plumb-waitlist">
+      <input type="hidden" name="price_variant" value="B">
+      <input type="hidden" name="displayed_price" value="69">
+      <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
+      <div class="field">
+        <label for="wl-email">Email <span class="req" aria-hidden="true">*</span></label>
+        <input type="email" name="email" id="wl-email" required autocomplete="email">
+      </div>
+      <button type="submit" class="button">Reserve your spot &mdash; notify me at launch.</button>
+      <p class="form-note">We use your address only for launch notification. We do not sell or share
+      addresses. To delete your address, email <a href="mailto:hello@plumbsleep.com">hello@plumbsleep.com</a>.</p>
+    </form>
+  </main>
+</body>
+</html>
