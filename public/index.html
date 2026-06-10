@@ -545,9 +545,10 @@
     </section>
 
     <!-- WAITLIST -->
-    <section class="section">
+    <section class="section" id="waitlist">
       <div class="content">
         <h2>Hear from us first</h2>
+        <p style="font-style:italic; color:var(--accent); margin-bottom:14px;">Designed around 90 nights with free returns both ways.</p>
         <p>
           Plumb is pre-prototype. We are running a small wear test before we make
           units to sell. If you want an email when the first wear-test cohort opens
@@ -674,6 +675,51 @@
         wlForm.hidden = true; wlThanks.hidden = false;
       }
     })();  </script>
+
+  <!-- Sticky waitlist CTA (appears after scrolling past the hero) -->
+  <a href="#waitlist" id="sticky-cta" class="sticky-cta" aria-label="Join the waitlist">Join the waitlist →</a>
+  <script>
+    (function(){
+      var cta = document.getElementById('sticky-cta');
+      var hero = document.querySelector('.section-hero');
+      if (!cta || !hero) return;
+      function update(){
+        var heroBottom = hero.getBoundingClientRect().bottom;
+        var inWaitlist = document.getElementById('waitlist').getBoundingClientRect().top < window.innerHeight * 0.5;
+        if (heroBottom < 80 && !inWaitlist) {
+          cta.classList.add('visible');
+        } else {
+          cta.classList.remove('visible');
+        }
+      }
+      update();
+      window.addEventListener('scroll', update, {passive: true});
+      window.addEventListener('resize', update);
+    })();
+  </script>
+
+  <!-- Schema.org JSON-LD Product structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Plumb",
+    "description": "A sleep-positioning kit for adult side sleepers. Three components — a soft knit thigh sleeve, a contoured hourglass foam pillow, and a removable washable cover — that attach to each other so the pillow stays where you put it.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Plumb"
+    },
+    "category": "Sleep Accessories",
+    "url": "https://plumbsleep.com/",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "USD",
+      "price": "69.00",
+      "availability": "https://schema.org/PreOrder",
+      "url": "https://plumbsleep.com/#waitlist"
+    }
+  }
+  </script>
 
 </body>
 </html>
