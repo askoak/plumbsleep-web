@@ -94,7 +94,13 @@
     .info-form, .actions-bar{ display:none !important; }
     @page{ margin:1in; }
   }
+  .brand-strip{ display:flex; align-items:center; gap:10px; margin:0 0 18px;
+                 font-family:-apple-system,system-ui,sans-serif; }
+  .brand-strip img{ height:36px; width:auto; display:block; border-radius:4px; }
+  .brand-strip .brand-text{ font-size:13px; color:var(--muted); letter-spacing:.04em; }
+  @media print{ .brand-strip img{ height:30px; } }
 </style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%233F5874'/%3E%3Ctext x='50' y='72' font-family='Georgia,Cambria,serif' font-size='72' font-weight='400' text-anchor='middle' fill='%23E8DCC4'%3EP%3C/text%3E%3Cpath d='M58 42 Q66 36 70 30 Q66 40 60 46 Z' fill='%236B8E5A'/%3E%3C/svg%3E">
 </head>
 <body>
   <div class="wrap" id="doc">
@@ -108,6 +114,16 @@
     <div class="actions-bar noprint">
       <a href="#" onclick="window.print(); return false;" class="btn">Print or save as PDF</a>
       <a href="#more-info" class="btn btn-secondary">Send me more information</a>
+    </div>
+
+    <div class="brand-strip">
+      <a href="/" aria-label="Plumb — home">
+        <picture>
+          <source srcset="/assets/logos/logo_C.webp" type="image/webp">
+          <img src="/assets/logos/logo_C.jpg" alt="Plumb">
+        </picture>
+      </a>
+      <span class="brand-text">Plumb · Sleep, aligned.</span>
     </div>
 
     <h1 id="plumb-investor-brief">Plumb — Investor brief</h1>
