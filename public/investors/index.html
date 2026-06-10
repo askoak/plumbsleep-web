@@ -28,6 +28,51 @@
   blockquote{ border-left:3px solid var(--sage); margin:14px 0; padding:4px 16px; color:var(--muted); }
   .confidential{ font-family:-apple-system,system-ui,sans-serif; font-size:12px; letter-spacing:.5px;
                   text-transform:uppercase; color:var(--sage-d); margin:0 0 26px; }
+  .confidentiality-banner{ background:#FDF6EC; border:1px solid #C08B4F; border-left:4px solid #C08B4F;
+                            padding:14px 18px; border-radius:4px; margin:0 0 28px;
+                            font-family:-apple-system,system-ui,sans-serif; font-size:13px;
+                            color:var(--ink); line-height:1.55; }
+  .confidentiality-banner .label{ color:#8B5A2B; display:block; margin-bottom:6px;
+                                   text-transform:uppercase; letter-spacing:.5px; font-size:11px;
+                                   font-weight:700; }
+  .actions-bar{ display:flex; gap:10px; flex-wrap:wrap; margin:0 0 28px;
+                 font-family:-apple-system,system-ui,sans-serif; }
+  .btn{ display:inline-block; padding:9px 18px; border:1px solid var(--sage-d);
+         background:var(--sage-d); color:#fff; border-radius:4px; text-decoration:none;
+         font-size:13px; font-weight:600; letter-spacing:.3px; cursor:pointer;
+         font-family:-apple-system,system-ui,sans-serif; }
+  .btn:hover{ background:#2D4A2C; }
+  .btn-secondary{ background:transparent; color:var(--sage-d); }
+  .btn-secondary:hover{ background:var(--sage); color:#fff; border-color:var(--sage); }
+  .info-form{ background:#fff; border:1px solid var(--line); border-radius:4px;
+               padding:22px 26px; margin:30px 0; }
+  .info-form h3{ margin-top:0; }
+  .info-form label{ display:block; font-family:-apple-system,system-ui,sans-serif;
+                     font-size:12px; letter-spacing:.5px; text-transform:uppercase;
+                     color:var(--muted); margin:14px 0 6px; }
+  .info-form input[type=text], .info-form input[type=email], .info-form textarea{
+      width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:4px;
+      font-family:Georgia,serif; font-size:14px; color:var(--ink); background:#fff;
+      box-sizing:border-box; }
+  .info-form textarea{ resize:vertical; min-height:80px; }
+  .info-form input:focus, .info-form textarea:focus{ outline:none; border-color:var(--sage);
+                                                       box-shadow:0 0 0 2px rgba(107,142,90,.15); }
+  .info-form .checkbox-row{ display:flex; gap:10px; align-items:flex-start; margin:14px 0;
+                              font-family:-apple-system,system-ui,sans-serif; font-size:13px;
+                              color:var(--ink); }
+  .info-form .checkbox-row input[type=checkbox]{ width:auto; margin-top:3px; flex-shrink:0;
+                                                   accent-color:var(--sage); }
+  .info-form .checkbox-row label{ text-transform:none; letter-spacing:0; font-size:13px;
+                                    color:var(--ink); margin:0; }
+  .disclosure-box{ background:#f6f6f1; border:1px dashed var(--line); border-radius:4px;
+                    padding:14px 18px; margin:18px 0; font-size:12px;
+                    font-family:-apple-system,system-ui,sans-serif; color:var(--muted);
+                    line-height:1.55; }
+  .disclosure-box .label{ color:var(--ink); text-transform:uppercase; letter-spacing:.5px;
+                           font-size:11px; display:block; margin-bottom:6px; font-weight:700; }
+  .provisional-note{ background:#FDF6EC; border-left:3px solid #C08B4F; padding:8px 14px;
+                      margin:10px 0; font-size:11px; color:#8B5A2B; font-style:italic;
+                      font-family:-apple-system,system-ui,sans-serif; }
   footer{ margin-top:46px; padding-top:16px; border-top:1px solid var(--line);
            font-family:-apple-system,system-ui,sans-serif; font-size:12px; color:#9b998f; }
   @media print{
@@ -36,17 +81,29 @@
     a{ color:var(--ink); text-decoration:none; }
     h2{ break-after:avoid; } table,tr,blockquote{ break-inside:avoid; }
     .noprint{ display:none !important; }
+    .info-form, .actions-bar{ display:none !important; }
     @page{ margin:1in; }
   }
 </style>
 </head>
 <body>
   <div class="wrap" id="doc">
-    <p class="confidential noprint">Confidential · not for distribution</p>
+    <p class="confidential noprint">Confidential · not for redistribution</p>
+
+    <div class="confidentiality-banner noprint">
+      <span class="label">Confidential · do not redistribute</span>
+      This brief is provided to you under an understanding of confidentiality. It is for Plumb Sleep and parties Plumb has explicitly approved. Do not forward, screenshot, post, or share the URL or contents without Mike Oak's prior written consent. The information here — market data, unit economics, FTO posture, supplier specifications — includes competitively sensitive material developed over weeks of primary research.
+    </div>
+
+    <div class="actions-bar noprint">
+      <a href="#" onclick="window.print(); return false;" class="btn">Print or save as PDF</a>
+      <a href="#more-info" class="btn btn-secondary">Send me more information</a>
+    </div>
+
     <h1 id="plumb-investor-brief">Plumb — Investor brief</h1>
 <p><strong>Sleep, aligned.</strong></p>
 <p>A modular sleep-alignment system for adult side sleepers. Pre-prototype. Architecture ratified. Stage 1 wear test materials ready to execute. Capital required to launch: ~$21,000. Bottom-up visible-market floor: ~$58M/yr (knee/leg-pillow category, sample of 29 ASINs; true category materially larger). Side-venture profit profile: $42k–$168k annual contribution at 1,500–6,000 units/yr at premium-functional price tier.</p>
-<p>This is a private investor brief for Mike Oak Advisors and parties Mike has explicitly approved. Not for distribution.</p>
+<p>This is a confidential investor brief for <strong>Plumb Sleep</strong> and parties Plumb has explicitly approved. Not for redistribution.</p>
 <hr />
 <h2 id="1-the-opportunity-one-paragraph">1. The opportunity — one paragraph</h2>
 <p>The US knee/leg-pillow category is large, fragmented, and commodity-dominated. The visible 29-ASIN slice we tracked drives roughly $58 million in annual revenue (knee/leg pillows alone, excluding body-pillow substitutes that capture another ~$27M from this set); the full US category, with hundreds of SKUs, is in the low-to-mid hundreds of millions per published sleep-category estimates. Every leading product fails at specific, repeated, fixable things: sizing (the #1 complaint in every tier we coded, 18–25%), retention (a bimodal failure on strap-based products), comfort and cooling (the reason buyers defect to body pillows), and foam durability. Plumb is a three-component modular wearable — a viscose-made-from-bamboo knit thigh sleeve, a removable washable cover, and a contoured hourglass foam pillow — designed against those four named failures with body-sized fit, anatomy-anchored retention (no strap), CertiPUR-US foam, and an honest 90-night home trial. Premium-functional, not luxury. Capturing 0.5–1% of just the visible knee/leg slice is $290,000–$580,000 in annual revenue — a credible lucrative side venture at low overhead.</p>
@@ -425,7 +482,48 @@
 </ul>
 <p>— Computer (architect) + Claude Code (engineer), joint
 signature: thistle-juniper-driftwood-xerox</p>
-    <footer>Last updated: June 9, 2026 · © Mike Oak Advisors — confidential, not for distribution</footer>
+    <section id="more-info" class="info-form noprint">
+      <h3>Send me more information</h3>
+      <p style="font-size:14px; color:var(--muted); margin-top:0;">Plumb does not currently solicit external investment. We do, however, accept inquiries from individuals already known to Mike Oak with whom we have a substantive pre-existing relationship.</p>
+
+      <div class="disclosure-box">
+        <span class="label">Required disclosure</span>
+        This brief is not an offer to sell securities, a solicitation of an offer to buy securities, or investment advice. Any securities offering by Plumb Sleep, if it occurs, will be conducted only in compliance with applicable federal and state securities laws and only to investors who meet the relevant eligibility criteria — which may include verification of accredited-investor status under Rule 501 of Regulation D under the Securities Act of 1933. By submitting this form, you confirm that you have a pre-existing substantive relationship with Mike Oak; that you understand this brief contains forward-looking statements which are inherently uncertain; and that you will not redistribute, post, or forward the contents of this brief. Plumb may decline to respond to any inquiry without explanation.
+      </div>
+      <div class="provisional-note">
+        ⚠ This disclosure language is provisional and will be reviewed by securities counsel before any external distribution. Treat this form as expression-of-interest infrastructure, not as a live offering.
+      </div>
+
+      <form name="plumb-investor-interest" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/investors/thanks.html">
+        <input type="hidden" name="form-name" value="plumb-investor-interest">
+        <p style="display:none;"><label>If you are human, leave this blank: <input name="bot-field"></label></p>
+
+        <label for="name">Your full name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="relationship">How do you know Mike Oak? (required — this form does not accept submissions from strangers)</label>
+        <textarea id="relationship" name="relationship" required placeholder="e.g., 'We worked together at Cambridge Associates from 2014 to 2018' or 'Sarah Chen introduced us at the 2024 board meeting.'"></textarea>
+
+        <label for="context">What aspect of Plumb is most interesting to you, and why?</label>
+        <textarea id="context" name="context" placeholder="Brief is fine — one or two sentences helps us triage."></textarea>
+
+        <div class="checkbox-row">
+          <input type="checkbox" id="accred" name="accredited_self_attestation" required>
+          <label for="accred">I understand that any securities offering, if one occurs, will be limited to investors meeting applicable eligibility criteria, and that this form is not itself an offer. (required)</label>
+        </div>
+        <div class="checkbox-row">
+          <input type="checkbox" id="confidential-ack" name="confidentiality_acknowledgment" required>
+          <label for="confidential-ack">I will not forward, screenshot, post, or otherwise redistribute this brief without Mike Oak's prior written consent. (required)</label>
+        </div>
+
+        <button type="submit" class="btn" style="margin-top:14px;">Submit inquiry</button>
+      </form>
+    </section>
+
+    <footer>Last updated: June 10, 2026 · © Plumb Sleep — confidential, not for redistribution. Any forwarded copy of this brief is a breach of the confidentiality terms above.</footer>
   </div>
 </body>
 </html>
