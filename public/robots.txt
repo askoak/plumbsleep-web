@@ -3,4 +3,5 @@ Allow: /
 Disallow: /investors/
 Disallow: /investors
 Disallow: /price/
+Disallow: /test/
 Sitemap: https://plumbsleep.com/sitemap.xml
