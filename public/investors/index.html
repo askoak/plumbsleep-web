@@ -245,7 +245,7 @@
 </tr>
 </tbody>
 </table>
-<p>The attachment mechanism between the covered pillow and the sleeve is <strong>TBD</strong> at Stage 1: three concepts (magnetic snap, kam-snap tab, sleeve-mounted exterior pouch) advance to the wear-test arm-selector (<a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/40_stage1_wear_test_v6.md">package/40 v6</a> Track 6). Velcro is rejected by design inference from the buyer-corpus bathroom-friction evidence.</p>
+<p>The attachment mechanism between the covered pillow and the sleeve is <strong>TBD</strong> at Stage 1: three concepts (magnetic snap, kam-snap tab, sleeve-mounted exterior pouch) advance to the wear-test arm-selector (<a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/40_stage1_wear_test_v7.md">package/40 v7</a> Track 6). Velcro is rejected by design inference from the buyer-corpus bathroom-friction evidence.</p>
 <p><strong>Why three components instead of one:</strong> the modular separation solves three problems the integrated foam-in-sleeve category cannot — wash durability (foam never washed; sleeve and cover each launder on their own protocol), foam-life economics (the pillow becomes a replaceable consumable SKU rather than a warranty liability), and architecture-to-buyer-need alignment (the sleeve does staying-in-place; the pillow is freed to be optimized for firmness and comfort without compromising for a strap).</p>
 <p>Architecture document: <a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/86_three_component_modular_architecture.md"><code>package/86</code></a>. Manufacturing BOM: <a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/87_modular_manufacturing_handoff.md"><code>package/87</code></a>.</p>
 <h2 id="3-5-mechanical-rationale">3.5 Mechanical rationale</h2>
@@ -270,7 +270,7 @@ load-bearing structural element — it produces a normal force distributed aroun
 the upper-thigh circumference via fabric tension plus discrete silicone-dot
 grippers at the interior top rim. The covered pillow is then attached to the
 sleeve at the inner-thigh contact zone via the Stage-1-arm-selected mechanism
-(magnetic, snap, or pouch — package/40 v6 Track 6 selects). The pillow's job
+(magnetic, snap, or pouch — package/40 v7 Track 6 selects). The pillow's job
 is comfort; the sleeve's job is staying. The mechanical separation is the
 design.</p>
 
@@ -385,7 +385,7 @@ side-lying posture</a>.</p>
 <p>The sleeve geometry, pillow shape, and material specs above are held constant
 through Stage 1. The single variable evaluated is the attachment mechanism
 between the covered pillow and the sleeve. Three concepts advance to the
-wear-test arm-selector per package/40 v6:</p>
+wear-test arm-selector per package/40 v7:</p>
 
 <ul>
 <li><strong>Arm A — magnetic snap interface.</strong> Embedded magnets in the
@@ -455,7 +455,7 @@ position</em>, BioMedical Engineering OnLine, 2011 (PMC3265433), for general
 side-sleep alignment background. Neither paper studies an inter-thigh pillow,
 and neither is the source of any specific Plumb IFD or sleeve-retention value
 above. Internal sources:
-package/40 v6 (Stage 1 protocol), package/86 (architecture rationale),
+package/40 v7 (Stage 1 protocol), package/86 (architecture rationale),
 package/87 (modular BOM).</p>
 
 <figure id="fig-working-sketches" style="margin: 2rem 0;">
@@ -890,7 +890,7 @@ package/87 (modular BOM).</p>
 <td><strong>Gate 1 — Stage 1 wear test</strong></td>
 <td style="text-align: right;">~$1,500</td>
 <td>Does anatomy-anchored retention actually work for an 8-hour sleep + one-handed bathroom-break release? Does the modular design pass the named "2 a.m. inversion" failure scenario?</td>
-<td>Track 6 of <code>package/40 v6</code> fails on all three attachment-mechanism arms</td>
+<td>Track 6 of <code>package/40 v7</code> fails on all three attachment-mechanism arms (or Stage 0 fixture eliminates all three pre-cohort)</td>
 </tr>
 <tr>
 <td><strong>Gate 2 — FTO clearance</strong> (Layer-3, attorney)</td>
@@ -917,17 +917,38 @@ package/87 (modular BOM).</p>
 
 <p>The brief above states what Gate 1 costs and what it answers. Engineering
 readers will reasonably want to see the protocol structure before forming
-an opinion. The full protocol is package/40 v6; the summary below is the
-investor-readable extract.</p>
+an opinion. The full protocol is package/40 v7; the summary below is the
+investor-readable extract. <strong>Gate 1 is designed as a directional
+screening gate, not a statistically-powered pass/fail</strong> — the load-
+bearing question (does the attachment physically hold?) is answered
+<em>before</em> any human wears the kit, on a bench fixture; the cohort
+then resolves which of the surviving arms wins on lived experience.</p>
 
 <table role="table">
   <caption>Stage 1 wear test — design summary</caption>
   <tbody>
     <tr>
+      <th scope="row">Stage 0 — pre-cohort pull-force fixture (NEW in v7)</th>
+      <td>Before any tester wears the kit, each of the three attachment arms
+      is force-tested on a simple fixture (sleeve segment + covered-pillow
+      stand-in + luggage scale, ~$10 in materials, ~1 hour). Required
+      minimum as-received pull-force floor: <strong>≥8.1 N</strong>
+      (3× the static-hang load). Any arm below the floor is <em>eliminated
+      before human exposure</em> and does not enter the cohort. This puts
+      the load-bearing attachment question on n-independent physics
+      rather than on a 30-night cohort.</td>
+    </tr>
+    <tr>
       <th scope="row">Cohort</th>
       <td>4 testers, recruited from Mike's personal network or substantive
       feedback-form responses (not anonymous-paid; tester quality is the
-      lever, not tester count).</td>
+      lever, not tester count). Gate 1 is a directional screening gate —
+      n=4 can reliably detect a catastrophic arm, not resolve a subtle
+      composite difference between two viable arms; close calls are
+      labeled directional. <strong>Conditional expansion clause:</strong>
+      if two arms finish within 10% composite on the decision rule
+      (genuinely ambiguous), expand <em>that tie only</em> to n=8 before
+      Stage 2 production commit.</td>
     </tr>
     <tr>
       <th scope="row">Duration</th>
@@ -945,9 +966,15 @@ investor-readable extract.</p>
       <th scope="row">Six measurement tracks</th>
       <td>
         <ol>
-          <li><strong>Sleeve fit & rotation</strong> — time-lapse on ≥5 nights;
-          kill on &gt;15° rotation or &gt;2 in. vertical migration in 2+ testers
-          on 2+ nights.</li>
+          <li><strong>Sleeve fit & rotation</strong> — marked-thigh photo
+          <em>every night</em> at the 6-hour mark; cumulative axial migration
+          read against a fixed reference mark. Kill on cohort-mean axial
+          migration <strong>&gt;1 in.</strong> across the 30-night photo set,
+          or axial-migration <em>rate</em> trending positive and crossing
+          1 in. before the 6 h mark in 2+ testers (systematic creep). Full
+          time-lapse on ≥8 randomly-assigned nights of 30 per tester (not
+          tester-chosen) for rotation measurement; kill on &gt;15° rotation
+          in 2+ testers on 2+ nights.</li>
           <li><strong>30-night tolerance</strong> — daily wear yes/no; kill on
           &gt;3 abandoned nights per tester for 2+ testers.</li>
           <li><strong>Bathroom-break ergonomics</strong> — per-event log of
@@ -973,23 +1000,25 @@ investor-readable extract.</p>
     </tr>
     <tr>
       <th scope="row">Decision rule</th>
-      <td>An arm must pass tracks 3, 4-hardware, and 6 to remain a candidate.
-      Among surviving arms, the winner is the highest composite of friction +
+      <td>An arm must clear Stage 0 (≥8.1 N as-received pull-force) and
+      pass tracks 3, 4-hardware, and 6 to remain a candidate. Among
+      surviving arms, the winner is the highest composite of friction +
       wash-survival + hold/release/durability/safety, with hold and safety
       weighted as binary gates (an arm that ever pinches skin or pulls hair
-      cannot win regardless of composite score).</td>
+      cannot win regardless of composite score). Composite ties within 10%
+      trigger the conditional n=8 expansion (above).</td>
     </tr>
     <tr>
       <th scope="row">Pass standard</th>
-      <td>At least one arm clears all six tracks across all four testers.
-      Zero arms passing = Gate 1 fails, the design is held until
+      <td>At least one arm clears Stage 0 and all six tracks across all four
+      testers. Zero arms passing = Gate 1 fails, the design is held until
       re-engineered.</td>
     </tr>
     <tr>
       <th scope="row">Source protocol</th>
       <td><a target="_blank" rel="noopener"
-             href="https://github.com/askoak/plumb-coordination/blob/main/package/40_stage1_wear_test_v6.md">
-        package/40 v6
+             href="https://github.com/askoak/plumb-coordination/blob/main/package/40_stage1_wear_test_v7.md">
+        package/40 v7
       </a></td>
     </tr>
   </tbody>
@@ -1032,7 +1061,7 @@ study would use, sized appropriately for a comfort product.</p>
 <li><a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/research/24_business_case.md"><code>research/24</code></a> — Business case + go/no-go (engineer source for sections 5–8 above)</li>
 <li><a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/86_three_component_modular_architecture.md"><code>package/86</code></a> — Ratified architecture</li>
 <li><a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/87_modular_manufacturing_handoff.md"><code>package/87</code></a> — Manufacturing BOM</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/40_stage1_wear_test_v6.md"><code>package/40 v6</code></a> — Stage 1 wear test protocol (Gate 1)</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/40_stage1_wear_test_v7.md"><code>package/40 v7</code></a> — Stage 1 wear test protocol (Gate 1)</li>
 <li><a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/06_fto_checklist_modular.md"><code>package/06 FTO checklist (modular)</code></a> — FTO posture (Gate 2 source)</li>
 <li><a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/89_corpus_synthesis_v1.md"><code>package/89</code></a> — Corpus synthesis, 24 findings</li>
 <li><a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/90_channel_sequence_v0_DRAFT.md"><code>package/90</code></a> — Channel sequence</li>
