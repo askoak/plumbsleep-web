@@ -245,7 +245,7 @@
 </tr>
 </tbody>
 </table>
-<p>The closure mechanism between the case and the foam pillow is <strong>TBD</strong> at Stage 1: candidate variants under a single-piece architecture (tuck-only soft flap, low-strength magnetic flap, hook-and-loop flap, open-pocket with case-tension only) advance to the pre-cohort bench fixture and the wear-test closure validator (<a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/40_stage1_wear_test_v7.md">package/40 v8 — in revision; v7 retained for link stability</a> Track 6B). Hardware-at-the-contact-zone variants (magnetic inter-thigh attachment, kam-snap inter-thigh attachment) are excluded by first-principles force math: any fastener strong enough to resist ~133 N inter-thigh shear cannot be released one-handed in under 5 seconds (see §3.5.4 and the architecture ratification at <a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/154_architecture_b_ratified_single_piece.md">package/154</a>).</p>
+<p>The closure mechanism between the case and the foam pillow is <strong>TBD</strong> at Stage 1: candidate variants under a single-piece architecture (tuck-only soft flap, low-strength magnetic flap, hook-and-loop flap, open-pocket with case-tension only) advance to the pre-cohort bench fixture and the wear-test closure validator (<a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/40_stage1_wear_test_v8_single_piece.md">package/40 v8 (single-piece)</a> Track 6B). Hardware-at-the-contact-zone variants (magnetic inter-thigh attachment, kam-snap inter-thigh attachment) are excluded by first-principles force math: any fastener strong enough to resist ~133 N inter-thigh shear cannot be released one-handed in under 5 seconds (see §3.5.4 and the architecture ratification at <a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/154_architecture_b_ratified_single_piece.md">package/154</a>).</p>
 <p><strong>Why one assembly with a swappable foam consumable:</strong> a sleeve-and-case sewn as a single assembly with the foam pillow as a replaceable consumable solves three problems the integrated foam-in-sleeve category cannot — wash durability (the assembly washes as one unit; the foam is removed first and never goes in water), foam-life economics (the pillow remains a replaceable consumable SKU rather than a warranty liability), and architecture-to-buyer-need alignment (the sleeve and case anchor staying-in-place via anatomy + body weight; the foam is freed to be optimized for firmness and comfort without carrying any attachment hardware). The fastener carries gravity-only load (~3–5 N) at the body-side face, not inter-thigh shear — the structural distinction that makes the closure releasable one-handed in the dark.</p>
 <p>Architecture document: <a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/154_architecture_b_ratified_single_piece.md"><code>package/154</code></a> (ratified 2026-06-11; supersedes <a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/86_three_component_modular_architecture.md"><code>package/86</code></a>). Manufacturing BOM: <a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/87_modular_manufacturing_handoff.md"><code>package/87</code></a> (in revision for single-piece BOM).</p>
 <h2 id="3-5-mechanical-rationale">3.5 Mechanical rationale</h2>
@@ -387,7 +387,7 @@ through Stage 1. Architecture is also held constant (single-piece sleeve-and-cas
 ratified at <a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/154_architecture_b_ratified_single_piece.md">package/154</a>). The single variable evaluated is the soft-fabric closure
 between the case opening and the body-side face of the case. Candidate variants
 advance to the pre-cohort bench fixture and the wear-test closure validator per
-package/40 v8 Track 6B (in revision; v7 retained for link stability):</p>
+package/40 v8 Track 6B:</p>
 
 <ul>
 <li><strong>Variant a — tuck-only soft flap.</strong> A fabric overlay sewn at the
@@ -437,15 +437,19 @@ inversion" disruption rating) are summarized in §7 below under Gate 1.</p>
 </figure>
 
 <figure id="fig-attachment-family">
-  <img src="/assets/investors/fig2_attachment_family.svg" width="600" height="400"
-       alt="Closure-variant family tree (legacy figure showing the three-arm modular concepts retained for archival reference; the live architecture is now single-piece per package/154)."
-       loading="lazy">
-  <figcaption>Figure 2 — Closure-variant family tree. The figure shown is
-  the legacy three-arm modular schematic from the architecture-A spec; it is
-  retained for archival reference. Under the ratified single-piece architecture
-  (<a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/154_architecture_b_ratified_single_piece.md">package/154</a>),
-  closure variants are tuck-only, low-strength magnetic flap, hook-and-loop,
-  and case-tension-only — a refreshed figure ships when v8 lands.</figcaption>
+  <picture>
+    <source srcset="/assets/investors/plumb_render_system_sage_blue_front.webp" type="image/webp">
+    <img src="/assets/investors/plumb_render_system_sage_blue_front.png" width="600" height="450"
+         alt="Single-piece Plumb system render, front view: the knit thigh sleeve with the spandex case sewn to its outer face and the contoured foam pillow seated inside, body-side flap pocket visible — the ratified Architecture B."
+         loading="lazy">
+  </picture>
+  <figcaption>Figure 2 — Single-piece sleeve-and-case (ratified Architecture B,
+  <a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/154_architecture_b_ratified_single_piece.md">package/154</a>):
+  the foam nests in a case sewn to the sleeve, retrieved through a body-side
+  flap. The Stage 1 variable is the flap closure (tuck-only / low-strength
+  magnet / hook-and-loop / case-tension-only), validated per
+  <a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/40_stage1_wear_test_v8_single_piece.md">package/40 v8</a>
+  Track 6B.</figcaption>
 </figure>
 
 <figure id="fig-thigh-distribution">
@@ -472,7 +476,7 @@ position</em>, BioMedical Engineering OnLine, 2011 (PMC3265433), for general
 side-sleep alignment background. Neither paper studies an inter-thigh pillow,
 and neither is the source of any specific Plumb IFD or sleeve-retention value
 above. Internal sources:
-package/40 v7 (Stage 1 protocol; v8 in revision for single-piece), package/154 (architecture rationale; supersedes package/86),
+package/40 v8 (single-piece Stage 1 protocol; supersedes v7), package/154 (architecture rationale; supersedes package/86),
 package/87 (modular BOM).</p>
 
 <figure id="fig-working-sketches" style="margin: 2rem 0;">
@@ -907,7 +911,7 @@ package/87 (modular BOM).</p>
 <td><strong>Gate 1 — Stage 1 wear test</strong></td>
 <td style="text-align: right;">~$1,500</td>
 <td>Does anatomy-anchored retention actually work for an 8-hour sleep + one-handed bathroom-break release? Does the modular design pass the named "2 a.m. inversion" failure scenario?</td>
-<td>Track 6 of <code>package/40 v7</code> fails on all three attachment-mechanism arms (or Stage 0 fixture eliminates all three pre-cohort)</td>
+<td>Track 6B of <code>package/40 v8</code> — the closure variant fails validation across the a→b→c fallback (or the Stage 0 bench gate cannot be cleared pre-cohort)</td>
 </tr>
 <tr>
 <td><strong>Gate 2 — FTO clearance</strong> (Layer-3, attorney)</td>
@@ -934,38 +938,45 @@ package/87 (modular BOM).</p>
 
 <p>The brief above states what Gate 1 costs and what it answers. Engineering
 readers will reasonably want to see the protocol structure before forming
-an opinion. The full protocol is package/40 v7; the summary below is the
-investor-readable extract. <strong>Gate 1 is designed as a directional
-screening gate, not a statistically-powered pass/fail</strong> — the load-
-bearing question (does the attachment physically hold?) is answered
-<em>before</em> any human wears the kit, on a bench fixture; the cohort
-then resolves which of the surviving arms wins on lived experience.</p>
+an opinion. The full protocol is package/40 v8 (single-piece); the summary
+below is the investor-readable extract. <strong>Gate 1 is designed as a
+directional screening gate, not a statistically-powered pass/fail</strong> —
+the load-bearing question (does the closure physically hold the foam?) is
+answered <em>before</em> any human wears the kit, on a bench fixture; the
+cohort then resolves the single pre-selected closure variant on lived
+experience.</p>
 
 <table role="table">
   <caption>Stage 1 wear test — design summary</caption>
   <tbody>
     <tr>
-      <th scope="row">Stage 0 — pre-cohort pull-force fixture (NEW in v7)</th>
-      <td>Before any tester wears the kit, each of the three attachment arms
-      is force-tested on a simple fixture (sleeve segment + covered-pillow
-      stand-in + luggage scale, ~$10 in materials, ~1 hour). Required
-      minimum as-received pull-force floor: <strong>≥8.1 N</strong>
-      (3× the static-hang load). Any arm below the floor is <em>eliminated
-      before human exposure</em> and does not enter the cohort. This puts
-      the load-bearing attachment question on n-independent physics
-      rather than on a 30-night cohort.</td>
+      <th scope="row">Stage 0 — pre-cohort bench gate (single-piece)</th>
+      <td>Before any tester wears the kit, three bench jobs run on a simple
+      fixture (sleeve+case + luggage scale, ~$10 in materials). <strong>0.1
+      Flap validation:</strong> the chosen closure variant must open at
+      ≤5 N (one-handed in the dark), hold above the <em>measured foam
+      push-out force</em> (×1.5 margin — the real spontaneous-open load),
+      survive ≥500 disturbance cycles, and release the foam at ≤10 N.
+      <strong>0.2 Axial-migration calc + bench</strong> on the dressed
+      assembly (foam-loaded and foam-free) confirms the permanent case mass
+      stays within Track 1's ≤1 in. threshold. <strong>0.3 Foam-reinsertion
+      mock-up</strong> (N=3–5, &lt;2 min) plus a dissimilar-knit case↔sleeve
+      seam check. A configuration failing any gate is fixed before a tester
+      is recruited — load-bearing physics on n-independent bench, not a
+      30-night cohort.</td>
     </tr>
     <tr>
       <th scope="row">Cohort</th>
       <td>4 testers, recruited from Mike's personal network or substantive
       feedback-form responses (not anonymous-paid; tester quality is the
-      lever, not tester count). Gate 1 is a directional screening gate —
-      n=4 can reliably detect a catastrophic arm, not resolve a subtle
-      composite difference between two viable arms; close calls are
-      labeled directional. <strong>Conditional expansion clause:</strong>
-      if two arms finish within 10% composite on the decision rule
-      (genuinely ambiguous), expand <em>that tie only</em> to n=8 before
-      Stage 2 production commit.</td>
+      lever, not tester count), with required strata (BMI ≥30, female
+      restless sleeper, pregnant/postpartum if pregnancy claims are kept).
+      Gate 1 is a directional screening gate — n=4 over 120 tester-nights
+      can reliably detect a catastrophic failure mode, not a subtle
+      difference; close calls are labeled directional. <strong>Conditional
+      expansion clause:</strong> if the single configuration lands in the
+      ambiguous band on the overall verdict (neither clear pass nor clear
+      fail), expand to n=8 before Stage 2 production commit.</td>
     </tr>
     <tr>
       <th scope="row">Duration</th>
@@ -985,7 +996,7 @@ then resolves which of the surviving arms wins on lived experience.</p>
       rotation across 10-night blocks — retired with the architecture pivot.)</td>
     </tr>
     <tr>
-      <th scope="row">Six measurement tracks</th>
+      <th scope="row">Seven measurement tracks</th>
       <td>
         <ol>
           <li><strong>Sleeve fit & rotation</strong> — marked-thigh photo
@@ -999,48 +1010,52 @@ then resolves which of the surviving arms wins on lived experience.</p>
           in 2+ testers on 2+ nights.</li>
           <li><strong>30-night tolerance</strong> — daily wear yes/no; kill on
           &gt;3 abandoned nights per tester for 2+ testers.</li>
-          <li><strong>Bathroom-break ergonomics</strong> — per-event log of
-          one-handed detach/reattach time and "frictionless" rating; kill an
-          arm at median detach &gt;5s, median reattach &gt;10s, or any tester
-          needing two hands more than 1-in-5 events.</li>
-          <li><strong>Wash durability</strong> — sleeve, cover, and arm-specific
-          hardware rated through 30 wash cycles (10 in situ + 20 bench);
-          kill on any rating dropping to 1–2 in first 15 cycles.</li>
-          <li><strong>Pillow shape retention</strong> — photo-and-rating at
-          nights 1/7/14/21/30; pass ≥3.5 cohort-mean shape rating and no
+          <li><strong>Bathroom-break ergonomics</strong> — the case stays on
+          the leg; only the foam swaps through the body-side flap. Per-event
+          log of flap-open, foam-extraction and reinsertion time; kill at
+          median foam-extraction &gt;10s, median reinsertion &gt;15s, or any
+          tester needing two hands / full waking to reinsert more than
+          1-in-5 events.</li>
+          <li><strong>Wash durability</strong> — the sleeve+case assembly
+          washes as one unit (foam removed); through 30 cycles, kill on
+          spandex-case stretch loss &gt;10%, flap-closure hold dropping below
+          the Stage 0 floor, or flap-to-case seam degradation.</li>
+          <li><strong>Pillow shape retention</strong> — objective caliper
+          thickness at 3 points (nights 0/7/21/30, ≤10% loss) plus
+          photo-and-rating; pass ≥3.5 cohort-mean shape rating and no
           worsening comfort trend.</li>
-          <li><strong>Attachment reliability (arm-selector)</strong> — hold
-          (≤1 unintended detachment per 10 nights), release (≥4 of 5
-          eyes-closed one-handed trials succeed, median ≤5s), cycle
-          durability (30 bench cycles, no rating drop below 3), safety (zero
-          hair-pull / skin-pinch events), and the "2 a.m. inversion"
-          experiential test — of any detachment events, ≤80% may register
-          as waking, median disruption ≤2 (1–5 scale), and zero may register
-          as a fall/hazard.</li>
+          <li><strong>Flap-closure validation (6B)</strong> — hold (≤1
+          unintended foam dislodgement per 10 nights), flap-found-open ≤2
+          mornings/tester/10, reinsertion ease &gt;2, and the "2 a.m.
+          inversion" experiential test — of any dislodgement events, ≤80%
+          may register as waking, median disruption ≤2 (1–5 scale), and zero
+          may register as a hazard.</li>
+          <li><strong>Foam reinstallation after wash</strong> — task-completion
+          test during wash cycles; kill on median reinsertion &gt;2 min or a
+          tester loading the foam inverted on ≥2 of 10 reinstalls
+          (orientation cuing then required).</li>
         </ol>
       </td>
     </tr>
     <tr>
       <th scope="row">Decision rule</th>
-      <td>An arm must clear Stage 0 (≥8.1 N as-received pull-force) and
-      pass tracks 3, 4-hardware, and 6 to remain a candidate. Among
-      surviving arms, the winner is the highest composite of friction +
-      wash-survival + hold/release/durability/safety, with hold and safety
-      weighted as binary gates (an arm that ever pinches skin or pulls hair
-      cannot win regardless of composite score). Composite ties within 10%
-      trigger the conditional n=8 expansion (above).</td>
+      <td>The pre-selected closure variant must clear Stage 0 and pass
+      tracks 3, 4-flap, 6B and 7. If it fails, the fallback is to escalate
+      the closure variant (tuck-only → low-strength magnet → hook-and-loop)
+      and re-run, not to run variants in parallel. An ambiguous overall
+      verdict triggers the conditional n=8 expansion (above).</td>
     </tr>
     <tr>
       <th scope="row">Pass standard</th>
-      <td>At least one arm clears Stage 0 and all six tracks across all four
-      testers. Zero arms passing = Gate 1 fails, the design is held until
-      re-engineered.</td>
+      <td>The closure variant clears Stage 0 and all seven tracks across all
+      four testers. No variant passing (after the a→b→c fallback) = Gate 1
+      fails, the design is held until re-engineered.</td>
     </tr>
     <tr>
       <th scope="row">Source protocol</th>
       <td><a target="_blank" rel="noopener"
-             href="https://github.com/askoak/plumb-coordination/blob/main/package/40_stage1_wear_test_v7.md">
-        package/40 v7
+             href="https://github.com/askoak/plumb-coordination/blob/main/package/40_stage1_wear_test_v8_single_piece.md">
+        package/40 v8 (single-piece)
       </a></td>
     </tr>
   </tbody>
@@ -1083,7 +1098,7 @@ study would use, sized appropriately for a comfort product.</p>
 <li><a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/research/24_business_case.md"><code>research/24</code></a> — Business case + go/no-go (engineer source for sections 5–8 above)</li>
 <li><a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/154_architecture_b_ratified_single_piece.md"><code>package/154</code></a> — Ratified architecture (supersedes package/86)</li>
 <li><a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/87_modular_manufacturing_handoff.md"><code>package/87</code></a> — Manufacturing BOM</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/40_stage1_wear_test_v7.md"><code>package/40 v7</code></a> — Stage 1 wear test protocol (Gate 1)</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/40_stage1_wear_test_v8_single_piece.md"><code>package/40 v8</code></a> — Stage 1 wear test protocol (single-piece, Gate 1)</li>
 <li><a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/06_fto_checklist_modular.md"><code>package/06 FTO checklist (modular)</code></a> — FTO posture (Gate 2 source)</li>
 <li><a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/89_corpus_synthesis_v1.md"><code>package/89</code></a> — Corpus synthesis, 24 findings</li>
 <li><a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/90_channel_sequence_v0_DRAFT.md"><code>package/90</code></a> — Channel sequence</li>
