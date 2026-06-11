@@ -858,3 +858,78 @@ figure.full-width figcaption {
 }
 
 /*
+
+/* ============================================================
+   Gallery carousel (homepage §4.5, package/145)
+   Auto-advancing, CSS-only, pauses on hover/focus,
+   respects prefers-reduced-motion (handled by global block above).
+   ============================================================ */
+
+.carousel {
+  margin-top: 1.5rem;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 4%, #000 96%, transparent 100%);
+          mask-image: linear-gradient(to right, transparent 0, #000 4%, #000 96%, transparent 100%);
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1.25rem;
+  width: max-content;
+  /* 8 slides duplicated = 16; loop -50% returns to start of the second copy */
+  animation: carousel-scroll 48s linear infinite;
+}
+
+.carousel:hover .carousel-track,
+.carousel:focus-within .carousel-track {
+  animation-play-state: paused;
+}
+
+.carousel-slide {
+  flex: 0 0 auto;
+  width: 320px;
+  margin: 0;
+}
+
+@media (min-width: 720px) {
+  .carousel-slide { width: 380px; }
+}
+
+.carousel-slide picture {
+  display: block;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #f4f0e6;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.carousel-slide figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.8125rem;
+  color: #75756e;
+  text-align: center;
+  font-style: italic;
+}
+
+@keyframes carousel-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Hide one of the duplicated tracks when motion is reduced
+   (the global reduced-motion rule disables the animation,
+    so the duplicate would otherwise sit unused; we leave it
+    visible because horizontal scroll still works via native overflow). */
+@media (prefers-reduced-motion: reduce) {
+  .carousel { overflow-x: auto; }
+  .carousel-track { animation: none; }
+}
