@@ -390,6 +390,32 @@ p { margin: 0 0 1rem; max-width: 64ch; }
 .piece-card p { margin: 0; color: var(--ink-soft); font-size: 0.96rem; }
 
 /* ============================================================
+   Benefits grid (Why Plumb is different — package/147 #4)
+   Four cards: sizing → firmness → washability → retention
+   Reuses .piece-card styling for visual consistency.
+   ============================================================ */
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin: 1.5rem 0 0;
+}
+@media (min-width: 640px) {
+  .benefits-grid { grid-template-columns: repeat(2, 1fr); gap: 1.75rem; }
+}
+@media (min-width: 1024px) {
+  .benefits-grid { grid-template-columns: repeat(4, 1fr); gap: 1.75rem; }
+}
+.benefits-grid .piece-card a {
+  color: var(--sage-deep);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.benefits-grid .piece-card a:hover { border-bottom-color: var(--sage); }
+
+/* ============================================================
    Mid CTA (second conversion anchor)
    ============================================================ */
 
