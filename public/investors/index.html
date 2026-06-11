@@ -245,9 +245,9 @@
 </tr>
 </tbody>
 </table>
-<p>The attachment mechanism between the covered pillow and the sleeve is <strong>TBD</strong> at Stage 1: three concepts (magnetic snap, kam-snap tab, sleeve-mounted exterior pouch) advance to the wear-test arm-selector (<a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/40_stage1_wear_test_v7.md">package/40 v7</a> Track 6). Velcro is rejected by design inference from the buyer-corpus bathroom-friction evidence.</p>
-<p><strong>Why three components instead of one:</strong> the modular separation solves three problems the integrated foam-in-sleeve category cannot — wash durability (foam never washed; sleeve and cover each launder on their own protocol), foam-life economics (the pillow becomes a replaceable consumable SKU rather than a warranty liability), and architecture-to-buyer-need alignment (the sleeve does staying-in-place; the pillow is freed to be optimized for firmness and comfort without compromising for a strap).</p>
-<p>Architecture document: <a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/86_three_component_modular_architecture.md"><code>package/86</code></a>. Manufacturing BOM: <a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/87_modular_manufacturing_handoff.md"><code>package/87</code></a>.</p>
+<p>The closure mechanism between the case and the foam pillow is <strong>TBD</strong> at Stage 1: candidate variants under a single-piece architecture (tuck-only soft flap, low-strength magnetic flap, hook-and-loop flap, open-pocket with case-tension only) advance to the pre-cohort bench fixture and the wear-test closure validator (<a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/40_stage1_wear_test_v7.md">package/40 v8 — in revision; v7 retained for link stability</a> Track 6B). Hardware-at-the-contact-zone variants (magnetic inter-thigh attachment, kam-snap inter-thigh attachment) are excluded by first-principles force math: any fastener strong enough to resist ~133 N inter-thigh shear cannot be released one-handed in under 5 seconds (see §3.5.4 and the architecture ratification at <a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/154_architecture_b_ratified_single_piece.md">package/154</a>).</p>
+<p><strong>Why one assembly with a swappable foam consumable:</strong> a sleeve-and-case sewn as a single assembly with the foam pillow as a replaceable consumable solves three problems the integrated foam-in-sleeve category cannot — wash durability (the assembly washes as one unit; the foam is removed first and never goes in water), foam-life economics (the pillow remains a replaceable consumable SKU rather than a warranty liability), and architecture-to-buyer-need alignment (the sleeve and case anchor staying-in-place via anatomy + body weight; the foam is freed to be optimized for firmness and comfort without carrying any attachment hardware). The fastener carries gravity-only load (~3–5 N) at the body-side face, not inter-thigh shear — the structural distinction that makes the closure releasable one-handed in the dark.</p>
+<p>Architecture document: <a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/154_architecture_b_ratified_single_piece.md"><code>package/154</code></a> (ratified 2026-06-11; supersedes <a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/86_three_component_modular_architecture.md"><code>package/86</code></a>). Manufacturing BOM: <a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/87_modular_manufacturing_handoff.md"><code>package/87</code></a> (in revision for single-piece BOM).</p>
 <h2 id="3-5-mechanical-rationale">3.5 Mechanical rationale</h2>
 <p>The product description above states what Plumb is. This section states why each
 engineering decision is what it is. The intended reader is someone who will ask
@@ -269,8 +269,8 @@ thigh circumference rather than the pillow geometry. The thigh sleeve is a
 load-bearing structural element — it produces a normal force distributed around
 the upper-thigh circumference via fabric tension plus discrete silicone-dot
 grippers at the interior top rim. The covered pillow is then attached to the
-sleeve at the inner-thigh contact zone via the Stage-1-arm-selected mechanism
-(magnetic, snap, or pouch — package/40 v7 Track 6 selects). The pillow's job
+sleeve at the inner-thigh contact zone via the case-and-flap closure
+selected at Stage 1 (variant selected by package/40 v8 Track 6B). The pillow's job
 is comfort; the sleeve's job is staying. The mechanical separation is the
 design.</p>
 
@@ -380,37 +380,51 @@ logic as the two-circumference sleeve lineup.</p>
 <p>See <a href="#fig-loading-geometry">Figure 1 — Inter-thigh loading geometry,
 side-lying posture</a>.</p>
 
-<h3 id="3-5-4-attachment-mechanism">3.5.4 Attachment mechanism — the variable Stage 1 resolves</h3>
+<h3 id="3-5-4-attachment-mechanism">3.5.4 Closure mechanism — the variable Stage 1 resolves</h3>
 
 <p>The sleeve geometry, pillow shape, and material specs above are held constant
-through Stage 1. The single variable evaluated is the attachment mechanism
-between the covered pillow and the sleeve. Three concepts advance to the
-wear-test arm-selector per package/40 v7:</p>
+through Stage 1. Architecture is also held constant (single-piece sleeve-and-case,
+ratified at <a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/154_architecture_b_ratified_single_piece.md">package/154</a>). The single variable evaluated is the soft-fabric closure
+between the case opening and the body-side face of the case. Candidate variants
+advance to the pre-cohort bench fixture and the wear-test closure validator per
+package/40 v8 Track 6B (in revision; v7 retained for link stability):</p>
 
 <ul>
-<li><strong>Arm A — magnetic snap interface.</strong> Embedded magnets in the
-cover-back panel and the sleeve exterior at the inner-thigh contact zone.
-Failure modes evaluated: hold-through-the-night, one-handed release, magnet
-edge sharpness on skin, wash survival.</li>
-<li><strong>Arm B — kam-snap tab.</strong> Fabric tabs on the cover engaging
-kam-snaps on the sleeve exterior. Failure modes: engagement-force-vs-release-force
-balance, hair-pull risk, snap retention through wash.</li>
-<li><strong>Arm C — sleeve-mounted exterior pouch.</strong> A structured open-top
-pouch on the sleeve exterior; the covered pillow slides in from the top. Failure
-modes: pouch-mouth elastic recovery after wash, retention force at the open top
-edge, awkwardness of one-handed insertion.</li>
+<li><strong>Variant a — tuck-only soft flap.</strong> A fabric overlay sewn at the
+top edge of the case opening, folding inward against the foam to close the
+access. No hardware. Failure modes evaluated: hold under cyclic incidental
+compression during sleep, foam-extraction friction at swap, flap-tucking
+repeatability across users.</li>
+<li><strong>Variant b — low-strength magnetic flap.</strong> The same soft flap
+with one or two small consumer-grade magnets (3–5 N pull, well below any
+implant-warning threshold at body-surface placement) on the flap edge and the
+corresponding case face. Hardware is at the body-side face, not the inter-thigh
+contact zone. Failure modes: magnet alignment in low light, magnet retention
+through wash cycles, fabric delamination at the magnet seam.</li>
+<li><strong>Variant c — hook-and-loop flap.</strong> A small fabric-friendly
+hook-and-loop patch closing the flap. Failure modes: lint and bamboo-viscose
+fiber accumulation in the loop surface, audible noise at opening, surface
+feel at the body-side face.</li>
+<li><strong>Variant d — open-pocket, case-tension only.</strong> No flap. The
+case opening relies on spandex tension and gravity (foam pressed against case
+fabric by body weight during sleep) to retain the foam. Failure modes:
+foam-fall-out risk when the user stands at 3 a.m., long-cycle case-fabric
+stretch-out, foam-displacement under turn-over inertia.</li>
 </ul>
 
-<p>Velcro is excluded by design inference from the buyer-corpus
-bathroom-friction evidence (Contour Legacy non-removable strap "cited as
-cumbersome for bathroom trips during the night" — research/07:139).</p>
+<p>All four variants share one structural property: the closure is fabric-on-fabric
+or low-force hardware at the body-side face, never at the inter-thigh contact
+zone. The 3-arm modular topology that v7 originally tested (magnetic, kam-snap,
+or pouch attaching the covered pillow to the sleeve at the inter-thigh contact
+zone) is excluded by first-principles force math — see
+<a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/research/synthesis/arch_synthesis_single_piece_vs_three_arm_20260611.md">the engineering synthesis</a>
+and <a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/research/synthesis/corpus_best_design_verdict_20260611.md">the corpus verdict</a>.</p>
 
-<p>See <a href="#fig-attachment-family">Figure 2 — Attachment-mechanism family
-tree</a>.</p>
+<p>See <a href="#fig-attachment-family">Figure 2 — Closure-variant family tree</a>.</p>
 
-<p>The full kill-criteria per arm (cycles, seconds, ratings, hair-pull/skin-pinch
-gates, the "2 a.m. inversion" disruption rating) are summarized in §7 below
-under Gate 1.</p>
+<p>The full kill-criteria per variant (bench pull-force ceiling and floor,
+foam-extraction force ceiling, foam-reinsertion median time, the "2 a.m.
+inversion" disruption rating) are summarized in §7 below under Gate 1.</p>
 
 <figure id="fig-loading-geometry">
   <img src="/assets/investors/fig1_loading_geometry.svg" width="600" height="400"
@@ -424,11 +438,14 @@ under Gate 1.</p>
 
 <figure id="fig-attachment-family">
   <img src="/assets/investors/fig2_attachment_family.svg" width="600" height="400"
-       alt="Attachment-mechanism family tree: schematic comparison of Arm A (magnetic snap, two opposed magnet pucks on cover-back and sleeve exterior), Arm B (kam-snap tab, fabric tab plus snap stud), and Arm C (sleeve-mounted pouch, open-top pocket with elastic mouth)."
+       alt="Closure-variant family tree (legacy figure showing the three-arm modular concepts retained for archival reference; the live architecture is now single-piece per package/154)."
        loading="lazy">
-  <figcaption>Figure 2 — Attachment-mechanism family tree (Stage 1 arms).
-  All three arms hold sleeve and pillow geometry constant; only the
-  cover-to-sleeve interface varies.</figcaption>
+  <figcaption>Figure 2 — Closure-variant family tree. The figure shown is
+  the legacy three-arm modular schematic from the architecture-A spec; it is
+  retained for archival reference. Under the ratified single-piece architecture
+  (<a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/154_architecture_b_ratified_single_piece.md">package/154</a>),
+  closure variants are tuck-only, low-strength magnetic flap, hook-and-loop,
+  and case-tension-only — a refreshed figure ships when v8 lands.</figcaption>
 </figure>
 
 <figure id="fig-thigh-distribution">
@@ -455,7 +472,7 @@ position</em>, BioMedical Engineering OnLine, 2011 (PMC3265433), for general
 side-sleep alignment background. Neither paper studies an inter-thigh pillow,
 and neither is the source of any specific Plumb IFD or sleeve-retention value
 above. Internal sources:
-package/40 v7 (Stage 1 protocol), package/86 (architecture rationale),
+package/40 v7 (Stage 1 protocol; v8 in revision for single-piece), package/154 (architecture rationale; supersedes package/86),
 package/87 (modular BOM).</p>
 
 <figure id="fig-working-sketches" style="margin: 2rem 0;">
@@ -957,10 +974,15 @@ then resolves which of the surviving arms wins on lived experience.</p>
     </tr>
     <tr>
       <th scope="row">Design</th>
-      <td>Within-subject. Each tester rotates through all three attachment
-      arms (magnetic / snap / pouch) in randomized 10-night blocks. Sleeve and
-      pillow are identical across all three arms — only the attachment
-      mechanism differs.</td>
+      <td>Within-subject. Under the ratified single-piece architecture
+      (<a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/154_architecture_b_ratified_single_piece.md">package/154</a>),
+      each tester evaluates the chosen closure variant continuously across
+      30 nights, with the closure variant pre-selected before kit fabrication
+      from the candidate set (tuck-only, low-strength magnetic flap,
+      hook-and-loop, case-tension-only) by the pre-cohort bench fixture.
+      Sleeve and pillow geometry are identical across all testers; the closure
+      variant is the variable. (Legacy v7 design used a within-subject three-arm
+      rotation across 10-night blocks — retired with the architecture pivot.)</td>
     </tr>
     <tr>
       <th scope="row">Six measurement tracks</th>
@@ -1046,7 +1068,7 @@ study would use, sized appropriately for a comfort product.</p>
 <ul>
 <li><strong>Not a luxury brand build.</strong> Plumb is premium-functional. The corpus does not support a luxury positioning; pricing at $100+ is unevidenced demand.</li>
 <li><strong>Not a venture-scale company.</strong> Side-venture profit profile, not a Casper-scale unicorn play. Capital is bounded; capital intensity stays low.</li>
-<li><strong>Not a medical device.</strong> No medical claims, no antimicrobial claims, no patent-pending claims. FTC general-comfort framing only. Net-impression review standard applies to every customer-facing artifact (<a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/86_three_component_modular_architecture.md"><code>package/86</code></a> §Net-impression review standard).</li>
+<li><strong>Not a medical device.</strong> No medical claims, no antimicrobial claims, no patent-pending claims. FTC general-comfort framing only. Net-impression review standard applies to every customer-facing artifact (compliance fence specified in <a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/117_voice_and_claim_compliance.md"><code>package/117</code></a>).</li>
 <li><strong>Not a discretionary impulse purchase.</strong> This is a sleep-positioning aid bought by people who have an actual side-sleep alignment problem and have tried two or three solutions that didn't work.</li>
 </ul>
 <h2 id="10-the-recommendation">10. The recommendation</h2>
@@ -1059,7 +1081,7 @@ study would use, sized appropriately for a comfort product.</p>
 <li><a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/research/22_corpus_cube_full.md"><code>research/22</code></a> — Definitive cube, 4,962 reviews, saturation-validated</li>
 <li><a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/research/23_product_design_brief.md"><code>research/23</code></a> — Evidence-based product design brief</li>
 <li><a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/research/24_business_case.md"><code>research/24</code></a> — Business case + go/no-go (engineer source for sections 5–8 above)</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/86_three_component_modular_architecture.md"><code>package/86</code></a> — Ratified architecture</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/154_architecture_b_ratified_single_piece.md"><code>package/154</code></a> — Ratified architecture (supersedes package/86)</li>
 <li><a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/87_modular_manufacturing_handoff.md"><code>package/87</code></a> — Manufacturing BOM</li>
 <li><a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/40_stage1_wear_test_v7.md"><code>package/40 v7</code></a> — Stage 1 wear test protocol (Gate 1)</li>
 <li><a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/06_fto_checklist_modular.md"><code>package/06 FTO checklist (modular)</code></a> — FTO posture (Gate 2 source)</li>
