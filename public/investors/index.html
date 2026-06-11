@@ -416,24 +416,27 @@ during lateral sleep position</em>, BioMedical Engineering OnLine, 2011
 package/40 v6 (Stage 1 protocol), package/86 (architecture rationale),
 package/87 (modular BOM).</p>
 
-<figure id="fig-working-sketches">
-  <div style="display:flex; gap:16px; flex-wrap:wrap; align-items:flex-start; justify-content:center;">
-    <picture style="max-width:340px; flex:1 1 280px;">
-      <source srcset="/assets/sketches/sketch_01_assembled.webp" type="image/webp">
-      <img src="/assets/sketches/sketch_01_assembled.png" width="1536" height="1024" loading="lazy" decoding="async"
-           style="width:100%;"
-           alt="Pencil-and-ink working sketch: the assembled Plumb kit shown in three views — sleeve on the thigh with the covered pillow attached — line art on plain paper.">
-    </picture>
-    <picture style="max-width:260px; flex:1 1 220px;">
-      <source srcset="/assets/sketches/sketch_02_exploded.webp" type="image/webp">
-      <img src="/assets/sketches/sketch_02_exploded.png" width="1024" height="1536" loading="lazy" decoding="async"
-           style="width:100%;"
-           alt="Pencil-and-ink working sketch: exploded view of the Plumb kit with the sleeve, cover, and foam pillow separated and labeled, plus a sleeve cross-section.">
-    </picture>
-  </div>
-  <figcaption>Designer working notes (pencil + ink, scrap paper) — assembled and exploded views from the
-  Plumb design process. Provisional; final illustrations to follow.</figcaption>
+<figure id="fig-working-sketches" style="margin: 2rem 0;">
+  <picture>
+    <source srcset="/assets/sketches/sketch_01_assembled.webp" type="image/webp">
+    <img src="/assets/sketches/sketch_01_assembled.png" width="1536" height="1024" loading="lazy" decoding="async"
+         style="width:100%; max-width:720px; height:auto; display:block; margin:0 auto;"
+         alt="Pencil-and-ink working sketch: the assembled Plumb kit shown in three views — sleeve on the thigh with the covered pillow attached — line art on plain paper.">
+  </picture>
+  <figcaption style="text-align:center; font-size:0.875rem; color:#75756e; margin-top:0.5rem;">Assembled — the three pieces as one unit</figcaption>
 </figure>
+
+<figure id="fig-working-sketches-exploded" style="margin: 2rem 0;">
+  <picture>
+    <source srcset="/assets/sketches/sketch_02_exploded.webp" type="image/webp">
+    <img src="/assets/sketches/sketch_02_exploded.png" width="1024" height="1536" loading="lazy" decoding="async"
+         style="width:100%; max-width:560px; height:auto; display:block; margin:0 auto;"
+         alt="Pencil-and-ink working sketch: exploded view of the Plumb kit with the sleeve, cover, and foam pillow separated and labeled, plus a sleeve cross-section.">
+  </picture>
+  <figcaption style="text-align:center; font-size:0.875rem; color:#75756e; margin-top:0.5rem;">Exploded — sleeve, cover, and foam pillow</figcaption>
+</figure>
+
+<p style="text-align:center; font-size:0.875rem; color:#75756e; font-style:italic; margin-top:-0.5rem;">Designer working notes (pencil + ink). Provisional; final illustrations to follow.</p>
 
 <h2 id="4-market-sizing-bottom-up-from-the-corpus">4. Market sizing — bottom-up from the corpus</h2>
 <p>Method: total Amazon ratings ÷ 2% review rate = lifetime units; lifetime units ÷ product age (from first review date) = annual units; annual units × price = annual revenue. The 29-ASIN tracked set is a <em>sample</em> of the category, so totals are a floor. All inputs are in <code>research/data/product_details.json</code>; reproducible via <code>package/build_business_case.py</code>.</p>
