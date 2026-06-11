@@ -200,7 +200,7 @@
 <p>This is a confidential investor brief for <strong>Plumb Sleep</strong> and parties Plumb has explicitly approved. Not for redistribution.</p>
 <hr />
 <h2 id="1-the-opportunity-one-paragraph">1. The opportunity — one paragraph</h2>
-<p>The US knee/leg-pillow category is large, fragmented, and commodity-dominated. The visible 29-ASIN slice we tracked drives roughly $58 million in annual revenue (knee/leg pillows alone, excluding body-pillow substitutes that capture another ~$27M from this set); the full US category, with hundreds of SKUs, is in the low-to-mid hundreds of millions per published sleep-category estimates. Every leading product fails at specific, repeated, fixable things: sizing (the #1 complaint in every tier we coded, 18–25%), retention (a bimodal failure on strap-based products), comfort and cooling (the reason buyers defect to body pillows), and foam durability. Plumb is a three-component modular wearable — a viscose-made-from-bamboo knit thigh sleeve, a removable washable cover, and a contoured hourglass foam pillow — designed against those four named failures with body-sized fit, anatomy-anchored retention (no strap), CertiPUR-US foam, and a 1-year customer guarantee (full refund, free shipping both ways). Premium-functional, not luxury. Capturing 0.5–1% of just the visible knee/leg slice is $290,000–$580,000 in annual revenue — a credible lucrative side venture at low overhead.</p>
+<p>This is a conditional-go brief, not a forecast. <strong>~$3,000–$5,500 of evidence buys the right to commit ~$15,000 of tooling.</strong> Below is what we know with the corpus we have, what we don&rsquo;t know yet, and what each next dollar resolves. The US knee/leg-pillow category is large, fragmented, and commodity-dominated; the visible 29-ASIN slice we tracked is a floor of roughly $58M/yr at a 2% review-rate assumption and materially less at higher rates (see §4 for the 2 / 3 / 5 / 7% sensitivity). The category fails at specific, repeated, fixable things: sizing (the #1 complaint in every tier we coded, 18–25%), retention (a bimodal failure on strap-based products), comfort and cooling (the reason buyers defect to body pillows), and foam durability. Plumb is a three-component modular wearable — a viscose-made-from-bamboo knit thigh sleeve, a removable washable cover, and a contoured hourglass foam pillow — designed against those four named failures with body-sized fit, anatomy-anchored retention (no strap), CertiPUR-US foam, and a 1-year customer guarantee (full refund, free shipping both ways). Premium-functional, not luxury. The question this brief asks is not <em>how big is the upside</em> — it is <em>are these the right next two checks to write</em>: Gate 1 (~$1,500 wear test, answers retention) and Gate 2 (~$1,500–$4,000 FTO clearance, answers the legal path). Capture math is in §4 and the recommendation is in §10; the discipline is here.</p>
 <h2 id="2-what-we-know-with-evidence-and-what-we-dont">2. What we know with evidence (and what we don't)</h2>
 <p>This brief is built on a saturated buyer-voice corpus: <strong>4,962 unique Amazon reviews</strong> across five product tiers (premium knee, value knee, bolster/half-moon, wearable/strap, and body/pregnancy-pillow substitutes — the products buyers actually defect to). Reviews were balanced between positive and critical (2,604 / 2,358), LLM-coded against a unified taxonomy with a saturation and coverage validator, and stress-tested with retrieval-augmented querying. Working notes and reproducible scripts are in <a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/research/18_corpus_method_and_sufficiency.md"><code>research/18</code></a> through <a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/research/24_business_case.md"><code>research/24</code></a> in the private project repository.</p>
 <p>Plumb's founder is a mathematical statistician who has built and deployed proprietary AI retrieval-augmented generation (RAG) systems for market research, evidence synthesis, and decision-support analytics across unrelated domains. He is also a long-time side sleeper who has used a knee pillow for years and has lived with the category's complaint set firsthand — sizing failure, retention failure, comfort and cooling shortfalls — alongside chronic back-pain context that initially drove the search for a better solution. The corpus analysis confirms what personal experience suggested: no incumbent solves both halves of the central design tension.</p>
@@ -642,7 +642,46 @@ package/87 (modular BOM).</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Knee/leg-pillow only (excluding body substitutes): ~$57.9M/yr</strong> from these 24 SKUs at the central 2% rating rate. Sensitivity range: <strong>$38.6M</strong> (3% rate) to <strong>$115.8M</strong> (1% rate). Published category estimates put the full US category in the low-to-mid hundreds of millions — the 29-ASIN floor is consistent with that order of magnitude.</p>
+<p><strong>Knee/leg-pillow only (excluding body substitutes): ~$57.9M/yr</strong> from these 24 SKUs at the central 2% rating rate. Published category estimates put the full US category in the low-to-mid hundreds of millions — the 29-ASIN floor is consistent with that order of magnitude.</p>
+<p><strong>Review-rate sensitivity — the assumption that moves everything.</strong> The 2% review-rate figure is taken from the lower bound of e-commerce category benchmarks; literature places observed review-to-purchase rates anywhere from ~1% to ~7% depending on category, prompt cadence, and product satisfaction skew. At higher rates the implied lifetime-units-from-ratings number is smaller, the visible market floor is smaller, and the capture range scales accordingly. The table below shows the full range a reader should sit with before reading the rest of the brief:</p>
+<table role="table">
+<caption>Review-rate sensitivity — knee/leg-pillow visible market and 0.5–1% capture</caption>
+<thead>
+<tr>
+<th>Review rate</th>
+<th style="text-align: right;">Visible market (24 knee/leg SKUs)</th>
+<th style="text-align: right;">0.5% capture</th>
+<th style="text-align: right;">1.0% capture</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2% <em>(central case used elsewhere in this brief)</em></td>
+<td style="text-align: right;">~$57.9M</td>
+<td style="text-align: right;">~$290K</td>
+<td style="text-align: right;">~$580K</td>
+</tr>
+<tr>
+<td>3%</td>
+<td style="text-align: right;">~$38.6M</td>
+<td style="text-align: right;">~$193K</td>
+<td style="text-align: right;">~$386K</td>
+</tr>
+<tr>
+<td>5%</td>
+<td style="text-align: right;">~$23.2M</td>
+<td style="text-align: right;">~$116K</td>
+<td style="text-align: right;">~$232K</td>
+</tr>
+<tr>
+<td>7%</td>
+<td style="text-align: right;">~$16.5M</td>
+<td style="text-align: right;">~$83K</td>
+<td style="text-align: right;">~$165K</td>
+</tr>
+</tbody>
+</table>
+<p>Reading the table: at a 2% rate the side-venture profit profile in the brief opener ($42K–$168K) is comfortably inside the capture range; at 5% the upper end of the capture range and the upper end of the profit profile converge; at 7% the side-venture profit profile becomes the ceiling, not the midpoint. None of these scenarios invalidates the conditional-go thesis — the gate-stack discipline (~$3K–$5K of evidence before ~$15K of tooling) is correct at any of these review rates. The point of surfacing the sensitivity here is that <em>the case for writing the next two checks doesn&rsquo;t depend on which row of this table is right</em>; only the case for the third check (production tooling) does.</p>
 <p><strong>The market is large enough to support a focused niche entrant without requiring market leadership.</strong> Coop Home Goods built a similar-margin sleep-accessory business on roughly this same playbook (Amazon-first review accumulation → wholesale; documented in <code>research/09</code>); their applicable playbook supports Plumb's channel approach directly.</p>
 <h2 id="5-unit-economics-at-a-69-retail-price">5. Unit economics (at a $69 retail price)</h2>
 <p><strong>Landed COGS at 500-unit MOQ, three-component modular:</strong></p>
