@@ -1,0 +1,152 @@
+id: WO-2026-06-12-plumbweb-image-audit-and-update
+venture: Plumb
+tier: 2
+status: queued
+authored_by: architect (AIStandingOrders session)
+authored_at: "2026-06-12T17:38:00-04:00"
+target_duration_hours: 2-3
+mike_available_during: false
+
+summary: >
+  Audit plumbsleep-web visual assets against the curated 2026-06-12 image library
+  (post-Mike-cleanup). Remove or archive depictions that are geometrically wrong
+  (sleeve-as-cylinder renders), update site to use the canonical hero
+  (plumb_render_kit_sage_bedding.png) and verified-accurate supporting images,
+  remove visual content that locks TBD design decisions (attachment mechanism,
+  cover closure). Maintain plumbsleep.com brand quality bar.
+
+context_files:
+  - github.com/askoak/AIStandingOrders SESSION_BOOTSTRAP.md
+  - github.com/askoak/AIStandingOrders CREDENTIALS_POINTER.md
+  - plumb-coordination package/130_canonical_final_design_spec.md (CANONICAL — verify all images against this spec)
+  - plumb-coordination decisions/d12 d13 d14 d16 d22 (Plumb decision history)
+  - plumbsleep-web public/ (current site content)
+
+asset_source:
+  location: C:\Users\Hello\OneDrive - Michael Oak Advisors\99_Public Folder\Plumb\plumb-coordination\Renderings\
+  note: Mike has manually curated this folder 2026-06-12. Whatever files remain there are approved for use. Files deleted by Mike must NOT be re-introduced from any backup.
+
+spend_guard:
+  cap_usd: 20
+  halt_before_usd: 15
+  hard_halt_if_no_progress_after_minutes: 30
+
+safety_rules:
+  - Verify ground-truth state of OneDrive Renderings folder before assuming any image exists
+  - Per d15 — read live files at HEAD, not prior session summaries
+  - Per d12 — verify Netlify deploy via direct check, not via merge-commit check-runs
+  - Per d14/d22 — sizing nomenclature is Sleeve Regular/XL + Pillow Regular/XL (foam+plush)
+  - Per d18 — do NOT raise procurement/offline action items
+  - Open a single PR; do NOT auto-merge; architect audit required
+  - Image alt text on every visible image (accessibility per Mike's standing prior request)
+
+tasks:
+  - id: T1
+    name: Inventory current plumbsleep-web image references
+    description: >
+      Grep entire public/ tree for image references (src=, url(), background-image:,
+      og:image, twitter:image). Build a map of: file path → where referenced → page.
+      Identify the geometrically-wrong "system" renders currently in use:
+      - public/assets/plumb_render_system_sage_blue_front.png + .webp
+      - public/assets/investors/plumb_render_system_sage_blue_front.png + .webp
+      These depict the sleeve as a wide standing cylinder, which is wrong. The
+      sleeve is a thigh-band (worn on the upper thigh, ~5 inches tall, not free-standing).
+    acceptance:
+      - inventory file written to _planning/2026-06-12-plumbweb-image-inventory.md
+      - every image-using page documented
+      - geometrically-wrong images flagged with their current usage
+    halt_on_fail: false
+
+  - id: T2
+    name: Sync OneDrive Renderings folder to plumbsleep-web public/assets/
+    description: >
+      Read the OneDrive folder C:\Users\Hello\OneDrive - Michael Oak Advisors\99_Public Folder\Plumb\plumb-coordination\Renderings\
+      Mike has curated this folder; whatever exists is the canonical visual set.
+      For each PNG in that folder:
+        (a) Generate a .webp version (Sharp or equivalent)
+        (b) Copy both into public/assets/ at the appropriate subpath
+        (c) Set image dimensions to web-appropriate (1500px max width for hero shots, 800px for inline)
+      Naming convention: keep the plumb_* prefix from OneDrive; subdir by type
+      (renders/, sketches/, illustrations/, diagrams/).
+      Do NOT copy files that no longer exist in OneDrive (Mike deleted them deliberately).
+    acceptance:
+      - public/assets/renders/, public/assets/sketches/, public/assets/illustrations/, public/assets/diagrams/ all populated from OneDrive
+      - each PNG has a .webp companion
+      - file sizes optimized for web (no 8MB images deployed)
+    halt_on_fail: false
+
+  - id: T3
+    name: Replace geometrically-wrong system renders site-wide
+    description: >
+      Find every reference to plumb_render_system_sage_blue_front (and variants —
+      _angled, _threequarter, _midnight_side, _assembled). Replace with appropriate
+      curated images:
+      - Hero/landing: use plumb_render_kit_sage_bedding (the eucalyptus + travertine flatlay)
+      - Components breakdown: use plumb_render_kit_sage_three_components OR plumb_render_kit_sage_flatlay
+      - Investor figures: keep the SVG diagrams (fig1, fig2, fig3) — those are correct
+      - In-use imagery: use sketches (plumb_sketch_inuse_man_03, _woman_02, _pregnant_02) for emotional/human moments
+      Archive the wrong renders to public/assets/archived/2026-06-12-sleeve-geometry-incorrect/.
+    acceptance:
+      - no public-facing page references the geometrically-wrong system renders
+      - replacements feel coherent (sleep-wellness editorial)
+      - alt text updated to describe what's actually shown
+      - archived wrong renders preserved for reference (do not delete)
+    halt_on_fail: false
+
+  - id: T4
+    name: Update og_card.png with new hero
+    description: >
+      Regenerate the social preview image (og_card.png + .webp) to feature
+      plumb_render_kit_sage_bedding or a clean derivative. Current og_card may
+      reference the wrong-sleeve render. Target dimensions: 1200x630 px.
+    acceptance:
+      - new og_card.png + .webp committed
+      - referenced from og:image and twitter:image meta tags site-wide
+
+  - id: T5
+    name: Audit visible-on-public-pages content for locked-decision violations
+    description: >
+      Per d12/d15, do not lock TBD design decisions publicly. Specifically:
+      - attachment mechanism (magnetic/snap/pouch — Stage 1 picks one)
+      - cover closure (envelope/zipper/elastic — TBD)
+      - exact contour curvature (locked offline per FTO/d14)
+      Search the site for visible text or imagery that asserts any of these.
+      Examples:
+      - "magnetic attachment" copy → soften to "secure attachment"
+      - any zipper visible in published renders → flag for re-render or archive
+      - exact-dimension claims → cite "approximately" or omit
+      Document findings; do NOT silently edit copy if the change is non-trivial.
+    acceptance:
+      - audit findings in _planning/2026-06-12-locked-decision-violations.md
+      - trivial copy edits applied; substantive edits flagged for architect review
+    halt_on_fail: false
+
+  - id: T6
+    name: Live verification
+    description: >
+      After PR opens and Netlify deploy preview is ready, fetch the deploy preview URL
+      and verify visually (via plumbsleep.com Basic-Auth credentials if applicable, or
+      direct deploy preview URL which bypasses gate):
+      - Hero renders correctly
+      - No 404s on image references
+      - OG card image returns 200
+    acceptance:
+      - deploy preview verified
+      - results logged with screenshots if possible (paths to local screenshot files)
+
+  - id: T_FINAL
+    name: Results YML + commit
+    description: >
+      Standard closing — results YML committed direct to main, PR left OPEN
+      for architect audit.
+
+rollback:
+  - PR revertable as a single unit
+  - archived wrong-sleeve renders preserved in public/assets/archived/
+
+architect_notes:
+  - This WO supersedes any prior plumbsleep-web visual asset assumptions
+  - Mike's OneDrive Renderings folder is the SOURCE OF TRUTH for which images exist
+  - When in doubt about an image being correct vs wrong, default to: does it look like a thigh-band, or a free-standing cylinder? Free-standing cylinder = WRONG.
+  - The sketches (plumb_sketch_inuse_man/woman/pregnant series) are accurate and editorial — use them generously for human moments
+  - The pencil sketches' aesthetic differs from the realistic renders' aesthetic; that's intentional brand layering, not inconsistency
