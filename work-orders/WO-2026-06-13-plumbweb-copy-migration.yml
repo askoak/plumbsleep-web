@@ -1,0 +1,290 @@
+# Work Order — Plumb site-wide copy migration
+# (architecture + sizing + corpus + funding goal + price reconciliation + "validated" framing)
+
+id: WO-2026-06-13-plumbweb-copy-migration
+repo: plumbsleep-web
+tier: 2  # Tier 2 — substantive copy/architecture migration; PR for architect audit before merge
+authored_by: architect (overnight 2026-06-12)
+authored_at: 2026-06-12T23:00:00Z
+estimated_minutes: 90-120
+estimated_cost_usd: 12-18
+budget_cap_usd: 30
+
+# ============================================================
+# CONTEXT — READ FIRST
+# ============================================================
+context: |
+  Today (2026-06-12) five Plumb decisions LOCKED the canonical truth that the
+  current site does not match. This WO migrates the site to that truth.
+
+  REQUIRED READING IN ORDER:
+  1. AIStandingOrders/decisions/d28.md — 3-piece architecture LOCKED (sleeve +
+     elastic open-ended pocket + washable pillowcase). SUPERSEDES package/154.
+  2. AIStandingOrders/decisions/d29.md — Three-LLM convergent read; drop
+     "validated" framing; fix sizing-axis conflation; reconcile pricing.
+  3. AIStandingOrders/decisions/d30.md — Gate-stack and $25-35K capital discipline.
+  4. AIStandingOrders/decisions/d22.md — Sizing nomenclature Regular/XL (NOT 5"/6").
+  5. AIStandingOrders/decisions/d25.md — Corpus count rounds to ~5,000 (NOT 4,962).
+  6. AIStandingOrders/decisions/STANDARDS.md — operating rules; especially S1
+     (disconfirmation) and S5 (architect-engineer thread separation).
+  7. Mike's chosen post-Kickstarter retail number (BLOCKING — see below).
+
+  This WO is BLOCKED until Mike answers ONE question (see "blocking_input" below).
+  Architect should not execute until that answer is recorded in this WO file.
+
+# ============================================================
+# BLOCKING INPUT FROM MIKE
+# ============================================================
+blocking_input:
+  question: "Post-Kickstarter retail price for the 3-piece Plumb kit"
+  options:
+    - id: A
+      label: "$65 sustained — matches Kickstarter Standard, no backer/public confusion"
+    - id: B
+      label: "$69 — current site default; backers receive $4 effective discount; matches unit economics already modeled"
+    - id: C
+      label: "$79 MSRP — clinicians-page MSRP; backers receive $14 discount; preserves 'premium-functional' framing"
+    - id: D
+      label: "TBD — delete the number; replace with 'post-Kickstarter pricing announced after first production run'"
+  status: AWAITING_MIKE
+  mike_answer: null  # Mike fills this in or replies with the option letter
+
+# ============================================================
+# CANONICAL TRUTH (what every page must align to)
+# ============================================================
+canonical:
+  architecture:
+    description: "Three-piece kit"
+    components:
+      - "Sleeve (worn on thigh; Regular ≤28\" or XL 28-32\")"
+      - "Elastic open-ended pocket sewn to the sleeve (holds the foam pillow; open-ended so the pillow can be removed mid-night without taking the sleeve off)"
+      - "Washable pillowcase (slides over the foam pillow; only laundry-cycle component)"
+    superseded_terms:
+      - "single-piece sleeve-and-case"
+      - "case sewn permanently to the sleeve"
+      - "sewn permanently to its body-side surface"
+      - "one-piece washable wearable"
+      - "Architecture B (package/154)"
+      - "the modular three-component design in package/86"  # also stale — package/86 was a precursor of d28
+  sizing_nomenclature:
+    canonical:
+      - "Sleeve Regular (≤28\" thigh circumference)"
+      - "Sleeve XL (28\"-32\" thigh circumference)"
+      - "Pillow Regular (5\" foam + 1\" plush layer = 6\" total)"
+      - "Pillow XL (5\" foam + 1.5\" plush layer = 6.5\" total)"
+    superseded_terms:
+      - "\"5-inch\" pillow"
+      - "\"6-inch\" pillow"
+      - "5-inch baseline / 6-inch"
+      - "two thicknesses" (vague — must name them)
+  corpus_count:
+    canonical: "~5,000 unique Amazon reviews"  # per d25 rounding rule
+    superseded: "4,962 unique Amazon reviews"
+  funding_goal:
+    canonical: "$20,000"
+    superseded: "$21,000"
+  kickstarter_ladder:
+    canonical:
+      - "$10  Supporter (no reward)"
+      - "$35  Donate-a-Kit"
+      - "$55  Early Bird (cap 200)"
+      - "$65  Standard"
+      - "$109 Two-Pack"
+  validated_framing:
+    canonical:
+      - "credible wedge, low-cost proof path, launchable experiment"
+      - "the Kickstarter is the diligence"
+      - "hypothesis to test"
+    superseded:
+      - "validated"
+      - "we directly solve the #1 documented pain"  # see also sizing_claim_integrity below
+      - any phrase that asserts product-market fit before Kickstarter delivers
+  sizing_claim_integrity:
+    rule: |
+      The corpus documents PILLOW-SIZE complaints (head/neck dimension).
+      Plumb's headline differentiator is THIGH-CIRCUMFERENCE sleeve sizing.
+      These are not the same axis. The Sleeve XL is deferred Stage 2 per d13,
+      NOT shipping at launch.
+    must_change:
+      - any sentence claiming Plumb solves the #1 documented pain (it does not — yet)
+      - any claim that XL sleeve ships at launch
+    must_preserve:
+      - the real argument: "Plumb introduces sleeve sizing in a category where pillow sizing fails. The XL sleeve targeting the documented large-frame segment is on the Stage 2 roadmap."
+  retail_price:
+    canonical: "<<MIKE TO ANSWER (see blocking_input)>>"
+    affects:
+      - homepage Product JSON-LD price field
+      - press kit retail line
+      - clinicians MSRP table
+      - investors §5 unit economics heading and tables
+      - price/49, price/69, price/89 A/B/C landing pages (KEEP if test still running OR delete if test concluded — architect to decide)
+
+# ============================================================
+# TASKS
+# ============================================================
+tasks:
+
+  - id: T1
+    title: "Migrate index.html (homepage)"
+    files:
+      - public/index.html
+    changes:
+      - replace all single-piece / sewn-permanently architecture copy with 3-piece kit description
+      - update Product JSON-LD price field to Mike's answer (was "69")
+      - replace "two thicknesses" with explicit "Pillow Regular (6\") and Pillow XL (6.5\")"
+      - drop or rephrase any "validated" / "we directly solve" sentences per d29 item 1
+      - replace "4,962" with "~5,000" if present
+      - leave the "$35 knee pillow sleeve" FAQ comparison untouched (it's about competitors)
+    verify:
+      - HTML validates
+      - JSON-LD is valid (use https://validator.schema.org/ syntax check)
+      - no "single-piece", "sewn permanently", "package/154" string anywhere
+
+  - id: T2
+    title: "Migrate expecting/index.html"
+    files:
+      - public/expecting/index.html
+    changes:
+      - 3-piece architecture copy
+      - sizing nomenclature
+      - drop "validated" framing
+      - corpus count rounding
+
+  - id: T3
+    title: "Migrate clinicians/index.html"
+    files:
+      - public/clinicians/index.html
+    changes:
+      - 3-piece architecture copy
+      - sizing nomenclature
+      - reconcile MSRP table: replace "$79-$89" with Mike's chosen retail (or remove MSRP table entirely if Option D)
+      - update wholesale-target language accordingly
+
+  - id: T4
+    title: "Migrate press/index.html"
+    files:
+      - public/press/index.html
+    changes:
+      - 3-piece architecture copy
+      - sizing nomenclature
+      - replace "$69 USD retail" with Mike's chosen retail
+      - replace "$21,000 target" with "$20,000 target"
+      - add the full 5-tier Kickstarter ladder (Supporter $10, Donate-a-Kit $35, Early Bird $55, Standard $65, Two-Pack $109)
+      - drop "validated" framing
+
+  - id: T5
+    title: "Migrate investors/index.html (THE BIG ONE)"
+    files:
+      - public/investors/index.html
+    changes:
+      - replace the entire single-piece architecture narrative with 3-piece architecture (§3.5, §3.5.4 especially)
+      - remove or substantially revise the "first-principles force math excludes 3-arm topology" section — it is now WRONG; the 3-piece architecture is the 3-arm-pocket topology
+      - update §5 unit economics heading from "at a $69 retail price" to Mike's chosen retail
+      - update all per-unit contribution tables to Mike's chosen retail
+      - update profit profile range if Mike's chosen retail differs from $69
+      - replace "$21,000 capital required to launch" with "$20,000"
+      - replace all instances of "4,962 unique Amazon reviews" with "~5,000 unique Amazon reviews" (8 instances)
+      - fix sizing-claim integrity per d29 item 2: separate pillow-size complaint corpus evidence from thigh-circumference sleeve differentiator; disclose Sleeve XL as Stage 2 not at launch
+      - reframe the brief opener per d30: the Kickstarter is the diligence; gate-stack discipline ($25-35K cap, three gates); replace "validated" framing with "credible wedge, capital-light experiment"
+      - keep the visible-market math, the COGS reconciliation, and the conditional-go thesis — those survive the rebuttal cleanly
+      - drop or revise the BRIEF-claimed "exit comp" framing of Boll & Branch (per d29 citation audit, B&B has not exited)
+      - if the rebuttal's IC-memo checklist is referenced anywhere, it must match d29 item 6 verbatim
+    verify:
+      - investors §3.5.4 is internally consistent (no "force math excludes 3-arm" sentence directly above the 3-arm figure)
+      - all $-amounts reconcile to Mike's chosen retail
+      - no "package/154" or "Architecture B" string remains
+      - "Sleeve XL" appears at least once with explicit "Stage 2" or "deferred to Stage 2" qualifier
+
+  - id: T6
+    title: "A/B/C price landing pages decision"
+    files:
+      - public/price/49/index.html
+      - public/price/69/index.html
+      - public/price/89/index.html
+    decision_needed: |
+      Architect must decide one of:
+      (a) Keep all three pages — Workstream C willingness-to-pay test is still actively running
+      (b) Delete the page that matches Mike's chosen retail; keep the other two as live alternatives if test running
+      (c) Delete all three — test concluded with d23 lock at $55/$65
+    default_recommendation: "(c) — delete all three. d23 locked the Kickstarter ladder; the test is done in spirit."
+    if_default: |
+      - git rm public/price/49/index.html public/price/69/index.html public/price/89/index.html
+      - update _redirects to 301 /price/* → /  (or to a new /pricing/ page summarizing the Kickstarter ladder)
+
+  - id: T7
+    title: "Sitemap and robots.txt sweep"
+    files:
+      - public/sitemap.xml
+      - public/robots.txt (if present)
+    changes:
+      - remove URLs deleted in T6
+      - ensure all migrated pages have current lastmod
+    verify:
+      - sitemap validates
+      - no 404-bound URLs in sitemap
+
+  - id: T8
+    title: "Illustration audit (NOT a re-render — just a flag list)"
+    files:
+      - public/assets/illustrations/plumb_illustration_foam_thickness.*
+      - public/assets/illustrations/plumb_illustration_sizing_pairing.*
+    changes: NONE
+    deliverable: |
+      Add a markdown file public/_planning/2026-06-13-illustration-pixel-text-flags.md listing every illustration whose pixel-level text now contradicts d22 nomenclature. Engineer does NOT re-render — that's a future illustration WO. Just enumerate so the architect can hand it to a designer.
+
+  - id: T9
+    title: "Results YML + acceptance gate"
+    files:
+      - work-orders/WO-2026-06-13-plumbweb-copy-migration-results.yml
+    changes:
+      - record every file changed
+      - record Mike's chosen retail and how each page was updated
+      - record the T6 decision
+      - record the T8 flag-list path
+      - record any standing copy that was DELIBERATELY left alone with reasoning
+    acceptance:
+      - Tier 2 PR opened against main
+      - deploy preview verified live via Netlify API
+      - all migrated pages return 200 in the preview
+      - JSON-LD validates on homepage and investors
+      - PR body cross-references d28, d29, d30, d22, d25 and STANDARDS S1/S5
+      - PR left OPEN for architect audit — DO NOT self-merge
+
+# ============================================================
+# DISCONFIRMATION REQUIREMENT (per STANDARDS S1)
+# ============================================================
+disconfirmation:
+  required: true
+  prompt: |
+    This WO migrates the site to a more honest framing. The engineer MUST surface
+    at least one finding where the new copy is now WORSE than the old copy on
+    some honest axis (e.g., loses a defensible claim that should have been kept,
+    or introduces a hedge that reads as weak when the underlying evidence is
+    actually strong). If the migration produces zero such findings, the engineer
+    has not been critical enough.
+
+# ============================================================
+# SCOPE LIMITS
+# ============================================================
+scope_limits:
+  do_not_change:
+    - any image asset (renders, illustrations, diagrams, sketches) — image audit was WO-2026-06-12 (PR #66)
+    - any CSS or layout
+    - the visible-market estimate methodology in investors §4
+    - the COGS reconciliation in investors §5 (numbers, not retail-price framing)
+    - the BOM table line items
+    - the gate-stack content from d30 — preserve verbatim where referenced
+    - the contour-claim IP disclosure (d14)
+  do_not_touch_other_repos:
+    - plumb-coordination (separate WO if needed)
+    - smartcarmanuals (different venture)
+    - askoak-brwc (different venture)
+
+# ============================================================
+# ROUTING
+# ============================================================
+routing:
+  next_session: NEW  # per STANDARDS S5
+  session_type: engineer
+  model_recommendation: claude_sonnet_4_6 or gpt_5_5  # this is copy-editing-heavy, model preference is Mike's
+  architect_audit_session: NEW (separate from engineer thread)
