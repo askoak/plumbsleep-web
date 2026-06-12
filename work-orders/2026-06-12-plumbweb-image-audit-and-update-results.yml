@@ -1,0 +1,149 @@
+work_order: WO-2026-06-12-plumbweb-image-audit-and-update
+status: completed
+started_at: "2026-06-12T17:41:00-04:00"
+completed_at: "2026-06-12T18:00:00-04:00"
+total_engineer_minutes: 20
+total_usd_spent_estimate: 6.00   # well under $20 cap / $15 halt line; no usage_today.json cache existed, estimate from session volume
+pr: 66
+pr_url: https://github.com/askoak/plumbsleep-web/pull/66
+branch: engineer/wo-image-audit-20260612
+sha: d6e7c31
+tier: 2
+auto_merge: false   # PR left OPEN for architect audit per WO safety rules
+
+ground_truth_note: >
+  OneDrive Renderings folder live-verified at 17:42 EDT (d15): 31 PNGs, no
+  subfolders. Mike's curation deleted (among others) plumb_render_kit_sage_three_components
+  (WO's first-choice components image) — used WO-listed alternative
+  plumb_render_kit_sage_flatlay. Nothing deleted by Mike was reintroduced.
+
+tasks:
+  - id: T1
+    status: done
+    pr: 66
+    sha: d6e7c31
+    retries_used: 0
+    minutes_used: 5
+    notes: >
+      Inventory at _planning/2026-06-12-plumbweb-image-inventory.md. All 14 HTML
+      pages documented. Wrong-geometry renders confirmed visually (sleeve as wide
+      free-standing cylinder): public/assets/plumb_render_system_sage_blue_front.{png,webp}
+      (homepage hero + 2 gallery slots + Product JSON-LD) and
+      public/assets/investors/ copy (investors Figure 2). One reference the WO grep
+      patterns missed was found in homepage JSON-LD "image" field.
+    blocker: null
+  - id: T2
+    status: done
+    pr: 66
+    sha: d6e7c31
+    retries_used: 0
+    minutes_used: 4
+    notes: >
+      All 31 curated PNGs synced via scripts/sync_renderings.mjs (sharp) into
+      public/assets/{renders,sketches,illustrations,diagrams}/ with .webp companions;
+      1500px max width hero-class, 800px inline. Largest deployed file 3.3 MB.
+      "1. " ordering prefix normalized out of the one filename carrying it.
+      plumb_palette_color_system.png is WebP-in-.png-clothing; sharp handled it.
+    blocker: null
+  - id: T3
+    status: done
+    pr: 66
+    sha: d6e7c31
+    retries_used: 0
+    minutes_used: 5
+    notes: >
+      Hero + JSON-LD image -> renders/plumb_render_kit_sage_bedding; both gallery
+      slides -> renders/plumb_render_kit_sage_flatlay; investors Figure 2 -> the
+      previously-orphaned fig2_attachment_family.svg per WO "fig1/2/3 are correct".
+      Wrong renders archived (git mv, preserved) at
+      public/assets/archived/2026-06-12-sleeve-geometry-incorrect/ with provenance
+      README. Zero references to plumb_render_system_* remain outside the archive.
+      Alt text rewritten decision-neutral. NOTE: investors §3.5.4 text now
+      contradicts Figure 2 (see next_actions #1).
+    blocker: null
+  - id: T4
+    status: done
+    pr: 66
+    sha: d6e7c31
+    retries_used: 0
+    minutes_used: 2
+    notes: >
+      og_card.png (399 KB) + .webp (62 KB) regenerated at 1200x630 from the bedding
+      hero via scripts/gen_og_card_from_hero.mjs (supersedes gen_og_card.py).
+      Same filename, so all six public pages' og:image/twitter:image tags resolve
+      unchanged. Pages without og tags (investors/test/price/404) are all noindex
+      by design — left as-is. Crop visually verified (full kit on linen).
+    blocker: null
+  - id: T5
+    status: done
+    pr: 66
+    sha: d6e7c31
+    retries_used: 0
+    minutes_used: 3
+    notes: >
+      Findings at _planning/2026-06-12-locked-decision-violations.md. Headline:
+      site is split between single-piece architecture copy (index/expecting/investors,
+      package/154, "sewn permanently", incl. JSON-LD + FAQ schema) and three-piece
+      modular copy (clinicians/press/price, matching canonical spec 130 + d14/d22).
+      Zero trivial edits qualified — every candidate traced to that substantive
+      conflict or the 5-inch/6-inch vs Regular/XL nomenclature conflict. Compliant:
+      closure variants presented as TBD; no zipper/envelope imagery; no contour-
+      curvature or waist-ratio disclosures; exact dims fall within spec 130's own
+      safe-spec text.
+    blocker: null
+  - id: T6
+    status: done
+    pr: 66
+    sha: d6e7c31
+    retries_used: 1
+    minutes_used: 4
+    notes: >
+      Deploy preview verified DIRECTLY via Netlify API per d12 (deploy-preview-66,
+      state ready, 21:55:52Z). All 32 unique image URLs across all 11 pages return
+      200, including the Basic-Auth-gated /investors/ (credentials from repo
+      public/_headers). New hero present, wrong render absent (homepage + investors),
+      fig2 SVG live, og_card.png 200 at 399 KB. Retry was a script bug of mine
+      ($home is a reserved PowerShell variable + stale-content on 401), not a site
+      failure. Verification artifacts: C:\Users\Hello\plumb-wo-verification-20260612\
+      {hero_deployed.png, og_card_deployed.png}.
+    blocker: null
+  - id: T_FINAL
+    status: done
+    pr: null
+    sha: null
+    retries_used: 0
+    minutes_used: 2
+    notes: This file, committed direct to main per run-work-order protocol.
+    blocker: null
+
+next_actions_for_architect:
+  - >
+    DECIDE (blocking for any future copy work): architecture narrative.
+    package/154 single-piece (ratified 2026-06-11, cited across index/expecting/
+    investors incl. structured data) vs package/130 canonical spec three-piece
+    modular (dated 2026-06-12, basis of this WO's imagery, d14/d22, Mike's curation).
+    Sharpest collision shipped in PR 66: investors §3.5.4 says the 3-arm modular
+    topology is "excluded by first-principles force math" and expects a
+    closure-variant Figure 2, while the WO-blessed fig2_attachment_family.svg
+    depicts exactly those 3 arms. If 154 stands: spec 130 needs correction and
+    Figure 2 needs a closure-variant SVG. If 130 stands: author a site-wide
+    copy-migration WO (meta descriptions, og:description, body copy, FAQ +
+    Product JSON-LD on three pages).
+  - >
+    ASK MIKE: meaning of the "1. " prefix on "1. plumb_render_system_sage_blue_front.png"
+    in the curated Renderings folder. He kept the render the WO calls geometrically
+    wrong, and ranked it "1.". Synced to assets/renders/ per "whatever exists is
+    canonical" but referenced by zero pages. If it is his hero pick, that overrides
+    the WO hero choice and PR 66 needs revision; if the prefix is incidental,
+    consider removing the file from the curated folder.
+  - >
+    Sizing nomenclature cleanup WO (if spec 130 stands): "5-inch/6-inch" thickness
+    claims on six pages + baked into two curated illustrations vs d22's
+    Pillow Regular/XL (foam+plush) lock and spec 130's 6"/6.5" totals.
+  - >
+    Tier 2 audit + merge decision on PR 66.
+  - >
+    Low priority: decide whether legacy sketch set (sketch_01..06, incl.
+    sketch_02_exploded which resembles the Mike-deleted exploded-kit sketch and is
+    captioned "legacy, pre-pivot") should be retired in favor of the synced
+    plumb_sketch_* set now in assets/sketches/.
