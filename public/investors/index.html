@@ -1102,6 +1102,8 @@ study would use, sized appropriately for a comfort product.</p>
 
 <h3 id="11-1-method">11.1 Method</h3>
 <p>The corpus is 4,962 unique Amazon reviews across five product tiers (premium knee 726, value knee 1,582, bolster 931, wearable 653, body-pillow substitute 1,070), balanced between positive (2,604) and critical (2,358). Each verbatim is normalized into a single record schema and LLM-coded against a fixed taxonomy (theme × segment × product-attribute × sentiment). The coded layer is pivoted into a cube measuring count plus verbatim drill-down, with a <code>--check</code> validator producing a saturation curve (whether new records add new themes) and a coverage report (which cells are thin). The discipline is the same shape used on the founder's other ventures and replaces keyword tallies with classified evidence.</p>
+
+<p>Corpus design and analysis are by the founder, a former mathematical statistician at the United States Department of Agriculture's National Agricultural Statistics Service.</p>
 <p>A second retrieval layer (sqlite-vec, voyage-3 embeddings, eval-gated at 92% recall@3) makes the corpus queryable so that any claim in this brief can be sourced to specific verbatims on demand. The eval harness is hand-labeled and the gate is preserved in the repo at <a target="_blank" rel="noopener" href="https://github.com/askoak/plumb-coordination/blob/main/package/build_voc_rag.py"><code>package/build_voc_rag.py</code></a>.</p>
 
 <h3 id="11-2-forecasts">11.2 The forecast posture</h3>
