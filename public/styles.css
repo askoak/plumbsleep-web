@@ -959,3 +959,252 @@ figure.full-width figcaption {
   .carousel { overflow-x: auto; }
   .carousel-track { animation: none; }
 }
+
+/* =========================================================================
+   AUDIT V2 ADDITIONS (2026-06-13)
+   Hero inline-capture form, comparison table, gallery grid, where-we-are
+   block, founder note, intent-segmented waitlist, sticky CTA verb swap.
+   ========================================================================= */
+
+/* Hero inline-capture form (audit v2 Change 1) */
+.hero-capture {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 1.2rem 0 0.8rem;
+  max-width: 32rem;
+}
+.hero-capture input[type="email"] {
+  flex: 1 1 14rem;
+  min-width: 0;
+  font-family: var(--sans);
+  font-size: 1rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--ink);
+}
+.hero-capture input[type="email"]:focus {
+  outline: 2px solid var(--sage-deep);
+  outline-offset: 1px;
+}
+.hero-capture button {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+.hero-fine {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin: 0.5rem 0 0;
+  max-width: 36rem;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
+
+/* Comparison table (audit v2 Change 3) */
+.section-comparison {
+  background: var(--surface);
+}
+.compare-table-wrap {
+  overflow-x: auto;
+  margin: 1.4rem 0 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--sans);
+  font-size: 0.98rem;
+  min-width: 38rem;
+}
+.compare-table thead th {
+  background: var(--bg-warm);
+  font-weight: 600;
+  text-align: center;
+  padding: 0.85rem 0.6rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.92rem;
+  color: var(--ink);
+}
+.compare-table thead th:first-child {
+  text-align: left;
+}
+.compare-table thead th:nth-child(2) {
+  background: #F4F6F1;  /* sage tint to emphasize Plumb column */
+  color: var(--sage-deep);
+}
+.compare-table tbody th {
+  text-align: left;
+  font-weight: 500;
+  padding: 0.85rem 0.7rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--ink);
+  background: var(--surface);
+}
+.compare-table tbody td {
+  text-align: center;
+  padding: 0.85rem 0.6rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+.compare-table tbody td:nth-child(2) {
+  background: #F9FAF7;
+}
+.compare-table tr:last-child th,
+.compare-table tr:last-child td { border-bottom: 0; }
+.compare-table .yes { color: var(--sage-deep); font-weight: 700; }
+.compare-table .no { color: var(--ink-soft); font-weight: 400; }
+.compare-table .partial { font-size: 0.85rem; color: var(--ink-soft); font-weight: 400; }
+.compare-fineprint {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin: 0.6rem 0 0;
+  max-width: 56rem;
+}
+
+/* Gallery 3-image static grid (audit v2 Change 6) */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.2rem;
+  margin: 1.4rem 0 0;
+}
+.gallery-card {
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+}
+.gallery-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+.gallery-card figcaption {
+  padding: 0.7rem 0.9rem;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  border-top: 1px solid var(--border);
+}
+
+/* Where we are right now (audit v2 Change 4) */
+.section-status {
+  background: var(--bg-warm);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.status-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.2rem 0 1.4rem;
+  display: grid;
+  gap: 0.9rem;
+}
+.status-list li {
+  padding: 0.85rem 1rem 0.85rem 1.4rem;
+  border-left: 3px solid var(--sage);
+  background: var(--surface);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+.status-list li strong { color: var(--sage-deep); }
+.status-closer {
+  font-size: 1.05rem;
+  line-height: 1.55;
+  max-width: 56ch;
+  color: var(--ink);
+  margin: 1rem 0 0;
+}
+
+/* Founder note (audit v2 Change 5) */
+.section-founder { }
+.section-founder p {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  max-width: 56ch;
+  margin: 0 0 0.9rem;
+}
+.section-founder .founder-sig {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  margin-top: 1.2rem;
+  color: var(--ink);
+}
+
+/* Intent-segmented waitlist radio (audit v2 Change 7) */
+.field-intent {
+  border: 0;
+  padding: 0;
+  margin: 1.2rem 0;
+}
+.field-intent legend {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+  color: var(--ink);
+}
+.field-intent .opt {
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+.radio-row {
+  display: flex;
+  gap: 0.7rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  margin: 0 0 0.6rem;
+  cursor: pointer;
+  transition: border-color .12s ease, background .12s ease;
+  align-items: flex-start;
+}
+.radio-row:hover { border-color: var(--sage); }
+.radio-row:has(input:checked) {
+  border-color: var(--sage-deep);
+  background: #F4F6F1;
+}
+.radio-row input[type="radio"] {
+  margin-top: 0.35rem;
+  flex: 0 0 auto;
+}
+.radio-help {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  margin-top: 0.25rem;
+  font-weight: 400;
+}
+
+/* Sticky CTA verb swap support (audit v2 Change 8) */
+.sticky-cta[data-state="post"] {
+  /* visually identical for now; data-state hooks future tracking */
+}
+
+/* Mobile tweaks */
+@media (max-width: 600px) {
+  .hero-capture { gap: 0.6rem; }
+  .hero-capture input[type="email"],
+  .hero-capture button { flex: 1 1 100%; }
+  .compare-table { font-size: 0.88rem; }
+  .compare-table thead th,
+  .compare-table tbody th,
+  .compare-table tbody td { padding: 0.6rem 0.4rem; }
+  .compare-table tbody td { font-size: 0.95rem; }
+  .gallery-grid { grid-template-columns: 1fr; }
+}
