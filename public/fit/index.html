@@ -558,17 +558,23 @@
         // Branch 1: non-side-sleeper -> honest redirect
         if (state.position === 'back' || state.position === 'stomach') {
           document.getElementById('result-eyebrow').textContent = 'Honest answer';
-          document.getElementById('result-headline').textContent = 'Plumb may not be the right product for you.';
-          document.getElementById('result-lead').textContent = 'Plumb is built specifically for side-sleep alignment. If you sleep mostly on your back or stomach, a knee pillow between your legs will not help you in the way it helps a side sleeper. We would rather tell you that than sell you something that does not fit.';
+          document.getElementById('result-headline').textContent = 'Plumb is probably not your pillow.';
+          document.getElementById('result-lead').textContent = 'Plumb is built for one job: keeping a side sleeper\'s knees stacked through the night. If you sleep on your back or your stomach, a pillow between your knees is doing about as much work for you as a snorkel does for a swimmer in the desert. We could sell you one anyway. We would rather not.';
           document.getElementById('result-cards').innerHTML = '';
           const redir = document.getElementById('result-redirect');
           redir.style.display = 'block';
+          const backCopy = state.position === 'back'
+            ? '<p><strong>Back sleeper</strong> is a power move and we respect it. You do not have a knee-gap problem; gravity already has the situation handled. What you might have is a low-back curve that wants a small support under the knees &mdash; different product, different problem. There are plenty of those on the market. Plumb is not one of them.</p>'
+            : '';
+          const stomachCopy = state.position === 'stomach'
+            ? '<p><strong>Stomach sleeping</strong> is the position equivalent of running with scissors. We understand. It is also the position most sleep clinicians gently suggest training out of, because your neck and your low back are filing a joint complaint that you cannot hear. A knee pillow does not help here. A new sleeping position might. We will not pretend otherwise.</p>'
+            : '';
           redir.innerHTML = `
             <div class="result-redirect-card">
-              <h3>What might help instead</h3>
-              <p>For back sleepers: a low-loft pillow under the knees can take pressure off the low back. There are many of these on the market.</p>
-              <p>For stomach sleepers: the position itself stresses the neck and low back. Most sleep clinicians suggest training out of stomach sleeping over time; pillow geometry is downstream of position.</p>
-              <p>If you are a position-shifter who starts on your side, Plumb may still help. <button type="button" class="restart" id="restart-redir" style="background:transparent;border:1px solid var(--rule);padding:0.4rem 0.8rem;border-radius:var(--radius);cursor:pointer;">Re-answer Q1</button></p>
+              <h3>The honest version</h3>
+              ${backCopy}
+              ${stomachCopy}
+              <p style="margin-top:0.8rem;">If you actually move around at night and just picked the position you spend the most time in, the picture changes. <button type="button" class="restart" id="restart-redir" style="background:transparent;border:1px solid var(--rule);padding:0.4rem 0.8rem;border-radius:var(--radius);cursor:pointer;">Wait, I move around &mdash; let me re-answer Q1</button></p>
             </div>
           `;
           document.getElementById('result-email-wrap').style.display = 'none';
