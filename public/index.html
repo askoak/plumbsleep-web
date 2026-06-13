@@ -26,6 +26,44 @@
     /* Hero subhead support — three-piece redesign per d28, voice council hero pairing */
     .hero-copy h1 .hero-sub{display:block;font-weight:500;color:var(--ink-soft, #5a6470);font-size:0.78em;line-height:1.2;margin-top:0.25em;letter-spacing:0.005em;}
     @media (max-width: 720px){ .hero-copy h1 .hero-sub{font-size:0.82em;} }
+
+    /* Fit Check gift card promo — restrained editorial card, not a banner */
+    .section-fitcheck-promo { padding: 1.5rem 0 0.5rem; }
+    .fitcheck-promo {
+      max-width: var(--max-w-narrow);
+      margin: 0 auto;
+      padding: 1.4rem 1.5rem;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.6rem;
+      align-items: center;
+    }
+    .fitcheck-promo img {
+      width: 210px; height: auto; border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(45, 74, 62, 0.12);
+    }
+    .fitcheck-promo .fc-copy { min-width: 0; }
+    .fitcheck-promo h2 {
+      font-family: var(--serif); font-weight: 600;
+      font-size: clamp(1.25rem, 2.4vw, 1.55rem); line-height: 1.25;
+      margin: 0 0 0.4rem; color: var(--ink);
+    }
+    .fitcheck-promo p {
+      margin: 0 0 0.5rem; line-height: 1.55; color: var(--ink-soft);
+      max-width: 60ch;
+    }
+    .fitcheck-promo .fc-fine {
+      font-size: 0.85rem; color: var(--faint); margin-top: 0.5rem;
+    }
+    .fitcheck-promo a.fc-cta {
+      font-weight: 600;
+    }
+    @media (max-width: 640px) {
+      .fitcheck-promo { grid-template-columns: 1fr; padding: 1.2rem 1.25rem; }
+      .fitcheck-promo img { width: 170px; justify-self: start; }
+    }
   </style>
 </head>
 <body>
@@ -100,6 +138,21 @@
             <img src="assets/plumb_render_system_sage_blue_front.png" alt="Plumb three-piece system: a soft sage-blue knit thigh sleeve, a removable foam pillow that slides into an elastic open-ended pocket, and a washable pillowcase." width="1536" height="1024" loading="eager" fetchpriority="high">
           </picture>
         </figure>
+      </div>
+    </section>
+
+    <!-- 1.5 FIT CHECK GIFT CARD PROMO (featured, restrained) -->
+    <section class="section section-fitcheck-promo">
+      <div class="content content-narrow">
+        <div class="fitcheck-promo">
+          <img src="/assets/amazon-gc-5.jpg" alt="$5 Amazon gift card" width="210" height="133" loading="lazy">
+          <div class="fc-copy">
+            <h2>Two minutes. $5 thank-you.</h2>
+            <p>Help us build Plumb for real side sleepers. Answer five quick questions and the first 100 finishers who leave an email get a $5 Amazon gift card within 24 hours.</p>
+            <p class="fc-fine">Prefer not to share an email? The $5 goes to the National Coalition for the Homeless on your behalf.</p>
+            <p><a class="fc-cta" href="/feedback/">Take the Fit Check &rarr;</a></p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -612,7 +665,6 @@
         <div>
           <p class="footer-col-h">Contact</p>
           <p><a href="mailto:hello@plumbsleep.com">hello@plumbsleep.com</a></p>
-          <p><a href="mailto:press@plumbsleep.com">press@plumbsleep.com</a></p>
         </div>
         <div>
           <p class="footer-col-h">Audience pages</p>
@@ -638,7 +690,6 @@
         affecting your back, hips, knees, or sleep, consult your physician.
         Fabric is viscose made from bamboo, not raw bamboo fiber.
       </p>
-      <p class="footer-fine">Mark selected June 2026 &middot; Option C.</p>
       <p class="footer-fine">&copy; 2026 Plumb. All rights reserved.</p>
     </div>
   </footer>
