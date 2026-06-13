@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find your Plumb &mdash; a five-question fit check</title>
+  <meta name="description" content="A short, honest fit check. Five questions about how you sleep and what has failed for you. The output is a personalized Plumb configuration with the corpus evidence behind it. No tracking. Two minutes.">
+  <link rel="canonical" href="https://plumbsleep.com/fit/">
+  <meta property="og:url" content="https://plumbsleep.com/fit/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Find your Plumb &mdash; a five-question fit check">
+  <meta property="og:description" content="A short, honest fit check. Five questions about how you sleep and what has failed for you. The output is a personalized Plumb configuration with the corpus evidence behind it.">
+  <meta property="og:image" content="https://plumbsleep.com/assets/og_card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://plumbsleep.com/assets/og_card.png">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%233F5874'/%3E%3Ctext x='50' y='72' font-family='Georgia,Cambria,serif' font-size='72' font-weight='400' text-anchor='middle' fill='%23E8DCC4'%3EP%3C/text%3E%3Cpath d='M58 42 Q66 36 70 30 Q66 40 60 46 Z' fill='%236B8E5A'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+  <link rel="stylesheet" href="https://fonts.bunny.net/css?family=source-serif-4:400,500,600,700|inter:400,500,600&display=optional">
+  <link rel="stylesheet" href="/styles.css">
+
+  <style>
+    /* Fit page layout — mirrors guarantee/ + investors/ patterns but adds quiz primitives. */
+    .fit-wrap { max-width: var(--max-w-narrow); margin: 0 auto; }
+    .fit-wrap section { padding: 1.8rem 0; border-top: 1px solid var(--border); }
+    .fit-wrap section:first-child { border-top: 0; padding-top: 1.2rem; }
+
+    .fit-intro { border-left: 3px solid var(--sage-deep); padding-left: 1.25rem; max-width: 64ch; }
+    .fit-intro h1 { margin: 0 0 0.6rem; }
+    .fit-intro p { margin: 0 0 0.5rem; }
+
+    .progress { display: flex; gap: 6px; margin: 1.2rem 0 1.6rem; }
+    .progress span { flex: 1; height: 4px; background: var(--border); border-radius: 2px; }
+    .progress span.done { background: var(--sage); }
+    .progress span.current { background: var(--sage-deep); }
+
+    .step { display: none; }
+    .step.active { display: block; }
+
+    .step .question {
+      font-family: var(--serif); font-size: 1.35rem; line-height: 1.35;
+      color: var(--ink); margin: 0 0 0.4rem;
+    }
+    .step .question-help {
+      font-size: 0.95rem; color: var(--ink-soft);
+      margin: 0 0 1.2rem; max-width: 56ch;
+    }
+
+    .choice-list {
+      list-style: none; padding: 0; margin: 0 0 1.4rem;
+      display: grid; gap: 0.5rem;
+    }
+    .choice-list li { margin: 0; }
+    .choice-list label {
+      display: block; padding: 0.85rem 1rem;
+      border: 1px solid var(--border); border-radius: var(--radius);
+      background: var(--surface); cursor: pointer;
+      font-size: 1rem; line-height: 1.4;
+      transition: border-color .12s ease, background .12s ease;
+    }
+    .choice-list label:hover { border-color: var(--sage); }
+    .choice-list input[type="radio"],
+    .choice-list input[type="checkbox"] {
+      margin-right: 0.6rem; vertical-align: middle;
+    }
+    .choice-list input:checked + .choice-text { font-weight: 500; }
+    .choice-list label:has(input:checked) {
+      border-color: var(--sage-deep);
+      background: #F4F6F1;
+    }
+    .choice-help {
+      display: block; font-size: 0.85rem; color: var(--ink-soft);
+      margin-top: 0.2rem;
+    }
+
+    .step-nav {
+      display: flex; justify-content: space-between; gap: 0.8rem;
+      margin-top: 0.4rem;
+    }
+    .step-nav button {
+      font-family: var(--sans); font-size: 1rem;
+      padding: 0.65rem 1.2rem; border-radius: var(--radius);
+      border: 1px solid var(--rule); background: var(--surface);
+      color: var(--ink); cursor: pointer;
+      transition: background .12s ease, border-color .12s ease;
+    }
+    .step-nav button:hover { border-color: var(--sage); }
+    .step-nav button.primary {
+      background: var(--sage-deep); border-color: var(--sage-deep); color: #FFFFFF;
+    }
+    .step-nav button.primary:hover { background: var(--ink); border-color: var(--ink); }
+    .step-nav button:disabled { opacity: 0.5; cursor: not-allowed; }
+    .step-nav button.back { background: transparent; border-color: transparent; padding-left: 0; }
+
+    /* Output / result screen */
+    .result { display: none; }
+    .result.shown { display: block; }
+    .result h2 { margin-bottom: 0.4rem; }
+    .result-eyebrow {
+      font-family: var(--sans); font-size: 0.82rem; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--sage-deep);
+      margin: 0 0 0.4rem; font-weight: 600;
+    }
+    .result-card {
+      border: 1px solid var(--border); border-radius: var(--radius);
+      background: var(--surface); padding: 1.4rem 1.6rem; margin: 0.6rem 0 1.6rem;
+    }
+    .result-card h3 { margin-top: 0; font-family: var(--serif); font-weight: 600; font-size: 1.15rem; }
+    .result-card p { margin: 0.4rem 0; }
+    .result-card .corpus-cite {
+      font-size: 0.88rem; color: var(--ink-soft);
+      border-left: 2px solid var(--border); padding-left: 0.8rem;
+      margin: 0.6rem 0 0;
+    }
+
+    .result-fineprint {
+      font-size: 0.88rem; color: var(--ink-soft); max-width: 64ch;
+      margin: 1.4rem 0 0;
+    }
+
+    /* Email capture inside result */
+    .result-email {
+      border-top: 1px solid var(--border); margin-top: 1.6rem; padding-top: 1.4rem;
+    }
+    .result-email .field { display: grid; gap: 0.3rem; max-width: 32rem; }
+    .result-email label { font-weight: 500; font-size: 0.95rem; }
+    .result-email input[type="email"] {
+      font-family: var(--sans); font-size: 1rem; padding: 0.65rem 0.8rem;
+      border: 1px solid var(--rule); border-radius: var(--radius);
+      background: var(--surface); color: var(--ink);
+    }
+    .result-email button {
+      font-family: var(--sans); font-size: 1rem; padding: 0.65rem 1.2rem;
+      border-radius: var(--radius); border: 1px solid var(--sage-deep);
+      background: var(--sage-deep); color: #FFFFFF;
+      cursor: pointer; margin-top: 0.6rem;
+      transition: background .12s ease;
+    }
+    .result-email button:hover { background: var(--ink); border-color: var(--ink); }
+    .result-email .opt-note { font-size: 0.82rem; color: var(--ink-soft); margin-top: 0.5rem; }
+
+    .result-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1.2rem 0 0.6rem; }
+    .result-actions a, .result-actions button.restart {
+      font-family: var(--sans); font-size: 0.95rem;
+      padding: 0.6rem 1rem; border-radius: var(--radius);
+      text-decoration: none;
+    }
+    .result-actions a.primary {
+      background: var(--midnight-deep); color: #FFFFFF; border: 1px solid var(--midnight-deep);
+    }
+    .result-actions a.secondary {
+      background: var(--surface); color: var(--ink); border: 1px solid var(--rule);
+    }
+    .result-actions button.restart {
+      background: transparent; color: var(--ink-soft);
+      border: 1px solid transparent; cursor: pointer;
+    }
+    .result-actions button.restart:hover { color: var(--ink); border-color: var(--rule); }
+
+    /* "Not the product for you" branch */
+    .result-redirect-card {
+      border-left: 3px solid var(--midnight); padding-left: 1.2rem;
+      background: var(--bg-warm); padding: 1.1rem 1.2rem; border-radius: var(--radius);
+      margin: 0.6rem 0 1.4rem;
+    }
+    .result-redirect-card h3 { margin-top: 0; }
+    .result-redirect-card p { margin: 0.3rem 0; }
+
+    @media (max-width: 600px) {
+      .step .question { font-size: 1.18rem; }
+      .step-nav { flex-direction: row; }
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="nav-inner">
+      <a class="nav-brand" href="/" aria-label="Plumb &mdash; home">
+        <picture>
+          <source srcset="/assets/logos/logo_C.webp" type="image/webp">
+          <img src="/assets/logos/logo_C.jpg" alt="Plumb" width="36" height="36" decoding="async">
+        </picture>
+        <span class="nav-brand-word">Plumb</span>
+      </a>
+      <ul class="nav-links">
+        <li><a class="nav-cta" href="/#waitlist">Join the waitlist</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="fit-wrap section">
+
+      <!-- INTRO -->
+      <section class="fit-intro-section">
+        <div class="fit-intro">
+          <p class="eyebrow">A five-question fit check</p>
+          <h1>Find your Plumb.</h1>
+          <p>Five honest questions. Two minutes. The output is a personalized configuration with the corpus evidence behind each recommendation. No tracking, no third-party scripts, nothing stored unless you save your fit at the end.</p>
+          <p style="font-size:0.9rem;color:var(--ink-soft);margin-top:0.6rem;">Plumb's product design is built on 4,962 coded Amazon reviews of side-sleep pillows. The recommendations below cite the specific finding behind each one. <a href="/investors/#11-methodology-honest-forecasts">See the methodology &rarr;</a></p>
+        </div>
+      </section>
+
+      <!-- QUIZ -->
+      <section class="fit-quiz-section" id="quiz">
+        <div class="progress" aria-label="Progress" role="progressbar" aria-valuemin="1" aria-valuemax="5">
+          <span id="p1" class="current"></span><span id="p2"></span><span id="p3"></span><span id="p4"></span><span id="p5"></span>
+        </div>
+
+        <!-- Q1: Sleep position -->
+        <div class="step active" data-step="1">
+          <p class="question">How do you sleep most nights?</p>
+          <p class="question-help">Pick the position you spend the most hours in. If you change positions, pick what you start in.</p>
+          <ul class="choice-list" data-name="position">
+            <li><label><input type="radio" name="position" value="side"><span class="choice-text">Side sleeper</span></label></li>
+            <li><label><input type="radio" name="position" value="position-shifter"><span class="choice-text">I start on my side, but I shift</span><span class="choice-help">Side &harr; back &harr; stomach through the night.</span></label></li>
+            <li><label><input type="radio" name="position" value="back"><span class="choice-text">Mostly on my back</span></label></li>
+            <li><label><input type="radio" name="position" value="stomach"><span class="choice-text">Mostly on my stomach</span></label></li>
+            <li><label><input type="radio" name="position" value="unsure"><span class="choice-text">Not sure</span></label></li>
+          </ul>
+          <div class="step-nav">
+            <button type="button" class="back" disabled>&larr; Back</button>
+            <button type="button" class="primary" data-action="next" disabled>Next &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Q2: Thigh circumference -->
+        <div class="step" data-step="2">
+          <p class="question">What is your upper-thigh circumference?</p>
+          <p class="question-help">Plumb makes two sleeve sizes. This question decides which one fits you. Measure the widest part of your thigh just below the hip joint if you have a tape measure; otherwise pick the closest estimate.</p>
+          <ul class="choice-list" data-name="thigh">
+            <li><label><input type="radio" name="thigh" value="under-28"><span class="choice-text">Under 28 in.</span><span class="choice-help">Regular sleeve fits.</span></label></li>
+            <li><label><input type="radio" name="thigh" value="28-32"><span class="choice-text">28 to 32 in.</span><span class="choice-help">XL sleeve fits.</span></label></li>
+            <li><label><input type="radio" name="thigh" value="over-32"><span class="choice-text">Over 32 in.</span><span class="choice-help">Above the current Plumb XL range. Stage 2 sleeve is planned.</span></label></li>
+            <li><label><input type="radio" name="thigh" value="unsure"><span class="choice-text">I do not know</span><span class="choice-help">Honest answer. The fit-finder will suggest Regular and tell you when XL is the better call.</span></label></li>
+          </ul>
+          <div class="step-nav">
+            <button type="button" class="back" data-action="back">&larr; Back</button>
+            <button type="button" class="primary" data-action="next" disabled>Next &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Q3: Biggest current pain (multi-select) -->
+        <div class="step" data-step="3">
+          <p class="question">What goes wrong most often?</p>
+          <p class="question-help">Pick as many as apply. These are the failures buyers describe most in the coded corpus.</p>
+          <ul class="choice-list" data-name="pains">
+            <li><label><input type="checkbox" name="pain" value="slides"><span class="choice-text">The pillow slides out at night.</span></label></li>
+            <li><label><input type="checkbox" name="pain" value="too_small"><span class="choice-text">The pillow is too small for me.</span></label></li>
+            <li><label><input type="checkbox" name="pain" value="hot"><span class="choice-text">I wake up hot.</span></label></li>
+            <li><label><input type="checkbox" name="pain" value="flattens"><span class="choice-text">The foam flattens out within weeks.</span></label></li>
+            <li><label><input type="checkbox" name="pain" value="wash"><span class="choice-text">I cannot wash the cover (or the zipper fails).</span></label></li>
+            <li><label><input type="checkbox" name="pain" value="firmness"><span class="choice-text">The firmness is wrong (too firm or too soft).</span></label></li>
+            <li><label><input type="checkbox" name="pain" value="hip_back"><span class="choice-text">My hip or low-back pain is the reason I am here.</span></label></li>
+            <li><label><input type="checkbox" name="pain" value="none"><span class="choice-text">I have not tried a knee pillow yet.</span></label></li>
+          </ul>
+          <div class="step-nav">
+            <button type="button" class="back" data-action="back">&larr; Back</button>
+            <button type="button" class="primary" data-action="next">Next &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Q4: What have you tried -->
+        <div class="step" data-step="4">
+          <p class="question">What have you tried before?</p>
+          <p class="question-help">Pick whatever you have used at least once. We will show you the specific complaints buyers had about each product, and what Plumb does differently.</p>
+          <ul class="choice-list" data-name="tried">
+            <li><label><input type="checkbox" name="tried" value="pillow_cube"><span class="choice-text">Pillow Cube</span></label></li>
+            <li><label><input type="checkbox" name="tried" value="contour"><span class="choice-text">Contour Legacy</span></label></li>
+            <li><label><input type="checkbox" name="tried" value="coop"><span class="choice-text">Coop Home Goods</span></label></li>
+            <li><label><input type="checkbox" name="tried" value="generic"><span class="choice-text">A generic Amazon knee pillow</span></label></li>
+            <li><label><input type="checkbox" name="tried" value="body"><span class="choice-text">A body pillow or pregnancy pillow (as a knee aid)</span></label></li>
+            <li><label><input type="checkbox" name="tried" value="strap"><span class="choice-text">A strap-on or wearable knee pillow</span></label></li>
+            <li><label><input type="checkbox" name="tried" value="none"><span class="choice-text">Nothing yet</span></label></li>
+          </ul>
+          <div class="step-nav">
+            <button type="button" class="back" data-action="back">&larr; Back</button>
+            <button type="button" class="primary" data-action="next">Next &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Q5: Temperature -->
+        <div class="step" data-step="5">
+          <p class="question">How does your sleep temperature usually run?</p>
+          <p class="question-help">This decides whether the cooling sleeve is doing real work for you or is incidental.</p>
+          <ul class="choice-list" data-name="temp">
+            <li><label><input type="radio" name="temp" value="hot"><span class="choice-text">I run hot. Cooling matters.</span></label></li>
+            <li><label><input type="radio" name="temp" value="cool"><span class="choice-text">I run cool. Warmth matters more.</span></label></li>
+            <li><label><input type="radio" name="temp" value="variable"><span class="choice-text">It varies a lot night to night.</span></label></li>
+            <li><label><input type="radio" name="temp" value="neutral"><span class="choice-text">No strong pattern.</span></label></li>
+          </ul>
+          <div class="step-nav">
+            <button type="button" class="back" data-action="back">&larr; Back</button>
+            <button type="button" class="primary" data-action="finish" disabled>See your fit &rarr;</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESULT -->
+      <section class="result" id="result" aria-live="polite">
+        <p class="result-eyebrow" id="result-eyebrow">Your fit</p>
+        <h2 id="result-headline">Your Plumb configuration</h2>
+        <p id="result-lead" style="max-width:60ch;"></p>
+
+        <!-- Cards: size, top wedges, what Plumb does -->
+        <div id="result-cards"></div>
+
+        <!-- Optional honest-redirect card for non-fit cases -->
+        <div id="result-redirect" style="display:none;"></div>
+
+        <!-- Email capture -->
+        <div class="result-email" id="result-email-wrap">
+          <p style="margin-top:0;"><strong>Save your fit and get a 10% Kickstarter early-backer reminder.</strong> One email when the Kickstarter campaign opens, with your saved configuration. We do not share email addresses and we do not send marketing.</p>
+          <form id="fit-form" name="plumb-fit" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/fit/?fit_saved=1">
+            <input type="hidden" name="form-name" value="plumb-fit">
+            <input type="hidden" name="quiz_position" id="hidden-position">
+            <input type="hidden" name="quiz_thigh" id="hidden-thigh">
+            <input type="hidden" name="quiz_pains" id="hidden-pains">
+            <input type="hidden" name="quiz_tried" id="hidden-tried">
+            <input type="hidden" name="quiz_temp" id="hidden-temp">
+            <input type="hidden" name="recommended_size" id="hidden-rec-size">
+            <p hidden><label>Do not fill this out: <input name="bot-field"></label></p>
+            <div class="field">
+              <label for="fit-email">Email</label>
+              <input type="email" name="email" id="fit-email" autocomplete="email" required>
+            </div>
+            <button type="submit">Save my fit &amp; remind me</button>
+            <p class="opt-note">Or skip the email and just <a href="/#waitlist">join the general waitlist</a>.</p>
+          </form>
+        </div>
+
+        <div class="result-actions">
+          <a class="primary" href="/#waitlist">Join the Kickstarter waitlist &rarr;</a>
+          <a class="secondary" href="/investors/#11-methodology-honest-forecasts">Read the methodology</a>
+          <button type="button" class="restart" id="restart-btn">Start over</button>
+        </div>
+
+        <p class="result-fineprint">This recommendation is a fit check, not medical advice. Plumb makes no clinical claims. Final retail terms posted before launch; Kickstarter Standard tier is currently set at $59 with a cap-200 Early Bird at $55; retail will be $69 plus $4.99 shipping. <a href="/guarantee/">1-year customer guarantee.</a></p>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <p style="font-family:var(--serif);font-size:1.05rem;color:var(--ink);">Plumb</p>
+        <p>Still there in the morning.<br>Sized for your body.</p>
+      </div>
+      <div class="footer-col">
+        <p><a href="/#how">How it works</a></p>
+        <p><a href="/#pieces">The kit</a></p>
+        <p><a href="/#sizing">Sizing</a></p>
+        <p><a href="/fit/"><strong>Find your fit</strong></a></p>
+      </div>
+      <div class="footer-col">
+        <p><a href="/clinicians/">For clinicians</a></p>
+        <p><a href="/expecting/">For planning &amp; expecting moms</a></p>
+        <p><a href="/guarantee/">Customer guarantee</a></p>
+        <p><a href="/press/">For press</a></p>
+      </div>
+    </div>
+    <p class="footer-fine">&copy; Plumb Sleep LLC. <a href="mailto:hello@plumbsleep.com">hello@plumbsleep.com</a></p>
+  </footer>
+
+  <script>
+    // ======================================================================
+    // Fit Quiz — vanilla JS, no framework, no third-party scripts.
+    // Five steps, state in memory only (cleared on reload). Submit sends
+    // structured fields plus email to the Netlify form pipeline.
+    // ======================================================================
+    (function () {
+      const steps = Array.from(document.querySelectorAll('.step'));
+      const progress = [1,2,3,4,5].map(n => document.getElementById('p'+n));
+      const resultEl = document.getElementById('result');
+      const quizEl = document.getElementById('quiz');
+      let current = 1;
+      const state = { position: null, thigh: null, pains: [], tried: [], temp: null };
+
+      function setStep(n) {
+        steps.forEach(s => s.classList.toggle('active', Number(s.dataset.step) === n));
+        progress.forEach((el, i) => {
+          el.classList.toggle('done', i + 1 < n);
+          el.classList.toggle('current', i + 1 === n);
+        });
+        current = n;
+        // Re-evaluate the Next button enable state on entry
+        evaluateNext();
+        // Scroll to top of question
+        document.getElementById('quiz').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      function evaluateNext() {
+        const step = steps.find(s => Number(s.dataset.step) === current);
+        if (!step) return;
+        const next = step.querySelector('[data-action="next"], [data-action="finish"]');
+        if (!next) return;
+        const list = step.querySelector('.choice-list');
+        if (!list) { next.disabled = false; return; }
+        const name = list.dataset.name;
+        if (name === 'position') next.disabled = !state.position;
+        else if (name === 'thigh') next.disabled = !state.thigh;
+        else if (name === 'pains') next.disabled = false; // optional multi
+        else if (name === 'tried') next.disabled = false;
+        else if (name === 'temp') next.disabled = !state.temp;
+      }
+
+      // Wire inputs
+      steps.forEach(step => {
+        step.querySelectorAll('input[type="radio"]').forEach(inp => {
+          inp.addEventListener('change', () => {
+            const name = inp.name;
+            state[name] = inp.value;
+            evaluateNext();
+          });
+        });
+        step.querySelectorAll('input[type="checkbox"]').forEach(inp => {
+          inp.addEventListener('change', () => {
+            const name = inp.name === 'pain' ? 'pains' : 'tried';
+            if (inp.checked) {
+              if (!state[name].includes(inp.value)) state[name].push(inp.value);
+            } else {
+              state[name] = state[name].filter(v => v !== inp.value);
+            }
+          });
+        });
+        step.querySelectorAll('[data-action="next"]').forEach(btn => {
+          btn.addEventListener('click', () => setStep(current + 1));
+        });
+        step.querySelectorAll('[data-action="back"]').forEach(btn => {
+          btn.addEventListener('click', () => setStep(current - 1));
+        });
+        step.querySelectorAll('[data-action="finish"]').forEach(btn => {
+          btn.addEventListener('click', renderResult);
+        });
+      });
+
+      // ----------------------------------------------------------------------
+      // Result rendering
+      // Each recommendation card carries (a) headline, (b) what Plumb does,
+      // (c) corpus citation in plain-language form with link to investors page.
+      // ----------------------------------------------------------------------
+
+      function recommendSize() {
+        if (state.thigh === 'under-28') return { sku: 'Regular', confidence: 'high', note: 'Regular sleeve is the right starting size for upper-thigh circumferences up to 28 inches.' };
+        if (state.thigh === '28-32') return { sku: 'XL', confidence: 'high', note: 'XL sleeve fits upper-thigh circumferences from 28 to 32 inches.' };
+        if (state.thigh === 'over-32') return { sku: 'Stage 2 waitlist', confidence: 'medium', note: 'Above 32 inches is beyond the current XL sleeve. Plumb has a Stage 2 sleeve planned and is taking expressions of interest; the current launch is Regular and XL only.' };
+        if (state.thigh === 'unsure') return { sku: 'Regular (start here)', confidence: 'medium', note: 'When in doubt, start with Regular. Plumb\'s 1-year guarantee covers a size swap if XL turns out to be the better fit.' };
+        return { sku: 'Regular', confidence: 'low', note: '' };
+      }
+
+      function wedgeCards() {
+        // Cite the corpus finding behind each pain selection, and how Plumb addresses it.
+        const out = [];
+        const p = state.pains;
+        if (p.includes('too_small')) out.push({
+          h: 'Sizing &mdash; the most common failure in the category',
+          body: 'Sizing-too-small is the #1 critical complaint across every product tier in the coded corpus. Plumb\'s sleeve is sized to the wearer rather than spec\'d as a one-size pillow.',
+          cite: '601 of 4,962 reviews (20.1% of critical reviews) flag sizing-too-small. Among large-frame buyers it reaches 53.5%.'
+        });
+        if (p.includes('slides')) out.push({
+          h: 'Retention &mdash; without a strap',
+          body: 'Plumb uses a thigh-worn sleeve with an open-ended elastic pocket. The pillow stays anchored to the leg that moves, not pinned between knees with a strap.',
+          cite: 'In the wearable tier, "stays in place" is the #1 delight (33%), but "retention slips" is also the #1 complaint (19%). Straps are polarizing. The sleeve-anchor architecture is the attempt to capture the delight without the failure.'
+        });
+        if (p.includes('hot')) out.push({
+          h: 'Cooling &mdash; viscose from bamboo, not polyester',
+          body: 'The sleeve and pillowcase are knit from viscose made from bamboo, which is breathable and runs cooler than synthetic covers. Thermal performance is being measured at the Stage 1 wear test before launch.',
+          cite: 'Cooling and breathability is a +10 percentage-point defection driver toward body pillows: 17% of body-pillow buyers praise cooling versus 7% of knee-pillow buyers. Honest disclosure: Plumb has not yet measured thermal performance on its actual materials.'
+        });
+        if (p.includes('flattens')) out.push({
+          h: 'Foam that flattens &mdash; designed as a replaceable consumable',
+          body: 'Plumb\'s foam pillow is a replaceable insert. When it flattens, you replace the foam, not the whole product. The sleeve and pillowcase keep working.',
+          cite: 'Foam-flattens runs 10% to 29% of critical reviews across tiers; it is the leading complaint in bolster and body-pillow tiers. Treating the foam as a consumable converts a product complaint into a replacement-SKU economy.'
+        });
+        if (p.includes('wash')) out.push({
+          h: 'Washability &mdash; pillowcase comes off',
+          body: 'The pillowcase is a removable, machine-washable layer over the foam insert. The sleeve washes separately.',
+          cite: 'Cover-or-zipper-wash complaints run 8% to 10% of knee-pillow reviews and 17% of body-pillow reviews. Honest correction: an earlier program claim that washability was the #1 wedge at 48% did not survive coded analysis; sizing is the #1 wedge. Washability is kept in the product as a real feature, not the headline.'
+        });
+        if (p.includes('firmness')) out.push({
+          h: 'Firmness &mdash; the right range for the load',
+          body: 'Plumb\'s foam is specified at an IFD range matched to the load most adult thighs put on a knee pillow. The replaceable foam means firmness can be tuned by swapping inserts over time.',
+          cite: 'Too-firm and too-soft together account for roughly 30% of critical reviews in the knee-pillow tiers. Right-firmness is also the #1 delight in premium and bolster tiers (27%). The category is bimodal; the foam spec targets the center of the load math.'
+        });
+        if (p.includes('hip_back')) out.push({
+          h: 'Pain relief &mdash; comfort and relief is the universal delight',
+          body: 'Side-sleep alignment, when it works, relieves load on the hip and low back. Plumb is the alignment tool; it is not a clinical product and makes no medical claims.',
+          cite: 'Comfort-and-relief is the leading delight in every product tier (67% to 84% of positive reviews mention it). The corpus shows alignment works when the product stays put and fits. Plumb optimizes for both conditions.'
+        });
+        return out;
+      }
+
+      function triedCards() {
+        const t = state.tried;
+        const out = [];
+        if (t.includes('pillow_cube')) out.push({
+          h: 'What buyers said about Pillow Cube',
+          body: '"Too firm" and "too small" are the recurring complaints. Pillow Cube is a side-sleeper head pillow scaled up; it is not a knee-anchored product. Two consumer class actions have been disclosed.',
+          cite: 'Pillow Cube is the closest comparable analog to Plumb on product and buyer (mean comparability 4.0 out of 5 in the comp scorecard). The corpus surfaces the same too-firm and too-small failures Plumb\'s replaceable-foam plus sized-sleeve architecture is designed to avoid.'
+        });
+        if (t.includes('contour')) out.push({
+          h: 'What buyers said about Contour Legacy',
+          body: 'Foam flattens, runs hot. Contour is shaped foam, not a wearable. It does not move with you when you shift.',
+          cite: 'Foam-flattens runs 14% of critical reviews in the premium-knee tier. Cooling is a defection driver to body pillows (+10 pp). The replaceable-foam-plus-breathable-sleeve combination addresses both.'
+        });
+        if (t.includes('coop')) out.push({
+          h: 'What buyers said about Coop',
+          body: 'Coop is a head pillow brand. As a knee aid, the complaint is "wrong shape" and "too much pillow." It is not built for the application.',
+          cite: 'Substitute usage is a real pattern in the corpus, but it carries an 8 percentage-point retention penalty (knee pillows beat substitutes on "stays in place"). Plumb is built for the application; head pillows are not.'
+        });
+        if (t.includes('generic')) out.push({
+          h: 'What buyers said about generic Amazon knee pillows',
+          body: 'The complaint stack is universal: too small, slides off, foam flattens, cover does not wash. These are the four failures Plumb is designed against.',
+          cite: 'The corpus is dominated by value-tier knee pillows (1,582 of 4,962 reviews). The four failures above are 60% to 70% of all critical reviews combined. Plumb is the post-corpus design response.'
+        });
+        if (t.includes('body')) out.push({
+          h: 'What buyers said about using a body pillow as a knee aid',
+          body: 'Comfort and cooling are high (+10 pp on both versus knee pillows), but "stays in place" is 8 pp worse. Body pillows are a great whole-night-positioning solution and a mediocre knee-anchoring solution.',
+          cite: 'Body-pillow substitutes are 22% of the corpus. They reveal what buyers actually defect TOWARD; Plumb has to match their comfort and cooling without giving up the positioning advantage.'
+        });
+        if (t.includes('strap')) out.push({
+          h: 'What buyers said about strap-on knee pillows',
+          body: 'Bimodal. When the strap works, "stays in place" is the #1 delight at 33%. When it does not, "retention slips" is the #1 complaint at 19%, and "medical-looking" is a recurring rejection.',
+          cite: 'The wearable tier (653 reviews) is the closest to Plumb\'s mechanical posture. Plumb deliberately uses a sleeve worn on the thigh rather than a strap around the knees, to capture the retention delight without the strap failure mode.'
+        });
+        if (t.includes('none') && t.length === 1) out.push({
+          h: 'You have not tried anything yet',
+          body: 'A fair starting point. Plumb\'s 1-year customer guarantee with free returns means you can try the kit at low personal risk; the foam pillow is a consumable, the sleeve is the durable garment.',
+          cite: ''
+        });
+        return out;
+      }
+
+      function tempCard() {
+        if (state.temp === 'hot') return {
+          h: 'You run hot &mdash; cooling matters',
+          body: 'The viscose-from-bamboo sleeve and pillowcase are the right material for you. Plumb is measuring thermal performance at the Stage 1 wear test; honest current state is that the material choice is evidence-based but the finished-product thermal data does not yet exist.',
+          cite: ''
+        };
+        if (state.temp === 'cool') return {
+          h: 'You run cool &mdash; the cooling fabric is incidental for you',
+          body: 'The viscose-from-bamboo sleeve will not be uncomfortably warm. The bigger wins for you will be sizing, retention, and firmness.',
+          cite: ''
+        };
+        return null;
+      }
+
+      function renderResult() {
+        const size = recommendSize();
+        const wedges = wedgeCards();
+        const tried = triedCards();
+        const temp = tempCard();
+
+        // Branch 1: non-side-sleeper -> honest redirect
+        if (state.position === 'back' || state.position === 'stomach') {
+          document.getElementById('result-eyebrow').textContent = 'Honest answer';
+          document.getElementById('result-headline').textContent = 'Plumb may not be the right product for you.';
+          document.getElementById('result-lead').textContent = 'Plumb is built specifically for side-sleep alignment. If you sleep mostly on your back or stomach, a knee pillow between your legs will not help you in the way it helps a side sleeper. We would rather tell you that than sell you something that does not fit.';
+          document.getElementById('result-cards').innerHTML = '';
+          const redir = document.getElementById('result-redirect');
+          redir.style.display = 'block';
+          redir.innerHTML = `
+            <div class="result-redirect-card">
+              <h3>What might help instead</h3>
+              <p>For back sleepers: a low-loft pillow under the knees can take pressure off the low back. There are many of these on the market.</p>
+              <p>For stomach sleepers: the position itself stresses the neck and low back. Most sleep clinicians suggest training out of stomach sleeping over time; pillow geometry is downstream of position.</p>
+              <p>If you are a position-shifter who starts on your side, Plumb may still help. <button type="button" class="restart" id="restart-redir" style="background:transparent;border:1px solid var(--rule);padding:0.4rem 0.8rem;border-radius:var(--radius);cursor:pointer;">Re-answer Q1</button></p>
+            </div>
+          `;
+          document.getElementById('result-email-wrap').style.display = 'none';
+          document.getElementById('restart-redir').addEventListener('click', resetQuiz);
+          show();
+          return;
+        }
+
+        document.getElementById('result-eyebrow').textContent = 'Your fit';
+        document.getElementById('result-headline').textContent = 'Your Plumb configuration';
+
+        let leadParts = [];
+        if (state.position === 'side') leadParts.push('You are a side sleeper');
+        else if (state.position === 'position-shifter') leadParts.push('You start on your side and shift');
+        else if (state.position === 'unsure') leadParts.push('You are not sure of your position');
+        leadParts.push(`a ${size.sku} sleeve is the right starting size`);
+        document.getElementById('result-lead').textContent = leadParts.join(', and ') + '.';
+
+        // Hidden fields for form submission
+        document.getElementById('hidden-position').value = state.position || '';
+        document.getElementById('hidden-thigh').value = state.thigh || '';
+        document.getElementById('hidden-pains').value = state.pains.join(',');
+        document.getElementById('hidden-tried').value = state.tried.join(',');
+        document.getElementById('hidden-temp').value = state.temp || '';
+        document.getElementById('hidden-rec-size').value = size.sku;
+
+        // Render cards
+        const cards = [];
+        // Size card always present
+        cards.push({
+          h: 'Recommended size: ' + size.sku,
+          body: size.note,
+          cite: state.thigh === 'over-32' ? '' : 'Plumb sleeve sizing is fit to upper-thigh circumference per d22.'
+        });
+        // Wedge cards from pains
+        wedges.forEach(w => cards.push(w));
+        // Tried cards (corpus-cited responses to prior products)
+        tried.forEach(t => cards.push(t));
+        // Temp card if hot
+        if (temp) cards.push(temp);
+
+        const html = cards.map(c => `
+          <div class="result-card">
+            <h3>${c.h}</h3>
+            <p>${c.body}</p>
+            ${c.cite ? `<p class="corpus-cite"><strong>From the corpus:</strong> ${c.cite}</p>` : ''}
+          </div>
+        `).join('');
+        document.getElementById('result-cards').innerHTML = html;
+        document.getElementById('result-redirect').style.display = 'none';
+        document.getElementById('result-email-wrap').style.display = 'block';
+
+        show();
+      }
+
+      function show() {
+        quizEl.style.display = 'none';
+        resultEl.classList.add('shown');
+        document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      function resetQuiz() {
+        // Clear state
+        state.position = null; state.thigh = null;
+        state.pains = []; state.tried = []; state.temp = null;
+        // Clear UI
+        document.querySelectorAll('.choice-list input').forEach(i => { i.checked = false; });
+        resultEl.classList.remove('shown');
+        quizEl.style.display = '';
+        setStep(1);
+      }
+
+      document.getElementById('restart-btn').addEventListener('click', resetQuiz);
+
+      // Initialize
+      setStep(1);
+
+      // If the URL has ?fit_saved=1 after Netlify form post-redirect, swap CTA
+      if (new URLSearchParams(location.search).get('fit_saved') === '1') {
+        // Show a thanks state without re-running the quiz
+        const wrap = document.getElementById('result-email-wrap');
+        if (wrap) {
+          wrap.innerHTML = '<div class="result-card" style="border-color:var(--sage);background:#F4F6F1;"><h3>Saved. We will email you when Kickstarter opens.</h3><p>One email. No marketing. We will include your saved configuration in the reminder.</p></div>';
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
