@@ -1129,6 +1129,18 @@ figure.full-width figcaption {
   margin: 1rem 0 0;
 }
 
+/* Plumb Fit Check homepage entry */
+.section-fit-check {
+  border-bottom: 1px solid var(--border);
+}
+.section-fit-check p {
+  max-width: 58ch;
+  color: var(--ink-soft);
+}
+.section-fit-check .button {
+  margin-top: 0.35rem;
+}
+
 /* Founder note (audit v2 Change 5) */
 .section-founder { }
 .section-founder p {
