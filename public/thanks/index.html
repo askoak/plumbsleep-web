@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thanks &mdash; Plumb</title>
+  <meta name="description" content="Thanks for the Plumb Fit Check. If you left an email and finished in the first 100, your $5 Amazon gift card is on its way. Either way, you'll see the Kickstarter early-bird before anyone else.">
+  <link rel="canonical" href="https://plumbsleep.com/thanks/">
+  <meta name="robots" content="noindex,follow">
+  <meta property="og:url" content="https://plumbsleep.com/thanks/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Thanks &mdash; Plumb">
+  <meta property="og:description" content="You finished the Plumb Fit Check. Here's what's next.">
+  <meta property="og:image" content="https://plumbsleep.com/assets/og_card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://plumbsleep.com/assets/og_card.png">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%233F5874'/%3E%3Ctext x='50' y='72' font-family='Georgia,Cambria,serif' font-size='72' font-weight='400' text-anchor='middle' fill='%23E8DCC4'%3EP%3C/text%3E%3Cpath d='M58 42 Q66 36 70 30 Q66 40 60 46 Z' fill='%236B8E5A'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+  <link rel="stylesheet" href="https://fonts.bunny.net/css?family=source-serif-4:400,500,600,700|inter:400,500,600&display=optional">
+  <link rel="stylesheet" href="/styles.css">
+
+  <style>
+    /* Thanks page — minimal, restrained. Mirrors /guarantee/ and /fit/ patterns. */
+    .thanks-wrap { max-width: var(--max-w-narrow); margin: 0 auto; padding: 3rem 0 2rem; }
+    .thanks-wrap section { padding: 1.8rem 0; border-top: 1px solid var(--border); }
+    .thanks-wrap section:first-child { border-top: 0; padding-top: 0; }
+
+    .thanks-hero h1 {
+      font-family: var(--serif); font-weight: 600;
+      font-size: clamp(2rem, 4.5vw, 2.8rem); line-height: 1.15;
+      margin: 0 0 0.6rem; color: var(--ink);
+    }
+    .thanks-hero p.lede {
+      font-family: var(--serif); font-size: 1.2rem; line-height: 1.5;
+      color: var(--ink-soft); margin: 0 0 0.4rem; max-width: 52ch;
+    }
+
+    .reward-block {
+      background: var(--bg-warm);
+      border-left: 3px solid var(--sage-deep);
+      padding: 1.4rem 1.5rem;
+      margin: 0;
+    }
+    .reward-block h2 {
+      font-family: var(--serif); font-weight: 600;
+      font-size: 1.25rem; margin: 0 0 0.5rem; color: var(--ink);
+    }
+    .reward-block p { margin: 0 0 0.5rem; line-height: 1.55; }
+    .reward-block p:last-child { margin-bottom: 0; }
+    .reward-block .small { font-size: 0.92rem; color: var(--ink-soft); }
+
+    .signup-block h2 {
+      font-family: var(--serif); font-weight: 600;
+      font-size: 1.4rem; margin: 0 0 0.5rem; color: var(--ink);
+    }
+    .signup-block .signup-lede {
+      max-width: 50ch; margin: 0 0 1.2rem; line-height: 1.55; color: var(--ink-soft);
+    }
+    .signup-form {
+      display: flex; flex-wrap: wrap; gap: 0.6rem; max-width: 460px;
+    }
+    .signup-form input[type="email"] {
+      flex: 1 1 220px; min-width: 0;
+      padding: 0.75rem 0.9rem;
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+      background: var(--surface);
+      font-family: var(--sans); font-size: 1rem;
+      color: var(--ink);
+    }
+    .signup-form input[type="email"]:focus {
+      outline: 2px solid var(--sage); outline-offset: 1px;
+      border-color: var(--sage-deep);
+    }
+    .signup-form button {
+      padding: 0.75rem 1.2rem;
+      border: 0; border-radius: var(--radius);
+      background: var(--sage-deep); color: var(--surface);
+      font-family: var(--sans); font-weight: 500; font-size: 1rem;
+      cursor: pointer;
+      transition: background .12s ease;
+    }
+    .signup-form button:hover { background: var(--ink); }
+    .signup-confirm {
+      display: none; margin-top: 0.8rem; padding: 0.7rem 0.9rem;
+      background: #F4F6F1; border-left: 3px solid var(--sage);
+      font-size: 0.95rem; line-height: 1.45; color: var(--ink);
+    }
+    .signup-confirm.active { display: block; }
+    .signup-meta {
+      margin-top: 0.7rem; font-size: 0.88rem; color: var(--faint);
+      max-width: 50ch; line-height: 1.45;
+    }
+
+    .next-block h2 {
+      font-family: var(--serif); font-weight: 600;
+      font-size: 1.2rem; margin: 0 0 0.6rem; color: var(--ink);
+    }
+    .next-list {
+      list-style: none; padding: 0; margin: 0;
+      display: grid; gap: 0.55rem;
+    }
+    .next-list li { margin: 0; }
+    .next-list a {
+      display: inline-block; color: var(--midnight-deep);
+      text-decoration: underline; text-decoration-color: var(--rule);
+      text-underline-offset: 3px;
+    }
+    .next-list a:hover { text-decoration-color: var(--sage-deep); color: var(--ink); }
+    .next-list .gloss {
+      display: block; font-size: 0.88rem; color: var(--faint);
+      margin-top: 0.1rem;
+    }
+
+    .donation-note {
+      margin-top: 1.2rem; padding: 0.8rem 1rem;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.92rem; line-height: 1.5; color: var(--ink-soft);
+    }
+    .donation-note strong { color: var(--ink); font-weight: 600; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="nav-inner">
+      <a class="nav-brand" href="/" aria-label="Plumb &mdash; home">
+        <picture>
+          <source srcset="/assets/logos/logo_C.webp" type="image/webp">
+          <img src="/assets/logos/logo_C.jpg" alt="Plumb" width="36" height="36" decoding="async">
+        </picture>
+        <span class="nav-brand-word">Plumb</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/#how">How it works</a></li>
+        <li><a href="/#pieces">The kit</a></li>
+        <li><a href="/#sizing">Sizing</a></li>
+        <li><a href="/#faq">FAQ</a></li>
+        <li><a class="nav-cta" href="/#waitlist">Join the waitlist</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main" class="thanks-wrap">
+
+    <section class="thanks-hero">
+      <h1>Thanks for the input.</h1>
+      <p class="lede">Real responses from real side sleepers are the only thing that keeps Plumb honest. We read every one.</p>
+    </section>
+
+    <section>
+      <div class="reward-block">
+        <h2>Your $5 gift card</h2>
+        <p>If you left an email and you&rsquo;re one of our first 100 finishers, your Amazon gift card lands in your inbox within 24 hours.</p>
+        <p class="small">Skipped the email? The $5 still gets spent. We send it to the National Coalition for the Homeless on your behalf at the end of the survey window.</p>
+      </div>
+    </section>
+
+    <section class="signup-block" id="kickstarter">
+      <h2>Want the Kickstarter early-bird first?</h2>
+      <p class="signup-lede">
+        We launch on Kickstarter at $59 for early backers (retail $69 plus shipping).
+        The first 200 backers also get a separate discount code we don&rsquo;t publish anywhere else.
+        Drop your email and you&rsquo;ll see the campaign before it goes public.
+      </p>
+
+      <form name="kickstarter-waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="signup-form" id="ks-form">
+        <input type="hidden" name="form-name" value="kickstarter-waitlist">
+        <p style="display:none;"><label>Don&rsquo;t fill this out: <input name="bot-field"></label></p>
+        <input type="email" name="email" required placeholder="your@email.com" aria-label="Email address">
+        <button type="submit">Notify me</button>
+      </form>
+
+      <div class="signup-confirm" id="ks-confirm" role="status" aria-live="polite">
+        Got it. You&rsquo;re on the Kickstarter early-bird list. Watch your inbox.
+      </div>
+
+      <p class="signup-meta">
+        One email when the campaign goes live. We don&rsquo;t share your address. Unsubscribe with one click.
+      </p>
+    </section>
+
+    <section class="next-block">
+      <h2>Three quick things while you&rsquo;re here</h2>
+      <ul class="next-list">
+        <li>
+          <a href="/#story">Read the Plumb story</a>
+          <span class="gloss">Why a side-sleeper founder built this in the first place.</span>
+        </li>
+        <li>
+          <a href="/#pieces">See the three-piece design</a>
+          <span class="gloss">Sleeve, foam pillow, washable cover. What each one does.</span>
+        </li>
+        <li>
+          <a href="/investors/">Investor materials</a>
+          <span class="gloss">Access-controlled. For accredited investors and family offices.</span>
+        </li>
+      </ul>
+
+      <div class="donation-note">
+        <strong>About the donation alternative.</strong> Plumb commits the unredeemed portion of the gift-card budget (up to $500) to the National Coalition for the Homeless after the survey window closes. We publish the donation amount in a follow-up update to everyone who finished.
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-cols">
+        <div>
+          <picture>
+            <source srcset="/assets/logos/logo_C.webp" type="image/webp">
+            <img src="/assets/logos/logo_C.jpg" alt="Plumb" width="48" height="48" class="footer-mark">
+          </picture>
+          <p class="footer-tag">Sleep, aligned.</p>
+        </div>
+        <div>
+          <p class="footer-col-h">Contact</p>
+          <p><a href="mailto:hello@plumbsleep.com">hello@plumbsleep.com</a></p>
+          <p><a href="mailto:press@plumbsleep.com">press@plumbsleep.com</a></p>
+        </div>
+        <div>
+          <p class="footer-col-h">Audience pages</p>
+          <p><a href="/clinicians/">For clinicians</a></p>
+          <p><a href="/expecting/">For planning &amp; expecting moms</a></p>
+          <p><a href="/guarantee/">Customer guarantee</a></p>
+          <p><a href="/fit/">Find your fit</a> <span class="footer-gated">(2-minute quiz)</span></p>
+          <p><a href="/feedback/">Plumb Fit Check</a> <span class="footer-gated">($5 reward, 100 cap)</span></p>
+          <p><a href="/investors/">For investors</a> <span class="footer-gated">(access-controlled)</span></p>
+          <p><a href="/press/">For press</a></p>
+        </div>
+        <div>
+          <p class="footer-col-h">Status</p>
+          <p>Launching on Kickstarter</p>
+          <p>Stage 1 wear test underway</p>
+          <p>First production targeted Q4 2026</p>
+        </div>
+      </div>
+      <p class="founder-line">Designed by a side sleeper tired of restless nights and lost knee pillows.</p>
+      <p class="disclaimer">
+        Plumb is not a medical device. It is designed to improve sleep posture
+        and comfort and is not intended to diagnose, treat, cure, or prevent
+        any disease or medical condition. If you have a medical condition
+        affecting your back, hips, knees, or sleep, consult your physician.
+        Fabric is viscose made from bamboo, not raw bamboo fiber.
+      </p>
+      <p class="footer-fine">Mark selected June 2026 &middot; Option C.</p>
+      <p class="footer-fine">&copy; 2026 Plumb. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Progressive enhancement: intercept Netlify form submit, show inline confirm.
+    (function(){
+      var form = document.getElementById('ks-form');
+      var confirm = document.getElementById('ks-confirm');
+      if (!form || !confirm) return;
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        var data = new FormData(form);
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Accept': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(data).toString()
+        }).then(function(){
+          form.style.display = 'none';
+          confirm.classList.add('active');
+        }).catch(function(){
+          // Fall back to native submit if fetch fails
+          form.submit();
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
