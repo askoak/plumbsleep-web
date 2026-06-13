@@ -638,13 +638,14 @@
         document.querySelectorAll('.choice-list input').forEach(i => { i.checked = false; });
         resultEl.classList.remove('shown');
         quizEl.style.display = '';
-        setStep(1);
+        setStep(1, true);  // scroll to top of quiz when restarting after a result
       }
 
       document.getElementById('restart-btn').addEventListener('click', resetQuiz);
 
-      // Initialize
-      setStep(1);
+      // Initialize. No scroll on first mount so the intro section above the
+      // quiz remains visible on landing.
+      setStep(1, false);
 
       // If the URL has ?fit_saved=1 after Netlify form post-redirect, swap CTA
       if (new URLSearchParams(location.search).get('fit_saved') === '1') {
