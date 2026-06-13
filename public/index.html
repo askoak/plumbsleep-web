@@ -29,21 +29,36 @@
 
     /* Fit Check gift card promo — restrained editorial card, not a banner */
     .section-fitcheck-promo { padding: 1.5rem 0 0.5rem; }
-    .fitcheck-promo {
-      margin: 0 auto;
-      padding: 1.6rem 1.5rem;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+    a.fitcheck-promo {
       display: grid;
       grid-template-columns: 170px 1fr;
       gap: 2rem;
       align-items: center;
+      margin: 0 auto;
+      padding: 1.6rem 1.5rem;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      color: inherit;
+      transition: background-color 0.18s ease;
     }
+    a.fitcheck-promo:hover,
+    a.fitcheck-promo:focus-visible {
+      background-color: rgba(107, 142, 90, 0.06); /* faint sage wash */
+      text-decoration: none;
+    }
+    a.fitcheck-promo:focus-visible {
+      outline: 2px solid var(--accent, #6B8E5A);
+      outline-offset: 2px;
+    }
+    a.fitcheck-promo:hover .fc-cta { text-decoration: underline; }
     .fitcheck-promo img {
       width: 170px; height: auto; border-radius: 6px;
       box-shadow: 0 2px 6px rgba(45, 74, 62, 0.12);
       justify-self: center;
+      transition: transform 0.18s ease;
     }
+    a.fitcheck-promo:hover img { transform: translateY(-1px); }
     .fitcheck-promo .fc-copy { min-width: 0; max-width: 62ch; }
     .fitcheck-promo h2 {
       font-family: var(--serif); font-weight: 600;
@@ -56,11 +71,14 @@
     .fitcheck-promo .fc-fine {
       font-size: 0.9rem; color: var(--faint); margin-top: 0.6rem;
     }
-    .fitcheck-promo a.fc-cta {
+    .fitcheck-promo .fc-cta {
       font-weight: 600;
+      color: var(--accent, #3F5874);
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
     @media (max-width: 640px) {
-      .fitcheck-promo { grid-template-columns: 1fr; padding: 1.2rem 1.25rem; gap: 1rem; }
+      a.fitcheck-promo { grid-template-columns: 1fr; padding: 1.2rem 1.25rem; gap: 1rem; }
       .fitcheck-promo img { width: 150px; justify-self: start; }
     }
   </style>
@@ -140,18 +158,18 @@
       </div>
     </section>
 
-    <!-- 1.5 FIT CHECK GIFT CARD PROMO (featured, restrained) -->
+    <!-- 1.5 FIT CHECK GIFT CARD PROMO (featured, restrained, fully clickable) -->
     <section class="section section-fitcheck-promo">
       <div class="content">
-        <div class="fitcheck-promo">
-          <img src="/assets/amazon-gc-5.jpg" alt="$5 Amazon gift card" width="210" height="133" loading="lazy">
+        <a class="fitcheck-promo" href="/feedback/" aria-label="Take the 2-minute Plumb Fit Check and earn a $5 Amazon gift card">
+          <img src="/assets/amazon-gc-5.jpg" alt="" width="210" height="133" loading="lazy">
           <div class="fc-copy">
             <h2>Two minutes. $5 thank-you.</h2>
             <p>Help us build Plumb for real side sleepers. Answer five quick questions and the first 100 finishers who leave an email get a $5 Amazon gift card within 24 hours.</p>
             <p class="fc-fine">Prefer not to share an email? The $5 goes to the National Coalition for the Homeless on your behalf.</p>
-            <p><a class="fc-cta" href="/feedback/">Take the Fit Check &rarr;</a></p>
+            <p><span class="fc-cta">Take the Fit Check &rarr;</span></p>
           </div>
-        </div>
+        </a>
       </div>
     </section>
 
