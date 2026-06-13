@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plumb &mdash; still there in the morning. Sized for your body.</title>
-  <meta name="description" content="A single-piece sleeve-and-case knee pillow for side sleepers. The foam pillow nests inside a case sewn permanently to the sleeve and replaces as a separate consumable. Designed against the four failures buyers complain about: pillow falls off, wrong size, wrong firmness, can't be washed. Pre-prototype. Backed by Plumb's 1-year customer guarantee.">
+  <meta name="description" content="A three-piece knee pillow for side sleepers: thigh sleeve, foam pillow, washable pillowcase. Designed against the four failures buyers complain about: pillow falls off, wrong size, wrong firmness, can't be washed. Launching on Kickstarter from $55. Backed by Plumb's 1-year customer guarantee with free returns shipping.">
   <link rel="canonical" href="https://plumbsleep.com/">
   <meta property="og:url" content="https://plumbsleep.com/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Plumb &mdash; still there in the morning. Sized for your body.">
-  <meta property="og:description" content="One garment, one job. The foam pillow nests in a case sewn permanently to the sleeve. Still between your knees when you wake up.">
+  <meta property="og:description" content="Three pieces, one job. A thigh sleeve, a foam pillow, and a washable pillowcase. Still between your knees when you wake up.">
   <meta property="og:image" content="https://plumbsleep.com/assets/og_card.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -23,7 +23,7 @@
 
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Hero subhead support — single-piece redesign, voice council hero pairing */
+    /* Hero subhead support — three-piece redesign per d28, voice council hero pairing */
     .hero-copy h1 .hero-sub{display:block;font-weight:500;color:var(--ink-soft, #5a6470);font-size:0.78em;line-height:1.2;margin-top:0.25em;letter-spacing:0.005em;}
     @media (max-width: 720px){ .hero-copy h1 .hero-sub{font-size:0.82em;} }
   </style>
@@ -50,13 +50,13 @@
     </div>
   </nav>
 
-  <!-- TRUST STRIP -->
+  <!-- TRUST STRIP (audit v2 Change 4: no apology; five non-hedged claims) -->
   <div class="trust-strip" role="status">
-    <span>Pre-prototype</span>
+    <span>4,962 reviews coded</span>
     <span aria-hidden="true">&middot;</span>
-    <span>Stage 1 wear test underway</span>
+    <span>2 sleeve sizes</span>
     <span aria-hidden="true">&middot;</span>
-    <span><a href="/guarantee/" style="color:inherit;text-decoration:none;">1-year guarantee &middot; free shipping both ways</a></span>
+    <span><a href="/guarantee/" style="color:inherit;text-decoration:none;">1-year guarantee &middot; free returns shipping</a></span>
     <span aria-hidden="true">&middot;</span>
     <span>Viscose made from bamboo</span>
     <span aria-hidden="true">&middot;</span>
@@ -66,34 +66,38 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <main id="main">
 
-    <!-- 1. HERO -->
+    <!-- 1. HERO (audit v2 Change 1: failure-mode headline, inline capture, d33 pricing) -->
     <section class="section section-hero">
       <div class="hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Sleep, aligned.</p>
-          <h1>Still there in the morning.<br><span class="hero-sub">Sized for your body.</span></h1>
+          <p class="eyebrow">The knee pillow that stays</p>
+          <h1>Still on the floor by 3 a.m.<br><span class="hero-sub">Not anymore.</span></h1>
           <p class="hero-lede">
-            If you've already tried two or three knee pillows and given up
-            on them &mdash; the strap that didn't help, the wedge that
-            ended up on the floor, the one your doctor told you to go
-            without &mdash; Plumb is a different design built against
-            those specific failures.
+            Every other knee pillow fails the same four ways. We read
+            4,962 reviews to prove it. Then we built the one that does
+            not.
           </p>
-          <div class="hero-ctas">
-            <a class="button button-primary" href="#waitlist">Join the waitlist</a>
-            <a class="button button-ghost" href="#how">See how it works &rarr;</a>
-          </div>
-          <p class="hero-meta">
-            <em>1-year customer guarantee &middot; free shipping both ways.</em> <a href="/guarantee/">Details</a>.
+          <form class="hero-capture" name="plumb-waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?waitlist_submitted=1">
+            <input type="hidden" name="form-name" value="plumb-waitlist">
+            <input type="hidden" name="source" value="hero">
+            <p hidden><label>Do not fill: <input name="bot-field"></label></p>
+            <label class="visually-hidden" for="hero-email">Email</label>
+            <input type="email" id="hero-email" name="email" placeholder="your@email.com" autocomplete="email" required>
+            <button type="submit" class="button button-primary">Reserve my spot &rarr;</button>
+          </form>
+          <p class="hero-fine">
+            Be first when we launch on Kickstarter. From $55 at launch
+            &middot; $69 + $4.99 shipping at retail &middot; 1-year
+            guarantee &middot; free returns shipping.
           </p>
-          <p class="hero-meta" style="margin-top:0.4rem;font-size:0.9rem;opacity:0.85;">
-            Designed from 4,962 coded buyer reviews. <a href="/investors/">See the methodology &rarr;</a>
+          <p class="hero-meta" style="margin-top:0.8rem;font-size:0.9rem;opacity:0.85;">
+            <a href="/fit/">Not sure if Plumb is for you? Take the 2-minute fit check &rarr;</a>
           </p>
         </div>
         <figure class="hero-figure">
           <picture>
             <source srcset="assets/plumb_render_system_sage_blue_front.webp" type="image/webp">
-            <img src="assets/plumb_render_system_sage_blue_front.png" alt="Plumb single-piece sleeve-and-case: a soft sage-blue knit thigh sleeve with a permanently sewn fitted case that holds the contoured foam pillow." width="1536" height="1024" loading="eager" fetchpriority="high">
+            <img src="assets/plumb_render_system_sage_blue_front.png" alt="Plumb three-piece system: a soft sage-blue knit thigh sleeve, a removable foam pillow that slides into an elastic open-ended pocket, and a washable pillowcase." width="1536" height="1024" loading="eager" fetchpriority="high">
           </picture>
         </figure>
       </div>
@@ -114,33 +118,30 @@
       <div class="content content-narrow">
         <div class="guarantee-callout">
           <h2>Plumb's customer guarantee.</h2>
-          <p>You're going to love it. We guarantee it. If you don't love your Plumb kit, send it back within 1 year of receipt for a full refund. Free shipping both ways. Defects are replaced free, anytime. <a href="/guarantee/">Read the full guarantee &rarr;</a></p>
+          <p>You are going to love it. We guarantee it. If you do not love your Plumb kit, send it back within 1 year of receipt for a full refund. Returns shipping is free. Defects are replaced free, anytime. <a href="/guarantee/">Read the full guarantee &rarr;</a></p>
           <p class="guarantee-closing">We want you to love your sleep, not just buy it.</p>
         </div>
       </div>
     </section>
 
-    <!-- 3. HOW IT WORKS — single-piece sleeve-and-case (Architecture B, package/154) -->
+    <!-- 3. HOW IT WORKS — d28 three-piece architecture -->
     <section class="section" id="how">
       <div class="content">
         <h2>How Plumb works</h2>
         <p class="section-lede">
-          One soft knit garment worn on the upper thigh, with a fitted
-          case sewn permanently to its inner side. The foam pillow
-          nests in the case. When you turn, everything turns with you
-          &mdash; there is nothing to reattach in the dark.
+          A soft knit thigh sleeve with an open-ended elastic pocket on its inner side. The foam pillow slides into the pocket; a washable pillowcase goes over the foam. When you turn, everything turns with you. There is nothing to reattach in the dark.
         </p>
 
         <ol class="how-steps">
           <li>
             <span class="how-step-num">1</span>
             <h3>Put it on</h3>
-            <p>A soft tubular knit (viscose made from bamboo), about five inches tall, on the upper thigh of your top-resting leg. The foam pillow is already seated in the case.</p>
+            <p>A soft tubular knit (viscose made from bamboo), about five inches tall, on the upper thigh of your top-resting leg. The foam pillow is already seated in the pocket, under the washable pillowcase.</p>
           </li>
           <li>
             <span class="how-step-num">2</span>
             <h3>Sleep</h3>
-            <p>Roll, twist, kick &mdash; the sleeve grips the thigh and the case carries the pillow with it. The pillow does not slip out from between your knees, because it cannot leave the case it is sewn into.</p>
+            <p>Roll, twist, kick. The sleeve grips the thigh and the pocket carries the pillow with it. The pillow does not slip out from between your knees because the leg the pocket is on is going wherever you are going.</p>
           </li>
           <li>
             <span class="how-step-num">3</span>
@@ -155,7 +156,7 @@
             <picture>
               <source srcset="assets/sketches/sketch_03_man.webp" type="image/webp">
               <img src="assets/sketches/sketch_03_man.png" width="1536" height="1024" loading="lazy" decoding="async"
-                   alt="Pencil-and-ink working sketch: an adult man side-sleeping with the Plumb sleeve-and-case on his top-resting thigh, the foam pillow seated between his thighs. Line art on plain paper.">
+                   alt="Pencil-and-ink working sketch: an adult man side-sleeping with the Plumb sleeve on his top-resting thigh, the foam pillow seated between his thighs. Line art on plain paper.">
             </picture>
             <figcaption>Plumb in use &mdash; designer working sketch</figcaption>
           </figure>
@@ -163,21 +164,20 @@
             <picture>
               <source srcset="assets/sketches/sketch_04_woman.webp" type="image/webp">
               <img src="assets/sketches/sketch_04_woman.png" width="1536" height="1024" loading="lazy" decoding="async"
-                   alt="Pencil-and-ink working sketch: an adult woman side-sleeping with the Plumb sleeve-and-case on her top-resting thigh, the foam pillow seated between her thighs. Line art on plain paper.">
+                   alt="Pencil-and-ink working sketch: an adult woman side-sleeping with the Plumb sleeve on her top-resting thigh, the foam pillow seated between her thighs. Line art on plain paper.">
             </picture>
             <figcaption>Plumb in use &mdash; designer working sketch</figcaption>
           </figure>
         </div>
-        <p class="built-sketches-note">Designer working sketches (pencil + ink). Provisional; final illustrations to follow.</p>
+        <p class="built-sketches-note">Designer working sketches (pencil + ink). Final illustrations land once the first production run does.</p>
       </div>
     </section>
 
-    <!-- 3.5 WHY PLUMB IS DIFFERENT — benefit stack ordered per voice council §5 ranking:
-         retention → sizing → firmness → washability. Hero (Still there in the morning /
-         Sized for your body) and the editorial pull-quote remain brand signatures. -->
+    <!-- 2. WHY PLUMB IS DIFFERENT — audit v2 Change 2: moved up to fold 2,
+         four cards rewritten in declarative voice, d28 three-piece architecture. -->
     <section class="section" id="why" aria-labelledby="why-heading">
       <div class="content">
-        <h2 id="why-heading">Why Plumb is different.</h2>
+        <h2 id="why-heading">Four failures. One design.</h2>
         <p class="section-lede">
           We coded 4,962 knee-pillow reviews against a unified taxonomy
           to find out exactly what fails for whom. The list below is
@@ -187,85 +187,143 @@
 
         <div class="benefits-grid">
           <div class="piece-card">
-            <h3>Still there in the morning.</h3>
-            <p>The most common failure is also the most exhausting one: the pillow ends up on the floor by 2 a.m. and the knee that needed support spent the night without it. Plumb's foam pillow sits inside a case sewn to the sleeve. There is no separable attachment to fall apart, no strap to twist, no buckle to dig in. Wear-test results published before launch.</p>
+            <h3>Stays put.</h3>
+            <p>The pillow on the floor by 2 a.m. is the #1 complaint in every brand we coded. Plumb's foam pillow slides into an elastic pocket on a thigh sleeve. The sleeve moves with the leg that moves. The pillow goes where the leg goes. That is the whole design.</p>
           </div>
           <div class="piece-card">
-            <h3>Sized for your body.</h3>
-            <p>Sizing is the number-one complaint in every tier of the category we surveyed. Pillows are too short for tall frames, too small for larger thighs, too contoured for slimmer ones. Plumb runs two sleeve sizes &mdash; Regular up to 28 inches and XL 28&ndash;32 inches &mdash; cut against U.S. anthropometric data, not a one-size guess. The foam pillow comes in two thicknesses to pair with it.</p>
+            <h3>Sized for you, not for an average.</h3>
+            <p>"Too short for tall people." "Too small for big thighs." "Too contoured for slim ones." Two sleeve sizes &mdash; Regular up to 28 inches, XL 28&ndash;32 inches &mdash; thigh-circumference fit, cut against U.S. anthropometric data. Not a one-size guess.</p>
           </div>
           <div class="piece-card">
-            <h3>Right firmness for inter-thigh load.</h3>
-            <p>Most knee pillows are spec'd to feel nice in a showroom, not to carry the load your thighs actually put on them through the night. Buyers describe it two ways &mdash; "more like a block of wood" or "goes flat in a week." Plumb's foam is specified at the firmness range the load math calls for. <a href="/investors/#3-5-mechanical-rationale">See the load math &rarr;</a></p>
+            <h3>The right firmness for your thighs.</h3>
+            <p>Most knee pillows are spec'd to feel nice in a showroom. Buyers call them "a block of wood" or say they "go flat in a week." Plumb's foam is specified for the load your thighs actually put on it. The foam is a replaceable insert, so when it wears, you swap the insert, not the product. <a href="/investors/#3-5-mechanical-rationale">See the load math &rarr;</a></p>
           </div>
           <div class="piece-card">
-            <h3>The parts that touch you wash.</h3>
-            <p>The sleeve-and-case is one knit fabric system; it goes in the machine. Cold wash, tumble dry low. The foam pillow inside is never washed &mdash; it airs out and is replaced as a separate consumable when it eventually wears. Most knee pillows are a single foam block that nothing washes. Plumb is built the other way.</p>
+            <h3>The parts that touch you, wash.</h3>
+            <p>Every other knee pillow is one foam block you cannot wash. Plumb is three pieces &mdash; the thigh sleeve, the foam pillow, and a washable pillowcase over the foam. The sleeve and the pillowcase go in the machine. The foam airs out and is replaced as a consumable when it wears.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 4. THE BUILD — single-piece sleeve-and-case + foam consumable (Architecture B, package/154) -->
+    <!-- 2.5 COMPARISON TABLE (audit v2 Change 3) -->
+    <section class="section section-comparison" id="compare" aria-labelledby="compare-heading">
+      <div class="content">
+        <h2 id="compare-heading">Plumb vs. what is already in your bedroom.</h2>
+        <p class="section-lede">
+          The honest comparison. Plumb does five things. Most products in the category do one or two.
+        </p>
+        <div class="compare-table-wrap">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Plumb</th>
+                <th scope="col">Strap pillow</th>
+                <th scope="col">Wedge</th>
+                <th scope="col">Padded sleeve</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Stays put all night</th>
+                <td class="yes" aria-label="Plumb: yes">&#10003;</td>
+                <td class="partial" aria-label="Strap pillow: mixed">Mixed</td>
+                <td class="no" aria-label="Wedge: no">&#10005;</td>
+                <td class="partial" aria-label="Padded sleeve: mixed">Mixed</td>
+              </tr>
+              <tr>
+                <th scope="row">Sized for your body</th>
+                <td class="yes" aria-label="Plumb: yes">&#10003;</td>
+                <td class="no" aria-label="Strap pillow: no">&#10005;</td>
+                <td class="no" aria-label="Wedge: no">&#10005;</td>
+                <td class="no" aria-label="Padded sleeve: no">&#10005;</td>
+              </tr>
+              <tr>
+                <th scope="row">Foam spec'd for thigh load</th>
+                <td class="yes" aria-label="Plumb: yes">&#10003;</td>
+                <td class="no" aria-label="Strap pillow: no">&#10005;</td>
+                <td class="no" aria-label="Wedge: no">&#10005;</td>
+                <td class="no" aria-label="Padded sleeve: no">&#10005;</td>
+              </tr>
+              <tr>
+                <th scope="row">The parts that touch you, wash</th>
+                <td class="yes" aria-label="Plumb: yes">&#10003;</td>
+                <td class="no" aria-label="Strap pillow: no">&#10005;</td>
+                <td class="no" aria-label="Wedge: no">&#10005;</td>
+                <td class="partial" aria-label="Padded sleeve: partial">Cover only</td>
+              </tr>
+              <tr>
+                <th scope="row">1-year guarantee, free returns</th>
+                <td class="yes" aria-label="Plumb: yes">&#10003;</td>
+                <td class="no" aria-label="Strap pillow: no">&#10005;</td>
+                <td class="no" aria-label="Wedge: no">&#10005;</td>
+                <td class="no" aria-label="Padded sleeve: no">&#10005;</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="compare-fineprint">Category claims based on the 4,962-review corpus. "Strap pillow" includes all wearable knee-pillow brands with a buckle or velcro strap. "Wedge" is half-moon and contour-block designs. "Padded sleeve" is sleeve-style products without independent sleeve sizing or replaceable foam.</p>
+      </div>
+    </section>
+
+    <!-- 4. THE BUILD — d28 three-piece architecture (sleeve + foam pillow + washable pillowcase) -->
     <section class="section section-warm" id="pieces">
       <div class="content">
-        <h2>One garment. One job.</h2>
+        <h2>Three pieces. One job.</h2>
         <p class="section-lede">
-          The sleeve and the case are one fabric system. The foam pillow
-          nests inside the case and is replaced as a consumable when it
-          wears. There is no separate attachment to break, lose, or fight
-          with in the dark.
+          A thigh sleeve. A foam pillow. A washable pillowcase. The pieces do different jobs, and each one is replaceable on its own when it needs to be.
         </p>
       </div>
 
       <figure class="full-width">
         <picture>
           <source srcset="assets/cushion_family.webp" type="image/webp">
-          <img src="assets/cushion_family.jpg" alt="Plumb foam pillow study: two thicknesses, five-inch baseline and six-inch optional, in matching hourglass profile." width="1536" height="1024" loading="lazy">
+          <img src="assets/cushion_family.jpg" alt="Plumb foam pillow study: two thicknesses in matching hourglass profile, paired with the washable pillowcase." width="1536" height="1024" loading="lazy">
         </picture>
-        <figcaption>The foam pillow comes in two thicknesses &middot; nests inside the case sewn to the sleeve</figcaption>
+        <figcaption>The foam pillow comes in two thicknesses &middot; slides into the elastic pocket on the sleeve, under a washable pillowcase</figcaption>
       </figure>
 
       <div class="content">
         <div class="three-pieces-grid">
           <div class="piece-card">
-            <h3>The sleeve-and-case</h3>
-            <p>A soft tubular knit (viscose made from bamboo) worn on the upper thigh, with a fitted case sewn permanently to its body-side surface. Silicone dot grippers on the inner top rim hold the sleeve in place without binding. The case holds the foam pillow against your inner thigh through any sleep position you take.</p>
+            <h3>The thigh sleeve</h3>
+            <p>A soft tubular knit (viscose made from bamboo) worn on the upper thigh, with an open-ended elastic pocket on its body-side surface. Silicone dot grippers on the inner top rim hold the sleeve in place without binding. The pocket holds the foam pillow against your inner thigh through any sleep position you take, and releases one-handed when you want to take it off.</p>
           </div>
           <div class="piece-card">
             <h3>The foam pillow</h3>
-            <p>A contoured hourglass foam core, CertiPUR-US polyurethane. Twelve inches long. Five-inch baseline thickness; six-inch optional. Slides into the case from a body-side flap closure. Replaced as a consumable when it eventually compresses or wears.</p>
+            <p>A contoured hourglass foam core, CertiPUR-US polyurethane. Sized to match the sleeve. Two thicknesses. The foam is the consumable &mdash; when it eventually compresses, you swap the foam, not the whole product.</p>
           </div>
           <div class="piece-card">
-            <h3>What it isn't</h3>
-            <p>It isn't a strap. It isn't a wedge wrapped in a sleeve. It isn't a foam block you can't wash. It isn't a buckle, a clip, or a band that ends up twisted on top of your thigh by morning. The single-piece architecture is the design, not a manufacturing shortcut &mdash; it's what removes the attachment as a failure mode.</p>
+            <h3>The washable pillowcase</h3>
+            <p>A knit cover that slides over the foam pillow, between the foam and the elastic pocket. Removable. Machine washable on cold, tumble dry low. The sleeve also washes. The two parts that touch you both come off and go in the wash; the foam stays clean inside.</p>
           </div>
         </div>
 
-        <!-- How it's built — designer working sketches (WebP, package/137 §5) -->
+        <!-- How it's built — designer working sketches -->
         <div class="built-sketches">
           <figure>
             <picture>
               <source srcset="assets/sketches/sketch_01_assembled.webp" type="image/webp">
               <img src="assets/sketches/sketch_01_assembled.png" width="1536" height="1024" loading="lazy" decoding="async"
-                   alt="Pencil-and-ink working sketch: the assembled Plumb sleeve-and-case in three views, the foam pillow seated inside the case. Line art on plain paper.">
+                   alt="Pencil-and-ink working sketch: the assembled Plumb three-piece system in three views, with foam pillow seated in the sleeve pocket under the pillowcase. Line art on plain paper.">
             </picture>
-            <figcaption>Assembled &mdash; sleeve, case, and foam pillow as one unit</figcaption>
+            <figcaption>Assembled &mdash; sleeve, foam pillow, and washable pillowcase as one unit</figcaption>
           </figure>
           <figure>
             <picture>
               <source srcset="assets/sketches/sketch_02_exploded.webp" type="image/webp">
               <img src="assets/sketches/sketch_02_exploded.png" width="1024" height="1536" loading="lazy" decoding="async"
-                   alt="Pencil-and-ink working sketch: exploded view of the Plumb design showing the sleeve-and-case as one fabric system and the foam pillow as a separate consumable, plus a sleeve cross-section. Line art on plain paper.">
+                   alt="Pencil-and-ink working sketch: exploded view of the Plumb three-piece design showing thigh sleeve, foam pillow, and washable pillowcase as separate components. Line art on plain paper.">
             </picture>
-            <figcaption>Exploded &mdash; the sleeve-and-case (one fabric system) and the foam pillow (the consumable)</figcaption>
+            <figcaption>Exploded &mdash; the three pieces that make up the system</figcaption>
           </figure>
         </div>
-        <p class="built-sketches-note">Designer working sketches (pencil + ink). Provisional; final illustrations to follow.</p>
+        <p class="built-sketches-note">Designer working sketches (pencil + ink). Final product photography lands once the first manufacturing run does.</p>
       </div>
     </section>
 
-    <!-- 4.5 VISUAL GALLERY (rotating carousel — package/145) -->
+    <!-- 4.5 VISUAL GALLERY (audit v2 Change 6: carousel cut; 3-image static grid) -->
     <section class="section" id="gallery" aria-labelledby="gallery-heading">
       <div class="content">
         <h2 id="gallery-heading">Plumb, in pictures.</h2>
@@ -273,136 +331,40 @@
           Working sketches and product study renders. The full set lives on
           the <a href="/investors/">investor brief</a>.
         </p>
-      </div>
-      <div class="carousel" role="region" aria-label="Plumb image gallery, auto-advancing">
-        <div class="carousel-track">
-        <figure class="carousel-slide">
-          <picture>
-            <source srcset="assets/sketches/sketch_01_assembled.webp" type="image/webp">
-            <img src="assets/sketches/sketch_01_assembled.png" alt="Assembled sleeve-and-case with foam pillow" loading="lazy" decoding="async">
-          </picture>
-          <figcaption>Assembled — sleeve, case, foam pillow as one</figcaption>
-        </figure>
-        <figure class="carousel-slide">
-          <picture>
-            <source srcset="assets/plumb_render_system_sage_blue_front.webp" type="image/webp">
-            <img src="assets/plumb_render_system_sage_blue_front.png" alt="Plumb single-piece product study render — sage-blue sleeve-and-case" loading="lazy" decoding="async">
-          </picture>
-          <figcaption>Single-piece product study — sage colorway</figcaption>
-        </figure>
-        <figure class="carousel-slide">
-          <picture>
-            <source srcset="assets/sketches/sketch_03_man.webp" type="image/webp">
-            <img src="assets/sketches/sketch_03_man.png" alt="Working sketch of a man side-sleeping with the Plumb sleeve-and-case" loading="lazy" decoding="async">
-          </picture>
-          <figcaption>Adult side-sleeper — male</figcaption>
-        </figure>
-        <figure class="carousel-slide">
-          <picture>
-            <source srcset="assets/hero_dune.webp" type="image/webp">
-            <img src="assets/hero_dune.jpg" alt="Plumb in the Dune colorway" loading="lazy" decoding="async">
-          </picture>
-          <figcaption>Dune colorway</figcaption>
-        </figure>
-        <figure class="carousel-slide">
-          <picture>
-            <source srcset="assets/sketches/sketch_04_woman.webp" type="image/webp">
-            <img src="assets/sketches/sketch_04_woman.png" alt="Working sketch of a woman side-sleeping with the Plumb sleeve-and-case" loading="lazy" decoding="async">
-          </picture>
-          <figcaption>Adult side-sleeper — female</figcaption>
-        </figure>
-        <figure class="carousel-slide">
-          <picture>
-            <source srcset="assets/cushion_family.webp" type="image/webp">
-            <img src="assets/cushion_family.jpg" alt="The foam pillow consumable in Regular and XL thicknesses" loading="lazy" decoding="async">
-          </picture>
-          <figcaption>Foam pillow — two thicknesses</figcaption>
-        </figure>
-        <figure class="carousel-slide">
-          <picture>
-            <source srcset="assets/sketches/sketch_05_pregnant.webp" type="image/webp">
-            <img src="assets/sketches/sketch_05_pregnant.png" alt="Working sketch of a pregnant side-sleeper with the Plumb sleeve-and-case" loading="lazy" decoding="async">
-          </picture>
-          <figcaption>Planning or expecting</figcaption>
-        </figure>
-        <figure class="carousel-slide">
-          <picture>
-            <source srcset="assets/pairing.webp" type="image/webp">
-            <img src="assets/pairing.jpg" alt="Sleeve-and-case sizing chart with foam pillow thickness options" loading="lazy" decoding="async">
-          </picture>
-          <figcaption>Sleeve sizing × foam thickness</figcaption>
-        </figure>
-        <figure class="carousel-slide">
-          <picture>
-            <source srcset="assets/sketches/sketch_01_assembled.webp" type="image/webp">
-            <img src="assets/sketches/sketch_01_assembled.png" alt="Assembled sleeve-and-case with foam pillow" loading="lazy" decoding="async">
-          </picture>
-          <figcaption>Assembled — sleeve, case, foam pillow as one</figcaption>
-        </figure>
-        <figure class="carousel-slide">
-          <picture>
-            <source srcset="assets/plumb_render_system_sage_blue_front.webp" type="image/webp">
-            <img src="assets/plumb_render_system_sage_blue_front.png" alt="Plumb single-piece product study render — sage-blue sleeve-and-case" loading="lazy" decoding="async">
-          </picture>
-          <figcaption>Single-piece product study — sage colorway</figcaption>
-        </figure>
-        <figure class="carousel-slide">
-          <picture>
-            <source srcset="assets/sketches/sketch_03_man.webp" type="image/webp">
-            <img src="assets/sketches/sketch_03_man.png" alt="Working sketch of a man side-sleeping with the Plumb sleeve-and-case" loading="lazy" decoding="async">
-          </picture>
-          <figcaption>Adult side-sleeper — male</figcaption>
-        </figure>
-        <figure class="carousel-slide">
-          <picture>
-            <source srcset="assets/hero_dune.webp" type="image/webp">
-            <img src="assets/hero_dune.jpg" alt="Plumb in the Dune colorway" loading="lazy" decoding="async">
-          </picture>
-          <figcaption>Dune colorway</figcaption>
-        </figure>
-        <figure class="carousel-slide">
-          <picture>
-            <source srcset="assets/sketches/sketch_04_woman.webp" type="image/webp">
-            <img src="assets/sketches/sketch_04_woman.png" alt="Working sketch of a woman side-sleeping with the Plumb sleeve-and-case" loading="lazy" decoding="async">
-          </picture>
-          <figcaption>Adult side-sleeper — female</figcaption>
-        </figure>
-        <figure class="carousel-slide">
-          <picture>
-            <source srcset="assets/cushion_family.webp" type="image/webp">
-            <img src="assets/cushion_family.jpg" alt="The foam pillow consumable in Regular and XL thicknesses" loading="lazy" decoding="async">
-          </picture>
-          <figcaption>Foam pillow — two thicknesses</figcaption>
-        </figure>
-        <figure class="carousel-slide">
-          <picture>
-            <source srcset="assets/sketches/sketch_05_pregnant.webp" type="image/webp">
-            <img src="assets/sketches/sketch_05_pregnant.png" alt="Working sketch of a pregnant side-sleeper with the Plumb sleeve-and-case" loading="lazy" decoding="async">
-          </picture>
-          <figcaption>Planning or expecting</figcaption>
-        </figure>
-        <figure class="carousel-slide">
-          <picture>
-            <source srcset="assets/pairing.webp" type="image/webp">
-            <img src="assets/pairing.jpg" alt="Sleeve-and-case sizing chart with foam pillow thickness options" loading="lazy" decoding="async">
-          </picture>
-          <figcaption>Sleeve sizing × foam thickness</figcaption>
-        </figure>
+        <div class="gallery-grid">
+          <figure class="gallery-card">
+            <picture>
+              <source srcset="assets/plumb_render_system_sage_blue_front.webp" type="image/webp">
+              <img src="assets/plumb_render_system_sage_blue_front.png" alt="Plumb three-piece product study render in the sage colorway." loading="lazy" decoding="async">
+            </picture>
+            <figcaption>Three-piece system &mdash; sage colorway</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <picture>
+              <source srcset="assets/sketches/sketch_01_assembled.webp" type="image/webp">
+              <img src="assets/sketches/sketch_01_assembled.png" alt="Working sketch of the assembled Plumb three-piece system." loading="lazy" decoding="async">
+            </picture>
+            <figcaption>Assembled working sketch</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <picture>
+              <source srcset="assets/hero_dune.webp" type="image/webp">
+              <img src="assets/hero_dune.jpg" alt="Plumb in the Dune colorway in a softly-lit bedroom setting." loading="lazy" decoding="async">
+            </picture>
+            <figcaption>Dune colorway</figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
-    <!-- 5. SECOND CTA + GUARANTEE (mid-page conversion anchor) -->
+    <!-- 5. MID-CTA + GUARANTEE (audit v2 Change 4: hedging consolidated; this is now declarative) -->
     <section class="section section-midcta">
       <div class="content content-narrow text-center">
-        <p class="midcta-lede">
-          Pre-prototype. First wear test in progress.
-        </p>
         <p class="midcta-promise">
-          Backed by Plumb's <strong>1-year customer guarantee</strong> &mdash; full refund, free shipping both ways, defects covered indefinitely. You're going to love it. We guarantee it.
+          Backed by Plumb's <strong>1-year customer guarantee</strong>: full refund, free returns shipping, defects covered indefinitely. You are going to love it. We guarantee it.
         </p>
-        <a class="button button-primary button-large" href="#waitlist">Notify me when Plumb ships</a>
-        <p class="midcta-fine"><a href="/guarantee/" style="color:inherit;">Read the full guarantee</a> &middot; final retail terms posted before launch.</p>
+        <a class="button button-primary button-large" href="#waitlist">Reserve my spot</a>
+        <p class="midcta-fine"><a href="/guarantee/" style="color:inherit;">Read the full guarantee</a></p>
       </div>
     </section>
 
@@ -488,7 +450,7 @@
 
         <details class="faq">
           <summary>Will it actually stay in place?</summary>
-          <p>That's the entire design. The sleeve grips the upper thigh; the foam pillow sits inside a case sewn permanently to the body-side of the sleeve. The foam cannot separate from the sleeve because they are one fabric system. We'll publish wear-test results before launch.</p>
+          <p>That is the entire design. The sleeve grips the upper thigh; the foam pillow slides into an open-ended elastic pocket on the body-side of the sleeve; a washable pillowcase goes over the foam between the foam and the pocket. The sleeve moves with the leg that moves, so the pillow goes where the leg goes.</p>
         </details>
 
         <details class="faq">
@@ -533,32 +495,55 @@
 
         <details class="faq">
           <summary>When can I buy one?</summary>
-          <p>Not yet. Pre-prototype. If the wear test passes, we'll open a waitlist and ship the first production run later in 2026. Join the waitlist below and you'll be among the first to know.</p>
+          <p>Plumb launches on Kickstarter. The first 200 backers lock in $55 Early Bird. The Standard tier is $59. Retail after the campaign is $69 plus $4.99 shipping. Join the waitlist below to be first in line when the campaign opens.</p>
         </details>
 
         <details class="faq">
           <summary>What if I don't love it?</summary>
-          <p>You're going to love it &mdash; we guarantee it. You'll have a full year from when your kit arrives to decide. If you don't love it, send it back for a full refund, with free shipping both ways. Defects are replaced free, anytime. <a href="/guarantee/">Read the full guarantee &rarr;</a></p>
+          <p>You are going to love it &mdash; we guarantee it. You will have a full year from when your kit arrives to decide. If you do not love it, send it back for a full refund. Returns shipping is free. Defects are replaced free, anytime. <a href="/guarantee/">Read the full guarantee &rarr;</a></p>
         </details>
       </div>
     </section>
 
-    <!-- 10. WAITLIST (final conversion) -->
+    <!-- 9.5 WHERE WE ARE RIGHT NOW (audit v2 Change 4: all hedging consolidated here) -->
+    <section class="section section-status" id="status" aria-labelledby="status-heading">
+      <div class="content content-narrow">
+        <h2 id="status-heading">Where we are right now.</h2>
+        <p>We are not shipping yet. Here is the actual status:</p>
+        <ul class="status-list">
+          <li><strong>Stage 1 wear test</strong> on the three-piece design (sleeve + foam pillow + washable pillowcase) is underway. Results published before Kickstarter opens, including what we learned and what we changed.</li>
+          <li><strong>Working sketches</strong> are by our designer. Final product photography happens once the first manufacturing run lands.</li>
+          <li><strong>Kickstarter launches</strong> on a target date we will name two weeks in advance. The first 200 backers lock in $55 Early Bird. Standard tier is $59. Retail after the campaign is $69 plus $4.99 shipping.</li>
+        </ul>
+        <p class="status-closer">We would rather show you where we are than dress this up. If you want a more polished website, come back after the wear test. If you want a knee pillow that does not migrate, we are ready when you are.</p>
+      </div>
+    </section>
+
+    <!-- 9.6 FOUNDER NOTE (audit v2 Change 5; brackets are Mike-to-confirm autobiographical specifics) -->
+    <section class="section section-warm section-founder" id="founder" aria-labelledby="founder-heading">
+      <div class="content content-narrow">
+        <h2 id="founder-heading">Why I am building this.</h2>
+        <p>I am a side sleeper. For years I have woken up at 3 a.m. with my knee pillow on the floor. I tried straps. I tried wedges. I tried a padded sleeve. None of them stayed.</p>
+        <p>Last winter I started reading reviews of every product in the category I could find. 4,962 of them, eventually, coded against a shared taxonomy. The same four failures came up in every brand. So I designed against those four failures, in the order people complained about them.</p>
+        <p>Plumb is the product that should already exist. I am a little annoyed it does not. If you have been waking up on the floor too, you are in good company.</p>
+        <p class="founder-sig">&mdash; Mike</p>
+      </div>
+    </section>
+
+    <!-- 10. WAITLIST (audit v2 Change 7: intent-segmented radio for KS vs general) -->
     <section class="section section-waitlist" id="waitlist">
       <div class="content content-narrow">
-        <h2>Be first to know.</h2>
+        <h2>Be first when we launch.</h2>
         <p class="waitlist-lede">
-          Pre-prototype. We're shipping when the wear test passes, not before.
-          Join the Plumb launch list and we'll send a small number of useful
-          updates: test results, fit guidance, launch timing, and early-backer
-          access. No spam. No unrelated offers.
+          Join the Plumb launch list. We send a small number of useful updates: test results, fit guidance, launch timing, and early-backer access. No spam. No unrelated offers.
         </p>
         <p class="waitlist-90night">
-          <em>Backed by Plumb's 1-year customer guarantee &mdash; full refund, free shipping both ways.</em>
+          <em>Backed by Plumb's 1-year customer guarantee: full refund, free returns shipping.</em>
         </p>
 
         <form id="waitlist-form" name="plumb-waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?waitlist_submitted=1" class="waitlist-form">
           <input type="hidden" name="form-name" value="plumb-waitlist">
+          <input type="hidden" name="source" value="waitlist-section">
           <input type="hidden" name="price_variant" value="">
           <input type="hidden" name="displayed_price" value="">
           <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
@@ -567,6 +552,18 @@
             <label for="wl_email">Email <span class="opt">(required)</span></label>
             <input type="email" name="email" id="wl_email" autocomplete="email" required>
           </div>
+
+          <fieldset class="field field-intent">
+            <legend>Which best describes you? <span class="opt">(required)</span></legend>
+            <label class="radio-row">
+              <input type="radio" name="intent" value="kickstarter-backer" required>
+              <span><strong>I want to back this on Kickstarter when it launches.</strong><br><span class="radio-help">You will get a 24-hour heads-up before the campaign opens, plus the Early Bird code while the cap-200 tier is still available.</span></span>
+            </label>
+            <label class="radio-row">
+              <input type="radio" name="intent" value="general-waitlist">
+              <span><strong>I just want to know when it ships.</strong><br><span class="radio-help">You will get a single email once the first production run lands, with retail purchase information.</span></span>
+            </label>
+          </fieldset>
 
           <div class="field">
             <label for="wl_thigh">Upper-thigh circumference <span class="opt">(optional &mdash; helps us forecast sizing demand)</span></label>
@@ -584,8 +581,8 @@
         </form>
 
         <div id="waitlist-thanks" class="thanks" hidden>
-          <h3>You're on the list.</h3>
-          <p>We'll send a small number of useful updates &mdash; test results, fit guidance, launch timing, and early-backer access. No spam, no upsells, no shared list.</p>
+          <h3>You are on the list.</h3>
+          <p>We will send a small number of useful updates &mdash; test results, fit guidance, launch timing, and early-backer access. No spam, no upsells, no shared list.</p>
         </div>
       </div>
     </section>
@@ -599,8 +596,8 @@
 
   </main>
 
-  <!-- Sticky waitlist CTA (appears after scrolling past hero) -->
-  <a href="#waitlist" class="sticky-cta" aria-label="Join the waitlist">Join the waitlist &rarr;</a>
+  <!-- Sticky CTA (audit v2 Change 8: contextual; updates verb past FAQ) -->
+  <a href="#waitlist" class="sticky-cta" id="sticky-cta" aria-label="Reserve your spot" data-state="pre">Reserve my spot &rarr;</a>
 
   <footer class="site-footer">
     <div class="footer-inner">
@@ -628,7 +625,7 @@
         </div>
         <div>
           <p class="footer-col-h">Status</p>
-          <p>Pre-prototype</p>
+          <p>Launching on Kickstarter</p>
           <p>Stage 1 wear test underway</p>
           <p>First production targeted Q4 2026</p>
         </div>
@@ -652,14 +649,14 @@
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Plumb Sleep Kit",
-    "description": "A single-piece sleeve-and-case sleep-alignment garment for side sleepers, with a replaceable contoured foam pillow that nests inside the case. One knit fabric system that goes on like a thigh sleeve and stays put through the night.",
+    "description": "A three-piece sleep-alignment system for side sleepers: thigh sleeve with an open-ended elastic pocket, foam pillow that slides into the pocket, and a washable pillowcase that goes over the foam.",
     "brand": { "@type": "Brand", "name": "Plumb" },
     "image": "https://plumbsleep.com/assets/plumb_render_system_sage_blue_front.png",
     "offers": {
       "@type": "Offer",
       "url": "https://plumbsleep.com/#waitlist",
       "priceCurrency": "USD",
-      "price": "69",
+      "price": "69.00",
       "availability": "https://schema.org/PreOrder",
       "priceValidUntil": "2026-12-31"
     }
@@ -700,7 +697,7 @@
       {
         "@type": "Question",
         "name": "Will it actually stay in place?",
-        "acceptedAnswer": { "@type": "Answer", "text": "That's the entire design. The sleeve grips the upper thigh; the foam pillow sits inside a case sewn permanently to the sleeve. The foam cannot separate from the sleeve because they are one fabric system." }
+        "acceptedAnswer": { "@type": "Answer", "text": "That is the entire design. The sleeve grips the upper thigh; the foam pillow slides into an open-ended elastic pocket on the body-side of the sleeve; a washable pillowcase goes over the foam." }
       },
       {
         "@type": "Question",
@@ -725,12 +722,12 @@
       {
         "@type": "Question",
         "name": "When can I buy one?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Not yet. Pre-prototype. If the wear test passes, we will open a waitlist and ship the first production run later in 2026." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Plumb launches on Kickstarter. The first 200 backers lock in $55 Early Bird. The Standard tier is $59. Retail after the campaign is $69 plus $4.99 shipping." }
       },
       {
         "@type": "Question",
         "name": "What if I don't love it?",
-        "acceptedAnswer": { "@type": "Answer", "text": "You're going to love it, and we guarantee it. You have a full year from when your kit arrives to decide. If you don't love it, send it back for a full refund, with free shipping both ways. Defects are replaced free, anytime. Applies to direct orders from plumbsleep.com." }
+        "acceptedAnswer": { "@type": "Answer", "text": "You are going to love it, and we guarantee it. You have a full year from when your kit arrives to decide. If you do not love it, send it back for a full refund. Returns shipping is free. Defects are replaced free, anytime. Applies to direct orders from plumbsleep.com." }
       }
     ]
   }
@@ -762,15 +759,30 @@
       }
     })();
 
-    // Sticky CTA: show after hero scrolls out
+    // Sticky CTA: show after hero scrolls out + change verb past FAQ (audit v2 Change 8)
     (function () {
       var cta = document.querySelector('.sticky-cta');
       var hero = document.querySelector('.section-hero');
+      var faq = document.getElementById('faq');
       if (!cta || !hero) return;
-      var io = new IntersectionObserver(function (entries) {
+      var heroIo = new IntersectionObserver(function (entries) {
         cta.classList.toggle('is-visible', !entries[0].isIntersecting);
       }, { rootMargin: '-40% 0px 0px 0px' });
-      io.observe(hero);
+      heroIo.observe(hero);
+      if (faq) {
+        var faqIo = new IntersectionObserver(function (entries) {
+          if (entries[0].isIntersecting || entries[0].boundingClientRect.top < 0) {
+            cta.dataset.state = 'post';
+            cta.textContent = "I'm in \u2192";
+            cta.setAttribute('aria-label', "I'm in");
+          } else {
+            cta.dataset.state = 'pre';
+            cta.textContent = "Reserve my spot \u2192";
+            cta.setAttribute('aria-label', "Reserve my spot");
+          }
+        }, { rootMargin: '0px 0px -50% 0px' });
+        faqIo.observe(faq);
+      }
     })();
   </script>
 </body>
