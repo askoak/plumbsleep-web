@@ -300,3 +300,110 @@ routing:
   session_type: engineer
   model_recommendation: claude_sonnet_4_6 or gpt_5_5  # this is copy-editing-heavy, model preference is Mike's
   architect_audit_session: NEW (separate from engineer thread)
+
+# ============================================================
+# EXECUTED 2026-06-13 08:14 EDT
+# ============================================================
+executed:
+  status: EXECUTED
+  executed_at: 2026-06-13T08:14:00-04:00
+  executed_by: architect / Perplexity Computer (direct execution, not engineer-dispatched)
+  authorization: |
+    Mike's direct instruction 2026-06-13 08:03 EDT: "Execute on all open
+    website work and push live the new site." Full permissions granted.
+
+  approach: |
+    Direct architect execution rather than engineer-dispatched. Justified
+    because (a) Mike asked for execution rather than planning, (b) the
+    audit v2 changes and the copy-migration WO scope overlapped substantially
+    and merging them avoided two engineer passes against the same files,
+    and (c) the work was bounded and reversible (any single section can
+    be reverted via a one-file git revert).
+
+  commits:
+    homepage: 1cb9e6f44576355f40172835f8cc39926141ae76
+    styles:   430c0fa9208c076e1043b05d8e5970905ed069a6
+    audit_v2_companion: 679f276ffa9c90f19f6d7bf930c7f9ec52a8696d (in plumb-coordination)
+
+  scope_executed:
+    architecture: |
+      d28 three-piece architecture (sleeve + foam pillow + washable
+      pillowcase) replaces every prior single-piece reference: hero alt-
+      text, OG description, meta description, schema description, How-it-
+      works steps, Why-Plumb-is-different four cards, Three-pieces-One-job
+      section, sketch alt-text, FAQ stays-in-place answer.
+    pricing: |
+      d33 pricing ladder ($55 Early Bird cap 200 / $59 Standard / $109
+      Two-Pack / $69 + $4.99 retail) replaces all "$69 launch price"
+      framing in hero meta, "Where we are right now" block, FAQ "When can
+      I buy one?", and Product JSON-LD ($69.00 retail).
+    voice_and_structure: |
+      All 8 audit-v2 Phase 1 changes landed:
+      - Change 1 Hero rewrite + inline capture
+      - Change 2 Four-failures moved to fold 2 + declarative voice
+      - Change 3 NEW comparison table
+      - Change 4 Hedging consolidated to "Where we are right now"; trust
+        strip rewritten without "Pre-prototype"
+      - Change 5 Founder note section ("Why I am building this") added
+      - Change 6 Carousel cut from 16 slides to 3-image static grid
+      - Change 7 Intent-segmented waitlist radio (KS backer vs general)
+      - Change 8 Contextual sticky CTA (Reserve-my-spot pre-FAQ /
+        I'm-in post-FAQ) via IntersectionObserver
+    styles_added: |
+      .hero-capture, .hero-fine, .visually-hidden, .section-comparison,
+      .compare-table, .compare-table-wrap, .gallery-grid, .gallery-card,
+      .section-status, .status-list, .status-closer, .section-founder,
+      .founder-sig, .field-intent, .radio-row, .radio-help. Uses existing
+      design tokens; no new color introductions.
+
+  acceptance_verified:
+    deploy: |
+      Netlify deploy completed within ~75s of push. plumbsleep.com/ returns
+      HTTP 200 with all new content.
+    browser_verification: |
+      Headless browser walked the page top-to-bottom and confirmed all
+      10 acceptance criteria: hero, trust strip, four-failures, comparison
+      table, three-pieces section, gallery (3-image grid, no carousel),
+      Where-we-are-right-now, founder note, waitlist intent radio, and
+      sticky-CTA verb swap (Reserve-my-spot to I'm-in past FAQ). No layout
+      regressions, no broken images, no missing content.
+    architecture_audit: |
+      Zero residual references to "single-piece", "sewn permanently",
+      "sewn into the case", or "Pre-prototype" in the live HTML.
+    pricing_audit: |
+      All numeric price references are d33-compliant. Hero meta names $55
+      floor; "Where we are right now" names full ladder; FAQ answer names
+      ladder; Product JSON-LD names $69 retail.
+    json_ld: |
+      All three JSON-LD blocks (Product, Organization+WebSite, FAQPage)
+      validate cleanly.
+
+  what_was_intentionally_NOT_touched:
+    - /fit/ Fit Quiz (shipped tonight separately at b9f128f4)
+    - /investors/ page (institutional voice per audit v2 Part V; §11
+      methodology appendix committed earlier at 0eb1c4f8 still in place)
+    - /guarantee/ page
+    - /expecting/, /clinicians/, /press/, /test/ subdirs
+    - M-2 memorial copy restriction (only on /expecting/ per
+      package/147 change #3, Mike-ratified 2026-06-11)
+
+  what_remains_for_a_future_pass:
+    - Founder note autobiographical specifics (Mike to confirm or revise
+      the four particulars: years-of-side-sleeping, $40 padded sleeve,
+      "last winter," and the implied annoyance line)
+    - Designer name in "Where we are right now" still reads "our designer"
+      placeholder; replace when designer is confirmed
+    - Kickstarter launch date placeholder ("a target date we will name two
+      weeks in advance") to be replaced when the campaign date locks
+    - Phase 2 of audit v2: archetype expansion of /fit/, "Will it stay?"
+      SVG simulator, night-mode toggle
+    - Investor surface consolidation (audit v2 Part V) — depends on
+      Mike's decision between (a) keep both gated surfaces or
+      (b) consolidate to plumb-investor-page
+
+  related:
+    - audit v2: askoak/plumb-coordination/research/website-audit/
+      2026-06-13-website-audit-kickstarter-readiness.md (commit 679f276f)
+    - review:  askoak/plumb-coordination/research/website-audit/
+      2026-06-13-website-audit-REVIEW.md (commit 2dcf2569)
+    - d28 (architecture), d33 (pricing), STANDARDS S10 (AI-tells)
