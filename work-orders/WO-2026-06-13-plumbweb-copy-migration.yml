@@ -46,8 +46,15 @@ blocking_input:
       label: "$79 MSRP — clinicians-page MSRP; backers receive $14 discount; preserves 'premium-functional' framing"
     - id: D
       label: "TBD — delete the number; replace with 'post-Kickstarter pricing announced after first production run'"
-  status: AWAITING_MIKE
-  mike_answer: null  # Mike fills this in or replies with the option letter
+  status: ANSWERED
+  mike_answer: "B-revised"  # Mike answered 2026-06-12 22:21 EDT, revised 22:23 EDT after math check
+  mike_answer_detail: |
+    Retail: $69 product + $4.99 shipping = $73.99 to door.
+    Kickstarter ladder revised: $10 / $35 / $55 Early Bird (cap 200) / $59 Standard (was $65) / $109 Two-Pack.
+    Standard tier moved from $65 to $59 to clear Mike's standing 20%-off-retail floor on every Kickstarter pledge tier.
+    See d33 in askoak/AIStandingOrders/decisions/d33.md for full rationale and the disconfirmation analysis.
+  ratified_at: "2026-06-12T22:23:00-04:00"
+  decision_ref: "d33"
 
 # ============================================================
 # CANONICAL TRUTH (what every page must align to)
@@ -111,7 +118,12 @@ canonical:
     must_preserve:
       - the real argument: "Plumb introduces sleeve sizing in a category where pillow sizing fails. The XL sleeve targeting the documented large-frame segment is on the Stage 2 roadmap."
   retail_price:
-    canonical: "<<MIKE TO ANSWER (see blocking_input)>>"
+    canonical: "$69 USD + $4.99 shipping = $73.99 to door"
+    product_price: "$69"
+    shipping: "$4.99"
+    door_total: "$73.99"
+    display_convention: "Show product price and shipping as separate line items on the marketing site. The $73.99 to-door figure may be used as a comparison anchor only on the Kickstarter campaign page itself."
+    kickstarter_standard_revised: "$59 (down from d23's $65, per d33 to clear 20% floor)"
     affects:
       - homepage Product JSON-LD price field
       - press kit retail line
@@ -167,9 +179,9 @@ tasks:
     changes:
       - 3-piece architecture copy
       - sizing nomenclature
-      - replace "$69 USD retail" with Mike's chosen retail
+      - confirm "$69 USD retail" + "$4.99 shipping" as separate line items wherever retail is named
       - replace "$21,000 target" with "$20,000 target"
-      - add the full 5-tier Kickstarter ladder (Supporter $10, Donate-a-Kit $35, Early Bird $55, Standard $65, Two-Pack $109)
+      - add the full 5-tier Kickstarter ladder per d33 (Supporter $10, Donate-a-Kit $35, Early Bird $55 cap 200, **Standard $59**, Two-Pack $109). NOTE: Standard tier is $59 per d33, NOT $65 per d23 — d23's $65 Standard was superseded.
       - drop "validated" framing
 
   - id: T5
@@ -179,9 +191,9 @@ tasks:
     changes:
       - replace the entire single-piece architecture narrative with 3-piece architecture (§3.5, §3.5.4 especially)
       - remove or substantially revise the "first-principles force math excludes 3-arm topology" section — it is now WRONG; the 3-piece architecture is the 3-arm-pocket topology
-      - update §5 unit economics heading from "at a $69 retail price" to Mike's chosen retail
+      - confirm §5 unit economics heading reads "at a $69 retail price" (no change; matches d33 product price; shipping is a separate $4.99 line)
       - update all per-unit contribution tables to Mike's chosen retail
-      - update profit profile range if Mike's chosen retail differs from $69
+      - profit profile range unchanged (Mike's chosen retail = $69 product, matches existing modeling)
       - replace "$21,000 capital required to launch" with "$20,000"
       - replace all instances of "4,962 unique Amazon reviews" with "~5,000 unique Amazon reviews" (8 instances)
       - fix sizing-claim integrity per d29 item 2: separate pillow-size complaint corpus evidence from thigh-circumference sleeve differentiator; disclose Sleeve XL as Stage 2 not at launch
@@ -205,7 +217,7 @@ tasks:
       Architect must decide one of:
       (a) Keep all three pages — Workstream C willingness-to-pay test is still actively running
       (b) Delete the page that matches Mike's chosen retail; keep the other two as live alternatives if test running
-      (c) Delete all three — test concluded with d23 lock at $55/$65
+      (c) Delete all three — test concluded with d23 lock at $55 Early Bird / d33 lock at $59 Standard
     default_recommendation: "(c) — delete all three. d23 locked the Kickstarter ladder; the test is done in spirit."
     if_default: |
       - git rm public/price/49/index.html public/price/69/index.html public/price/89/index.html
