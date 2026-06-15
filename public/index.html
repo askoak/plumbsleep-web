@@ -26,6 +26,61 @@
     /* Hero subhead support — three-piece redesign per d28, voice council hero pairing */
     .hero-copy h1 .hero-sub{display:block;font-weight:500;color:var(--ink-soft, #5a6470);font-size:0.78em;line-height:1.2;margin-top:0.25em;letter-spacing:0.005em;}
     @media (max-width: 720px){ .hero-copy h1 .hero-sub{font-size:0.82em;} }
+
+    /* Fit Check gift card promo — restrained editorial card, not a banner */
+    .section-fitcheck-promo { padding: 1.5rem 0 0.5rem; }
+    a.fitcheck-promo {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 2rem;
+      align-items: center;
+      margin: 0 auto;
+      padding: 1.6rem 1.5rem;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      color: inherit;
+      transition: background-color 0.18s ease;
+    }
+    a.fitcheck-promo:hover,
+    a.fitcheck-promo:focus-visible {
+      background-color: rgba(107, 142, 90, 0.06); /* faint sage wash */
+      text-decoration: none;
+    }
+    a.fitcheck-promo:focus-visible {
+      outline: 2px solid var(--accent, #6B8E5A);
+      outline-offset: 2px;
+    }
+    a.fitcheck-promo:hover .fc-cta { text-decoration: underline; }
+    .fitcheck-promo img {
+      width: 170px; height: auto; border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(45, 74, 62, 0.12);
+      justify-self: center;
+      transition: transform 0.18s ease;
+    }
+    a.fitcheck-promo:hover img { transform: translateY(-1px); }
+    .fitcheck-promo .fc-copy { min-width: 0; max-width: 62ch; }
+    .fitcheck-promo h2 {
+      font-family: var(--serif); font-weight: 600;
+      font-size: clamp(1.35rem, 2.6vw, 1.7rem); line-height: 1.2;
+      margin: 0 0 0.5rem; color: var(--ink);
+    }
+    .fitcheck-promo p {
+      margin: 0 0 0.5rem; line-height: 1.6; color: var(--ink-soft);
+    }
+    .fitcheck-promo .fc-fine {
+      font-size: 0.9rem; color: var(--faint); margin-top: 0.6rem;
+    }
+    .fitcheck-promo .fc-cta {
+      font-weight: 600;
+      color: var(--accent, #3F5874);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    @media (max-width: 640px) {
+      a.fitcheck-promo { grid-template-columns: 1fr; padding: 1.2rem 1.25rem; gap: 1rem; }
+      .fitcheck-promo img { width: 150px; justify-self: start; }
+    }
   </style>
 </head>
 <body>
@@ -52,9 +107,9 @@
 
   <!-- TRUST STRIP (audit v2 Change 4: no apology; five non-hedged claims) -->
   <div class="trust-strip" role="status">
-    <span>4,962 reviews coded</span>
+    <span>4,962 reviews analyzed</span>
     <span aria-hidden="true">&middot;</span>
-    <span>2 sleeve sizes</span>
+    <span>Modular fit, not average fit</span>
     <span aria-hidden="true">&middot;</span>
     <span><a href="/guarantee/" style="color:inherit;text-decoration:none;">1-year guarantee &middot; free returns shipping</a></span>
     <span aria-hidden="true">&middot;</span>
@@ -103,12 +158,27 @@
       </div>
     </section>
 
+    <!-- 1.5 FIT CHECK GIFT CARD PROMO (featured, restrained, fully clickable) -->
+    <section class="section section-fitcheck-promo">
+      <div class="content">
+        <a class="fitcheck-promo" href="/feedback/" aria-label="Take the 2-minute Plumb Fit Check and earn a $5 Amazon gift card">
+          <img src="/assets/amazon-gc-5.jpg" alt="" width="210" height="133" loading="lazy">
+          <div class="fc-copy">
+            <h2>Two minutes. $5 thank-you.</h2>
+            <p>Help us build Plumb for real side sleepers. Answer five quick questions and the first 100 finishers who leave an email get a $5 Amazon gift card within 24 hours.</p>
+            <p class="fc-fine">Prefer not to share an email? The $5 goes to the National Coalition for the Homeless on your behalf.</p>
+            <p><span class="fc-cta">Take the Fit Check &rarr;</span></p>
+          </div>
+        </a>
+      </div>
+    </section>
+
     <!-- 2. THE PROMISE (editorial pull-quote — buyer-voice anchored, corpus-derived) -->
     <section class="section section-promise">
       <div class="content content-narrow">
         <blockquote class="promise-quote">
-          <p>We read the reviews. We coded what fails.</p>
-          <p class="promise-quote-sub">Then we built against the list, in the order buyers gave us.</p>
+          <p>4,962 reviews. Five product categories. Same four failures, every time.</p>
+          <p class="promise-quote-sub">Falls off. Wrong size. Wrong firmness. Can&rsquo;t be washed. We built against all four, in the order buyers ranked them.</p>
         </blockquote>
       </div>
     </section>
@@ -536,6 +606,7 @@
         <h2 id="founder-heading">Why I am building this.</h2>
         <p>I am a side sleeper. For years I have woken up at 3 a.m. with my knee pillow on the floor. I tried straps. I tried wedges. I tried a padded sleeve. None of them stayed.</p>
         <p>Last winter I started reading reviews of every product in the category I could find. 4,962 of them, eventually, coded against a shared taxonomy. The same four failures came up in every brand. So I designed against those four failures, in the order people complained about them.</p>
+        <p>In a previous life I counted beans &mdash; literally &mdash; as a mathematical statistician for the USDA&rsquo;s National Agricultural Statistics Service. Once you have spent a few years counting beans for a living, counting bad knee pillows is mostly a hobby.</p>
         <p>Plumb is the product that should already exist. I am a little annoyed it does not. If you have been waking up on the floor too, you are in good company.</p>
         <p class="founder-sig">&mdash; Mike</p>
       </div>
@@ -623,7 +694,6 @@
         <div>
           <p class="footer-col-h">Contact</p>
           <p><a href="mailto:hello@plumbsleep.com">hello@plumbsleep.com</a></p>
-          <p><a href="mailto:press@plumbsleep.com">press@plumbsleep.com</a></p>
         </div>
         <div>
           <p class="footer-col-h">Audience pages</p>
@@ -650,7 +720,6 @@
         affecting your back, hips, knees, or sleep, consult your physician.
         Fabric is viscose made from bamboo, not raw bamboo fiber.
       </p>
-      <p class="footer-fine">Mark selected June 2026 &middot; Option C.</p>
       <p class="footer-fine">&copy; 2026 Plumb. All rights reserved.</p>
     </div>
   </footer>

@@ -25,32 +25,77 @@
     .feedback-wrap { max-width: var(--max-w-wide); margin: 0 auto; padding: 1.5rem 0 0; }
 
     .feedback-intro {
-      max-width: var(--max-w-narrow); margin: 0 auto;
-      padding: 0 1.25rem 1.2rem;
+      margin: 0 auto;
+      padding: 0 1.5rem 1.6rem;
       border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 2.5rem;
+      align-items: center;
     }
+    .feedback-intro-text { min-width: 0; max-width: 62ch; }
     .feedback-intro h1 {
       font-family: var(--serif); font-weight: 600;
-      font-size: clamp(1.6rem, 3.5vw, 2.1rem); line-height: 1.2;
-      margin: 0 0 0.5rem; color: var(--ink);
+      font-size: clamp(1.7rem, 3.6vw, 2.2rem); line-height: 1.2;
+      margin: 0 0 0.6rem; color: var(--ink);
     }
     .feedback-intro p {
-      margin: 0 0 0.4rem; line-height: 1.55; color: var(--ink-soft);
-      max-width: 58ch;
+      margin: 0 0 0.5rem; line-height: 1.6; color: var(--ink-soft);
     }
     .feedback-intro .small {
-      font-size: 0.9rem; color: var(--faint); margin-top: 0.6rem;
+      font-size: 0.9rem; color: var(--faint); margin-top: 0.7rem;
+    }
+    .feedback-gc-wrap {
+      display: flex; flex-direction: column; align-items: center; gap: 0.7rem;
+      justify-self: center;
+    }
+    .feedback-gc {
+      width: 210px; height: auto; border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(45, 74, 62, 0.12);
+      display: block;
+    }
+    .feedback-gc-caption {
+      font-family: var(--serif); font-weight: 600;
+      font-size: 1.15rem; color: var(--ink);
+      margin: 0; letter-spacing: 0.005em;
+    }
+    @media (max-width: 640px) {
+      .feedback-intro { grid-template-columns: 1fr; gap: 1rem; }
+      .feedback-gc-wrap { order: -1; align-items: flex-start; }
+      .feedback-gc { width: 160px; }
+      .feedback-gc-caption { font-size: 1.05rem; }
     }
 
+    /* Midnight band wraps the Tally iframe so the cream intro flows into the
+       dark form chamber instead of slamming into it. Full-bleed background. */
+    .tally-band {
+      background: #0F1B2D;
+      margin: 2rem 0 0;
+      padding: 2rem 0 3rem;
+      width: 100vw;
+      position: relative;
+      left: 50%; right: 50%;
+      margin-left: -50vw; margin-right: -50vw;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+    }
+    .tally-band-inner {
+      max-width: 800px; margin: 0 auto; padding: 0 1rem;
+    }
+    .tally-band-eyebrow {
+      text-align: center; color: rgba(232, 230, 225, 0.55);
+      font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase;
+      margin: 0 0 1.2rem;
+      font-family: var(--sans);
+    }
     .tally-shell {
       width: 100%;
       max-width: 800px;
       margin: 0 auto;
-      padding: 1rem 0;
+      padding: 0;
     }
     .tally-frame {
       width: 100%;
-      min-height: 1400px;
+      min-height: 2400px; height: 2400px;
       border: 0;
       display: block;
       background: transparent;
@@ -82,13 +127,22 @@
   <main id="main" class="feedback-wrap">
 
     <header class="feedback-intro">
-      <h1>Plumb Fit Check</h1>
-      <p>Two minutes. Five questions. We&rsquo;re building Plumb for real side sleepers and we need real input.</p>
-      <p class="small">The first 100 finishers who leave an email get a $5 Amazon gift card within 24 hours. Skip the email and the $5 goes to the National Coalition for the Homeless on your behalf. Either way, you see the Kickstarter early-bird before anyone else.</p>
+      <div class="feedback-intro-text">
+        <h1>Plumb Fit Check</h1>
+        <p>Two minutes. Five questions. We&rsquo;re building Plumb for real side sleepers and we need real input.</p>
+        <p class="small">The first 100 finishers who leave an email get a $5 Amazon gift card within 24 hours. Skip the email and the $5 goes to the National Coalition for the Homeless on your behalf. Either way, you see the Kickstarter early-bird before anyone else.</p>
+      </div>
+      <figure class="feedback-gc-wrap">
+        <img src="/assets/amazon-gc-5.jpg" alt="$5 Amazon gift card" class="feedback-gc" width="210" height="133" loading="lazy">
+        <figcaption class="feedback-gc-caption">Thank you.</figcaption>
+      </figure>
     </header>
 
-    <div class="tally-shell">
-      <iframe
+    <div class="tally-band">
+      <div class="tally-band-inner">
+        <p class="tally-band-eyebrow">The five questions</p>
+        <div class="tally-shell">
+          <iframe
         src="https://tally.so/embed/rjqdDM?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
         loading="lazy"
         width="100%"
@@ -98,7 +152,10 @@
         marginwidth="0"
         title="Plumb Fit Check &mdash; survey form"
         class="tally-frame"
-        id="tally-frame"></iframe>
+        id="tally-frame"
+        allow="payment"></iframe>
+        </div>
+      </div>
     </div>
 
   </main>
@@ -116,7 +173,6 @@
         <div>
           <p class="footer-col-h">Contact</p>
           <p><a href="mailto:hello@plumbsleep.com">hello@plumbsleep.com</a></p>
-          <p><a href="mailto:press@plumbsleep.com">press@plumbsleep.com</a></p>
         </div>
         <div>
           <p class="footer-col-h">Audience pages</p>
@@ -143,7 +199,6 @@
         affecting your back, hips, knees, or sleep, consult your physician.
         Fabric is viscose made from bamboo, not raw bamboo fiber.
       </p>
-      <p class="footer-fine">Mark selected June 2026 &middot; Option C.</p>
       <p class="footer-fine">&copy; 2026 Plumb. All rights reserved.</p>
     </div>
   </footer>

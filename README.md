@@ -5,6 +5,8 @@ Tagline: *Sleep, aligned.*
 
 This repo is a pure static site. No build step. Netlify serves `public/`.
 
+**Fresh AI sessions:** read [`AIStandingOrders/SESSION_BOOTSTRAP.md`](https://github.com/askoak/AIStandingOrders/blob/main/SESSION_BOOTSTRAP.md) and [`AIStandingOrders/canonical/plumb-canonical.md`](https://github.com/askoak/AIStandingOrders/blob/main/canonical/plumb-canonical.md) FIRST. The canonical file carries the Plumb-specific user-ratified language, decisions, voice rules, and the Fit Check Tally survey operational facts. This repo's README is just the static-site mechanics.
+
 ## Structure
 
 ```
