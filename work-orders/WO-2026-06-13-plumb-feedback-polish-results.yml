@@ -1,0 +1,113 @@
+id: WO-2026-06-13-plumb-feedback-polish
+venture: Plumb
+session: "[13June2026 Plumb post-survey-launch polish]"
+branch: wo/2026-06-13-plumb-feedback-polish
+date: 2026-06-13
+status: completed
+
+budget:
+  cap_usd: 20
+  surface_at_usd: 15
+  status: under_cap_estimate
+
+required_reading:
+  aiso_session_bootstrap: completed
+  aiso_standards:
+    S3: completed
+    S5: completed
+    S10: completed
+    S11: completed
+  plumb_decisions:
+    d22_sizing: completed
+    d23_kickstarter_setup: completed
+    d28_three_piece_architecture: completed
+    d29_no_validated_framing: completed
+    d30_gate_stack: completed
+    d32_canonical_architecture: completed
+    d33_pricing: completed
+  plumb_canonical: completed
+  plumb_coordination_charter: completed
+  shipped_pages:
+    feedback: completed
+    thanks: completed
+    homepage: completed
+
+live_deploy_check:
+  feedback:
+    url: https://plumbsleep.com/feedback/
+    status: 200
+  thanks:
+    url: https://plumbsleep.com/thanks/
+    status: 200
+
+changes:
+  - file: netlify.toml
+    summary: Allow Tally script and frame origin in CSP for /feedback/.
+  - file: public/feedback/index.html
+    summary: Use a direct Tally iframe src so the form can render even if the helper script is delayed.
+  - file: public/thanks/index.html
+    summary: Send the Netlify waitlist fetch as application/x-www-form-urlencoded.
+  - file: public/sitemap.xml
+    summary: Add /feedback/ and /thanks/ to the sitemap.
+  - file: public/index.html
+    summary: Add a restrained Plumb Fit Check homepage entry point and homepage footer link.
+  - file: public/styles.css
+    summary: Add minimal styling for the homepage Plumb Fit Check entry.
+  - repo: plumb-coordination
+    file: STATUS.md
+    summary: Add current status note for the feedback and thanks page ship.
+
+qa:
+  curl:
+    - command: curl -I https://plumbsleep.com/feedback/
+      result: 200 OK
+    - command: curl -I https://plumbsleep.com/thanks/
+      result: 200 OK
+    - command: curl -I "https://tally.so/embed/rjqdDM?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+      result: 200 OK
+  static_site:
+    command: python -m http.server 4177 --bind 127.0.0.1 --directory public
+    result: served local site successfully
+  sitemap:
+    command: PowerShell XML parse of public/sitemap.xml
+    result: pass
+  browser_desktop_1280:
+    feedback:
+      iframe_src_assigned: true
+      iframe_width_px: 800
+      horizontal_overflow_px: 0
+      footer_feedback_link: present
+    thanks:
+      netlify_form_name: kickstarter-waitlist
+      hidden_form_name: kickstarter-waitlist
+      urlencoded_post_header: present
+      horizontal_overflow_px: 0
+      footer_feedback_link: present
+    homepage:
+      feedback_entry_point: present
+      footer_feedback_link: present
+      horizontal_overflow_px: 0
+  browser_mobile_375:
+    feedback:
+      iframe_src_assigned: true
+      iframe_width_px: 320
+      horizontal_overflow_px: 0
+      footer_feedback_link: present
+    thanks:
+      netlify_form_name: kickstarter-waitlist
+      hidden_form_name: kickstarter-waitlist
+      urlencoded_post_header: present
+      horizontal_overflow_px: 0
+      footer_feedback_link: present
+    homepage:
+      feedback_entry_point: present
+      footer_feedback_link: present
+      horizontal_overflow_px: 0
+  notes:
+    - The shipped live feedback page had iframe src unset during QA. The branch fixes this by using a direct Tally iframe src and by allowing Tally in CSP.
+    - The Browser plugin could not enter the cross-origin Tally frame in the local hidden-tab run. The iframe contract was verified by direct src assignment, no horizontal overflow, and a 200 response from the Tally embed URL.
+    - Browser local form typing was blocked by the plugin virtual clipboard. Markup and script checks confirm the Netlify trigger and urlencoded POST path.
+
+prs:
+  plumbsleep_web: pending_at_results_commit
+  plumb_coordination: pending_at_results_commit
