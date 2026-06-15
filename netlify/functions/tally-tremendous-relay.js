@@ -113,11 +113,12 @@ export const handler = async (event) => {
   const orderBody = {
     external_id: responseId,
     payment: { funding_source_id: 'BALANCE' },
-    reward: {
+    rewards: [{
       campaign_id: process.env.TREMENDOUS_CAMPAIGN_ID,
       recipient: { name: recipientName, email },
+      delivery: { method: 'EMAIL' },
       value: { denomination, currency_code: 'USD' },
-    },
+    }],
   };
 
   let tres;
@@ -144,7 +145,7 @@ export const handler = async (event) => {
   try { tresData = await tres.json(); } catch { /* ignore non-JSON bodies */ }
 
   if (tres.ok) {
-    const orderId = tresData.order?.id ?? 'unknown';
+    const orderId = tresData.order?.id ?? tresData.order?.rewards?.[0]?.id ?? 'unknown';
     await store.set(responseId, JSON.stringify({
       responseId, email_hash: hashPrefix(email), tremendous_order_id: orderId,
       status: 'succeeded', timestamp: ts, amount: denomination,
