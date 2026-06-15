@@ -5,6 +5,8 @@
 //   TALLY_WEBHOOK_SECRET   — Tally signing secret (set via API, T5)
 //   TREMENDOUS_PROD_TOKEN  — Bearer token for Tremendous prod API
 //   TREMENDOUS_CAMPAIGN_ID — "Plumb Survey Reward $5" campaign ID
+//   NETLIFY_SITE_ID        — Site ID for explicit Blobs context
+//   NETLIFY_BLOBS_TOKEN    — Netlify API token for Blobs auth
 
 import crypto from 'node:crypto';
 import { getStore } from '@netlify/blobs';
@@ -87,7 +89,8 @@ export const handler = async (event) => {
   const recipientName = nameField?.value?.trim() || 'Plumb respondent';
 
   // Idempotency: one reward per responseId.
-  const store = getStore(LEDGER_STORE);
+  // Pass siteID + token explicitly — Lambda v1 runtime doesn't auto-inject NETLIFY_BLOBS_CONTEXT.
+  const store = getStore({ name: LEDGER_STORE, siteID: process.env.NETLIFY_SITE_ID, token: process.env.NETLIFY_BLOBS_TOKEN });
   const existing = await store.get(responseId, { type: 'json' });
 
   if (existing?.status === 'succeeded') {
