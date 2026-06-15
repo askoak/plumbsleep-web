@@ -2,7 +2,7 @@
 // Replaces the disabled Zapier integration (2026-06-15).
 //
 // Env vars (set in Netlify, never committed):
-//   TALLY_WEBHOOK_SECRET   — Tally signing secret (set in T5)
+//   TALLY_WEBHOOK_SECRET   — Tally signing secret (set via API, T5)
 //   TREMENDOUS_PROD_TOKEN  — Bearer token for Tremendous prod API
 //   TREMENDOUS_CAMPAIGN_ID — "Plumb Survey Reward $5" campaign ID
 
